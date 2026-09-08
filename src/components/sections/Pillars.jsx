@@ -102,22 +102,22 @@ export default function Pillars() {
               </div>
 
               {/* Right: Data Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto shrink-0">
-                <div className="bg-white/60 border border-[#E96614]/20 hover:bg-white transition-colors rounded-[24px] p-6 backdrop-blur-sm shadow-sm">
-                  <div className="text-[32px] font-black text-brand-dark mb-1">300M+</div>
-                  <div className="text-[13px] text-gray-600 font-semibold leading-snug">Total students<br/>in India</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full lg:w-auto shrink-0 mt-2 lg:mt-0">
+                <div className="bg-white/60 border border-[#E96614]/20 hover:bg-white transition-colors rounded-2xl sm:rounded-[24px] p-4 sm:p-6 backdrop-blur-sm shadow-sm">
+                  <div className="text-[22px] sm:text-[32px] font-black text-brand-dark mb-1 leading-none">300M+</div>
+                  <div className="text-[11px] sm:text-[13px] text-gray-600 font-semibold leading-tight sm:leading-snug mt-1.5">Total students<br className="hidden sm:block"/>in India</div>
                 </div>
-                <div className="bg-white/60 border border-[#E96614]/20 hover:bg-white transition-colors rounded-[24px] p-6 backdrop-blur-sm shadow-sm">
-                  <div className="text-[32px] font-black text-[#E96614] mb-1">&lt; 10%</div>
-                  <div className="text-[13px] text-gray-600 font-semibold leading-snug">Possess real-world<br/>21st-century skills</div>
+                <div className="bg-white/60 border border-[#E96614]/20 hover:bg-white transition-colors rounded-2xl sm:rounded-[24px] p-4 sm:p-6 backdrop-blur-sm shadow-sm">
+                  <div className="text-[22px] sm:text-[32px] font-black text-[#E96614] mb-1 leading-none">&lt; 10%</div>
+                  <div className="text-[11px] sm:text-[13px] text-gray-600 font-semibold leading-tight sm:leading-snug mt-1.5">Possess real-world<br className="hidden sm:block"/>21st-century skills</div>
                 </div>
-                <div className="bg-white/60 border border-[#E96614]/20 hover:bg-white transition-colors rounded-[24px] p-6 backdrop-blur-sm shadow-sm">
-                  <div className="text-[32px] font-black text-brand-dark mb-1">51.2%</div>
-                  <div className="text-[13px] text-gray-600 font-semibold leading-snug">Current graduate<br/>employability rate</div>
+                <div className="bg-white/60 border border-[#E96614]/20 hover:bg-white transition-colors rounded-2xl sm:rounded-[24px] p-4 sm:p-6 backdrop-blur-sm shadow-sm">
+                  <div className="text-[22px] sm:text-[32px] font-black text-brand-dark mb-1 leading-none">51.2%</div>
+                  <div className="text-[11px] sm:text-[13px] text-gray-600 font-semibold leading-tight sm:leading-snug mt-1.5">Current graduate<br className="hidden sm:block"/>employability rate</div>
                 </div>
-                <div className="bg-white/60 border border-[#E96614]/20 hover:bg-white transition-colors rounded-[24px] p-6 backdrop-blur-sm shadow-sm">
-                  <div className="text-[32px] font-black text-[#E96614] mb-1">93%</div>
-                  <div className="text-[13px] text-gray-600 font-semibold leading-snug">Students aware of only<br/>7 conventional careers</div>
+                <div className="bg-white/60 border border-[#E96614]/20 hover:bg-white transition-colors rounded-2xl sm:rounded-[24px] p-4 sm:p-6 backdrop-blur-sm shadow-sm">
+                  <div className="text-[22px] sm:text-[32px] font-black text-[#E96614] mb-1 leading-none">93%</div>
+                  <div className="text-[11px] sm:text-[13px] text-gray-600 font-semibold leading-tight sm:leading-snug mt-1.5">Students aware of only<br className="hidden sm:block"/>7 conventional careers</div>
                 </div>
               </div>
               

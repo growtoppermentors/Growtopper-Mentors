@@ -131,7 +131,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
     try {
       if (supabase) {
         const { error: otpError } = await supabase.auth.signInWithOtp({
-          email,
+          email: email.trim().toLowerCase(),
           options: { shouldCreateUser: true },
         });
         if (otpError) throw otpError;
@@ -150,7 +150,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
     try {
       if (supabase) {
         const { error: otpError } = await supabase.auth.signInWithOtp({
-          email,
+          email: email.trim().toLowerCase(),
           options: { shouldCreateUser: true },
         });
         if (otpError) throw otpError;
@@ -175,15 +175,15 @@ export default function ApplicationModal({ isOpen, onClose }) {
     try {
       if (supabase) {
         let { error: verifyError } = await supabase.auth.verifyOtp({
-          email,
-          token: otp,
+          email: email.trim().toLowerCase(),
+          token: otp.trim(),
           type: 'email',
         });
         
         if (verifyError) {
           const { error: magicError } = await supabase.auth.verifyOtp({
-            email,
-            token: otp,
+            email: email.trim().toLowerCase(),
+            token: otp.trim(),
             type: 'magiclink',
           });
           verifyError = magicError;
@@ -191,8 +191,8 @@ export default function ApplicationModal({ isOpen, onClose }) {
 
         if (verifyError) {
           const { error: signupError } = await supabase.auth.verifyOtp({
-            email,
-            token: otp,
+            email: email.trim().toLowerCase(),
+            token: otp.trim(),
             type: 'signup',
           });
           verifyError = signupError;
@@ -324,7 +324,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
 
                 <form onSubmit={handleStudentSubmit} className="space-y-4">
                   <div className="relative group">
-                    <label className={labelClass}>Student's First Name</label>
+                    <label className={labelClass}>Student Name</label>
                     <User className={iconClass} />
                     <input required type="text" value={studentName} onChange={(e)=>setStudentName(e.target.value)} className={inputClass} placeholder="E.g. Rohan" />
                   </div>
@@ -379,7 +379,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
                   </div>
 
                   <div className="relative group">
-                    <label className={labelClass}>Your Name (Parent)</label>
+                    <label className={labelClass}>Parent Name</label>
                     <User className={iconClass} />
                     <input required type="text" value={parentName} onChange={(e)=>setParentName(e.target.value)} className={inputClass} placeholder="Your full name" />
                   </div>
@@ -493,17 +493,36 @@ export default function ApplicationModal({ isOpen, onClose }) {
 
                 <form onSubmit={handleOtpSubmit} className="space-y-5">
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-2 text-center">Enter your 6-digit OTP</label>
-                    <input 
-                      required 
-                      type="text"
-                      inputMode="numeric"
-                      placeholder="• • • • • •"
-                      value={otp}
-                      onChange={(e) => { setOtp(e.target.value.replace(/\D/g, '').slice(0, 6)); setError(''); }}
-                      className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple focus:bg-white outline-none transition-all font-black text-center tracking-[0.8em] text-brand-dark text-2xl shadow-inner" 
-                    />
-                    {error && <p className="text-red-500 text-[11px] font-bold mt-2 text-center">{error}</p>}
+                    <label className="block text-xs font-bold text-gray-700 mb-3 text-center">Enter your 6-digit OTP</label>
+                    
+                    <div className="relative w-full max-w-[340px] mx-auto">
+                      <input 
+                        required 
+                        autoFocus
+                        type="text"
+                        inputMode="numeric"
+                        maxLength={6}
+                        value={otp}
+                        onChange={(e) => { setOtp(e.target.value.replace(/\D/g, '').slice(0, 6)); setError(''); }}
+                        className="absolute inset-0 w-full h-full opacity-0 z-10 cursor-text tracking-widest text-transparent" 
+                      />
+                      <div className="flex gap-2 sm:gap-3 justify-between pointer-events-none">
+                        {[0, 1, 2, 3, 4, 5].map((i) => (
+                          <div 
+                            key={i} 
+                            className={`w-11 h-14 sm:w-12 sm:h-16 flex items-center justify-center rounded-xl text-2xl font-black transition-all ${
+                              otp[i] 
+                                ? 'bg-white border-2 border-brand-purple text-brand-dark shadow-md transform scale-105' 
+                                : 'bg-gray-50 border border-gray-200 text-gray-300'
+                            }`}
+                          >
+                            {otp[i] || '•'}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {error && <p className="text-red-500 text-[11px] font-bold mt-4 text-center animate-in slide-in-from-top-1">{error}</p>}
                   </div>
 
                   <div className="pt-1 space-y-3">

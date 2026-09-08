@@ -150,10 +150,10 @@ export default function ProblemSection() {
                   </div>
 
                   <div className="flex flex-col items-center">
-                    <span className="font-['Caveat',cursive] text-gray-900 text-[26px] leading-none -mb-2 transform -rotate-3">Subhasis Swain</span>
-                    <span className="w-24 sm:w-28 border-t border-gray-400 mt-2 mb-1"></span>
-                    <span className="text-[9px] uppercase tracking-wider text-gray-900 font-black">Subhasis Swain</span>
-                    <span className="text-[8px] uppercase tracking-wider text-gray-500 font-bold mt-0.5">Founder & CEO</span>
+                    <span className="font-['Caveat',cursive] text-gray-900 text-[20px] sm:text-[24px] leading-none -mb-1 sm:-mb-2 transform -rotate-3">Subhasis Swain</span>
+                    <span className="w-20 sm:w-28 border-t border-gray-400 mt-1 sm:mt-2 mb-1"></span>
+                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-gray-900 font-black">Subhasis Swain</span>
+                    <span className="text-[7px] sm:text-[8px] uppercase tracking-wider text-gray-500 font-bold mt-0.5">Founder & CEO</span>
                   </div>
 
                 </div>
