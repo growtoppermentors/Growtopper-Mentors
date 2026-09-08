@@ -90,9 +90,9 @@
         ctx.fillText("growtopper", 660, 420);
         
         // Export
-        const imgURI = canvas.toDataURL(image/, 1.0);
+        const imgURI = canvas.toDataURL(`image/${format}`, 1.0);
         const a = document.createElement('a');
-        a.setAttribute('download', Growtopper_Full_Logo.);
+        a.setAttribute('download', `Growtopper_Full_Logo.${format === 'jpeg' ? 'jpg' : 'png'}`);
         a.setAttribute('href', imgURI);
         document.body.appendChild(a);
         a.click();
