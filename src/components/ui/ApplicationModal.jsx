@@ -205,7 +205,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
       if (supabase) {
         await supabase.from('applications').insert([{
           phone,
-          email,
+          email: email.trim().toLowerCase(),
           student_name: studentName,
           student_class: studentClass,
           board,
@@ -220,7 +220,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
       goToNextStep(6);
     } catch (err) {
       console.error('OTP Verification Error:', err);
-      setError('Invalid OTP. Please check your email and try again.');
+      setError(err?.message || 'Invalid OTP. Please check your email and try again.');
     } finally {
       setOtpVerifying(false);
     }
@@ -449,13 +449,13 @@ export default function ApplicationModal({ isOpen, onClose }) {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="relative group">
                       <label className={labelClass}>Date</label>
-                      <Calendar className={iconClass} />
-                      <input required type="date" min={new Date().toISOString().split("T")[0]} value={callDate} onChange={(e) => setCallDate(e.target.value)} className={inputClass} style={{colorScheme: 'light'}} />
+                      <Calendar className={`${iconClass} hidden sm:block`} />
+                      <input required type="date" min={new Date().toISOString().split("T")[0]} value={callDate} onChange={(e) => setCallDate(e.target.value)} className={`${inputClass} sm:pl-10 pl-3 text-[12px] sm:text-sm tracking-tighter sm:tracking-normal min-w-0`} style={{colorScheme: 'light'}} />
                     </div>
                     <div className="relative group">
                       <label className={labelClass}>Exact Time</label>
-                      <Clock className={iconClass} />
-                      <input required type="time" value={callTime} onChange={(e) => setCallTime(e.target.value)} className={inputClass} style={{colorScheme: 'light'}} />
+                      <Clock className={`${iconClass} hidden sm:block`} />
+                      <input required type="time" value={callTime} onChange={(e) => setCallTime(e.target.value)} className={`${inputClass} sm:pl-10 pl-3 text-[12px] sm:text-sm tracking-tighter sm:tracking-normal min-w-0`} style={{colorScheme: 'light'}} />
                     </div>
                   </div>
 
