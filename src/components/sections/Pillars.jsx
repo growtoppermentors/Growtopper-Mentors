@@ -79,15 +79,12 @@ export default function Pillars() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* --- Indian Student Facts Card --- */}
-        <div className="relative mb-20 lg:mb-28 rounded-[32px] p-[2px] bg-gradient-to-r from-[#F69748] via-[#FFC085] to-[#F69748] animate-[shimmer_3s_linear_infinite] bg-[length:200%_100%] shadow-[0_20px_40px_rgba(233,102,20,0.1)] hover:shadow-[0_20px_50px_rgba(233,102,20,0.15)] transition-shadow group">
+        <div className="relative mb-20 lg:mb-28 rounded-[32px] p-[2px] bg-gradient-to-r from-[#F69748] via-[#FFC085] to-[#F69748] md:animate-[shimmer_3s_linear_infinite] bg-[length:200%_100%] shadow-[0_20px_40px_rgba(233,102,20,0.1)] hover:shadow-[0_20px_50px_rgba(233,102,20,0.15)] transition-shadow group">
           
           <div className="relative rounded-[30px] overflow-hidden bg-white bg-gradient-to-br from-[#E96614]/10 via-[#E96614]/5 to-transparent h-full w-full p-8 md:p-10 lg:p-12 z-10">
             
-            {/* Soft Glow Decor */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E96614]/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-            
-            {/* Full Card Shimmer Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#E96614]/5 to-transparent animate-[shimmer_4s_linear_infinite] bg-[length:200%_100%] pointer-events-none"></div>
+            {/* Soft Glow Decor — desktop only */}
+            <div className="hidden md:block absolute top-0 right-0 w-[500px] h-[500px] bg-[#E96614]/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none will-change-transform"></div>
 
             <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-16">
               

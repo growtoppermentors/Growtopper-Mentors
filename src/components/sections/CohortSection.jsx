@@ -53,7 +53,7 @@ export default function CohortSection({ onRequestInvite }) {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7280DE]/5 to-transparent animate-[shimmer_4s_linear_infinite] bg-[length:200%_100%] pointer-events-none"></div>
 
             {/* Subtle soft top-light overlay */}
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#7280DE]/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/4 -translate-y-1/4"></div>
+          <div className="hidden md:block absolute top-0 left-0 w-[600px] h-[600px] bg-[#7280DE]/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/4 -translate-y-1/4 will-change-transform"></div>
 
           {/* Inner card content */}
           <div className="relative p-8 sm:p-12 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">

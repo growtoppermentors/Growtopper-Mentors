@@ -75,13 +75,25 @@ export default function ApplicationModal({ isOpen, onClose }) {
   const validatePhone = (num) => /^[6-9]\d{9}$/.test(num);
   const validateEmail = (mail) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
 
-  const handlePhoneSubmit = (e) => {
+  const handlePhoneSubmit = async (e) => {
     e.preventDefault();
     if (!validatePhone(phone)) {
       setError('Enter a valid 10-digit number (starts with 6-9).');
       return;
     }
     setError('');
+    // Check for duplicate phone
+    if (supabase) {
+      const { data } = await supabase
+        .from('applications')
+        .select('id')
+        .eq('phone', phone)
+        .maybeSingle();
+      if (data) {
+        setError('already_submitted');
+        return;
+      }
+    }
     goToNextStep(2);
   };
 
@@ -103,6 +115,18 @@ export default function ApplicationModal({ isOpen, onClose }) {
       return;
     }
     setError('');
+    // Check for duplicate email
+    if (supabase) {
+      const { data } = await supabase
+        .from('applications')
+        .select('id')
+        .eq('email', email)
+        .maybeSingle();
+      if (data) {
+        setError('already_submitted');
+        return;
+      }
+    }
     setOtpSending(true);
     try {
       if (supabase) {
@@ -230,12 +254,20 @@ export default function ApplicationModal({ isOpen, onClose }) {
                         className="w-full px-4 py-3 sm:py-3.5 bg-transparent outline-none font-bold text-base sm:text-lg text-brand-dark tracking-wide" 
                       />
                     </div>
-                    {error && <p className="text-red-500 text-[11px] font-bold mt-1.5 ml-1">{error}</p>}
+                    {error && error !== 'already_submitted' && <p className="text-red-500 text-[11px] font-bold mt-1.5 ml-1">{error}</p>}
                   </div>
 
-                  <button type="submit" disabled={phone.length < 10} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 disabled:opacity-50 shadow-md active:scale-[0.98]">
-                    Continue <ArrowRight className="w-4 h-4" />
-                  </button>
+                  {error === 'already_submitted' ? (
+                    <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 text-center">
+                      <div className="text-2xl mb-2">🙏</div>
+                      <p className="font-black text-amber-800 text-[15px] mb-1">Already Received!</p>
+                      <p className="text-amber-700 text-[13px] font-medium leading-relaxed">You've already submitted your application with this number. Our mentor team will get back to you shortly — please wait!</p>
+                    </div>
+                  ) : (
+                    <button type="submit" disabled={phone.length < 10} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 disabled:opacity-50 shadow-md active:scale-[0.98]">
+                      Continue <ArrowRight className="w-4 h-4" />
+                    </button>
+                  )}
                 </form>
               </div>
             )}
@@ -389,13 +421,21 @@ export default function ApplicationModal({ isOpen, onClose }) {
                   </div>
 
                   <div className="pt-2">
-                    <button type="submit" disabled={otpSending} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 shadow-md active:scale-[0.98] disabled:opacity-60">
-                      {otpSending ? (
-                        <><span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></span> Sending OTP…</>
-                      ) : (
-                        <>Send OTP <ArrowRight className="w-4 h-4" /></>
-                      )}
-                    </button>
+                    {error === 'already_submitted' ? (
+                      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 text-center">
+                        <div className="text-2xl mb-2">🙏</div>
+                        <p className="font-black text-amber-800 text-[15px] mb-1">Already Received!</p>
+                        <p className="text-amber-700 text-[13px] font-medium leading-relaxed">This email is already registered. Our mentor team will get back to you shortly — please wait!</p>
+                      </div>
+                    ) : (
+                      <button type="submit" disabled={otpSending} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 shadow-md active:scale-[0.98] disabled:opacity-60">
+                        {otpSending ? (
+                          <><span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></span> Sending OTP…</>
+                        ) : (
+                          <>Send OTP <ArrowRight className="w-4 h-4" /></>
+                        )}
+                      </button>
+                    )}
                   </div>
                 </form>
               </div>
