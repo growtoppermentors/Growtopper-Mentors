@@ -84,12 +84,13 @@ export default function ApplicationModal({ isOpen, onClose }) {
     setError('');
     // Check for duplicate phone
     if (supabase) {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('applications')
         .select('id')
         .eq('phone', phone.trim())
-        .maybeSingle();
-      if (data) {
+        .limit(1);
+      
+      if (data && data.length > 0) {
         setError('already_submitted');
         return;
       }
@@ -117,12 +118,13 @@ export default function ApplicationModal({ isOpen, onClose }) {
     setError('');
     // Check for duplicate email
     if (supabase) {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('applications')
         .select('id')
         .eq('email', email.trim().toLowerCase())
-        .maybeSingle();
-      if (data) {
+        .limit(1);
+        
+      if (data && data.length > 0) {
         setError('already_submitted');
         return;
       }
