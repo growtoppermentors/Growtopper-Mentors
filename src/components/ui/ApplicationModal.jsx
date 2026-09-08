@@ -22,6 +22,8 @@ export default function ApplicationModal({ isOpen, onClose }) {
   const [callTime, setCallTime] = useState('');
   
   const [otp, setOtp] = useState('');
+  const [otpSending, setOtpSending] = useState(false);
+  const [otpVerifying, setOtpVerifying] = useState(false);
   const [error, setError] = useState('');
   
   const [animationKey, setAnimationKey] = useState(0);
@@ -93,27 +95,52 @@ export default function ApplicationModal({ isOpen, onClose }) {
     goToNextStep(4);
   };
 
-  const handleEmailSubmit = (e) => {
+  // Send real OTP via Supabase
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
     if (!validateEmail(email)) {
       setError('Enter a valid email.');
       return;
     }
     setError('');
-    goToNextStep(5);
+    setOtpSending(true);
+    try {
+      if (supabase) {
+        const { error: otpError } = await supabase.auth.signInWithOtp({
+          email,
+          options: { shouldCreateUser: true },
+        });
+        if (otpError) throw otpError;
+      }
+      goToNextStep(5);
+    } catch (err) {
+      setError('Failed to send OTP. Please try again.');
+    } finally {
+      setOtpSending(false);
+    }
   };
 
+  // Verify real Supabase OTP
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
-    if (otp.length < 4) {
-      setError('OTP must be 4 digits.');
+    if (otp.length < 6) {
+      setError('Enter the 6-digit OTP sent to your email.');
       return;
     }
     setError('');
+    setOtpVerifying(true);
+    try {
+      if (supabase) {
+        const { error: verifyError } = await supabase.auth.verifyOtp({
+          email,
+          token: otp,
+          type: 'email',
+        });
+        if (verifyError) throw verifyError;
+      }
 
-    // Save application to Supabase
-    if (supabase) {
-      try {
+      // Save application to Supabase
+      if (supabase) {
         await supabase.from('applications').insert([{
           phone,
           email,
@@ -125,13 +152,15 @@ export default function ApplicationModal({ isOpen, onClose }) {
           city,
           call_date: callDate,
           call_time: callTime,
-        }]);
-      } catch (_) {
-        // Silently continue — don't block success screen
+        }]).catch(() => {});
       }
-    }
 
-    goToNextStep(6);
+      goToNextStep(6);
+    } catch (err) {
+      setError('Invalid OTP. Please check your email and try again.');
+    } finally {
+      setOtpVerifying(false);
+    }
   };
 
   // Mobile-first highly compact inputs
@@ -360,8 +389,12 @@ export default function ApplicationModal({ isOpen, onClose }) {
                   </div>
 
                   <div className="pt-2">
-                    <button type="submit" className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 shadow-md active:scale-[0.98]">
-                      Send OTP <ArrowRight className="w-4 h-4" />
+                    <button type="submit" disabled={otpSending} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 shadow-md active:scale-[0.98] disabled:opacity-60">
+                      {otpSending ? (
+                        <><span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></span> Sending OTP…</>
+                      ) : (
+                        <>Send OTP <ArrowRight className="w-4 h-4" /></>
+                      )}
                     </button>
                   </div>
                 </form>
@@ -376,26 +409,31 @@ export default function ApplicationModal({ isOpen, onClose }) {
                     <Lock className="w-6 h-6 text-brand-purple" />
                   </div>
                   <h2 className="text-[22px] sm:text-[26px] font-black mb-1.5 text-brand-dark tracking-tight">Verify Email</h2>
-                  <p className="text-gray-600 text-[13px] sm:text-[14px] font-medium">We've sent a 4-digit code to <strong className="text-brand-dark">{email}</strong>.</p>
+                  <p className="text-gray-600 text-[13px] sm:text-[14px] font-medium">We've sent a <strong className="text-brand-dark">6-digit code</strong> to <strong className="text-brand-dark">{email}</strong>. Check your inbox.</p>
                 </div>
 
                 <form onSubmit={handleOtpSubmit} className="space-y-5">
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-2 text-center">Enter your 4-digit OTP</label>
+                    <label className="block text-xs font-bold text-gray-700 mb-2 text-center">Enter your 6-digit OTP</label>
                     <input 
                       required 
-                      type="text" 
-                      placeholder="• • • •"
+                      type="text"
+                      inputMode="numeric"
+                      placeholder="• • • • • •"
                       value={otp}
-                      onChange={(e) => { setOtp(e.target.value.replace(/\D/g, '').slice(0, 4)); setError(''); }}
-                      className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple focus:bg-white outline-none transition-all font-black text-center tracking-[1em] text-brand-dark text-2xl shadow-inner" 
+                      onChange={(e) => { setOtp(e.target.value.replace(/\D/g, '').slice(0, 6)); setError(''); }}
+                      className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple focus:bg-white outline-none transition-all font-black text-center tracking-[0.8em] text-brand-dark text-2xl shadow-inner" 
                     />
                     {error && <p className="text-red-500 text-[11px] font-bold mt-2 text-center">{error}</p>}
                   </div>
 
                   <div className="pt-1">
-                    <button type="submit" disabled={otp.length < 4} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center shadow-md disabled:opacity-50 active:scale-[0.98]">
-                      Verify & Confirm
+                    <button type="submit" disabled={otp.length < 6 || otpVerifying} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 shadow-md disabled:opacity-50 active:scale-[0.98]">
+                      {otpVerifying ? (
+                        <><span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></span> Verifying…</>
+                      ) : (
+                        'Verify & Confirm'
+                      )}
                     </button>
                   </div>
                 </form>

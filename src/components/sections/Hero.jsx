@@ -27,8 +27,8 @@ export default function Hero({ onRequestInvite }) {
   return (
     <section className="pt-20 lg:pt-24 pb-10 lg:pb-16 bg-[#F8F9FE] relative overflow-hidden flex flex-col justify-center items-center">
       
-      {/* Soft Center Radial Glow */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#E8E2FF]/60 rounded-full blur-[100px] pointer-events-none z-0"></div>
+      {/* Soft Center Radial Glow — hidden on mobile for performance */}
+      <div className="hidden md:block absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#E8E2FF]/60 rounded-full blur-[100px] pointer-events-none z-0 will-change-transform"></div>
 
       <div className="max-w-[1200px] mx-auto w-full px-4 sm:px-8 flex flex-col items-center relative z-10">
         
@@ -43,7 +43,7 @@ export default function Hero({ onRequestInvite }) {
         {/* Headline */}
         <h1 className="text-center font-black text-[38px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-[-0.02em] text-[#111115] mb-5 max-w-[850px]">
           30 Days. One Mentor.<br/>
-          A Structured System for <span className="inline-flex text-transparent bg-clip-text bg-[linear-gradient(110deg,#4E14F9,45%,#B28BFF,55%,#4E14F9)] bg-[length:200%_auto] animate-shimmer">Student Growth.</span>
+          A Structured System for <span className="inline-flex text-transparent bg-clip-text bg-[linear-gradient(110deg,#4E14F9,45%,#B28BFF,55%,#4E14F9)] bg-[length:200%_auto] md:animate-shimmer">Student Growth.</span>
         </h1>
 
         {/* Subtitle */}
