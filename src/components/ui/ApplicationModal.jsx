@@ -3,6 +3,7 @@ import {
   X, ArrowRight, ArrowLeft, CheckCircle2, Phone, User, 
   GraduationCap, BookOpen, Building, Mail, Calendar, Clock, Lock
 } from 'lucide-react';
+import { supabase } from '../../supabase';
 
 export default function ApplicationModal({ isOpen, onClose }) {
   const [step, setStep] = useState(1);
@@ -102,13 +103,34 @@ export default function ApplicationModal({ isOpen, onClose }) {
     goToNextStep(5);
   };
 
-  const handleOtpSubmit = (e) => {
+  const handleOtpSubmit = async (e) => {
     e.preventDefault();
     if (otp.length < 4) {
       setError('OTP must be 4 digits.');
       return;
     }
     setError('');
+
+    // Save application to Supabase
+    if (supabase) {
+      try {
+        await supabase.from('applications').insert([{
+          phone,
+          email,
+          student_name: studentName,
+          student_class: studentClass,
+          board,
+          school,
+          parent_name: parentName,
+          city,
+          call_date: callDate,
+          call_time: callTime,
+        }]);
+      } catch (_) {
+        // Silently continue — don't block success screen
+      }
+    }
+
     goToNextStep(6);
   };
 
