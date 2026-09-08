@@ -203,7 +203,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
 
       // Save application to Supabase
       if (supabase) {
-        await supabase.from('applications').insert([{
+        const { error: dbError } = await supabase.from('applications').insert([{
           phone,
           email: email.trim().toLowerCase(),
           student_name: studentName,
@@ -214,7 +214,13 @@ export default function ApplicationModal({ isOpen, onClose }) {
           city,
           call_date: callDate,
           call_time: callTime,
-        }]).catch(() => {});
+        }]);
+        
+        if (dbError) {
+          console.error('Database Insert Error:', dbError);
+          // We still proceed to success screen even if saving to DB fails,
+          // as the auth portion succeeded.
+        }
       }
 
       goToNextStep(6);
@@ -236,7 +242,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onClick={onClose}></div>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
       
       <div className="relative bg-white w-full max-w-[440px] rounded-[24px] sm:rounded-[32px] shadow-2xl z-10 flex flex-col">
         
