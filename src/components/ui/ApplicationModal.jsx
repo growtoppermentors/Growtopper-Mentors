@@ -244,7 +244,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
       
-      <div className="relative bg-gradient-to-br from-brand-purple/[0.07] via-white to-white w-full max-w-[440px] rounded-[24px] sm:rounded-[32px] shadow-2xl z-10 flex flex-col border border-white/60">
+      <div className="relative bg-gradient-to-b from-[#FAF9FF] to-white w-full max-w-[440px] rounded-[24px] sm:rounded-[32px] shadow-2xl z-10 flex flex-col border border-white/60">
         
         {/* Absolute Header for Back & Close Buttons (Keeps them out of document flow) */}
         <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-between px-4 sm:px-6 z-20 mt-1">
@@ -259,14 +259,12 @@ export default function ApplicationModal({ isOpen, onClose }) {
             ) : <div></div>}
           </div>
           
-          {/* Main Website Logo Format (Scaled Down) */}
+          {/* Main Website Logo Format */}
           <div className="flex items-center gap-1.5">
-            <div className="w-6 h-6 bg-brand-purple rounded-[6px] flex items-center justify-center transform -rotate-6 shadow-sm">
-              <span className="text-white font-black text-[13px] transform rotate-6 leading-none mt-[1px]">G</span>
+            <div className="w-7 h-7 rounded-lg bg-brand-purple flex items-center justify-center text-white shadow-md shadow-brand-purple/30">
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <span className="text-brand-dark font-black text-[14px] tracking-tight mt-[1px]">
-              GROWTOPPER<span className="text-brand-purple">.</span>
-            </span>
+            <span className="font-black text-[16px] tracking-tight text-brand-dark">growtopper</span>
           </div>
 
           <div className="w-[80px] flex justify-end">
