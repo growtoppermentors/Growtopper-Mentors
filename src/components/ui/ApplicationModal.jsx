@@ -174,11 +174,30 @@ export default function ApplicationModal({ isOpen, onClose }) {
     setOtpVerifying(true);
     try {
       if (supabase) {
-        const { error: verifyError } = await supabase.auth.verifyOtp({
+        let { error: verifyError } = await supabase.auth.verifyOtp({
           email,
           token: otp,
           type: 'email',
         });
+        
+        if (verifyError) {
+          const { error: magicError } = await supabase.auth.verifyOtp({
+            email,
+            token: otp,
+            type: 'magiclink',
+          });
+          verifyError = magicError;
+        }
+
+        if (verifyError) {
+          const { error: signupError } = await supabase.auth.verifyOtp({
+            email,
+            token: otp,
+            type: 'signup',
+          });
+          verifyError = signupError;
+        }
+
         if (verifyError) throw verifyError;
       }
 
@@ -200,6 +219,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
 
       goToNextStep(6);
     } catch (err) {
+      console.error('OTP Verification Error:', err);
       setError('Invalid OTP. Please check your email and try again.');
     } finally {
       setOtpVerifying(false);
