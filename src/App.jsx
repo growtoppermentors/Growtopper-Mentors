@@ -12,6 +12,7 @@ import PricingSection from './components/sections/PricingSection';
 import FAQ from './components/sections/FAQ';
 import FinalCTA from './components/sections/FinalCTA';
 import ApplicationModal from './components/ui/ApplicationModal';
+import LiveNotification from './components/ui/LiveNotification';
 import SyllabusPage from './pages/SyllabusPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
@@ -73,6 +74,7 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
       <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />
+      <LiveNotification />
     </BrowserRouter>
   );
 }
