@@ -34,7 +34,7 @@ alter table public.applications enable row level security;
 create policy "Allow public insert"
   on public.applications
   for insert
-  to anon
+  to public
   with check (true);
 
 -- Only authenticated users (you) can SELECT/UPDATE/DELETE
