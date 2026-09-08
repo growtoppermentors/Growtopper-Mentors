@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block dev/build artifacts
+Disallow: /dist/
+Disallow: /.vite/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://growtopper.app/sitemap.xml
