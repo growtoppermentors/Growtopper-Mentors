@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { ArrowLeft, ArrowRight, Target, BookOpen, Lightbulb, BarChart2, Trophy, Check } from 'lucide-react';
 
 export default function Journey() {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -320 : 320;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const phases = [
     {
       id: '01',
@@ -72,17 +81,17 @@ export default function Journey() {
             </p>
           </div>
           <div className="flex items-center gap-3 shrink-0">
-            <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-brand-dark transition-all active:scale-95 shadow-sm">
+            <button onClick={() => scroll('left')} className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-brand-dark transition-all active:scale-95 shadow-sm">
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <button className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-brand-dark transition-all active:scale-95 shadow-sm">
+            <button onClick={() => scroll('right')} className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-brand-dark transition-all active:scale-95 shadow-sm">
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
         </div>
 
         {/* Horizontal Scrolling Track */}
-        <div className="flex gap-5 overflow-x-auto hide-scrollbar pb-10 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth snap-x">
+        <div ref={scrollRef} className="flex gap-5 overflow-x-auto hide-scrollbar pb-10 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-smooth snap-x">
           {phases.map((phase, idx) => (
             
             /* Outer Wrapper for Gradient Border */

@@ -136,11 +136,15 @@ export default function ProblemSection() {
                     <span className="text-[8px] uppercase tracking-wider text-gray-500 font-bold">Ref No.</span>
                   </div>
 
-                  {/* Gold Seal */}
-                  <div className="relative w-16 h-16 transform translate-y-4">
-                    <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-[3px] border-[#FCFBF8]">
-                      <div className="w-12 h-12 rounded-full border border-amber-100/50 flex items-center justify-center border-dashed">
-                        <Medal className="w-6 h-6 text-amber-100 fill-amber-100" />
+                  {/* Authentic Rubber Stamp */}
+                  <div className="relative transform rotate-[-15deg] translate-y-1 sm:translate-y-2 opacity-80 mix-blend-multiply">
+                    <div className="border-[3px] border-rose-600 rounded-full w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center p-1">
+                      <div className="border-[1.5px] border-rose-600 rounded-full w-full h-full flex flex-col items-center justify-center text-center px-1">
+                        <span className="text-[6.5px] sm:text-[7.5px] font-black uppercase text-rose-600 leading-none tracking-widest">Growtopper</span>
+                        <div className="w-[85%] border-y-[1.5px] border-rose-600 py-0.5 my-[2px] flex items-center justify-center">
+                          <span className="text-[5px] sm:text-[6px] font-bold uppercase text-rose-600 tracking-[0.2em]">Verified</span>
+                        </div>
+                        <span className="text-[6.5px] sm:text-[7.5px] font-black uppercase text-rose-600 leading-none tracking-widest">Mentors</span>
                       </div>
                     </div>
                   </div>

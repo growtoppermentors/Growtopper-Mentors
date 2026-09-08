@@ -144,6 +144,25 @@ export default function ApplicationModal({ isOpen, onClose }) {
     }
   };
 
+  const handleResendOtp = async () => {
+    setError('');
+    setOtpSending(true);
+    try {
+      if (supabase) {
+        const { error: otpError } = await supabase.auth.signInWithOtp({
+          email,
+          options: { shouldCreateUser: true },
+        });
+        if (otpError) throw otpError;
+      }
+      // Give some visual feedback that it worked instead of a raw alert if possible, but simple alert is ok for now.
+    } catch (err) {
+      setError('Failed to resend OTP. Please try again.');
+    } finally {
+      setOtpSending(false);
+    }
+  };
+
   // Verify real Supabase OTP
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
@@ -467,7 +486,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
                     {error && <p className="text-red-500 text-[11px] font-bold mt-2 text-center">{error}</p>}
                   </div>
 
-                  <div className="pt-1">
+                  <div className="pt-1 space-y-3">
                     <button type="submit" disabled={otp.length < 6 || otpVerifying} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 shadow-md disabled:opacity-50 active:scale-[0.98]">
                       {otpVerifying ? (
                         <><span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></span> Verifying…</>
@@ -475,6 +494,16 @@ export default function ApplicationModal({ isOpen, onClose }) {
                         'Verify & Confirm'
                       )}
                     </button>
+                    <div className="text-center">
+                      <button 
+                        type="button" 
+                        onClick={handleResendOtp}
+                        disabled={otpSending}
+                        className="text-[13px] font-bold text-gray-500 hover:text-brand-purple transition-colors disabled:opacity-50"
+                      >
+                        {otpSending ? 'Sending...' : "Didn't receive code? Resend OTP"}
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>
