@@ -87,7 +87,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
       const { data } = await supabase
         .from('applications')
         .select('id')
-        .eq('phone', phone)
+        .eq('phone', phone.trim())
         .maybeSingle();
       if (data) {
         setError('already_submitted');
@@ -120,7 +120,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
       const { data } = await supabase
         .from('applications')
         .select('id')
-        .eq('email', email)
+        .eq('email', email.trim().toLowerCase())
         .maybeSingle();
       if (data) {
         setError('already_submitted');
@@ -244,28 +244,39 @@ export default function ApplicationModal({ isOpen, onClose }) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
       
-      <div className="relative bg-white w-full max-w-[440px] rounded-[24px] sm:rounded-[32px] shadow-2xl z-10 flex flex-col">
+      <div className="relative bg-gradient-to-b from-slate-50 via-white to-white w-full max-w-[440px] rounded-[24px] sm:rounded-[32px] shadow-2xl z-10 flex flex-col border border-white/50">
         
         {/* Absolute Header for Back & Close Buttons (Keeps them out of document flow) */}
-        <div className="absolute top-0 left-0 right-0 h-14 flex items-center justify-between px-4 sm:px-5 z-20 mt-1 sm:mt-2">
-          {step > 1 && step < 6 ? (
-            <button 
-              onClick={goToPrevStep} 
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors text-gray-700 font-bold text-[13px] shadow-sm border border-gray-200/50"
-            >
-              <ArrowLeft className="w-4 h-4" /> Back
-            </button>
-          ) : <div></div>}
+        <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-between px-4 sm:px-6 z-20 mt-1">
+          <div className="w-[80px]">
+            {step > 1 && step < 6 ? (
+              <button 
+                onClick={goToPrevStep} 
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 hover:bg-gray-100 transition-colors text-gray-700 font-bold text-[13px] shadow-sm border border-gray-200/50 backdrop-blur-sm"
+              >
+                <ArrowLeft className="w-4 h-4" /> Back
+              </button>
+            ) : <div></div>}
+          </div>
           
-          {step !== 6 && (
-            <button onClick={onClose} className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors border border-gray-200/50 shadow-sm">
-              <X className="w-5 h-5 text-gray-600" />
-            </button>
-          )}
+          <div className="flex items-center gap-1.5">
+            <div className="w-5 h-5 bg-gradient-to-br from-[#1a0533] to-[#4E14F9] rounded-[5px] flex items-center justify-center shadow-sm">
+              <span className="text-white text-[10px] font-black leading-none">G</span>
+            </div>
+            <span className="text-brand-dark font-black text-[12px] tracking-tight">GROWTOPPER.</span>
+          </div>
+
+          <div className="w-[80px] flex justify-end">
+            {step !== 6 && (
+              <button onClick={onClose} className="p-2 rounded-full bg-white/80 hover:bg-gray-100 transition-colors border border-gray-200/50 shadow-sm backdrop-blur-sm">
+                <X className="w-5 h-5 text-gray-600" />
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Content Container */}
-        <div className="p-5 sm:p-8 pt-14 sm:pt-16 pb-6 sm:pb-8">
+        <div className="p-5 sm:p-8 pt-16 sm:pt-20 pb-6 sm:pb-8">
           
           <div key={animationKey} className={animClass}>
             
