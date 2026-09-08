@@ -244,7 +244,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
       
-      <div className="relative bg-gradient-to-b from-slate-50 via-white to-white w-full max-w-[440px] rounded-[24px] sm:rounded-[32px] shadow-2xl z-10 flex flex-col border border-white/50">
+      <div className="relative bg-gradient-to-br from-brand-purple/[0.07] via-white to-white w-full max-w-[440px] rounded-[24px] sm:rounded-[32px] shadow-2xl z-10 flex flex-col border border-white/60">
         
         {/* Absolute Header for Back & Close Buttons (Keeps them out of document flow) */}
         <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-between px-4 sm:px-6 z-20 mt-1">
@@ -252,23 +252,26 @@ export default function ApplicationModal({ isOpen, onClose }) {
             {step > 1 && step < 6 ? (
               <button 
                 onClick={goToPrevStep} 
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 hover:bg-gray-100 transition-colors text-gray-700 font-bold text-[13px] shadow-sm border border-gray-200/50 backdrop-blur-sm"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-gray-50 transition-colors text-gray-700 font-bold text-[13px] shadow-sm border border-gray-200/50 backdrop-blur-md"
               >
                 <ArrowLeft className="w-4 h-4" /> Back
               </button>
             ) : <div></div>}
           </div>
           
+          {/* Main Website Logo Format (Scaled Down) */}
           <div className="flex items-center gap-1.5">
-            <div className="w-5 h-5 bg-gradient-to-br from-[#1a0533] to-[#4E14F9] rounded-[5px] flex items-center justify-center shadow-sm">
-              <span className="text-white text-[10px] font-black leading-none">G</span>
+            <div className="w-6 h-6 bg-brand-purple rounded-[6px] flex items-center justify-center transform -rotate-6 shadow-sm">
+              <span className="text-white font-black text-[13px] transform rotate-6 leading-none mt-[1px]">G</span>
             </div>
-            <span className="text-brand-dark font-black text-[12px] tracking-tight">GROWTOPPER.</span>
+            <span className="text-brand-dark font-black text-[14px] tracking-tight mt-[1px]">
+              GROWTOPPER<span className="text-brand-purple">.</span>
+            </span>
           </div>
 
           <div className="w-[80px] flex justify-end">
             {step !== 6 && (
-              <button onClick={onClose} className="p-2 rounded-full bg-white/80 hover:bg-gray-100 transition-colors border border-gray-200/50 shadow-sm backdrop-blur-sm">
+              <button onClick={onClose} className="p-2 rounded-full bg-white hover:bg-gray-50 transition-colors border border-gray-200/50 shadow-sm backdrop-blur-md">
                 <X className="w-5 h-5 text-gray-600" />
               </button>
             )}
@@ -425,11 +428,8 @@ export default function ApplicationModal({ isOpen, onClose }) {
                     </datalist>
                   </div>
 
-                  <div className="pt-2 flex gap-3">
-                    <button type="button" onClick={goToPrevStep} className="px-5 py-3.5 rounded-xl border border-gray-200 text-gray-600 font-bold hover:bg-gray-50 transition-colors">
-                      <ArrowLeft className="w-4 h-4" />
-                    </button>
-                    <button type="submit" className="flex-1 py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 shadow-md active:scale-[0.98]">
+                  <div className="pt-2">
+                    <button type="submit" className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 shadow-md active:scale-[0.98]">
                       Next Step <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
