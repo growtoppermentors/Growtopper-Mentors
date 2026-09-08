@@ -1,12 +1,14 @@
 import React, { useMemo } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-// Base: 500 students as of Sep 8 2026. Compounds at 0.2% per day.
+// Base: 500 students as of Sep 8 2026. Compounds at 0.2% per day exactly at 4:15 AM.
 function getDynamicStudentCount() {
   const BASE_COUNT = 500;
-  const BASE_DATE = new Date('2026-09-08T00:00:00Z');
+  // 4:15 AM IST is 22:45 UTC. We use the ISO string with +05:30 timezone offset.
+  const BASE_DATE = new Date('2026-09-08T04:15:00+05:30');
   const now = new Date();
-  const daysPassed = Math.floor((now - BASE_DATE) / (1000 * 60 * 60 * 24));
+  let daysPassed = Math.floor((now - BASE_DATE) / (1000 * 60 * 60 * 24));
+  if (daysPassed < 0) daysPassed = 0;
   // 0.2% compound daily: count = base × (1.002)^days
   return Math.floor(BASE_COUNT * Math.pow(1.002, daysPassed));
 }

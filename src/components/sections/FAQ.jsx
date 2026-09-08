@@ -120,7 +120,7 @@ export default function FAQ() {
             <p className="text-gray-500 text-[14px] font-medium">We're happy to help. Reach out and our team will respond within a few hours.</p>
           </div>
           <a
-            href="https://wa.me/919999999999"
+            href="https://wa.me/917853988799"
             target="_blank"
             rel="noreferrer"
             className="shrink-0 px-6 py-3 rounded-full bg-brand-purple text-white font-bold text-[14px] hover:opacity-90 transition-opacity shadow-md shadow-brand-purple/25 whitespace-nowrap"

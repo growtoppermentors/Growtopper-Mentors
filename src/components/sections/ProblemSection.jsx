@@ -138,14 +138,12 @@ export default function ProblemSection() {
 
                   {/* Authentic Rubber Stamp */}
                   <div className="relative transform rotate-[-15deg] translate-y-1 sm:translate-y-2 opacity-80 mix-blend-multiply">
-                    <div className="border-[3px] border-blue-600 rounded-full w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center p-1">
-                      <div className="border-[1.5px] border-blue-600 rounded-full w-full h-full flex flex-col items-center justify-center text-center px-1">
-                        <span className="text-[6.5px] sm:text-[7.5px] font-black uppercase text-blue-600 leading-none tracking-widest">Growtopper</span>
-                        <div className="w-[85%] border-y-[1.5px] border-blue-600 py-0.5 my-[2px] flex items-center justify-center">
-                          <span className="text-[5px] sm:text-[6px] font-bold uppercase text-blue-600 tracking-[0.2em]">Verified</span>
-                        </div>
-                        <span className="text-[6.5px] sm:text-[7.5px] font-black uppercase text-blue-600 leading-none tracking-widest">Mentors</span>
+                    <div className="border-2 border-blue-600 rounded-full w-14 h-14 sm:w-[68px] sm:h-[68px] flex flex-col items-center justify-center text-center p-1">
+                      <span className="text-[5.5px] sm:text-[7px] font-black uppercase text-blue-600 leading-none tracking-widest">Growtopper</span>
+                      <div className="w-full max-w-[85%] border-y border-blue-600 py-[2px] my-1 flex items-center justify-center">
+                        <span className="text-[4.5px] sm:text-[6px] font-bold uppercase text-blue-600 tracking-[0.2em]">Verified</span>
                       </div>
+                      <span className="text-[5.5px] sm:text-[7px] font-black uppercase text-blue-600 leading-none tracking-widest">Mentors</span>
                     </div>
                   </div>
 
