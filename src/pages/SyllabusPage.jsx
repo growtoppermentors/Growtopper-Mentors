@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   ArrowLeft, Check, Trophy, Award, ChevronDown,
   Atom, BrainCircuit, Building2, Landmark, Mic2, Flame, Compass,
-  Calculator, FlaskConical
+  Calculator, FlaskConical, Sparkles, Medal
 } from 'lucide-react';
 
 // ─── ICONS ─────────────────────────────────────────────────────────────────────
@@ -417,23 +417,44 @@ export default function SyllabusPage({ onRequestInvite }) {
 
           <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-            {/* Assessment Parameter Cards */}
+            {/* Evaluation Structure */}
             <div>
               <h3 className="font-black text-brand-dark text-[15px] mb-5 flex items-center gap-2">
-                <Award className="w-5 h-5 text-brand-purple" /> 10 Assessment Parameters
+                <Award className="w-5 h-5 text-brand-purple" /> Evaluation Structure
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {assessmentParams.map((p) => (
-                  <div key={p.num} className={`flex items-center gap-3 rounded-2xl border ${p.border} ${p.bg} px-4 py-3`}>
-                    <div className={`w-8 h-8 rounded-xl bg-white border ${p.border} flex items-center justify-center shrink-0 ${p.color}`}>
-                      {p.icon}
-                    </div>
-                    <div>
-                      <div className={`text-[9px] font-black uppercase tracking-wider ${p.color} opacity-60`}>#{p.num}</div>
-                      <div className="text-[12px] font-bold text-gray-700 leading-snug mt-0.5">{p.label}</div>
-                    </div>
+              <div className="flex flex-col gap-3">
+                {/* 100 Marks Block */}
+                <div className="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                  <div className="w-10 h-10 rounded-xl bg-brand-purple/10 flex items-center justify-center shrink-0">
+                    <span className="text-brand-purple font-black text-sm">100</span>
                   </div>
-                ))}
+                  <div>
+                    <h5 className="font-bold text-brand-dark text-[13px] mb-0.5">One Final Exam</h5>
+                    <p className="text-gray-500 text-[12px] font-medium leading-relaxed">100 Total Marks. Divided across core skills (20 marks per skill). A true test of applied knowledge.</p>
+                  </div>
+                </div>
+
+                {/* Skill Champion Block */}
+                <div className="flex items-start gap-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                    <Sparkles className="w-4 h-4 text-emerald-600" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-emerald-900 text-[13px] mb-0.5">The Skill Champions</h5>
+                    <p className="text-emerald-700/80 text-[12px] font-medium leading-relaxed">The single highest scorer in each specific skill takes the crown for that domain among the 20 students.</p>
+                  </div>
+                </div>
+
+                {/* Overall Rank Block */}
+                <div className="flex items-start gap-4 p-4 rounded-2xl bg-amber-50 border border-amber-200">
+                  <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+                    <Medal className="w-4 h-4 text-amber-600" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-amber-900 text-[13px] mb-0.5">The Grand Rank</h5>
+                    <p className="text-amber-700/80 text-[12px] font-medium leading-relaxed">Rank 1 goes to the student holding the highest number of Skill Champion titles. Followed by Rank 2 and Rank 3.</p>
+                  </div>
+                </div>
               </div>
             </div>
 

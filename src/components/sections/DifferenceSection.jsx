@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Quote } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 
 export default function DifferenceSection() {
 
@@ -75,10 +75,10 @@ export default function DifferenceSection() {
                 <Quote className="w-10 h-10" style={{ color: 'currentColor' }} />
               </div>
 
-              {/* Sparkles */}
+              {/* Stars */}
               <div className="flex gap-1">
                 {[1,2,3,4,5].map(i => (
-                  <Sparkles key={i} className={`w-4 h-4 fill-current ${t.starColor}`} />
+                  <Star key={i} className={`w-4 h-4 fill-current ${t.starColor}`} />
                 ))}
               </div>
 

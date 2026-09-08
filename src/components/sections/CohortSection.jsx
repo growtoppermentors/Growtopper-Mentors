@@ -46,11 +46,11 @@ export default function CohortSection({ onRequestInvite }) {
         </div>
 
         {/* Premium White Mix Gradient Card with Shining Border */}
-        <div className="relative rounded-[32px] p-[2px] bg-gradient-to-r from-[#7280DE] via-[#B28BFF] to-[#7280DE] animate-[shimmer_3s_linear_infinite] bg-[length:200%_100%] shadow-[0_20px_40px_rgba(114,128,222,0.15)] hover:shadow-[0_20px_50px_rgba(114,128,222,0.25)] transition-shadow">
+        <div className="relative rounded-[32px] p-[2px] bg-gradient-to-r from-[#7280DE] via-[#B28BFF] to-[#7280DE] md:animate-[shimmer_3s_linear_infinite] bg-[length:200%_100%] shadow-[0_20px_40px_rgba(114,128,222,0.15)] hover:shadow-[0_20px_50px_rgba(114,128,222,0.25)] transition-shadow">
           <div className="relative rounded-[30px] overflow-hidden bg-white bg-gradient-to-br from-[#7280DE]/10 via-[#7280DE]/5 to-transparent h-full w-full">
             
             {/* Full Card Shimmer Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7280DE]/5 to-transparent animate-[shimmer_4s_linear_infinite] bg-[length:200%_100%] pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7280DE]/5 to-transparent md:animate-[shimmer_4s_linear_infinite] bg-[length:200%_100%] pointer-events-none"></div>
 
             {/* Subtle soft top-light overlay */}
           <div className="hidden md:block absolute top-0 left-0 w-[600px] h-[600px] bg-[#7280DE]/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/4 -translate-y-1/4 will-change-transform"></div>
@@ -61,11 +61,11 @@ export default function CohortSection({ onRequestInvite }) {
             {/* Left: Info */}
             <div className="lg:w-1/2 relative z-10 text-center lg:text-left">
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8">
-                <div className="flex items-center gap-2 text-brand-dark font-bold bg-[#7280DE]/10 px-4 py-2 rounded-xl border border-[#7280DE]/20 shadow-sm backdrop-blur-sm">
+                <div className="flex items-center gap-2 text-brand-dark font-bold bg-[#7280DE]/10 px-4 py-2 rounded-xl border border-[#7280DE]/20 shadow-sm md:backdrop-blur-sm">
                   <CalendarDays className="w-4 h-4 text-[#7280DE]" />
                   Starts Oct 1st
                 </div>
-                <div className="flex items-center gap-2 text-brand-dark font-bold bg-[#7280DE]/10 px-4 py-2 rounded-xl border border-[#7280DE]/20 shadow-sm backdrop-blur-sm">
+                <div className="flex items-center gap-2 text-brand-dark font-bold bg-[#7280DE]/10 px-4 py-2 rounded-xl border border-[#7280DE]/20 shadow-sm md:backdrop-blur-sm">
                   <Users className="w-4 h-4 text-[#7280DE]" />
                   Only 20 Seats
                 </div>
@@ -84,7 +84,7 @@ export default function CohortSection({ onRequestInvite }) {
                   { label: 'Secs', value: timeLeft.seconds }
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col items-center">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#7280DE]/10 border border-[#7280DE]/20 flex items-center justify-center mb-2 shadow-sm backdrop-blur-sm">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#7280DE]/10 border border-[#7280DE]/20 flex items-center justify-center mb-2 shadow-sm md:backdrop-blur-sm">
                       <span className="text-[24px] sm:text-[32px] font-black text-brand-dark tabular-nums tracking-tight">
                         {item.value.toString().padStart(2, '0')}
                       </span>
@@ -96,7 +96,7 @@ export default function CohortSection({ onRequestInvite }) {
 
               <button
                 onClick={onRequestInvite}
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-brand-dark via-brand-dark/80 to-brand-dark animate-[shimmer_2s_linear_infinite] bg-[length:200%_100%] text-white font-black text-[15px] hover:scale-[0.98] transition-all shadow-xl shadow-brand-dark/20 relative overflow-hidden group"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-brand-dark via-brand-dark/80 to-brand-dark md:animate-[shimmer_2s_linear_infinite] bg-[length:200%_100%] text-white font-black text-[15px] hover:scale-[0.98] transition-all shadow-xl shadow-brand-dark/20 relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:animate-[shimmer_1.5s_linear_infinite] bg-[length:200%_100%]"></div>
                 <span className="relative z-10">Request Invite Only Access</span>
