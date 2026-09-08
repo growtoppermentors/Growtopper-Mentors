@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export default function TrustStrip() {
   return (
@@ -15,7 +15,7 @@ export default function TrustStrip() {
             </div>
             <div>
               <div className="flex gap-1 text-[#FFB800] mb-0.5">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
+                {[1,2,3,4,5].map(i => <Sparkles key={i} className="w-4 h-4 fill-current" />)}
               </div>
               <p className="text-sm font-bold text-brand-dark">Trusted by 500+ parents</p>
             </div>

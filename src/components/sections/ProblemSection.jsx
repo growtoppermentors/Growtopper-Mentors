@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CalendarDays, TrendingUp, BrainCircuit, Building2, Landmark, Mic2, UserCheck, BookMarked, Award, Trophy, Sparkles, BookOpen, Star } from 'lucide-react';
+import { CalendarDays, TrendingUp, BrainCircuit, Building2, Landmark, Mic2, UserCheck, BookMarked, Award, Trophy, Sparkles, BookOpen, Medal } from 'lucide-react';
 
 export default function ProblemSection() {
 
@@ -140,7 +140,7 @@ export default function ProblemSection() {
                   <div className="relative w-16 h-16 transform translate-y-4">
                     <div className="absolute inset-0 bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg border-[3px] border-[#FCFBF8]">
                       <div className="w-12 h-12 rounded-full border border-amber-100/50 flex items-center justify-center border-dashed">
-                        <Star className="w-6 h-6 text-amber-100 fill-amber-100" />
+                        <Medal className="w-6 h-6 text-amber-100 fill-amber-100" />
                       </div>
                     </div>
                   </div>

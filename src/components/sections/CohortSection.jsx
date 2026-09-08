@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CalendarDays, Users, Star } from 'lucide-react';
+import { CalendarDays, Users, Crown } from 'lucide-react';
 
 export default function CohortSection({ onRequestInvite }) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -107,7 +107,7 @@ export default function CohortSection({ onRequestInvite }) {
             <div className="lg:w-1/2 flex justify-center lg:justify-end relative z-10 w-full">
               <div className="bg-white border border-[#7280DE]/20 rounded-[24px] p-6 sm:p-8 w-full max-w-md shadow-xl relative">
                 <div className="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-[#7280DE] text-white flex items-center justify-center shadow-lg transform rotate-12">
-                  <Star className="w-5 h-5 fill-current" />
+                  <Crown className="w-6 h-6 fill-current" />
                 </div>
                 <h4 className="text-brand-dark font-black text-[18px] mb-4">Why apply early?</h4>
                 <ul className="space-y-4">
