@@ -68,7 +68,7 @@ export default function PricingPage({ onRequestInvite }) {
                     <span className="text-[48px] font-black text-brand-purple leading-none tracking-tighter">₹1</span>
                     <span className="text-[10px] font-black text-brand-purple uppercase tracking-widest mb-2 border border-brand-purple/20 bg-brand-purple/5 px-2 py-0.5 rounded">OFFER<br/>ONE TIME</span>
                   </div>
-                  <button onClick={() => navigate('/clarity-session')} className="bg-brand-purple text-white px-8 py-3 rounded-xl font-bold text-[14px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-brand-purple/25 w-full max-w-[200px] flex items-center justify-center gap-2">
+                  <button onClick={() => window.open('https://pages.razorpay.com/setupcall', '_blank')} className="bg-brand-purple text-white px-8 py-3 rounded-xl font-bold text-[14px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-brand-purple/25 w-full max-w-[200px] flex items-center justify-center gap-2">
                     Book for ₹1 <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -213,12 +213,12 @@ export default function PricingPage({ onRequestInvite }) {
                   <tr>
                     <td className="p-4 border-r border-gray-100 bg-gray-50/30"></td>
                     <td className="p-6 border-r border-gray-100 text-center">
-                      <button onClick={() => window.open('https://rzp.io/l/growtopper-elite', '_blank')} className="bg-gray-100 text-gray-800 px-8 py-2.5 rounded-xl font-bold text-[13px] hover:bg-gray-200 transition-colors w-full">
+                      <button onClick={() => window.open('https://pages.razorpay.com/growtoppereliteplan', '_blank')} className="bg-gray-100 text-gray-800 px-8 py-2.5 rounded-xl font-bold text-[13px] hover:bg-gray-200 transition-colors w-full">
                         Start Elite
                       </button>
                     </td>
                     <td className="p-6 text-center bg-[#F9F4FF]">
-                      <button onClick={() => window.open('https://rzp.io/l/growtopper-pro', '_blank')} className="bg-brand-purple text-white px-8 py-2.5 rounded-xl font-bold text-[13px] hover:bg-[#4E0EE6] transition-colors shadow-md shadow-brand-purple/20 w-full">
+                      <button onClick={() => window.open('https://pages.razorpay.com/growtopperproplan', '_blank')} className="bg-brand-purple text-white px-8 py-2.5 rounded-xl font-bold text-[13px] hover:bg-[#4E0EE6] transition-colors shadow-md shadow-brand-purple/20 w-full">
                         Get Pro
                       </button>
                     </td>
