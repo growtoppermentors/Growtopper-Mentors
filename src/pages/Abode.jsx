@@ -660,7 +660,7 @@ export default function Abode() {
             </div>
           </div>
 
-          <div className="flex overflow-x-auto gap-5 pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex overflow-x-auto gap-5 pb-8 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {/* Nav button left hidden on mobile */}
             <div className="hidden lg:flex flex-col justify-center shrink-0 pr-2">
               <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
@@ -731,8 +731,6 @@ export default function Abode() {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] rounded-2xl p-6 mt-4 relative">
-            <div className="absolute -right-6 -top-8 rotate-[-15deg] hidden lg:block text-[#5B10FF] font-medium text-[14px] leading-tight text-center" style={{ fontFamily: 'Caveat, cursive' }}>Same<br/>Students.<br/>Bigger<br/>Futures.</div>
-            
             <div className="flex items-center gap-3 w-full md:w-auto">
               <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
                 <Users className="w-5 h-5 text-brand-purple" />
@@ -786,7 +784,7 @@ export default function Abode() {
         </div>
 
         {/* Trust Banner */}
-        <div className="bg-gradient-to-br from-[#5B10FF]/10 via-[#5B10FF]/5 to-transparent bg-white rounded-[32px] p-8 md:p-12 mb-20 border border-[#5B10FF]/20 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div className="bg-gradient-to-br from-[#5B10FF]/10 via-[#5B10FF]/5 to-transparent bg-white rounded-[32px] p-8 md:p-12 mb-8 border border-[#5B10FF]/20 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-10">
           <div className="lg:w-1/2 text-center lg:text-left">
             <h3 className="text-[28px] md:text-[36px] font-black text-brand-dark leading-[1.1] tracking-tight mb-4">
               Trusted by Parents.<br/>
@@ -826,8 +824,8 @@ export default function Abode() {
         </div>
 
         {/* CTA Banner */}
-        <div className="bg-[#F9F4FF] rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-[#5B10FF]/10 shadow-[0_20px_60px_rgba(91,16,255,0.06)] relative overflow-hidden">
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#5B10FF]/5 rounded-full blur-3xl"></div>
+        <div className="bg-[#F9F4FF] rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-[#5B10FF]/10 shadow-sm relative overflow-hidden">
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#5B10FF]/5 rounded-full blur-xl"></div>
           
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 relative z-10 text-center md:text-left">
             <div className="flex -space-x-3">
