@@ -108,36 +108,44 @@ export default function CareerLanding() {
           <h2 className="text-3xl font-black text-center mb-12">How we align Passion with Profession.</h2>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-purple-50 text-brand-purple rounded-xl flex items-center justify-center mb-4">
-                <Brain className="w-6 h-6" />
+            {/* Step 1: AI SWOT Test - Dashboard Gradient */}
+            <div className="p-6 rounded-[32px] shadow-lg flex flex-col items-center text-center bg-gradient-to-br from-[#cd5d10] via-[#f29c54] to-[#d4e3f5] text-white relative overflow-hidden group hover:-translate-y-1 transition-transform">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+              <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 border border-white/30 shadow-sm group-hover:scale-110 transition-transform">
+                <Brain className="w-7 h-7 text-white" />
               </div>
-              <h3 className="font-bold mb-2">1. AI SWOT Test</h3>
-              <p className="text-xs text-gray-500 font-medium">A 30-min interactive chat to evaluate your strengths, weaknesses, and habits.</p>
+              <h3 className="font-black text-xl mb-3 drop-shadow-sm">1. AI SWOT Test</h3>
+              <p className="text-sm text-white/90 font-medium leading-relaxed drop-shadow-sm">A 30-min interactive chat to evaluate your strengths, weaknesses, and habits.</p>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-4">
-                <BarChart className="w-6 h-6" />
+            {/* Step 2: Report Generation - Startup Program Gradient */}
+            <div className="p-6 rounded-[32px] shadow-lg flex flex-col items-center text-center bg-gradient-to-br from-[#6974d6] to-[#b5c2f2] text-white relative overflow-hidden group hover:-translate-y-1 transition-transform">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+              <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 border border-white/30 shadow-sm group-hover:scale-110 transition-transform">
+                <BarChart className="w-7 h-7 text-white" />
               </div>
-              <h3 className="font-bold mb-2">2. Report Generation</h3>
-              <p className="text-xs text-gray-500 font-medium">A detailed report card highlighting your current growth stage and market opportunities.</p>
+              <h3 className="font-black text-xl mb-3 drop-shadow-sm">2. Report Generation</h3>
+              <p className="text-sm text-white/90 font-medium leading-relaxed drop-shadow-sm">A detailed report card highlighting your current growth stage and market opportunities.</p>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-amber-50 text-amber-500 rounded-xl flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6" />
+            {/* Step 3: 1-on-1 Video Call - Brand Gradient */}
+            <div className="p-6 rounded-[32px] shadow-lg flex flex-col items-center text-center bg-gradient-to-br from-[#dd6e3d] via-[#865ca2] to-[#5974d5] text-white relative overflow-hidden group hover:-translate-y-1 transition-transform">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+              <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 border border-white/30 shadow-sm group-hover:scale-110 transition-transform">
+                <Shield className="w-7 h-7 text-white" />
               </div>
-              <h3 className="font-bold mb-2">3. 1-on-1 Video Call</h3>
-              <p className="text-xs text-gray-500 font-medium">Discuss the results with an expert to ensure your passion has real earning potential.</p>
+              <h3 className="font-black text-xl mb-3 drop-shadow-sm">3. 1-on-1 Video Call</h3>
+              <p className="text-sm text-white/90 font-medium leading-relaxed drop-shadow-sm">Discuss the results with an expert to ensure your passion has real earning potential.</p>
             </div>
 
-            <div className="bg-brand-purple p-6 rounded-3xl shadow-md border border-brand-purple flex flex-col items-center text-center text-white">
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6" />
+            {/* Step 4: Execution Strategy - Sovereign Models Gradient */}
+            <div className="p-6 rounded-[32px] shadow-lg flex flex-col items-center text-center bg-gradient-to-br from-[#74ac49] to-[#dcead0] text-gray-900 relative overflow-hidden group hover:-translate-y-1 transition-transform">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full blur-2xl -mr-10 -mt-10"></div>
+              <div className="w-14 h-14 bg-white/40 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 border border-white/50 shadow-sm group-hover:scale-110 transition-transform">
+                <TrendingUp className="w-7 h-7 text-[#5a8b36]" />
               </div>
-              <h3 className="font-bold mb-2">4. Execution Strategy</h3>
-              <p className="text-xs text-white/80 font-medium">Walk away with a concrete, workable roadmap to achieve your chosen goal.</p>
+              <h3 className="font-black text-xl mb-3 drop-shadow-sm text-[#3b6021]">4. Execution Strategy</h3>
+              <p className="text-sm text-[#4a752b] font-bold leading-relaxed">Walk away with a concrete, workable roadmap to achieve your chosen goal.</p>
             </div>
           </div>
         </div>
