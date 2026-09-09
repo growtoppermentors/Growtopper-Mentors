@@ -24,43 +24,43 @@ export default function Abode() {
       <section className="px-4 w-full flex flex-col items-center justify-center min-h-[100dvh] pt-20 pb-4 max-w-7xl mx-auto">
         
         {/* Hero Headings */}
-        <div className="text-center max-w-3xl mx-auto mb-4 sm:mb-6 w-full mt-auto">
-          <h1 className="text-[28px] sm:text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3 text-balance">
+        <div className="text-center max-w-3xl mx-auto mb-6 w-full mt-auto">
+          <h1 className="text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.05] tracking-tight mb-4 text-balance">
             Mentor for Everything.<br/>
-            Get a mentor for <span className="text-[#5B10FF]">10X growth.</span>
+            Get a mentor for <span className="whitespace-nowrap text-[#5B10FF]">10X growth.</span>
           </h1>
-          <p className="text-[13px] sm:text-[14px] text-gray-500 font-medium leading-relaxed mt-2 sm:mt-3">
+          <p className="text-[14px] text-gray-500 font-medium leading-relaxed mt-4">
             Not a Coaching Class. Not an App.<br/>
             India's First Mentor-Led Student Growth Platform.
           </p>
         </div>
 
         {/* The Card */}
-        <div className="relative w-full max-w-[280px] sm:max-w-[300px] mx-auto scale-95 sm:scale-100 mb-auto">
+        <div className="relative w-full max-w-[320px] md:max-w-[300px] mx-auto mb-auto">
           {/* Start Here Badge */}
           <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#222222] text-white text-[9px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full z-10 shadow-sm border border-[#333]">
             START HERE
           </div>
 
-          <div className="bg-white rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 p-5 sm:p-6 flex flex-col items-center text-center relative z-0">
+          <div className="bg-white rounded-[32px] md:rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 p-6 flex flex-col items-center text-center relative z-0">
             
-            <div className="text-[#5B10FF] font-black text-[46px] sm:text-[54px] leading-none tracking-tighter my-4 sm:my-5 flex items-center justify-center">
-              1<span className="text-[36px] sm:text-[44px] mx-0.5">on</span>1
+            <div className="text-[#5B10FF] font-black text-[56px] md:text-[54px] leading-none tracking-tighter my-5 flex items-center justify-center">
+              1<span className="text-[44px] mx-0.5">on</span>1
             </div>
 
-            <div className="uppercase text-[9px] sm:text-[10px] font-black text-gray-800 tracking-widest mb-2">
+            <div className="uppercase text-[10px] font-black text-gray-800 tracking-widest mb-3">
               PARENT & STUDENT CALL
             </div>
             
-            <p className="text-[10px] sm:text-[11px] text-gray-400 font-medium mb-4 sm:mb-5">
+            <p className="text-[11px] text-gray-400 font-medium mb-6">
               Includes our 30-min student test.
             </p>
 
-            <div className="w-full h-px bg-gray-100 mb-4 sm:mb-5"></div>
+            <div className="w-full h-px bg-gray-100 mb-6"></div>
 
             <button 
               onClick={() => navigate('/career-counseling')}
-              className="w-full bg-[#5B10FF] text-white font-bold text-[13px] sm:text-[14px] py-3 sm:py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-[#4E0EE6] transition-colors shadow-md shadow-[#5B10FF]/20"
+              className="w-full bg-[#5B10FF] text-white font-bold text-[14px] py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-[#4E0EE6] transition-colors shadow-md shadow-[#5B10FF]/20"
             >
               See the plans <ChevronRight className="w-4 h-4" />
             </button>
