@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, ArrowRight, ChevronRight, Zap, Rocket, Coins, BookOpen } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronRight, Zap, Rocket, Coins, BookOpen, Flame } from 'lucide-react';
 
 export default function Navbar({ onRequestInvite }) {
   const [scrolled, setScrolled] = useState(false);
@@ -31,10 +31,10 @@ export default function Navbar({ onRequestInvite }) {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: 'Clarity Session', href: '/clarity-session', Icon: Zap },
-    { name: 'Program',  href: '/#program',  Icon: Rocket },
-    { name: 'Pricing',  href: '/pricing',  Icon: Coins },
-    { name: 'Blog',     href: '/blog',     Icon: BookOpen },
+    { name: '30-Day Challenge', href: '/30-days-growth-challenge', Icon: Flame },
+    { name: 'Clarity Session',  href: '/clarity-session',          Icon: Zap },
+    { name: 'Pricing',          href: '/pricing',                   Icon: Coins },
+    { name: 'Blog',             href: '/blog',                      Icon: BookOpen },
   ];
 
   const handleNavClick = (e, href) => {
