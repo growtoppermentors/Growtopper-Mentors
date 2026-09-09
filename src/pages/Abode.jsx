@@ -785,6 +785,46 @@ export default function Abode() {
           </div>
         </div>
 
+        {/* Trust Banner */}
+        <div className="bg-gradient-to-br from-[#5B10FF]/10 via-[#5B10FF]/5 to-transparent bg-white rounded-[32px] p-8 md:p-12 mb-20 border border-[#5B10FF]/20 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="lg:w-1/2 text-center lg:text-left">
+            <h3 className="text-[28px] md:text-[36px] font-black text-brand-dark leading-[1.1] tracking-tight mb-4">
+              Trusted by Parents.<br/>
+              <span className="text-[#E96614] italic font-serif">Loved by Students.</span>
+            </h3>
+            <p className="text-[14px] md:text-[15px] text-gray-600 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0">
+              Early families use Growtopper for cleaner routines, stronger follow-through, and calmer parent-student conversations.
+            </p>
+          </div>
+          
+          <div className="lg:w-1/2 flex flex-col sm:flex-row items-center lg:justify-end gap-10 sm:gap-12 w-full">
+            <div className="flex flex-col items-center sm:items-start">
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-[48px] md:text-[56px] font-black text-brand-dark leading-none">4.8</span>
+                <span className="text-[20px] font-bold text-gray-400">/5</span>
+              </div>
+              <div className="flex gap-1 mb-3">
+                {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-[#FBBF24] text-[#FBBF24]" />)}
+              </div>
+              <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest">PARENT REVIEW</div>
+            </div>
+
+            <div className="hidden sm:block w-px h-24 bg-brand-purple/10"></div>
+            <div className="sm:hidden w-full h-px bg-brand-purple/10"></div>
+
+            <div className="flex flex-col items-center sm:items-start">
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-[48px] md:text-[56px] font-black text-brand-dark leading-none">4.7</span>
+                <span className="text-[20px] font-bold text-gray-400">/5</span>
+              </div>
+              <div className="flex gap-1 mb-3">
+                {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-[#FBBF24] text-[#FBBF24]" />)}
+              </div>
+              <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest">STUDENT REVIEW</div>
+            </div>
+          </div>
+        </div>
+
         {/* CTA Banner */}
         <div className="bg-[#F9F4FF] rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-[#5B10FF]/10 shadow-[0_20px_60px_rgba(91,16,255,0.06)] relative overflow-hidden">
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#5B10FF]/5 rounded-full blur-3xl"></div>
