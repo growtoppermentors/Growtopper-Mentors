@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { ChevronRight, Check, Building2, MonitorPlay, Zap, Award } from 'lucide-react';
+import { ChevronRight, Check, Building2, MonitorPlay, Zap, Award, Cpu, MessageSquare, TrendingUp, Lightbulb, BookOpen, Target, Calendar, FileText, Video } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
@@ -19,10 +19,9 @@ export default function Abode() {
 
           const start = container.scrollLeft;
           const target = 200; // scroll amount
-          const duration = 2500; // 2.5 seconds duration for a premium slow walk
+          const duration = 2500; 
           const startTime = performance.now();
 
-          // Smooth easeOutQuad function
           const easeOutQuad = (t) => t * (2 - t);
 
           function animateScroll(currentTime) {
@@ -38,7 +37,7 @@ export default function Abode() {
           }
 
           requestAnimationFrame(animateScroll);
-        }, 500); // Wait 0.5s after seeing it to start walking
+        }, 500); 
 
         observer.disconnect(); 
       }
@@ -66,8 +65,6 @@ export default function Abode() {
       
       {/* Hero Section (Strictly Full Viewport Height) */}
       <section className="px-4 w-full flex flex-col items-center justify-center min-h-[100dvh] pt-20 pb-4 max-w-7xl mx-auto">
-        
-        {/* Hero Headings */}
         <div className="text-center max-w-3xl mx-auto mb-6 w-full mt-auto">
           <h1 className="text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.05] tracking-tight mb-4 text-balance">
             Mentor for Everything.<br/>
@@ -79,15 +76,12 @@ export default function Abode() {
           </p>
         </div>
 
-        {/* The Card */}
         <div className="relative w-full max-w-[320px] md:max-w-[300px] mx-auto mb-auto">
-          {/* Start Here Badge */}
           <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#222222] text-white text-[9px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full z-10 shadow-sm border border-[#333]">
             START HERE
           </div>
 
           <div className="bg-white rounded-[32px] md:rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 p-6 flex flex-col items-center text-center relative z-0">
-            
             <div className="text-[#5B10FF] font-black text-[56px] md:text-[54px] leading-none tracking-tighter my-5 flex items-center justify-center">
               1<span className="text-[44px] mx-0.5">on</span>1
             </div>
@@ -191,92 +185,94 @@ export default function Abode() {
       </section>
 
       {/* How it Works / Roadmap Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-32 max-w-6xl mx-auto w-full">
+      <section className="px-4 sm:px-6 lg:px-8 pb-32 max-w-[1000px] mx-auto w-full">
         {/* Headings */}
-        <div className="text-center mb-16 md:mb-24">
-          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-purple/5 text-brand-purple text-[10px] font-black uppercase tracking-widest mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-purple/5 text-brand-purple text-[10px] font-black uppercase tracking-widest mb-4">
             HOW IT WORKS
           </div>
-          <h2 className="text-[32px] md:text-[44px] font-black text-brand-dark leading-[1.1] tracking-tight mb-4 text-balance">
+          <h2 className="text-[28px] md:text-[38px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3 text-balance">
             A Simple 3-Step Journey<br/>to <span className="text-[#5B10FF]">10X Growth.</span>
           </h2>
-          <p className="text-[15px] md:text-[17px] text-gray-500 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[14px] md:text-[15px] text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">
             From clarity to execution to long-term success — everything your child needs, guided by the right mentor.
           </p>
         </div>
 
         {/* Steps Container */}
         <div className="relative">
-          {/* Vertical Dashed Line (Desktop & Mobile) */}
-          <div className="absolute left-6 md:left-12 top-0 bottom-0 w-[2px] border-l-2 border-dashed border-brand-purple/30"></div>
+          {/* Vertical Dashed Line - Centered relative to the circles. 
+              w-10 (40px) circle center = left-5 (20px). 
+              md:w-12 (48px) circle center = left-6 (24px). */}
+          <div className="absolute left-[19px] md:left-[23px] top-4 bottom-0 w-[2px] border-l-2 border-dashed border-brand-purple/20"></div>
 
-          <div className="space-y-12 md:space-y-24">
+          <div className="space-y-12 md:space-y-16">
 
             {/* STEP 1 */}
-            <div className="relative flex flex-col md:flex-row gap-6 md:gap-12">
+            <div className="relative flex flex-col md:flex-row gap-5 md:gap-10">
               {/* Left Column (Timeline) */}
-              <div className="flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-2 w-full md:w-32 shrink-0 z-10 relative">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[20px] md:text-[24px] shadow-lg shadow-[#5B10FF]/30 md:ml-4 bg-clip-padding border-4 border-[#FAFAFA]">
+              <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-2 w-full md:w-[100px] shrink-0 z-10 relative">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[18px] md:text-[20px] shadow-lg shadow-[#5B10FF]/20 bg-clip-padding border-[3px] border-[#FAFAFA]">
                   1
                 </div>
-                <div className="md:mt-4 md:ml-2">
-                  <div className="text-[10px] font-black text-brand-purple uppercase tracking-widest mb-1">STEP 1</div>
-                  <div className="text-[16px] md:text-[18px] font-bold text-brand-purple leading-tight mb-1">Get Clarity</div>
-                  <div className="text-[12px] md:text-[13px] font-medium text-gray-500 leading-snug">Know where<br className="hidden md:block"/>you stand</div>
+                <div className="md:mt-3 md:text-center">
+                  <div className="text-[9px] font-black text-brand-purple uppercase tracking-widest mb-1">STEP 1</div>
+                  <div className="text-[15px] md:text-[16px] font-bold text-brand-purple leading-tight mb-1">Get Clarity</div>
+                  <div className="text-[11px] md:text-[12px] font-medium text-gray-500 leading-snug">Know where<br className="hidden md:block"/>you stand</div>
                 </div>
               </div>
 
               {/* Right Column (Card) */}
               <div className="flex-1 w-full">
-                <div className="rounded-[32px] bg-gradient-to-br from-[#5B10FF]/20 via-transparent to-[#5B10FF]/10 p-[1px] shadow-sm hover:shadow-lg hover:shadow-[#5B10FF]/5 transition-all">
-                  <div className="bg-white rounded-[31px] p-6 md:p-10 relative overflow-hidden">
+                <div className="rounded-[28px] bg-gradient-to-br from-[#5B10FF]/20 via-transparent to-[#5B10FF]/10 p-[1px] shadow-sm hover:shadow-md hover:shadow-[#5B10FF]/5 transition-all">
+                  <div className="bg-white rounded-[27px] p-6 md:p-8 relative overflow-hidden">
                     
-                    <div className="inline-block px-3 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[10px] font-black uppercase tracking-widest mb-4">
+                    <div className="inline-block px-3 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-4">
                       CLARITY SESSION
                     </div>
                     
-                    <h3 className="text-[24px] md:text-[32px] font-black text-brand-dark leading-[1.1] tracking-tight mb-4 max-w-md">
+                    <h3 className="text-[20px] md:text-[26px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3 max-w-sm">
                       Understand your child holistically.
                     </h3>
-                    <p className="text-[14px] md:text-[15px] text-gray-500 font-medium mb-8 max-w-md leading-relaxed">
+                    <p className="text-[13px] md:text-[14px] text-gray-500 font-medium mb-6 max-w-sm leading-relaxed">
                       A deep-dive session to identify strengths, weaknesses and opportunities across academic and non-academic areas.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 max-w-xl">
-                      <div className="flex-1 bg-gray-50/50 rounded-2xl p-5 border border-gray-100">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                    <div className="flex flex-col sm:flex-row gap-3 max-w-[480px]">
+                      <div className="flex-1 bg-gray-50/50 rounded-xl p-4 border border-gray-100">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center">
+                            <FileText className="w-3.5 h-3.5 text-blue-500" strokeWidth={2.5} />
                           </div>
-                          <h4 className="font-bold text-[13px] text-gray-800">30 min AI SWOT Test</h4>
+                          <h4 className="font-bold text-[12px] text-gray-800">30 min AI SWOT Test</h4>
                         </div>
-                        <p className="text-[12px] text-gray-500 font-medium leading-relaxed">Data-driven insights on strengths, weaknesses, interests and personality.</p>
+                        <p className="text-[11px] text-gray-500 font-medium leading-relaxed">Data-driven insights on strengths, weaknesses, interests and personality.</p>
                       </div>
 
-                      <div className="flex-1 bg-gray-50/50 rounded-2xl p-5 border border-gray-100">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-brand-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                      <div className="flex-1 bg-gray-50/50 rounded-xl p-4 border border-gray-100">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-7 h-7 rounded-lg bg-purple-50 flex items-center justify-center">
+                            <Video className="w-3.5 h-3.5 text-brand-purple" strokeWidth={2.5} />
                           </div>
-                          <h4 className="font-bold text-[13px] text-gray-800">30 min 1:1 Mentor Call</h4>
+                          <h4 className="font-bold text-[12px] text-gray-800">30 min 1:1 Mentor Call</h4>
                         </div>
-                        <p className="text-[12px] text-gray-500 font-medium leading-relaxed">Personalized discussion with a mentor to decode the results and set direction.</p>
+                        <p className="text-[11px] text-gray-500 font-medium leading-relaxed">Personalized discussion with a mentor to decode the results and set direction.</p>
                       </div>
                     </div>
 
                     {/* SWOT Mockup graphic */}
-                    <div className="hidden lg:block absolute right-8 top-12 w-[220px] bg-white rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.08)] border border-gray-100 p-5 rotate-3">
-                      <h4 className="font-bold text-[13px] text-gray-800 mb-4 border-b border-gray-100 pb-2">SWOT Report</h4>
-                      <ul className="space-y-3.5">
+                    <div className="hidden lg:block absolute right-6 top-1/2 -translate-y-1/2 w-[200px] bg-white rounded-2xl shadow-[0_12px_30px_rgba(0,0,0,0.06)] border border-gray-100 p-4 rotate-2">
+                      <h4 className="font-bold text-[12px] text-gray-800 mb-3 border-b border-gray-100 pb-2">SWOT Report</h4>
+                      <ul className="space-y-3">
                         {[
                           { label: 'Strengths', color: 'bg-green-500' },
                           { label: 'Weaknesses', color: 'bg-red-500' },
                           { label: 'Opportunities', color: 'bg-[#5B10FF]' },
                           { label: 'Growth Areas', color: 'bg-yellow-400' }
                         ].map(s => (
-                          <li key={s.label} className="flex items-center gap-3">
-                            <div className={`w-3 h-3 rounded-full ${s.color}`}></div>
-                            <span className="text-[12px] font-semibold text-gray-600">{s.label}</span>
+                          <li key={s.label} className="flex items-center gap-2.5">
+                            <div className={`w-2.5 h-2.5 rounded-full ${s.color}`}></div>
+                            <span className="text-[11px] font-semibold text-gray-600">{s.label}</span>
                           </li>
                         ))}
                       </ul>
@@ -287,65 +283,65 @@ export default function Abode() {
             </div>
 
             {/* STEP 2 */}
-            <div className="relative flex flex-col md:flex-row gap-6 md:gap-12">
-              <div className="flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-2 w-full md:w-32 shrink-0 z-10 relative">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[20px] md:text-[24px] shadow-lg shadow-[#5B10FF]/30 md:ml-4 bg-clip-padding border-4 border-[#FAFAFA]">
+            <div className="relative flex flex-col md:flex-row gap-5 md:gap-10">
+              <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-2 w-full md:w-[100px] shrink-0 z-10 relative">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[18px] md:text-[20px] shadow-lg shadow-[#5B10FF]/20 bg-clip-padding border-[3px] border-[#FAFAFA]">
                   2
                 </div>
-                <div className="md:mt-4 md:ml-2">
-                  <div className="text-[10px] font-black text-brand-purple uppercase tracking-widest mb-1">STEP 2</div>
-                  <div className="text-[16px] md:text-[18px] font-bold text-brand-purple leading-tight mb-1">Take Action</div>
-                  <div className="text-[12px] md:text-[13px] font-medium text-gray-500 leading-snug">Turn insights<br className="hidden md:block"/>into progress</div>
+                <div className="md:mt-3 md:text-center">
+                  <div className="text-[9px] font-black text-brand-purple uppercase tracking-widest mb-1">STEP 2</div>
+                  <div className="text-[15px] md:text-[16px] font-bold text-brand-purple leading-tight mb-1">Take Action</div>
+                  <div className="text-[11px] md:text-[12px] font-medium text-gray-500 leading-snug">Turn insights<br className="hidden md:block"/>into progress</div>
                 </div>
               </div>
 
               <div className="flex-1 w-full">
-                <div className="rounded-[32px] bg-gradient-to-br from-[#5B10FF]/20 via-transparent to-[#5B10FF]/10 p-[1px] shadow-sm hover:shadow-lg hover:shadow-[#5B10FF]/5 transition-all">
-                  <div className="bg-white rounded-[31px] p-6 md:p-10 relative overflow-hidden">
+                <div className="rounded-[28px] bg-gradient-to-br from-[#5B10FF]/20 via-transparent to-[#5B10FF]/10 p-[1px] shadow-sm hover:shadow-md hover:shadow-[#5B10FF]/5 transition-all">
+                  <div className="bg-white rounded-[27px] p-6 md:p-8 relative overflow-hidden">
                     
-                    <div className="inline-block px-3 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[10px] font-black uppercase tracking-widest mb-4">
+                    <div className="inline-block px-3 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-4">
                       30 DAYS GROWTH CHALLENGE
                     </div>
                     
-                    <h3 className="text-[24px] md:text-[32px] font-black text-brand-dark leading-[1.1] tracking-tight mb-4 max-w-md">
+                    <h3 className="text-[20px] md:text-[26px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3 max-w-sm">
                       Build real skills.<br/>Create real progress.
                     </h3>
-                    <p className="text-[14px] md:text-[15px] text-gray-500 font-medium mb-8 max-w-md leading-relaxed">
+                    <p className="text-[13px] md:text-[14px] text-gray-500 font-medium mb-6 max-w-md leading-relaxed">
                       A structured 30-day program where one mentor trains your child on 6 essential skills to build confidence, discipline and future-ready abilities.
                     </p>
 
                     <div>
-                      <div className="text-[10px] font-black text-[#5B10FF] uppercase tracking-widest mb-4">6 SKILLS FOR A BRIGHTER YOU</div>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 max-w-2xl">
+                      <div className="text-[9px] font-black text-[#5B10FF] uppercase tracking-widest mb-3">6 SKILLS FOR A BRIGHTER YOU</div>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5 max-w-[500px]">
                         {[
-                          { title: 'Tech & AI', sub: 'Be future ready', icon: '💻', color: 'bg-purple-100' },
-                          { title: 'Communication', sub: 'Speak. Express. Lead.', icon: '💬', color: 'bg-blue-100' },
-                          { title: 'Finance', sub: 'Build money smarts', icon: '📈', color: 'bg-green-100' },
-                          { title: 'Business', sub: 'Think. Create. Solve.', icon: '💡', color: 'bg-yellow-100' },
-                          { title: 'Academic', sub: 'Stronger fundamentals', icon: '📚', color: 'bg-red-100' },
-                          { title: 'Personal Growth', sub: 'Discipline & Focus', icon: '🎯', color: 'bg-indigo-100' }
+                          { title: 'Tech & AI', sub: 'Be future ready', icon: Cpu, color: 'bg-purple-100 text-purple-600' },
+                          { title: 'Communication', sub: 'Speak. Express. Lead.', icon: MessageSquare, color: 'bg-blue-100 text-blue-600' },
+                          { title: 'Finance', sub: 'Build money smarts', icon: TrendingUp, color: 'bg-green-100 text-green-600' },
+                          { title: 'Business', sub: 'Think. Create. Solve.', icon: Lightbulb, color: 'bg-yellow-100 text-yellow-600' },
+                          { title: 'Academic', sub: 'Stronger fundamentals', icon: BookOpen, color: 'bg-red-100 text-red-600' },
+                          { title: 'Personal Growth', sub: 'Discipline & Focus', icon: Target, color: 'bg-indigo-100 text-indigo-600' }
                         ].map((skill, i) => (
                           <div key={i} className="text-center">
-                            <div className={`w-10 h-10 mx-auto rounded-xl ${skill.color} flex items-center justify-center text-[18px] mb-2`}>
-                              {skill.icon}
+                            <div className={`w-9 h-9 mx-auto rounded-xl ${skill.color} flex items-center justify-center mb-2 shadow-sm`}>
+                              <skill.icon className="w-4 h-4" strokeWidth={2.5} />
                             </div>
-                            <h5 className="font-bold text-[11px] text-gray-800 leading-tight mb-1">{skill.title}</h5>
-                            <p className="text-[9px] text-gray-400 font-medium leading-tight">{skill.sub}</p>
+                            <h5 className="font-bold text-[10px] text-gray-800 leading-tight mb-0.5">{skill.title}</h5>
+                            <p className="text-[8px] text-gray-400 font-medium leading-tight">{skill.sub}</p>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Calendar Mockup */}
-                    <div className="hidden lg:block absolute right-8 top-12 w-[240px] bg-white rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.08)] border border-gray-100 p-5 -rotate-2">
-                      <div className="flex items-center gap-2 mb-4 border-b border-gray-100 pb-2">
-                        <svg className="w-4 h-4 text-brand-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                        <span className="font-bold text-[13px] text-gray-800">30-Day Challenge</span>
+                    <div className="hidden lg:block absolute right-6 top-1/2 -translate-y-1/2 w-[210px] bg-white rounded-2xl shadow-[0_12px_30px_rgba(0,0,0,0.06)] border border-gray-100 p-4 -rotate-2">
+                      <div className="flex items-center gap-2 mb-3 border-b border-gray-100 pb-2">
+                        <Calendar className="w-3.5 h-3.5 text-brand-purple" strokeWidth={2.5} />
+                        <span className="font-bold text-[12px] text-gray-800">30-Day Challenge</span>
                       </div>
-                      <div className="grid grid-cols-5 gap-2">
+                      <div className="grid grid-cols-5 gap-1.5">
                         {Array(15).fill(0).map((_, i) => (
-                          <div key={i} className={`w-6 h-6 rounded-full flex items-center justify-center ${[0,1,2,3,6].includes(i) ? 'bg-[#5B10FF]' : 'bg-gray-100'}`}>
-                            {[0,1,2,3,6].includes(i) && <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>}
+                          <div key={i} className={`w-5 h-5 rounded-full flex items-center justify-center ${[0,1,2,3,6].includes(i) ? 'bg-[#5B10FF]' : 'bg-gray-100'}`}>
+                            {[0,1,2,3,6].includes(i) && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
                           </div>
                         ))}
                       </div>
@@ -356,50 +352,52 @@ export default function Abode() {
             </div>
 
             {/* STEP 3 */}
-            <div className="relative flex flex-col md:flex-row gap-6 md:gap-12">
-              <div className="flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-2 w-full md:w-32 shrink-0 z-10 relative">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[20px] md:text-[24px] shadow-lg shadow-[#5B10FF]/30 md:ml-4 bg-clip-padding border-4 border-[#FAFAFA]">
+            <div className="relative flex flex-col md:flex-row gap-5 md:gap-10">
+              <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-2 w-full md:w-[100px] shrink-0 z-10 relative">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[18px] md:text-[20px] shadow-lg shadow-[#5B10FF]/20 bg-clip-padding border-[3px] border-[#FAFAFA]">
                   3
                 </div>
-                <div className="md:mt-4 md:ml-2">
-                  <div className="text-[10px] font-black text-brand-purple uppercase tracking-widest mb-1">STEP 3</div>
-                  <div className="text-[16px] md:text-[18px] font-bold text-brand-purple leading-tight mb-1">Stay Ahead</div>
-                  <div className="text-[12px] md:text-[13px] font-medium text-gray-500 leading-snug">Continuous<br className="hidden md:block"/>growth</div>
+                <div className="md:mt-3 md:text-center">
+                  <div className="text-[9px] font-black text-brand-purple uppercase tracking-widest mb-1">STEP 3</div>
+                  <div className="text-[15px] md:text-[16px] font-bold text-brand-purple leading-tight mb-1">Stay Ahead</div>
+                  <div className="text-[11px] md:text-[12px] font-medium text-gray-500 leading-snug">Continuous<br className="hidden md:block"/> growth</div>
                 </div>
               </div>
 
               <div className="flex-1 w-full">
-                <div className="rounded-[32px] bg-gradient-to-br from-[#5B10FF]/20 via-transparent to-[#5B10FF]/10 p-[1px] shadow-sm hover:shadow-lg hover:shadow-[#5B10FF]/5 transition-all">
-                  <div className="bg-white rounded-[31px] p-6 md:p-10">
+                <div className="rounded-[28px] bg-gradient-to-br from-[#5B10FF]/20 via-transparent to-[#5B10FF]/10 p-[1px] shadow-sm hover:shadow-md hover:shadow-[#5B10FF]/5 transition-all">
+                  <div className="bg-white rounded-[27px] p-6 md:p-8">
                     
-                    <div className="inline-block px-3 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[10px] font-black uppercase tracking-widest mb-4">
+                    <div className="inline-block px-3 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-4">
                       LONG TERM MENTORSHIP
                     </div>
                     
-                    <div className="flex flex-col xl:flex-row gap-8">
-                      <div className="xl:w-1/3">
-                        <h3 className="text-[24px] md:text-[32px] font-black text-brand-dark leading-[1.1] tracking-tight mb-4">
+                    <div className="flex flex-col lg:flex-row gap-8">
+                      <div className="lg:w-[40%]">
+                        <h3 className="text-[20px] md:text-[26px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3">
                           Keep growing,<br/>for what's next.
                         </h3>
-                        <p className="text-[14px] md:text-[15px] text-gray-500 font-medium mb-6 leading-relaxed">
+                        <p className="text-[13px] md:text-[14px] text-gray-500 font-medium mb-5 leading-relaxed">
                           Continue the journey with monthly mentorship. Choose a plan that fits your goals — and keep building life-ready skills with expert guidance.
                         </p>
                       </div>
 
-                      <div className="xl:w-2/3 flex flex-col sm:flex-row gap-4">
+                      <div className="lg:w-[60%] flex flex-col sm:flex-row gap-3">
                         {/* Elite Plan */}
-                        <div className="flex-1 bg-gray-50/50 rounded-2xl p-5 border border-gray-100 flex flex-col">
-                          <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-[14px]">👑</div>
+                        <div className="flex-1 bg-white rounded-xl p-4 border border-[#5B10FF]/15 shadow-sm flex flex-col hover:border-[#5B10FF]/30 transition-colors">
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="w-7 h-7 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-[12px]">👑</div>
                             <div>
-                              <h4 className="font-bold text-[14px] text-gray-800">Elite Plan</h4>
-                              <p className="text-[11px] text-gray-500 font-medium">Only Mentorship</p>
+                              <h4 className="font-bold text-[13px] text-gray-800">Elite Plan</h4>
+                              <p className="text-[10px] text-gray-500 font-medium">Only Mentorship</p>
                             </div>
                           </div>
-                          <ul className="space-y-2.5 mt-auto">
+                          <ul className="space-y-2 mt-auto">
                             {['Monthly 1:1 Mentor Sessions', 'Personalized Guidance', 'Progress Review & Support', 'Parent Updates'].map((item, i) => (
-                              <li key={i} className="flex items-start gap-2 text-[12px] font-medium text-gray-600">
-                                <div className="w-3.5 h-3.5 rounded-full bg-[#5B10FF] text-white flex items-center justify-center shrink-0 mt-0.5"><svg className="w-2 h-2" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg></div>
+                              <li key={i} className="flex items-start gap-1.5 text-[11px] font-medium text-gray-600">
+                                <div className="w-3 h-3 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                                  <Check className="w-2 h-2" strokeWidth={4} />
+                                </div>
                                 {item}
                               </li>
                             ))}
@@ -407,21 +405,23 @@ export default function Abode() {
                         </div>
 
                         {/* Pro Plan */}
-                        <div className="flex-1 bg-white rounded-2xl p-5 border border-[#5B10FF]/20 shadow-md shadow-[#5B10FF]/5 flex flex-col relative overflow-hidden">
-                          <div className="absolute top-0 right-0 bg-[#5B10FF] text-white text-[9px] font-black uppercase px-3 py-1 rounded-bl-lg">Most Popular</div>
-                          <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-[#5B10FF]">
-                              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        <div className="flex-1 bg-white rounded-xl p-4 border border-[#5B10FF] shadow-md shadow-[#5B10FF]/10 flex flex-col relative overflow-hidden ring-1 ring-[#5B10FF]/20">
+                          <div className="absolute top-0 right-0 bg-[#5B10FF] text-white text-[8px] font-black uppercase px-2.5 py-1 rounded-bl-lg">Most Popular</div>
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="w-7 h-7 rounded-full bg-purple-50 border border-purple-100 flex items-center justify-center text-[#5B10FF]">
+                              <Zap className="w-3.5 h-3.5 fill-current" />
                             </div>
                             <div>
-                              <h4 className="font-bold text-[14px] text-gray-800">Pro Plan</h4>
-                              <p className="text-[10px] text-gray-500 font-medium leading-tight mt-0.5 max-w-[140px]">Mentorship + 6 Skills + Academic Growth</p>
+                              <h4 className="font-bold text-[13px] text-gray-800">Pro Plan</h4>
+                              <p className="text-[9px] text-gray-500 font-medium leading-tight mt-0.5 max-w-[120px]">Mentorship + 6 Skills + Academic</p>
                             </div>
                           </div>
-                          <ul className="space-y-2.5 mt-auto">
+                          <ul className="space-y-2 mt-auto">
                             {['Monthly 1:1 Mentor Sessions', '6 Skills Training (Continued)', 'Academic Growth Guidance', 'Progress Tracking', 'Parent Updates'].map((item, i) => (
-                              <li key={i} className="flex items-start gap-2 text-[12px] font-bold text-gray-700">
-                                <div className="w-3.5 h-3.5 rounded-full bg-[#5B10FF] text-white flex items-center justify-center shrink-0 mt-0.5"><svg className="w-2 h-2" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg></div>
+                              <li key={i} className="flex items-start gap-1.5 text-[11px] font-bold text-gray-700">
+                                <div className="w-3 h-3 rounded-full bg-[#5B10FF] text-white flex items-center justify-center shrink-0 mt-0.5">
+                                  <Check className="w-2 h-2" strokeWidth={4} />
+                                </div>
                                 {item}
                               </li>
                             ))}
