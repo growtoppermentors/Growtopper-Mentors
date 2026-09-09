@@ -202,20 +202,20 @@ export default function Abode() {
         {/* Steps Container */}
         <div className="relative">
           {/* Vertical Dashed Line - Centered relative to the circles. 
-              w-10 (40px) circle center = left-5 (20px). 
-              md:w-12 (48px) circle center = left-6 (24px). */}
-          <div className="absolute left-[19px] md:left-[23px] top-4 bottom-0 w-[2px] border-l-2 border-dashed border-brand-purple/20"></div>
+              Mobile: circle w-10 center is left-5 (20px). Line left-19.
+              Desktop: col w-[100px] items-center. Center is 50px. Line left-49. */}
+          <div className="absolute left-[19px] md:left-[49px] top-4 bottom-0 w-[2px] border-l-2 border-dashed border-brand-purple/20"></div>
 
           <div className="space-y-12 md:space-y-16">
 
             {/* STEP 1 */}
             <div className="relative flex flex-col md:flex-row gap-5 md:gap-10">
               {/* Left Column (Timeline) */}
-              <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-2 w-full md:w-[100px] shrink-0 z-10 relative">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[18px] md:text-[20px] shadow-lg shadow-[#5B10FF]/20 bg-clip-padding border-[3px] border-[#FAFAFA]">
+              <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-0 w-full md:w-[100px] shrink-0 z-10 relative">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[18px] md:text-[20px] shadow-lg shadow-[#5B10FF]/20 bg-clip-padding border-[3px] border-[#FAFAFA] relative z-20">
                   1
                 </div>
-                <div className="md:mt-3 md:text-center">
+                <div className="md:mt-2 md:text-center bg-[#FAFAFA] py-1 md:py-2 relative z-20">
                   <div className="text-[9px] font-black text-brand-purple uppercase tracking-widest mb-1">STEP 1</div>
                   <div className="text-[15px] md:text-[16px] font-bold text-brand-purple leading-tight mb-1">Get Clarity</div>
                   <div className="text-[11px] md:text-[12px] font-medium text-gray-500 leading-snug">Know where<br className="hidden md:block"/>you stand</div>
@@ -284,11 +284,11 @@ export default function Abode() {
 
             {/* STEP 2 */}
             <div className="relative flex flex-col md:flex-row gap-5 md:gap-10">
-              <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-2 w-full md:w-[100px] shrink-0 z-10 relative">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[18px] md:text-[20px] shadow-lg shadow-[#5B10FF]/20 bg-clip-padding border-[3px] border-[#FAFAFA]">
+              <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-0 w-full md:w-[100px] shrink-0 z-10 relative">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[18px] md:text-[20px] shadow-lg shadow-[#5B10FF]/20 bg-clip-padding border-[3px] border-[#FAFAFA] relative z-20">
                   2
                 </div>
-                <div className="md:mt-3 md:text-center">
+                <div className="md:mt-2 md:text-center bg-[#FAFAFA] py-1 md:py-2 relative z-20">
                   <div className="text-[9px] font-black text-brand-purple uppercase tracking-widest mb-1">STEP 2</div>
                   <div className="text-[15px] md:text-[16px] font-bold text-brand-purple leading-tight mb-1">Take Action</div>
                   <div className="text-[11px] md:text-[12px] font-medium text-gray-500 leading-snug">Turn insights<br className="hidden md:block"/>into progress</div>
@@ -353,14 +353,14 @@ export default function Abode() {
 
             {/* STEP 3 */}
             <div className="relative flex flex-col md:flex-row gap-5 md:gap-10">
-              <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-2 w-full md:w-[100px] shrink-0 z-10 relative">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[18px] md:text-[20px] shadow-lg shadow-[#5B10FF]/20 bg-clip-padding border-[3px] border-[#FAFAFA]">
+              <div className="flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-0 w-full md:w-[100px] shrink-0 z-10 relative">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#5B10FF] text-white flex items-center justify-center font-black text-[18px] md:text-[20px] shadow-lg shadow-[#5B10FF]/20 bg-clip-padding border-[3px] border-[#FAFAFA] relative z-20">
                   3
                 </div>
-                <div className="md:mt-3 md:text-center">
+                <div className="md:mt-2 md:text-center bg-[#FAFAFA] py-1 md:py-2 relative z-20">
                   <div className="text-[9px] font-black text-brand-purple uppercase tracking-widest mb-1">STEP 3</div>
                   <div className="text-[15px] md:text-[16px] font-bold text-brand-purple leading-tight mb-1">Stay Ahead</div>
-                  <div className="text-[11px] md:text-[12px] font-medium text-gray-500 leading-snug">Continuous<br className="hidden md:block"/> growth</div>
+                  <div className="text-[11px] md:text-[12px] font-medium text-gray-500 leading-snug">Continuous <br className="hidden md:block"/>growth</div>
                 </div>
               </div>
 
