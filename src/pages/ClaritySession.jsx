@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Brain, Heart, CheckCircle2, Target, BarChart, Clock, Shield, Zap, BookOpen, MessageSquare, Layout, Activity, Compass, Users } from 'lucide-react';
+import { ArrowRight, Brain, Heart, CheckCircle2, Target, BarChart, Clock, Shield, Zap, BookOpen, MessageSquare, Layout, Activity, Compass, Users, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
