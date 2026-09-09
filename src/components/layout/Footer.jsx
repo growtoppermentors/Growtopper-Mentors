@@ -54,7 +54,7 @@ export default function Footer({ onRequestInvite }) {
           {/* Subtle Dotted Grid */}
           <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#5B10FF 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}></div>
           {/* Giant Text */}
-          <div className="font-black text-[120px] sm:text-[180px] md:text-[240px] lg:text-[300px] text-[#5B10FF]/[0.03] tracking-tighter select-none whitespace-nowrap -mt-10 md:-mt-20">
+          <div className="font-black text-[15vw] xl:text-[220px] text-[#5B10FF]/[0.03] tracking-tighter select-none whitespace-nowrap -mt-4 md:-mt-10 leading-none">
             growtopper
           </div>
         </div>
