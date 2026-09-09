@@ -16,6 +16,7 @@ import LiveNotification from './components/ui/LiveNotification';
 import SyllabusPage from './pages/SyllabusPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import Abode from './pages/Abode';
 import CareerLanding from './pages/CareerLanding';
 import CounselingRoom from './pages/CounselingRoom';
 import ReportCard from './pages/ReportCard';
@@ -76,6 +77,7 @@ function App() {
         <Route path="/syllabus" element={<SyllabusPage onRequestInvite={openModal} />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/abode" element={<Abode />} />
         
         {/* AI Career Counseling Routes */}
         <Route path="/career-counseling" element={<CareerLanding />} />

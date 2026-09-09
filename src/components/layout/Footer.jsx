@@ -75,6 +75,7 @@ export default function Footer({ onRequestInvite }) {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 max-w-[280px] mx-auto lg:mx-0 text-center lg:text-left">
               {[
                 { label: 'Career Counseling', href: '/career-counseling' },
+                { label: 'Abode', href: '/abode' },
                 { label: 'Curriculum', href: '#program' },
                 { label: 'Benefits', href: '#how-it-works' },
                 { label: 'Cohort', href: '#cohort' },
