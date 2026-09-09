@@ -61,6 +61,9 @@ export default function LiveNotification() {
 
   useEffect(() => {
     let localIndex = 0; // use local variable for timeout closures
+    let isMounted = true;
+    let hideTimeout;
+    let nextTimeout;
 
     const showNext = () => {
       if (!isMounted) return;
@@ -83,10 +86,10 @@ export default function LiveNotification() {
       }, 5000);
     };
 
-    // Initial delay before showing first notification (12 seconds)
+    // Initial delay before showing first notification (3 seconds)
     const initialTimer = setTimeout(() => {
       showNext();
-    }, 12000);
+    }, 3000);
 
     return () => {
       isMounted = false;
