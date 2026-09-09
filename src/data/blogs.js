@@ -11,7 +11,7 @@ const initialBlogs = [
     date: "Sep 9, 2026",
     author: "Aditi Sharma",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Aditi&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/exam,student/all?lock=11",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=101",
     content: `
       <h2>A Paradigm Shift in Indian Testing</h2>
       <p>For decades, the Indian education system has been synonymous with the immense pressure of the single, end-of-year board exam. However, the Ministry of Education has officially implemented the National Curriculum Framework (NCF) recommendation to conduct CBSE Class 10 and 12 board exams twice a year.</p>
@@ -48,7 +48,7 @@ const initialBlogs = [
     date: "Sep 5, 2026",
     author: "Growtopper Research",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Growtopper&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/technology,school/all?lock=12",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=102",
     content: `
       <h2>Digitizing Indian Education</h2>
       <p>As part of the National Education Policy (NEP) 2020, the Indian government has rolled out the APAAR ID (Automated Permanent Academic Account Registry). Dubbed as the 'EduAadhar', this is a lifelong ID number assigned to every student from pre-primary to higher education.</p>
@@ -85,7 +85,7 @@ const initialBlogs = [
     date: "Aug 28, 2026",
     author: "Vikram Mehta",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Vikram&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/university,campus/all?lock=13",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=103",
     content: `
       <h2>The End of Normalization Anxiety</h2>
       <p>The National Testing Agency (NTA) has announced a major overhaul for the CUET-UG exams. The controversial 'normalization' process—which mathematically adjusted students' scores based on the difficulty of different exam shifts—has been entirely scrapped.</p>
@@ -121,7 +121,7 @@ const initialBlogs = [
     date: "Aug 15, 2026",
     author: "Neha Kapoor",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Neha&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/building,college/all?lock=14",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=104",
     content: `
       <h2>The World Comes to India</h2>
       <p>A historic milestone in Indian higher education has been achieved. For the first time, foreign universities have established independent physical campuses in India, starting with Australia's Deakin University and the University of Wollongong at Gujarat's GIFT City.</p>
@@ -158,7 +158,7 @@ const initialBlogs = [
     date: "Jul 30, 2026",
     author: "Priya Rajan",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Priya&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/code,kid/all?lock=15",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=105",
     content: `
       <h2>Modernizing the Indian Textbook</h2>
       <p>The National Council of Educational Research and Training (NCERT) has released its highly anticipated updated syllabus. Moving away from outdated ICT chapters, the new books mandate the teaching of Artificial Intelligence, Data Science, and foundational Coding starting from Class 6.</p>
@@ -195,7 +195,7 @@ const initialBlogs = [
     date: "Jul 20, 2026",
     author: "Vikram Mehta",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Vikram&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/airport,travel/all?lock=16",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=106",
     content: `
       <h2>The Squeeze on International Students</h2>
       <p>For over a decade, Canada and the UK have been the top two destinations for Indian students seeking higher education and subsequent immigration. However, facing domestic housing crises and political pressure, both nations have introduced stringent new visa rules in 2025/2026.</p>
@@ -230,7 +230,7 @@ const initialBlogs = [
     date: "Jul 10, 2026",
     author: "Neha Kapoor",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Neha&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/library,study/all?lock=17",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=107",
     content: `
       <h2>The Return of Standardized Testing</h2>
       <p>During the pandemic, almost all major US universities went 'test-optional'. However, data from the last few years revealed a surprising truth to admissions officers: SAT and ACT scores remain the strongest predictors of a student's academic success in college. Consequently, Ivy League institutions like Harvard, Yale, Dartmouth, and MIT have officially reinstated mandatory standardized testing.</p>
@@ -266,7 +266,7 @@ const initialBlogs = [
     date: "Jun 28, 2026",
     author: "Dr. Ananya Roy",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Ananya&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/meditation,student/all?lock=18",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=108",
     content: `
       <h2>Addressing the Elephant in the Room</h2>
       <p>The Indian Institutes of Technology (IITs) are globally renowned for their academic rigor. However, this pressure-cooker environment has taken a severe toll on student mental health. In a highly progressive move, the IIT Council has mandated a massive curriculum overhaul focused on student well-being.</p>
@@ -303,7 +303,7 @@ const initialBlogs = [
     date: "Jun 15, 2026",
     author: "Growtopper Research",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Growtopper&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/medical,study/all?lock=19",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=109",
     content: `
       <h2>The Medical Exam Bottleneck</h2>
       <p>The National Eligibility cum Entrance Test (NEET) has become the most competitive exam in the world, with over 2.5 million students fighting for roughly 100,000 medical seats. The immense pressure has fueled a multi-billion dollar coaching industry in cities like Kota, often at the cost of student mental health and regular schooling.</p>
@@ -339,7 +339,7 @@ const initialBlogs = [
     date: "Jun 02, 2026",
     author: "Aditi Sharma",
     authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?seed=Aditi&backgroundColor=transparent",
-    image: "https://loremflickr.com/1000/600/laptop,classroom/all?lock=20",
+    image: "https://loremflickr.com/1000/600/education,student/all?lock=110",
     content: `
       <h2>The Rise and Fall of Pure Online Learning</h2>
       <p>During the pandemic, EdTech giants promised that pure online learning was the future. Valuations soared. But as schools reopened, the reality hit hard: K-12 students suffered massive learning losses, attention deficits, and social isolation when isolated behind a screen.</p>
