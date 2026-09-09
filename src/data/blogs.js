@@ -1,4 +1,6 @@
-export const blogs = [
+import { moreBlogs } from './moreBlogs';
+
+const initialBlogs = [
   {
     id: "cbse-twice-a-year-board-exams",
     slug: "cbse-twice-a-year-board-exams",
@@ -245,3 +247,4 @@ export const blogs = [
     `
   }
 ];
+export const blogs = [...initialBlogs, ...moreBlogs];
