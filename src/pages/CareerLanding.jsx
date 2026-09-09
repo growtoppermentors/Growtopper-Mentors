@@ -273,17 +273,83 @@ export default function CareerLanding() {
           </div>
         </div>
 
-        {/* Mentor Authority */}
-        <div className="max-w-4xl mx-auto mb-24 text-center">
-          <div className="w-14 h-14 rounded-2xl bg-brand-purple/10 flex items-center justify-center mx-auto mb-5 text-brand-purple">
-            <Users className="w-7 h-7" />
+        {/* Mentor Authority - Profile Cards */}
+        <div className="mb-24">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-purple/5 border border-brand-purple/10 text-brand-purple text-xs font-bold uppercase tracking-widest mb-4">
+              <Shield className="w-3.5 h-3.5" /> GUIDED BY THE BEST
+            </div>
+            <h2 className="text-[32px] md:text-[40px] font-black text-brand-dark leading-[1.1] tracking-tight mb-4">Meet Your Mentors</h2>
+            <p className="text-[17px] text-gray-500 font-medium max-w-2xl mx-auto text-balance">
+              Industry experts, alumni, and psychologists dedicated to your child's growth.
+            </p>
           </div>
-          <h2 className="text-[32px] font-black text-brand-dark mb-4">Meet your Growth Experts</h2>
-          <p className="text-[16px] text-gray-500 font-medium mb-8 max-w-2xl mx-auto leading-relaxed">Your 1-on-1 video call isn't with a generic school counselor. You'll be speaking directly with industry veterans and top alumni who understand modern market trends.</p>
-          <div className="inline-flex flex-wrap justify-center items-center gap-3">
-            <div className="px-5 py-2 rounded-full bg-white border border-gray-200 font-bold text-[13px] text-gray-700 shadow-sm">IIT / NIT Alumni</div>
-            <div className="px-5 py-2 rounded-full bg-white border border-gray-200 font-bold text-[13px] text-gray-700 shadow-sm">EdTech Founders</div>
-            <div className="px-5 py-2 rounded-full bg-white border border-gray-200 font-bold text-[13px] text-gray-700 shadow-sm">Product Managers</div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Academic Strategy Mentor",
+                subtitle: "IIT/NIT-aligned study planning",
+                tag: "Weekly execution review",
+                desc: "Turns school, coaching, and self-study into one clear action plan.",
+                seed: "academic"
+              },
+              {
+                title: "Student Psychology Mentor",
+                subtitle: "Focus, stress, and confidence",
+                tag: "Parent-child communication",
+                desc: "Helps students manage overload, confidence dips, and routine resistance.",
+                seed: "psychology"
+              },
+              {
+                title: "Career Pathway Mentor",
+                subtitle: "Subject and goal clarity",
+                tag: "Strength-based guidance",
+                desc: "Maps interests, subjects, and future options into realistic next steps.",
+                seed: "pathway"
+              },
+              {
+                title: "Communication Mentor",
+                subtitle: "Speaking and self-expression",
+                tag: "Confidence building",
+                desc: "Builds better articulation, presentation comfort, and classroom confidence.",
+                seed: "comm"
+              }
+            ].map((mentor, i) => (
+              <div key={i} className="bg-white rounded-[28px] border border-gray-200 p-3 flex flex-col hover:shadow-xl hover:border-brand-purple/30 transition-all duration-300 group">
+                
+                {/* Top Image Box */}
+                <div className="bg-[#F8F9FA] rounded-[20px] pt-3 px-3 pb-0 flex flex-col items-center relative overflow-hidden h-[200px]">
+                  {/* Purple Top Badge */}
+                  <div className="w-full bg-[#5B10FF] text-white text-[10px] font-black uppercase tracking-widest py-2.5 rounded-[12px] text-center shadow-sm flex justify-center items-center gap-1.5 z-10">
+                    <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    GROWTOPPER MENTOR
+                  </div>
+                  
+                  {/* Illustration using Dicebear Notionists style */}
+                  <img src={`https://api.dicebear.com/9.x/notionists/svg?seed=${mentor.seed}&backgroundColor=transparent`} alt={mentor.title} className="w-36 h-36 object-contain mt-auto z-0 group-hover:scale-105 transition-transform duration-500" />
+                  
+                  {/* Verified Badge */}
+                  <div className="absolute bottom-3 left-3 bg-white text-gray-800 text-[10px] font-bold px-2.5 py-1.5 rounded-lg shadow-sm flex items-center gap-1.5 z-10 border border-gray-100">
+                    <Shield className="w-3 h-3 text-[#5B10FF] fill-current" /> Verified
+                  </div>
+                </div>
+
+                {/* Bottom Content */}
+                <div className="pt-6 pb-4 px-2 text-center flex flex-col items-center flex-1">
+                  <h3 className="font-black text-[18px] text-brand-dark leading-tight mb-1">{mentor.title}</h3>
+                  <p className="text-[#5B10FF] text-[13px] font-bold mb-3">{mentor.subtitle}</p>
+                  
+                  <div className="bg-[#5B10FF]/5 text-[#5B10FF] text-[11px] font-bold px-3.5 py-1.5 rounded-full mb-4 border border-[#5B10FF]/10">
+                    {mentor.tag}
+                  </div>
+                  
+                  <p className="text-gray-500 text-[13px] font-medium leading-relaxed">
+                    {mentor.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
