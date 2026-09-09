@@ -54,15 +54,15 @@ export default function Footer({ onRequestInvite }) {
           {/* Subtle Dotted Grid */}
           <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#5B10FF 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}></div>
           {/* Giant Text */}
-          <div className="font-black text-[18vw] md:text-[15vw] xl:text-[220px] text-[#5B10FF]/[0.03] tracking-tighter select-none whitespace-nowrap mb-20 md:mb-0 md:-mt-10 leading-none">
+          <div className="font-black text-[18vw] md:text-[15vw] xl:text-[220px] text-[#5B10FF]/[0.03] tracking-tighter select-none whitespace-nowrap mb-[108px] md:mb-0 md:-mt-10 leading-none">
             growtopper
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-12 pb-6 md:pb-8 relative z-10">
 
         {/* Top row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16 text-center lg:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8 mb-10 md:mb-16 text-center lg:text-left">
 
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start">
