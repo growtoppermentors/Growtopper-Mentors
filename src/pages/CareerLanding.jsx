@@ -41,61 +41,59 @@ export default function CareerLanding() {
           <div className="grid md:grid-cols-2 gap-8">
             
             {/* Traditional */}
-            <div className="bg-white p-8 rounded-[32px] border border-gray-200 shadow-sm opacity-80">
+            <div className="p-8 rounded-[32px] border border-[#FAD4D4] shadow-sm bg-gradient-to-br from-[#FDF2F2] to-[#FFFFFF] hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">
-                  <XCircle className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center text-red-500 shadow-sm">
+                  <XCircle className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-500">Traditional Platforms</h3>
+                <h3 className="text-xl font-bold text-gray-800">Traditional Platforms</h3>
               </div>
               
               <ul className="space-y-5">
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5"><span className="text-xs font-bold text-gray-500">1</span></div>
-                  <p className="text-gray-500 text-sm font-medium">Give you a basic 5-minute personality test.</p>
+                  <div className="w-6 h-6 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5 border border-red-100"><span className="text-xs font-bold">1</span></div>
+                  <p className="text-gray-700 text-sm font-medium">Give you a basic 5-minute personality test.</p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5"><span className="text-xs font-bold text-gray-500">2</span></div>
-                  <p className="text-gray-500 text-sm font-medium">Arbitrarily assign you a career (e.g. "You should be a doctor").</p>
+                  <div className="w-6 h-6 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5 border border-red-100"><span className="text-xs font-bold">2</span></div>
+                  <p className="text-gray-700 text-sm font-medium">Arbitrarily assign you a career (e.g. "You should be a doctor").</p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5"><span className="text-xs font-bold text-gray-500">3</span></div>
-                  <p className="text-gray-500 text-sm font-medium">No discussion about market reality, earning potential, or your actual current academic strengths.</p>
+                  <div className="w-6 h-6 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5 border border-red-100"><span className="text-xs font-bold">3</span></div>
+                  <p className="text-gray-700 text-sm font-medium">No discussion about market reality, earning potential, or your actual current academic strengths.</p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5"><span className="text-xs font-bold text-gray-500">4</span></div>
-                  <p className="text-gray-500 text-sm font-medium">Leave you with zero execution plan on how to actually achieve it.</p>
+                  <div className="w-6 h-6 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0 mt-0.5 border border-red-100"><span className="text-xs font-bold">4</span></div>
+                  <p className="text-gray-700 text-sm font-medium">Leave you with zero execution plan on how to actually achieve it.</p>
                 </li>
               </ul>
             </div>
 
             {/* Growtopper Way */}
-            <div className="bg-brand-dark text-white p-8 rounded-[32px] border border-brand-purple/30 shadow-xl shadow-brand-purple/10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-purple/20 blur-[80px] rounded-full pointer-events-none"></div>
-              
-              <div className="flex items-center gap-3 mb-6 relative z-10">
-                <div className="w-10 h-10 rounded-full bg-brand-purple flex items-center justify-center text-white shadow-md">
-                  <CheckCircle2 className="w-5 h-5" />
+            <div className="p-8 rounded-[32px] border border-[#DDE4FF] shadow-sm bg-gradient-to-br from-[#EEF2FF] to-[#FFFFFF] hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 shadow-sm">
+                  <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-black">The Growtopper Approach</h3>
+                <h3 className="text-xl font-black text-gray-900">The Growtopper Approach</h3>
               </div>
               
-              <ul className="space-y-5 relative z-10">
+              <ul className="space-y-5">
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-xs font-bold text-white">1</span></div>
-                  <p className="text-gray-300 text-sm font-medium">Evaluate your <strong className="text-white">current state (SWOT)</strong> through a 30-minute AI chat.</p>
+                  <div className="w-6 h-6 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 mt-0.5 border border-blue-100"><span className="text-xs font-bold">1</span></div>
+                  <p className="text-gray-800 text-sm font-medium">Evaluate your <strong>current state (SWOT)</strong> through a 30-minute AI chat.</p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-xs font-bold text-white">2</span></div>
-                  <p className="text-gray-300 text-sm font-medium">Educate you on various careers and let <strong className="text-white">you choose</strong> what actually sparks your passion.</p>
+                  <div className="w-6 h-6 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 mt-0.5 border border-blue-100"><span className="text-xs font-bold">2</span></div>
+                  <p className="text-gray-800 text-sm font-medium">Educate you on various careers and let <strong>you choose</strong> what actually sparks your passion.</p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-xs font-bold text-white">3</span></div>
-                  <p className="text-gray-300 text-sm font-medium">1-on-1 human reality check to align your passion with <strong className="text-white">market growth & earning potential</strong>.</p>
+                  <div className="w-6 h-6 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 mt-0.5 border border-blue-100"><span className="text-xs font-bold">3</span></div>
+                  <p className="text-gray-800 text-sm font-medium">1-on-1 human reality check to align your passion with <strong>market growth & earning potential</strong>.</p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-brand-purple flex items-center justify-center shrink-0 mt-0.5 shadow-md shadow-brand-purple/50"><span className="text-xs font-bold text-white">4</span></div>
-                  <p className="text-white text-sm font-bold">Provide a workable, step-by-step Execution Roadmap to bridge the gap.</p>
+                  <div className="w-6 h-6 rounded-full bg-brand-purple text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm"><span className="text-xs font-bold">4</span></div>
+                  <p className="text-gray-900 text-sm font-bold">Provide a workable, step-by-step Execution Roadmap to bridge the gap.</p>
                 </li>
               </ul>
             </div>
@@ -108,53 +106,43 @@ export default function CareerLanding() {
           <h2 className="text-3xl font-black text-center mb-12">How we align Passion with Profession.</h2>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Step 1: AI SWOT Test - Dashboard Gradient */}
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center relative overflow-hidden group hover:shadow-xl hover:border-orange-200 transition-all hover:-translate-y-1">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#cd5d10] via-[#f29c54] to-[#d4e3f5]"></div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100/40 rounded-full blur-3xl pointer-events-none group-hover:bg-orange-200/40 transition-colors"></div>
-              
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#cd5d10] via-[#f29c54] to-[#d4e3f5] flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform relative z-10">
-                <Brain className="w-8 h-8 text-white" />
+            
+            {/* Step 1: Purple Pale */}
+            <div className="p-8 rounded-[32px] shadow-sm border border-[#E8D9FF] bg-gradient-to-br from-[#F5EEFF] to-[#FFFFFF] flex flex-col items-start hover:-translate-y-1 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 text-purple-600 shadow-sm">
+                <Brain className="w-7 h-7" />
               </div>
-              <h3 className="font-black text-xl mb-3 text-gray-900 relative z-10">1. AI SWOT Test</h3>
-              <p className="text-sm text-gray-500 font-medium leading-relaxed relative z-10">A 30-min interactive chat to evaluate your strengths, weaknesses, and habits.</p>
+              <h3 className="font-black text-xl mb-3 text-gray-900">1. AI SWOT Test</h3>
+              <p className="text-sm text-gray-600 font-medium leading-relaxed">A 30-min interactive chat to evaluate your strengths, weaknesses, and habits.</p>
             </div>
 
-            {/* Step 2: Report Generation - Startup Program Gradient */}
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center relative overflow-hidden group hover:shadow-xl hover:border-blue-200 transition-all hover:-translate-y-1">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#6974d6] to-[#b5c2f2]"></div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/40 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-200/40 transition-colors"></div>
-              
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#6974d6] to-[#b5c2f2] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform relative z-10">
-                <BarChart className="w-8 h-8 text-white" />
+            {/* Step 2: Orange Pale */}
+            <div className="p-8 rounded-[32px] shadow-sm border border-[#FFEDDE] bg-gradient-to-br from-[#FFF5ED] to-[#FFFFFF] flex flex-col items-start hover:-translate-y-1 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 text-orange-600 shadow-sm">
+                <BarChart className="w-7 h-7" />
               </div>
-              <h3 className="font-black text-xl mb-3 text-gray-900 relative z-10">2. Report Generation</h3>
-              <p className="text-sm text-gray-500 font-medium leading-relaxed relative z-10">A detailed report card highlighting your current growth stage and market opportunities.</p>
+              <h3 className="font-black text-xl mb-3 text-gray-900">2. Report Generation</h3>
+              <p className="text-sm text-gray-600 font-medium leading-relaxed">A detailed report card highlighting your current growth stage and market opportunities.</p>
             </div>
 
-            {/* Step 3: 1-on-1 Video Call - Brand Gradient */}
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center relative overflow-hidden group hover:shadow-xl hover:border-purple-200 transition-all hover:-translate-y-1">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#dd6e3d] via-[#865ca2] to-[#5974d5]"></div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100/40 rounded-full blur-3xl pointer-events-none group-hover:bg-purple-200/40 transition-colors"></div>
-              
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#dd6e3d] via-[#865ca2] to-[#5974d5] flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 group-hover:scale-110 transition-transform relative z-10">
-                <Shield className="w-8 h-8 text-white" />
+            {/* Step 3: Green Pale */}
+            <div className="p-8 rounded-[32px] shadow-sm border border-[#D6F0C2] bg-gradient-to-br from-[#F2FAED] to-[#FFFFFF] flex flex-col items-start hover:-translate-y-1 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-6 text-green-600 shadow-sm">
+                <Shield className="w-7 h-7" />
               </div>
-              <h3 className="font-black text-xl mb-3 text-gray-900 relative z-10">3. 1-on-1 Video Call</h3>
-              <p className="text-sm text-gray-500 font-medium leading-relaxed relative z-10">Discuss the results with an expert to ensure your passion has real earning potential.</p>
+              <h3 className="font-black text-xl mb-3 text-gray-900">3. 1-on-1 Video Call</h3>
+              <p className="text-sm text-gray-600 font-medium leading-relaxed">Discuss the results with an expert to ensure your passion has real earning potential.</p>
             </div>
 
-            {/* Step 4: Execution Strategy - Sovereign Models Gradient */}
-            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center relative overflow-hidden group hover:shadow-xl hover:border-green-200 transition-all hover:-translate-y-1">
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#74ac49] to-[#dcead0]"></div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-100/40 rounded-full blur-3xl pointer-events-none group-hover:bg-green-200/40 transition-colors"></div>
-              
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#74ac49] to-[#dcead0] flex items-center justify-center mb-6 shadow-lg shadow-green-500/20 group-hover:scale-110 transition-transform relative z-10">
-                <TrendingUp className="w-8 h-8 text-white" />
+            {/* Step 4: Pink Pale */}
+            <div className="p-8 rounded-[32px] shadow-sm border border-[#F2CFE1] bg-gradient-to-br from-[#FDF0F6] to-[#FFFFFF] flex flex-col items-start hover:-translate-y-1 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-pink-100 flex items-center justify-center mb-6 text-pink-600 shadow-sm">
+                <TrendingUp className="w-7 h-7" />
               </div>
-              <h3 className="font-black text-xl mb-3 text-gray-900 relative z-10">4. Execution Strategy</h3>
-              <p className="text-sm text-gray-500 font-medium leading-relaxed relative z-10">Walk away with a concrete, workable roadmap to achieve your chosen goal.</p>
+              <h3 className="font-black text-xl mb-3 text-gray-900">4. Execution Strategy</h3>
+              <p className="text-sm text-gray-600 font-medium leading-relaxed">Walk away with a concrete, workable roadmap to achieve your chosen goal.</p>
             </div>
+
           </div>
         </div>
 

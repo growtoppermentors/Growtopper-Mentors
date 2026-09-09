@@ -78,7 +78,7 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         
         {/* AI Career Counseling Routes */}
-        <Route path="/career" element={<CareerLanding />} />
+        <Route path="/career-counseling" element={<CareerLanding />} />
         <Route path="/counseling-room" element={<CounselingRoom />} />
         <Route path="/report" element={<ReportCard />} />
         <Route path="/clarity-session" element={<ClaritySession />} />

@@ -74,6 +74,7 @@ export default function Footer({ onRequestInvite }) {
             <h4 className="font-black text-brand-dark text-[13px] uppercase tracking-widest mb-4">Program</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 max-w-[280px] mx-auto lg:mx-0 text-center lg:text-left">
               {[
+                { label: 'Career Counseling', href: '/career-counseling' },
                 { label: 'Curriculum', href: '#program' },
                 { label: 'Benefits', href: '#how-it-works' },
                 { label: 'Cohort', href: '#cohort' },
