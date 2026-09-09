@@ -1,4 +1,4 @@
-import { moreBlogs } from './moreBlogs';
+import { moreBlogs } from './moreBlogs.js';
 
 const initialBlogs = [
   {
