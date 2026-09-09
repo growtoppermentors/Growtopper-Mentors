@@ -19,6 +19,7 @@ import TermsOfService from './pages/TermsOfService';
 import CareerLanding from './pages/CareerLanding';
 import CounselingRoom from './pages/CounselingRoom';
 import ReportCard from './pages/ReportCard';
+import ClaritySession from './pages/ClaritySession';
 
 function HomePage({ openModal }) {
   return (
@@ -80,6 +81,7 @@ function App() {
         <Route path="/career" element={<CareerLanding />} />
         <Route path="/counseling-room" element={<CounselingRoom />} />
         <Route path="/report" element={<ReportCard />} />
+        <Route path="/clarity-session" element={<ClaritySession />} />
       </Routes>
       <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />
       <LiveNotification />
