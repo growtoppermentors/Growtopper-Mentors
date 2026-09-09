@@ -35,13 +35,13 @@ export default function BlogList({ onRequestInvite }) {
 
         {/* Featured Blog (Large Card) */}
         <Link to={`/blog/${featuredBlog.slug}`} className="group block mb-12 md:mb-20">
-          <div className="bg-white rounded-[32px] p-4 md:p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 md:gap-10 hover:shadow-xl hover:shadow-brand-purple/5 transition-all duration-500 relative overflow-hidden">
-            <div className="w-full md:w-3/5 h-[300px] md:h-[400px] rounded-[24px] overflow-hidden relative">
-              <img src={featuredBlog.image} alt={featuredBlog.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
-            </div>
-            
-            <div className="w-full md:w-2/5 flex flex-col justify-center py-4 md:py-8 md:pr-8">
+            <div className="bg-white rounded-[32px] p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-5 md:gap-8 hover:shadow-xl hover:shadow-brand-purple/5 transition-all duration-500 relative overflow-hidden items-stretch">
+              <div className="w-full md:w-1/2 h-[260px] md:h-auto md:min-h-[300px] lg:min-h-[340px] rounded-[24px] overflow-hidden relative">
+                <img src={featuredBlog.image} alt={featuredBlog.title} className="w-full h-full object-cover absolute inset-0 transform group-hover:scale-105 transition-transform duration-700 ease-out" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
+              </div>
+              
+              <div className="w-full md:w-1/2 flex flex-col justify-center py-2 md:py-6 lg:py-8 md:pr-6 lg:pr-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-[11px] font-black uppercase tracking-widest">{featuredBlog.category}</span>
                 <span className="text-[13px] font-bold text-gray-400">{featuredBlog.readTime}</span>
