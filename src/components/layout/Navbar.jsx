@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, ArrowRight, ChevronRight } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronRight, Zap, Rocket, Coins } from 'lucide-react';
 
 export default function Navbar({ onRequestInvite }) {
   const [scrolled, setScrolled] = useState(false);
@@ -31,9 +31,9 @@ export default function Navbar({ onRequestInvite }) {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: 'Clarity Session', href: '/clarity-session', emoji: '✨' },
-    { name: 'Program',  href: '/#program',  emoji: '🚀' },
-    { name: 'Pricing',  href: '/pricing',  emoji: '🪙' },
+    { name: 'Clarity Session', href: '/clarity-session', Icon: Zap },
+    { name: 'Program',  href: '/#program',  Icon: Rocket },
+    { name: 'Pricing',  href: '/pricing',  Icon: Coins },
   ];
 
   const handleNavClick = (e, href) => {
@@ -112,19 +112,19 @@ export default function Navbar({ onRequestInvite }) {
         <div className="bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-xl shadow-black/[0.08] mx-0">
           
           {/* Nav Links Grid */}
-          <div className="px-4 pt-3 pb-2 grid grid-cols-2 gap-1.5">
-            {navLinks.map((link, i) => (
+          <div className="px-4 pt-4 pb-2 grid grid-cols-1 gap-2.5">
+            {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`flex items-center gap-2.5 px-3.5 py-3 rounded-xl bg-gray-50 hover:bg-brand-purple/5 hover:text-brand-purple active:scale-[0.97] transition-all group ${
-                  i === navLinks.length - 1 && navLinks.length % 2 !== 0 ? 'col-span-2' : ''
-                }`}
+                className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-gray-50/80 hover:bg-brand-purple/5 hover:text-brand-purple border border-gray-100 hover:border-brand-purple/20 active:scale-[0.98] transition-all group"
               >
-                <span className="text-[16px] leading-none">{link.emoji}</span>
-                <span className="font-bold text-[14px] text-brand-dark group-hover:text-brand-purple transition-colors">{link.name}</span>
-                <ChevronRight className="w-3 h-3 text-gray-300 group-hover:text-brand-purple ml-auto transition-colors" />
+                <div className="w-9 h-9 rounded-[10px] bg-white border border-gray-100 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.04)] group-hover:border-brand-purple/30 group-hover:bg-brand-purple/5 transition-colors shrink-0">
+                  <link.Icon className="w-4 h-4 text-brand-dark group-hover:text-brand-purple transition-colors" />
+                </div>
+                <span className="font-bold text-[15px] text-brand-dark group-hover:text-brand-purple transition-colors tracking-tight">{link.name}</span>
+                <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-brand-purple ml-auto transition-colors" />
               </a>
             ))}
           </div>
