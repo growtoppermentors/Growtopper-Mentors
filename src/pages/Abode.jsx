@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ChevronRight, Check, Building2, MonitorPlay, Zap, Award } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
@@ -6,6 +6,31 @@ import Footer from '../components/layout/Footer';
 
 export default function Abode() {
   const navigate = useNavigate();
+  const tableContainerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting && window.innerWidth < 768) {
+        // Automatically scroll to the right smoothly so they see the Growtopper column
+        setTimeout(() => {
+          if (tableContainerRef.current) {
+            tableContainerRef.current.scrollTo({
+              left: 200, // scrolls to the right side
+              behavior: 'smooth'
+            });
+          }
+        }, 300); // Trigger quickly after it enters view
+        observer.disconnect(); // Only trigger once
+      }
+    }, { threshold: 0.5 }); // Trigger when 50% of the table is visible
+
+    if (tableContainerRef.current) {
+      observer.observe(tableContainerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const features = [
     { name: "Personalized Study Plans", offline: false, online: false, growtopper: true },
@@ -69,46 +94,46 @@ export default function Abode() {
       </section>
 
       {/* Comparison Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-32 pt-12 max-w-5xl mx-auto w-full">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#EBF4FF] border border-[#D1E4FF] text-[#0066FF] text-[9px] sm:text-[10px] font-black uppercase tracking-widest mb-5">
+      <section className="px-4 sm:px-6 lg:px-8 pb-20 pt-8 max-w-4xl mx-auto w-full">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#EBF4FF] border border-[#D1E4FF] text-[#0066FF] text-[9px] sm:text-[10px] font-black uppercase tracking-widest mb-4">
             <Award className="w-3.5 h-3.5" /> THE SMARTER CHOICE
           </div>
-          <h2 className="text-[32px] md:text-[40px] font-black text-brand-dark leading-[1.15] tracking-tight mb-3 text-balance">
+          <h2 className="text-[28px] md:text-[32px] font-black text-brand-dark leading-[1.15] tracking-tight mb-2 text-balance">
             Not a Coaching Class.<br/>Not just an App.
           </h2>
-          <p className="text-[15px] sm:text-[16px] text-gray-500 font-medium">
+          <p className="text-[14px] md:text-[15px] text-gray-500 font-medium">
             See why parents are making the switch.
           </p>
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white rounded-[32px] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[600px]">
+        <div className="bg-white rounded-[24px] md:rounded-[32px] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden">
+          <div className="overflow-x-auto scroll-smooth" ref={tableContainerRef}>
+            <table className="w-full text-left border-collapse min-w-[500px] md:min-w-[600px]">
               <thead>
                 <tr>
-                  <th className="p-6 md:p-8 w-[40%] align-bottom">
-                    <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest">FEATURE</span>
+                  <th className="p-4 md:p-5 w-[40%] align-bottom">
+                    <span className="text-[10px] md:text-[11px] font-black text-gray-400 uppercase tracking-widest">FEATURE</span>
                   </th>
-                  <th className="p-6 md:p-8 w-[20%] text-center align-bottom border-l border-gray-100">
-                    <div className="flex flex-col items-center gap-2.5">
-                      <Building2 className="w-6 h-6 text-gray-400" strokeWidth={1.5} />
-                      <span className="text-[12px] sm:text-[13px] font-bold text-gray-700 leading-tight">Offline<br/>Coaching</span>
+                  <th className="p-4 md:p-5 w-[20%] text-center align-bottom border-l border-gray-100">
+                    <div className="flex flex-col items-center gap-2">
+                      <Building2 className="w-5 h-5 md:w-6 md:h-6 text-gray-400" strokeWidth={1.5} />
+                      <span className="text-[11px] md:text-[12px] font-bold text-gray-700 leading-tight">Offline<br/>Coaching</span>
                     </div>
                   </th>
-                  <th className="p-6 md:p-8 w-[20%] text-center align-bottom border-l border-gray-100">
-                    <div className="flex flex-col items-center gap-2.5">
-                      <MonitorPlay className="w-6 h-6 text-gray-400" strokeWidth={1.5} />
-                      <span className="text-[12px] sm:text-[13px] font-bold text-gray-700 leading-tight">Online<br/>Apps</span>
+                  <th className="p-4 md:p-5 w-[20%] text-center align-bottom border-l border-gray-100">
+                    <div className="flex flex-col items-center gap-2">
+                      <MonitorPlay className="w-5 h-5 md:w-6 md:h-6 text-gray-400" strokeWidth={1.5} />
+                      <span className="text-[11px] md:text-[12px] font-bold text-gray-700 leading-tight">Online<br/>Apps</span>
                     </div>
                   </th>
-                  <th className="p-6 md:p-8 w-[20%] text-center align-bottom border-l border-gray-100 bg-[#F9F4FF]">
-                    <div className="flex flex-col items-center gap-2.5">
-                      <div className="w-7 h-7 rounded-full bg-[#5B10FF] flex items-center justify-center text-white shadow-sm shadow-[#5B10FF]/30">
-                        <Zap className="w-4 h-4 fill-current" />
+                  <th className="p-4 md:p-5 w-[20%] text-center align-bottom border-l border-gray-100 bg-[#F9F4FF]">
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-[#5B10FF] flex items-center justify-center text-white shadow-sm shadow-[#5B10FF]/30">
+                        <Zap className="w-3.5 h-3.5 md:w-4 md:h-4 fill-current" />
                       </div>
-                      <span className="text-[13px] sm:text-[14px] font-bold text-[#5B10FF]">Growtopper</span>
+                      <span className="text-[12px] md:text-[13px] font-bold text-[#5B10FF]">Growtopper</span>
                     </div>
                   </th>
                 </tr>
@@ -116,26 +141,26 @@ export default function Abode() {
               <tbody className="divide-y divide-gray-100">
                 {features.map((feature, i) => (
                   <tr key={i} className="hover:bg-gray-50/50 transition-colors">
-                    <td className="p-5 md:px-8 md:py-6">
-                      <span className="text-[14px] font-medium text-gray-600">{feature.name}</span>
+                    <td className="p-4 md:px-5 md:py-4">
+                      <span className="text-[13px] md:text-[14px] font-medium text-gray-600">{feature.name}</span>
                     </td>
-                    <td className="p-5 md:px-8 md:py-6 text-center border-l border-gray-100">
+                    <td className="p-4 md:px-5 md:py-4 text-center border-l border-gray-100">
                       {feature.offline ? (
                         <Check className="w-4 h-4 text-gray-300 mx-auto" />
                       ) : (
                         <span className="text-gray-300 font-medium">-</span>
                       )}
                     </td>
-                    <td className="p-5 md:px-8 md:py-6 text-center border-l border-gray-100">
+                    <td className="p-4 md:px-5 md:py-4 text-center border-l border-gray-100">
                       {feature.online ? (
                         <Check className="w-4 h-4 text-gray-300 mx-auto" />
                       ) : (
                         <span className="text-gray-300 font-medium">-</span>
                       )}
                     </td>
-                    <td className="p-5 md:px-8 md:py-6 text-center border-l border-gray-100 bg-[#F9F4FF]">
+                    <td className="p-4 md:px-5 md:py-4 text-center border-l border-gray-100 bg-[#F9F4FF]">
                       <div className="w-5 h-5 rounded-full bg-[#5B10FF] flex items-center justify-center mx-auto shadow-sm shadow-[#5B10FF]/20">
-                        <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+                        <Check className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" strokeWidth={3} />
                       </div>
                     </td>
                   </tr>
