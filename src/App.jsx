@@ -22,6 +22,8 @@ import CareerLanding from './pages/CareerLanding';
 import CounselingRoom from './pages/CounselingRoom';
 import ReportCard from './pages/ReportCard';
 import ClaritySession from './pages/ClaritySession';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
 
 function HomePage({ openModal }) {
   return (
@@ -80,6 +82,8 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/abode" element={<Abode />} />
         <Route path="/pricing" element={<PricingPage onRequestInvite={openModal} />} />
+        <Route path="/blog" element={<BlogList onRequestInvite={openModal} />} />
+        <Route path="/blog/:slug" element={<BlogPost onRequestInvite={openModal} />} />
         
         {/* AI Career Counseling Routes */}
         <Route path="/career-counseling" element={<CareerLanding />} />
