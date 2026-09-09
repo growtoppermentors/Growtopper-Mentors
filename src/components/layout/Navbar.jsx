@@ -33,12 +33,7 @@ export default function Navbar({ onRequestInvite }) {
   const navLinks = [
     { name: 'Clarity Session', href: '/clarity-session', emoji: '✨' },
     { name: 'Program',  href: '/#program',  emoji: '🚀' },
-    { name: 'Syllabus', href: '/#syllabus', emoji: '🗂️' },
-    { name: 'Benefits', href: '/#benefits', emoji: '✦' },
-    { name: 'Cohort',   href: '/#cohort',   emoji: '🎓' },
-    { name: 'Reviews',  href: '/#results',  emoji: '🏅' },
     { name: 'Pricing',  href: '/pricing',  emoji: '🪙' },
-    { name: 'FAQ',      href: '/#faq',      emoji: '🔍' },
   ];
 
   const handleNavClick = (e, href) => {
