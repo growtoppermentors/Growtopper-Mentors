@@ -109,43 +109,51 @@ export default function CareerLanding() {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Step 1: AI SWOT Test - Dashboard Gradient */}
-            <div className="p-6 rounded-[32px] shadow-lg flex flex-col items-center text-center bg-gradient-to-br from-[#cd5d10] via-[#f29c54] to-[#d4e3f5] text-white relative overflow-hidden group hover:-translate-y-1 transition-transform">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-              <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 border border-white/30 shadow-sm group-hover:scale-110 transition-transform">
-                <Brain className="w-7 h-7 text-white" />
+            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center relative overflow-hidden group hover:shadow-xl hover:border-orange-200 transition-all hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#cd5d10] via-[#f29c54] to-[#d4e3f5]"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100/40 rounded-full blur-3xl pointer-events-none group-hover:bg-orange-200/40 transition-colors"></div>
+              
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#cd5d10] via-[#f29c54] to-[#d4e3f5] flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform relative z-10">
+                <Brain className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-black text-xl mb-3 drop-shadow-sm">1. AI SWOT Test</h3>
-              <p className="text-sm text-white/90 font-medium leading-relaxed drop-shadow-sm">A 30-min interactive chat to evaluate your strengths, weaknesses, and habits.</p>
+              <h3 className="font-black text-xl mb-3 text-gray-900 relative z-10">1. AI SWOT Test</h3>
+              <p className="text-sm text-gray-500 font-medium leading-relaxed relative z-10">A 30-min interactive chat to evaluate your strengths, weaknesses, and habits.</p>
             </div>
 
             {/* Step 2: Report Generation - Startup Program Gradient */}
-            <div className="p-6 rounded-[32px] shadow-lg flex flex-col items-center text-center bg-gradient-to-br from-[#6974d6] to-[#b5c2f2] text-white relative overflow-hidden group hover:-translate-y-1 transition-transform">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-              <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 border border-white/30 shadow-sm group-hover:scale-110 transition-transform">
-                <BarChart className="w-7 h-7 text-white" />
+            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center relative overflow-hidden group hover:shadow-xl hover:border-blue-200 transition-all hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#6974d6] to-[#b5c2f2]"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/40 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-200/40 transition-colors"></div>
+              
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#6974d6] to-[#b5c2f2] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform relative z-10">
+                <BarChart className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-black text-xl mb-3 drop-shadow-sm">2. Report Generation</h3>
-              <p className="text-sm text-white/90 font-medium leading-relaxed drop-shadow-sm">A detailed report card highlighting your current growth stage and market opportunities.</p>
+              <h3 className="font-black text-xl mb-3 text-gray-900 relative z-10">2. Report Generation</h3>
+              <p className="text-sm text-gray-500 font-medium leading-relaxed relative z-10">A detailed report card highlighting your current growth stage and market opportunities.</p>
             </div>
 
             {/* Step 3: 1-on-1 Video Call - Brand Gradient */}
-            <div className="p-6 rounded-[32px] shadow-lg flex flex-col items-center text-center bg-gradient-to-br from-[#dd6e3d] via-[#865ca2] to-[#5974d5] text-white relative overflow-hidden group hover:-translate-y-1 transition-transform">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-              <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 border border-white/30 shadow-sm group-hover:scale-110 transition-transform">
-                <Shield className="w-7 h-7 text-white" />
+            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center relative overflow-hidden group hover:shadow-xl hover:border-purple-200 transition-all hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#dd6e3d] via-[#865ca2] to-[#5974d5]"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100/40 rounded-full blur-3xl pointer-events-none group-hover:bg-purple-200/40 transition-colors"></div>
+              
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#dd6e3d] via-[#865ca2] to-[#5974d5] flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20 group-hover:scale-110 transition-transform relative z-10">
+                <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-black text-xl mb-3 drop-shadow-sm">3. 1-on-1 Video Call</h3>
-              <p className="text-sm text-white/90 font-medium leading-relaxed drop-shadow-sm">Discuss the results with an expert to ensure your passion has real earning potential.</p>
+              <h3 className="font-black text-xl mb-3 text-gray-900 relative z-10">3. 1-on-1 Video Call</h3>
+              <p className="text-sm text-gray-500 font-medium leading-relaxed relative z-10">Discuss the results with an expert to ensure your passion has real earning potential.</p>
             </div>
 
             {/* Step 4: Execution Strategy - Sovereign Models Gradient */}
-            <div className="p-6 rounded-[32px] shadow-lg flex flex-col items-center text-center bg-gradient-to-br from-[#74ac49] to-[#dcead0] text-gray-900 relative overflow-hidden group hover:-translate-y-1 transition-transform">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full blur-2xl -mr-10 -mt-10"></div>
-              <div className="w-14 h-14 bg-white/40 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 border border-white/50 shadow-sm group-hover:scale-110 transition-transform">
-                <TrendingUp className="w-7 h-7 text-[#5a8b36]" />
+            <div className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 flex flex-col items-center text-center relative overflow-hidden group hover:shadow-xl hover:border-green-200 transition-all hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#74ac49] to-[#dcead0]"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-100/40 rounded-full blur-3xl pointer-events-none group-hover:bg-green-200/40 transition-colors"></div>
+              
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#74ac49] to-[#dcead0] flex items-center justify-center mb-6 shadow-lg shadow-green-500/20 group-hover:scale-110 transition-transform relative z-10">
+                <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-black text-xl mb-3 drop-shadow-sm text-[#3b6021]">4. Execution Strategy</h3>
-              <p className="text-sm text-[#4a752b] font-bold leading-relaxed">Walk away with a concrete, workable roadmap to achieve your chosen goal.</p>
+              <h3 className="font-black text-xl mb-3 text-gray-900 relative z-10">4. Execution Strategy</h3>
+              <p className="text-sm text-gray-500 font-medium leading-relaxed relative z-10">Walk away with a concrete, workable roadmap to achieve your chosen goal.</p>
             </div>
           </div>
         </div>
