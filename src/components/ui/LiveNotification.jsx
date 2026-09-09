@@ -1,31 +1,73 @@
 import React, { useState, useEffect } from 'react';
 
-const NOTIFICATIONS = [
-  { name: "Rohan's parent", city: 'Delhi', action: 'requested an invite' },
-  { name: "Priya's parent", city: 'Mumbai', action: 'secured a cohort seat' },
-  { name: "Aarav's parent", city: 'Bangalore', action: 'requested an invite' },
-  { name: "Sneha's parent", city: 'Pune', action: 'just applied for grade 9' },
-  { name: "Kabir's parent", city: 'Hyderabad', action: 'requested an invite' },
-  { name: "Ananya's parent", city: 'Chennai', action: 'just applied for grade 7' },
-  { name: "Vihaan's parent", city: 'Gurgaon', action: 'secured a cohort seat' },
-  { name: "A Parent", city: 'Ahmedabad', action: 'requested an invite' },
-  { name: "Kavya's parent", city: 'Kolkata', action: 'just applied for grade 8' }
+const NAMES = [
+  "Aarav", "Aditi", "Aditya", "Akshay", "Ananya", "Aniket", "Anjali", "Ansh", "Anushka", "Aryan",
+  "Ayush", "Bhavya", "Chaitanya", "Deepak", "Dev", "Dhruv", "Diya", "Gaurav", "Gauri", "Harsh",
+  "Hrithik", "Ishaan", "Ishita", "Janvi", "Kabir", "Karan", "Karthik", "Kavya", "Kiara", "Krish",
+  "Kriti", "Lakshya", "Madhav", "Manish", "Meera", "Mihir", "Myra", "Nakul", "Neha", "Nikhil",
+  "Nisha", "Nitin", "Om", "Palak", "Parth", "Pooja", "Pranav", "Pratham", "Pratik", "Priya",
+  "Priyanka", "Rahul", "Raj", "Rajat", "Riya", "Rohan", "Rohit", "Ruchi", "Rudrash", "Sahil",
+  "Samar", "Sameer", "Sanjay", "Sanya", "Sarthak", "Saurabh", "Shikha", "Shivam", "Shreya", "Shruti",
+  "Siddharth", "Simran", "Sneha", "Soham", "Sonal", "Soumya", "Sparsh", "Srishti", "Surya", "Tanmay",
+  "Tanya", "Tarun", "Tejas", "Trisha", "Uday", "Utkarsh", "Vaibhav", "Varun", "Vedant", "Vidhi",
+  "Vidyut", "Vikas", "Vinay", "Virat", "Vishal", "Vivek", "Yash", "Yuvraj", "Zara", "Zoya"
 ];
+
+const CITIES = [
+  "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Pune", 
+  "Chennai", "Kolkata", "Ahmedabad", "Jaipur", "Surat",
+  "Lucknow", "Chandigarh", "Indore", "Nagpur", "Patna",
+  "Bhopal", "Vadodara", "Ludhiana", "Agra", "Nashik"
+];
+
+const ACTIONS = [
+  "booked a Clarity Session",
+  "unlocked their AI Growth Report",
+  "started the AI SWOT Test",
+  "scheduled a 1-on-1 Mentor Call",
+  "requested an invite",
+  "secured a spot in the next cohort",
+  "completed the AI Career Assessment",
+  "upgraded to the premium roadmap",
+  "downloaded their personalized plan",
+  "joined the Growtopper community",
+  "claimed the ₹299 special offer",
+  "booked a strategy call with a founder",
+  "is analyzing their 10 growth parameters",
+  "took the first step towards clarity",
+  "locked in their 1-on-1 video call",
+  "received their academic roadmap",
+  "finished the Growtch AI interview",
+  "verified their student profile",
+  "unlocked their custom study strategy",
+  "is discovering their true zone of genius"
+];
+
+// Pre-generate a shuffled list of 100 unique notifications so they don't repeat quickly
+const generateNotifications = () => {
+  const shuffledNames = [...NAMES].sort(() => 0.5 - Math.random());
+  return shuffledNames.map(name => ({
+    name: `${name}'s parent`,
+    city: CITIES[Math.floor(Math.random() * CITIES.length)],
+    action: ACTIONS[Math.floor(Math.random() * ACTIONS.length)]
+  }));
+};
+
+const NOTIFICATIONS = generateNotifications();
 
 export default function LiveNotification() {
   const [current, setCurrent] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    let hideTimeout;
-    let nextTimeout;
-    let isMounted = true;
+    let localIndex = 0; // use local variable for timeout closures
 
     const showNext = () => {
       if (!isMounted) return;
-      const random = NOTIFICATIONS[Math.floor(Math.random() * NOTIFICATIONS.length)];
-      setCurrent(random);
+      const notification = NOTIFICATIONS[localIndex % NOTIFICATIONS.length];
+      setCurrent(notification);
       setIsVisible(true);
+      localIndex++;
 
       // Hide after 5 seconds
       hideTimeout = setTimeout(() => {

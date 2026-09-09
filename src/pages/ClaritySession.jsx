@@ -32,18 +32,18 @@ export default function ClaritySession() {
             <span className="w-2 h-2 rounded-full bg-brand-purple animate-pulse"></span>
             The 60-Minute Turning Point
           </div>
-          <h1 className="text-[40px] md:text-[64px] font-black leading-[1.1] tracking-tight mb-6 max-w-4xl mx-auto text-balance">
-            Stop guessing. Discover your child's <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-purple-400">Real Growth Score.</span>
+          <h1 className="text-[40px] md:text-[56px] font-black leading-[1.1] tracking-tight mb-6 max-w-4xl mx-auto text-balance text-gray-900">
+            1-on-1 Video Call for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-purple-500">Student Growth Check.</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 font-medium max-w-2xl mx-auto mb-10 text-balance leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-500 font-medium max-w-2xl mx-auto mb-10 text-balance leading-relaxed">
             A comprehensive 60-minute intervention: 30 minutes of deep AI-powered SWOT analysis, followed by a 30-minute 1-on-1 Mentor strategy call to decode the reality and build an execution roadmap.
           </p>
           
           <button 
             onClick={() => navigate('/counseling-room')}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-purple text-white font-black text-lg hover:bg-brand-purple/90 transition-all shadow-xl shadow-brand-purple/20 hover:-translate-y-1"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-purple to-purple-500 text-white font-black text-lg hover:opacity-90 transition-all shadow-xl shadow-brand-purple/10 hover:-translate-y-1"
           >
-            Book Your Clarity Session <ArrowRight className="w-5 h-5" />
+            Take Free AI SWOT Test <ArrowRight className="w-5 h-5" />
           </button>
         </div>
 
@@ -154,45 +154,45 @@ export default function ClaritySession() {
             </div>
 
             {/* AI Brain */}
-            <div className="flex-1 bg-[#2A2A2A] text-white p-8 md:p-12 rounded-[32px] shadow-xl">
-              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 border border-white/5">
-                <Brain className="w-7 h-7 text-gray-300" />
+            <div className="flex-1 bg-white border border-gray-100 p-8 md:p-12 rounded-[32px] shadow-lg text-gray-900">
+              <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 border border-gray-200">
+                <Brain className="w-7 h-7 text-gray-700" />
               </div>
               <h3 className="text-2xl font-black mb-8">The AI Brain</h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
-                  <Target className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                  <span className="text-gray-300 font-medium text-sm leading-relaxed">Analyzes the 30-min psychology & focus test to identify learning gaps.</span>
+                  <Target className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
+                  <span className="text-gray-600 font-medium text-sm leading-relaxed">Analyzes the 30-min psychology & focus test to identify learning gaps.</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <FileText className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                  <span className="text-gray-300 font-medium text-sm leading-relaxed">Generates hyper-personalized, realistic daily study roadmaps.</span>
+                  <FileText className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
+                  <span className="text-gray-600 font-medium text-sm leading-relaxed">Generates hyper-personalized, realistic daily study roadmaps.</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <Activity className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                  <span className="text-gray-300 font-medium text-sm leading-relaxed">Tracks habit streaks and automatically flags burnout risks.</span>
+                  <Activity className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
+                  <span className="text-gray-600 font-medium text-sm leading-relaxed">Tracks habit streaks and automatically flags burnout risks.</span>
                 </li>
               </ul>
             </div>
 
             {/* Human Heart */}
-            <div className="flex-1 bg-brand-purple text-white p-8 md:p-12 rounded-[32px] shadow-xl shadow-brand-purple/20">
-              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 border border-white/10">
-                <Heart className="w-7 h-7 text-white" />
+            <div className="flex-1 bg-gradient-to-br from-[#F8F9FE] to-purple-50 text-gray-900 p-8 md:p-12 rounded-[32px] shadow-lg border border-purple-100">
+              <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-8 border border-purple-100 shadow-sm">
+                <Heart className="w-7 h-7 text-brand-purple" />
               </div>
               <h3 className="text-2xl font-black mb-8">The Human Heart</h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
-                  <Users className="w-5 h-5 text-white/80 shrink-0 mt-0.5" />
-                  <span className="text-white/90 font-medium text-sm leading-relaxed">1-on-1 weekly video calls to review progress and remove blockers.</span>
+                  <Users className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
+                  <span className="text-gray-700 font-medium text-sm leading-relaxed">1-on-1 weekly video calls to review progress and remove blockers.</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <Shield className="w-5 h-5 text-white/80 shrink-0 mt-0.5" />
-                  <span className="text-white/90 font-medium text-sm leading-relaxed">Provides deep emotional support and builds real-world confidence.</span>
+                  <Shield className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
+                  <span className="text-gray-700 font-medium text-sm leading-relaxed">Provides deep emotional support and builds real-world confidence.</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-white/80 shrink-0 mt-0.5" />
-                  <span className="text-white/90 font-medium text-sm leading-relaxed">Strict but friendly daily accountability to ensure the AI plan is actually executed.</span>
+                  <CheckCircle2 className="w-5 h-5 text-brand-purple shrink-0 mt-0.5" />
+                  <span className="text-gray-700 font-medium text-sm leading-relaxed">Strict but friendly daily accountability to ensure the AI plan is actually executed.</span>
                 </li>
               </ul>
             </div>
