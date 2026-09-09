@@ -439,6 +439,228 @@ export default function Abode() {
         </div>
       </section>
 
+      {/* TESTIMONIALS SECTION */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-32 max-w-6xl mx-auto w-full">
+        {/* Headings */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-purple/5 text-brand-purple text-[10px] font-black uppercase tracking-widest mb-4">
+            TESTIMONIALS
+          </div>
+          <h2 className="text-[32px] md:text-[44px] font-black text-brand-dark leading-[1.1] tracking-tight mb-4 text-balance">
+            Real People. Real Stories.<br/><span className="text-[#5B10FF]">Real Growth.</span>
+          </h2>
+          <p className="text-[14px] md:text-[16px] text-gray-500 font-medium max-w-2xl mx-auto leading-relaxed">
+            From better habits to bigger dreams — hear from students and parents who are building a brighter future with Growtopper.
+          </p>
+        </div>
+
+        {/* Stats Row */}
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-16 mb-16">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </div>
+            <div>
+              <div className="font-black text-[18px] text-brand-dark leading-none">500+</div>
+              <div className="text-[11px] font-medium text-gray-500">Students Mentored</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
+            </div>
+            <div>
+              <div className="font-black text-[18px] text-brand-dark leading-none">4.8/5</div>
+              <div className="text-[11px] font-medium text-gray-500">Trusted by Parents</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple">
+              <TrendingUp className="w-5 h-5" strokeWidth={2.5} />
+            </div>
+            <div>
+              <div className="font-black text-[18px] text-brand-dark leading-none">90%</div>
+              <div className="text-[11px] font-medium text-gray-500">Show Improved Discipline</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple">
+              <BookOpen className="w-5 h-5" strokeWidth={2.5} />
+            </div>
+            <div>
+              <div className="font-black text-[18px] text-brand-dark leading-none">6-12</div>
+              <div className="text-[11px] font-medium text-gray-500">Grades We Support</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Featured Video Card */}
+        <div className="bg-white rounded-[32px] border border-gray-100 shadow-[0_12px_40px_rgb(0,0,0,0.04)] p-4 md:p-6 mb-20 flex flex-col md:flex-row gap-6 md:gap-10 hover:shadow-[0_12px_40px_rgba(91,16,255,0.06)] transition-all">
+          {/* Video Container */}
+          <div className="w-full md:w-1/2 aspect-video md:aspect-[4/3] rounded-[24px] overflow-hidden relative border border-gray-100 bg-gray-900 group">
+            <iframe 
+              src="https://www.youtube.com/embed/jNQXAC9IVRw?controls=0&rel=0&showinfo=0" 
+              title="Growtopper Educational Demo"
+              className="w-full h-full object-cover"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+            <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md rounded-xl px-4 py-2 text-white border border-white/10 pointer-events-none">
+              <h4 className="font-bold text-[14px]">Arjun S.</h4>
+              <p className="text-[11px] opacity-80 font-medium">Grade 9, Bhubaneswar</p>
+            </div>
+          </div>
+          
+          {/* Content Container */}
+          <div className="w-full md:w-1/2 flex flex-col justify-center py-4 md:py-8 md:pr-8">
+            <div className="inline-block px-3 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[9px] font-black uppercase tracking-widest mb-6 self-start">
+              STUDENT STORY
+            </div>
+            <h3 className="text-[22px] md:text-[28px] font-black text-brand-dark leading-[1.2] tracking-tight mb-5">
+              “Growtopper helped me get clarity and focus. I now study with a plan and feel much <span className="text-[#5B10FF]">more confident.</span>”
+            </h3>
+            <p className="text-[14px] md:text-[15px] text-gray-500 font-medium mb-8 leading-relaxed">
+              The AI test showed me my strengths and where I was wasting time. My mentor helped me build a routine, and the 30-day challenge really changed my habits.
+            </p>
+            
+            <div className="flex flex-wrap gap-3">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-100 text-[11px] font-bold text-gray-700">
+                <Target className="w-3.5 h-3.5 text-brand-purple" /> Better Focus
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-100 text-[11px] font-bold text-gray-700">
+                <Calendar className="w-3.5 h-3.5 text-brand-purple" /> Structured Routine
+              </div>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-100 text-[11px] font-bold text-gray-700">
+                <svg className="w-3.5 h-3.5 text-brand-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                More Confidence
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Card Grid */}
+        <div className="text-center mb-10">
+          <div className="text-[10px] font-black text-brand-purple uppercase tracking-widest mb-2">MORE SUCCESS STORIES</div>
+          <h2 className="text-[28px] md:text-[36px] font-black text-brand-dark leading-[1.1] tracking-tight">
+            Different Journeys. Same Growth.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {/* Card 1 */}
+          <div className="bg-white rounded-[24px] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] p-6 md:p-8 hover:-translate-y-1 transition-transform duration-300">
+            <div className="flex justify-between items-start mb-6">
+              <svg className="w-8 h-8 text-[#EBF4FF] fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+              <div className="px-2.5 py-1 rounded-md bg-green-50 text-green-600 text-[8px] font-black uppercase tracking-widest">PARENT STORY</div>
+            </div>
+            <h3 className="text-[18px] font-black text-brand-dark leading-snug mb-3">
+              “We finally see <span className="text-[#5B10FF]">real progress</span> in our child.”
+            </h3>
+            <p className="text-[13px] text-gray-500 font-medium leading-relaxed mb-8">
+              Growtopper gave our daughter the clarity and structure she needed. The weekly reports keep us informed, and her confidence has improved so much.
+            </p>
+            <div className="flex items-center gap-3">
+              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Priya&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100" alt="Parent" />
+              <div>
+                <h4 className="font-bold text-[13px] text-gray-800">Priya Mehta</h4>
+                <p className="text-[10px] text-gray-400 font-medium">Parent of Grade 8 Student</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-white rounded-[24px] border border-[#5B10FF]/15 shadow-[0_8px_30px_rgb(91,16,255,0.06)] p-6 md:p-8 hover:-translate-y-1 transition-transform duration-300">
+            <div className="flex justify-between items-start mb-6">
+              <svg className="w-8 h-8 text-[#F9F4FF] fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+              <div className="px-2.5 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[8px] font-black uppercase tracking-widest">STUDENT STORY</div>
+            </div>
+            <h3 className="text-[18px] font-black text-brand-dark leading-snug mb-3">
+              “I learned skills <span className="text-[#5B10FF]">beyond academics.</span>”
+            </h3>
+            <p className="text-[13px] text-gray-500 font-medium leading-relaxed mb-8">
+              The 6 skills training — especially communication and finance — has helped me think differently about my future. It's not just about marks anymore.
+            </p>
+            <div className="flex items-center gap-3">
+              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Rohan&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-purple-50 border border-purple-100" alt="Student" />
+              <div>
+                <h4 className="font-bold text-[13px] text-gray-800">Rohan K.</h4>
+                <p className="text-[10px] text-gray-400 font-medium">Grade 10, Bhubaneswar</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-white rounded-[24px] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] p-6 md:p-8 hover:-translate-y-1 transition-transform duration-300">
+            <div className="flex justify-between items-start mb-6">
+              <svg className="w-8 h-8 text-[#EBF4FF] fill-current" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+              <div className="px-2.5 py-1 rounded-md bg-green-50 text-green-600 text-[8px] font-black uppercase tracking-widest">PARENT STORY</div>
+            </div>
+            <h3 className="text-[18px] font-black text-brand-dark leading-snug mb-3">
+              “It's not a coaching class. It's <span className="text-[#5B10FF]">what our child needed.</span>”
+            </h3>
+            <p className="text-[13px] text-gray-500 font-medium leading-relaxed mb-8">
+              We tried multiple tuitions, but nothing changed. Growtopper focuses on the real issues — discipline, mindset and consistent execution. Highly recommended!
+            </p>
+            <div className="flex items-center gap-3">
+              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Sandeep&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100" alt="Parent" />
+              <div>
+                <h4 className="font-bold text-[13px] text-gray-800">Sandeep Rao</h4>
+                <p className="text-[10px] text-gray-400 font-medium">Parent of Grade 9 Student</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Small Quotes Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-20 border-t border-gray-100 pt-8">
+          <div>
+            <p className="text-[13px] font-bold text-gray-800 leading-snug mb-2">"My child is now more organized and calm."</p>
+            <p className="text-[10px] text-gray-400 font-medium">— Parent, Grade 7</p>
+          </div>
+          <div>
+            <p className="text-[13px] font-bold text-gray-800 leading-snug mb-2">"The mentor actually listens and understands."</p>
+            <p className="text-[10px] text-gray-400 font-medium">— Student, Grade 9</p>
+          </div>
+          <div>
+            <p className="text-[13px] font-bold text-gray-800 leading-snug mb-2">"Great platform for holistic development."</p>
+            <p className="text-[10px] text-gray-400 font-medium">— Parent, Grade 10</p>
+          </div>
+          <div>
+            <p className="text-[13px] font-bold text-gray-800 leading-snug mb-2">"I feel more prepared for my future now."</p>
+            <p className="text-[10px] text-gray-400 font-medium">— Student, Grade 11</p>
+          </div>
+        </div>
+
+        {/* CTA Banner */}
+        <div className="bg-[#F9F4FF] rounded-[32px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-[#5B10FF]/10 shadow-[0_20px_60px_rgba(91,16,255,0.06)] relative overflow-hidden">
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#5B10FF]/5 rounded-full blur-3xl"></div>
+          
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 relative z-10 text-center md:text-left">
+            <div className="flex -space-x-3">
+              {['A', 'B', 'C', 'D'].map((seed, i) => (
+                <img key={i} src={`https://api.dicebear.com/9.x/notionists/svg?seed=${seed}&backgroundColor=transparent`} className="w-12 h-12 rounded-full border-2 border-white bg-white shadow-sm" alt="Student avatar" />
+              ))}
+              <div className="w-12 h-12 rounded-full border-2 border-white bg-white shadow-sm flex items-center justify-center text-[11px] font-black text-[#5B10FF]">+500</div>
+            </div>
+            
+            <div>
+              <h3 className="text-[24px] md:text-[28px] font-black text-brand-dark leading-tight mb-1">Your Child's Growth Story Could Be Next.</h3>
+              <p className="text-[14px] text-gray-500 font-medium">Join 500+ families who trust Growtopper.</p>
+            </div>
+          </div>
+          
+          <div className="relative z-10 flex flex-col items-center md:items-end">
+            <button 
+              onClick={() => navigate('/career-counseling')}
+              className="bg-[#5B10FF] text-white px-8 py-3.5 rounded-full font-bold text-[14px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-[#5B10FF]/30 flex items-center gap-2 mb-3 w-full md:w-auto justify-center"
+            >
+              Start Today <ChevronRight className="w-4 h-4" />
+            </button>
+            <p className="text-[10px] text-gray-400 font-medium">Not a Coaching Class. Not an App.<br/>A Mentor for Everything.</p>
+          </div>
+        </div>
+      </section>
+
       <Footer onRequestInvite={() => navigate('/counseling-room')} />
     </div>
   );
