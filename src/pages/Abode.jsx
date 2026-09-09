@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { ChevronRight, Check, Building2, MonitorPlay, Zap, Award, Cpu, MessageSquare, TrendingUp, Lightbulb, BookOpen, Target, Calendar, FileText, Video } from 'lucide-react';
+import { ChevronRight, Check, Building2, MonitorPlay, Zap, Award, Cpu, MessageSquare, TrendingUp, Lightbulb, BookOpen, Target, Calendar, FileText, Video, Star, Heart, Shield, Users, GraduationCap, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
@@ -455,41 +455,41 @@ export default function Abode() {
         </div>
 
         {/* Stats Row */}
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-16 mb-16">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 max-w-5xl mx-auto place-items-center md:place-items-start">
+          <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 w-full max-w-[160px]">
+            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple shrink-0">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
             </div>
             <div>
-              <div className="font-black text-[18px] text-brand-dark leading-none">500+</div>
-              <div className="text-[11px] font-medium text-gray-500">Students Mentored</div>
+              <div className="font-black text-[18px] text-brand-dark leading-none mb-1">500+</div>
+              <div className="text-[11px] font-medium text-gray-500 leading-tight">Students Mentored</div>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple">
+          <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 w-full max-w-[160px]">
+            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple shrink-0">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
             </div>
             <div>
-              <div className="font-black text-[18px] text-brand-dark leading-none">4.8/5</div>
-              <div className="text-[11px] font-medium text-gray-500">Trusted by Parents</div>
+              <div className="font-black text-[18px] text-brand-dark leading-none mb-1">4.8/5</div>
+              <div className="text-[11px] font-medium text-gray-500 leading-tight">Trusted by Parents</div>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple">
+          <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 w-full max-w-[160px]">
+            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple shrink-0">
               <TrendingUp className="w-5 h-5" strokeWidth={2.5} />
             </div>
             <div>
-              <div className="font-black text-[18px] text-brand-dark leading-none">90%</div>
-              <div className="text-[11px] font-medium text-gray-500">Show Improved Discipline</div>
+              <div className="font-black text-[18px] text-brand-dark leading-none mb-1">90%</div>
+              <div className="text-[11px] font-medium text-gray-500 leading-tight">Show Improved Discipline</div>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple">
+          <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 w-full max-w-[160px]">
+            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple shrink-0">
               <BookOpen className="w-5 h-5" strokeWidth={2.5} />
             </div>
             <div>
-              <div className="font-black text-[18px] text-brand-dark leading-none">6-12</div>
-              <div className="text-[11px] font-medium text-gray-500">Grades We Support</div>
+              <div className="font-black text-[18px] text-brand-dark leading-none mb-1">6-12</div>
+              <div className="text-[11px] font-medium text-gray-500 leading-tight">Grades We Support</div>
             </div>
           </div>
         </div>
@@ -628,6 +628,160 @@ export default function Abode() {
           <div>
             <p className="text-[13px] font-bold text-gray-800 leading-snug mb-2">"I feel more prepared for my future now."</p>
             <p className="text-[10px] text-gray-400 font-medium">— Student, Grade 11</p>
+          </div>
+        </div>
+
+        {/* OUR MENTORS SECTION */}
+        <div className="mb-24">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12 relative">
+            <div className="absolute -left-12 top-0 -rotate-12 hidden lg:block text-[#5B10FF] font-medium text-[20px] leading-tight" style={{ fontFamily: 'Caveat, cursive' }}>Real<br/>Mentors.<br/>Real<br/>Impact.</div>
+            <div className="text-center md:text-left flex-1 lg:pl-16">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#F9F4FF] text-[#5B10FF] text-[9px] font-black uppercase tracking-widest mb-4">
+                OUR MENTORS
+              </div>
+              <h2 className="text-[28px] md:text-[38px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3">
+                Learn from People Who <br className="hidden md:block" />Are Building a <span className="text-[#5B10FF]">Brighter Tomorrow.</span>
+              </h2>
+              <p className="text-[14px] text-gray-500 font-medium max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                Our mentors are young achievers from top universities and diverse fields, passionate about helping students grow — academically, personally, and for life.
+              </p>
+            </div>
+            
+            <div className="bg-[#F9F4FF] rounded-[32px] p-6 flex flex-col gap-4 shrink-0 rounded-tr-[40px] rounded-bl-[40px] border border-[#5B10FF]/5">
+              <div className="flex items-center gap-3 text-[13px] font-bold text-gray-700">
+                <GraduationCap className="w-4 h-4 text-brand-purple" strokeWidth={2.5} /> Top Universities
+              </div>
+              <div className="flex items-center gap-3 text-[13px] font-bold text-gray-700">
+                <Star className="w-4 h-4 text-brand-purple" strokeWidth={2.5} /> Real-World Experience
+              </div>
+              <div className="flex items-center gap-3 text-[13px] font-bold text-gray-700">
+                <Heart className="w-4 h-4 text-brand-purple" strokeWidth={2.5} /> Passionate about Students
+              </div>
+            </div>
+          </div>
+
+          <div className="flex overflow-x-auto gap-5 pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+            {/* Nav button left hidden on mobile */}
+            <div className="hidden lg:flex flex-col justify-center shrink-0 pr-2">
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
+                <ArrowLeft className="w-5 h-5" />
+              </button>
+            </div>
+
+            {[
+              {
+                name: "Arjun Mehta", uni: "IIT Kharagpur", deg: "B.Tech, Computer Science",
+                quote: "I love helping students turn their curiosity into real skills with AI.",
+                tags: ["AI Tools", "Problem Solving", "Future Careers"],
+                pill: "Tech & AI", icon: Cpu, seed: "Felix",
+                note: "Build\nwith\nAI", color: "bg-purple-100", text: "text-purple-600", bgLight: "bg-purple-50/50"
+              },
+              {
+                name: "Riya Sharma", uni: "Delhi University", deg: "B.A. (Hons.) English",
+                quote: "I help students find their voice and express confidently in every area of life.",
+                tags: ["Public Speaking", "Confidence", "Leadership"],
+                pill: "Communication", icon: MessageSquare, seed: "Jocelyn",
+                note: "Speak\nCreate\nLead", color: "bg-blue-100", text: "text-blue-600", bgLight: "bg-blue-50/50"
+              },
+              {
+                name: "Karan Verma", uni: "CA Finalist", deg: "ICAI",
+                quote: "I make finance simple and practical so students can build a strong future.",
+                tags: ["Money Basics", "Investing", "Real Life Skills"],
+                pill: "Finance", icon: TrendingUp, seed: "Jack",
+                note: "Understand\nMoney\nBuild Freedom", color: "bg-green-100", text: "text-green-600", bgLight: "bg-green-50/50"
+              },
+              {
+                name: "Sneha Patel", uni: "NISER", deg: "M.Sc. Science",
+                quote: "I help students build strong concepts and a problem-solving mindset.",
+                tags: ["Maths", "Science", "Exam Strategy"],
+                pill: "Academic (Math & Science)", icon: BookOpen, seed: "Avery",
+                note: "Stronger\nFundamentals\nBigger\nPossibilities", color: "bg-indigo-100", text: "text-indigo-600", bgLight: "bg-indigo-50/50"
+              }
+            ].map((m, i) => (
+              <div key={i} className="min-w-[280px] w-[280px] sm:min-w-[300px] sm:w-[300px] md:flex-1 shrink-0 snap-start bg-white rounded-[24px] border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] flex flex-col hover:shadow-lg transition-shadow relative overflow-hidden">
+                <div className={`h-[180px] ${m.bgLight} relative p-4 flex items-end justify-center rounded-t-[24px]`}>
+                  <div className="absolute top-4 left-4 bg-white/80 backdrop-blur-md rounded-full px-2.5 py-1 flex items-center gap-1.5 shadow-sm">
+                    <m.icon className={`w-3 h-3 ${m.text}`} strokeWidth={3} />
+                    <span className="text-[9px] font-black uppercase text-gray-800">{m.pill}</span>
+                  </div>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 text-right rotate-6">
+                    <div className="text-[#5B10FF] font-medium text-[12px] leading-tight whitespace-pre-line" style={{ fontFamily: 'Caveat, cursive' }}>{m.note}</div>
+                  </div>
+                  <img src={`https://api.dicebear.com/9.x/notionists/svg?seed=${m.seed}&backgroundColor=transparent`} className="w-32 h-32 object-contain" alt={m.name} />
+                </div>
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="font-black text-[16px] text-gray-900 leading-none mb-1">{m.name}</h3>
+                  <div className="font-bold text-[12px] text-gray-800 leading-tight">{m.uni}</div>
+                  <div className="text-[10px] text-gray-400 font-medium mb-3">{m.deg}</div>
+                  <p className="text-[12px] text-gray-500 font-medium leading-relaxed mb-4 flex-1">"{m.quote}"</p>
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {m.tags.map(tag => (
+                      <span key={tag} className="px-2 py-1 rounded-md bg-[#F9F4FF] text-[#5B10FF] text-[9px] font-bold">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            <div className="hidden lg:flex flex-col justify-center shrink-0 pl-2">
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] rounded-2xl p-6 mt-4 relative">
+            <div className="absolute -right-6 -top-8 rotate-[-15deg] hidden lg:block text-[#5B10FF] font-medium text-[14px] leading-tight text-center" style={{ fontFamily: 'Caveat, cursive' }}>Same<br/>Students.<br/>Bigger<br/>Futures.</div>
+            
+            <div className="flex items-center gap-3 w-full md:w-auto">
+              <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
+                <Users className="w-5 h-5 text-brand-purple" />
+              </div>
+              <div>
+                <div className="font-bold text-[13px] text-gray-800">50+</div>
+                <div className="text-[11px] text-gray-500 font-medium">Expert Mentors</div>
+              </div>
+            </div>
+            <div className="w-px h-8 bg-gray-100 hidden md:block"></div>
+            <div className="flex items-center gap-3 w-full md:w-auto">
+              <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
+                <GraduationCap className="w-5 h-5 text-brand-purple" />
+              </div>
+              <div>
+                <div className="font-bold text-[13px] text-gray-800">From Top Universities</div>
+                <div className="text-[11px] text-gray-500 font-medium">IITs, NISER, DU and more</div>
+              </div>
+            </div>
+            <div className="w-px h-8 bg-gray-100 hidden md:block"></div>
+            <div className="flex items-center gap-3 w-full md:w-auto">
+              <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
+                <Shield className="w-5 h-5 text-brand-purple" />
+              </div>
+              <div>
+                <div className="font-bold text-[13px] text-gray-800">Rigorous Selection</div>
+                <div className="text-[11px] text-gray-500 font-medium">&lt; 5% acceptance rate</div>
+              </div>
+            </div>
+            <div className="w-px h-8 bg-gray-100 hidden md:block"></div>
+            <div className="flex items-center gap-3 w-full md:w-auto">
+              <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
+                <Heart className="w-5 h-5 text-brand-purple" />
+              </div>
+              <div>
+                <div className="font-bold text-[13px] text-gray-800">Mentors Who Care</div>
+                <div className="text-[11px] text-gray-500 font-medium">More than just academics</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center flex flex-col items-center">
+            <button 
+              onClick={() => navigate('/career-counseling')}
+              className="bg-[#5B10FF] text-white px-8 py-3.5 rounded-full font-bold text-[13px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-[#5B10FF]/30 flex items-center gap-2 mb-2"
+            >
+              Meet Our Full Mentor Team <ArrowRight className="w-4 h-4" />
+            </button>
+            <p className="text-[11px] text-gray-500 font-medium">Different backgrounds. One mission — your growth.</p>
           </div>
         </div>
 
