@@ -37,7 +37,7 @@ export default function Navbar({ onRequestInvite }) {
     { name: 'Benefits', href: '/#benefits', emoji: '✦' },
     { name: 'Cohort',   href: '/#cohort',   emoji: '🎓' },
     { name: 'Reviews',  href: '/#results',  emoji: '🏅' },
-    { name: 'Pricing',  href: '/#pricing',  emoji: '🪙' },
+    { name: 'Pricing',  href: '/pricing',  emoji: '🪙' },
     { name: 'FAQ',      href: '/#faq',      emoji: '🔍' },
   ];
 

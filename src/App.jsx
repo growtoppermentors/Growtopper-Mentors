@@ -17,6 +17,7 @@ import SyllabusPage from './pages/SyllabusPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Abode from './pages/Abode';
+import PricingPage from './pages/PricingPage';
 import CareerLanding from './pages/CareerLanding';
 import CounselingRoom from './pages/CounselingRoom';
 import ReportCard from './pages/ReportCard';
@@ -78,6 +79,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/abode" element={<Abode />} />
+        <Route path="/pricing" element={<PricingPage onRequestInvite={openModal} />} />
         
         {/* AI Career Counseling Routes */}
         <Route path="/career-counseling" element={<CareerLanding />} />
