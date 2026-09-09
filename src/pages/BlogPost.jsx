@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowLeft, Share2, Facebook, Twitter, Linkedin, Instagram, Link as LinkIcon } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { blogs } from '../data/blogs';
@@ -47,10 +47,10 @@ export default function BlogPost({ onRequestInvite }) {
             {blog.title}
           </h1>
           
-          <div className="flex items-center justify-between py-6 border-y border-gray-100">
+          <div className="flex flex-col md:flex-row md:items-center justify-between py-6 border-y border-gray-100 gap-4">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-purple to-pink-500 text-white flex items-center justify-center font-black text-[18px] shadow-sm">
-                {blog.author.charAt(0)}
+              <div className="w-12 h-12 rounded-full bg-brand-purple/5 overflow-hidden flex items-center justify-center border border-gray-100 shadow-sm">
+                <img src={blog.authorAvatar} alt={blog.author} className="w-9 h-9 object-cover" />
               </div>
               <div>
                 <div className="text-[15px] font-bold text-brand-dark">{blog.author}</div>
@@ -58,13 +58,35 @@ export default function BlogPost({ onRequestInvite }) {
               </div>
             </div>
             
-            <div className="hidden md:flex items-center gap-2">
-              <span className="text-[12px] font-bold text-gray-400 mr-2 uppercase tracking-widest">Share</span>
-              {[Twitter, Linkedin, Facebook].map((Icon, i) => (
-                <button key={i} className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-brand-purple hover:text-white transition-colors">
-                  <Icon className="w-4 h-4" />
-                </button>
-              ))}
+            <div className="flex items-center gap-2">
+              <span className="text-[12px] font-bold text-gray-400 mr-2 uppercase tracking-widest hidden md:inline-block">Share</span>
+              
+              {/* LinkedIn */}
+              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#0A66C2] hover:text-white transition-colors" title="Share on LinkedIn">
+                <Linkedin className="w-4 h-4" />
+              </a>
+
+              {/* Facebook */}
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-colors" title="Share on Facebook">
+                <Facebook className="w-4 h-4" />
+              </a>
+
+              {/* Twitter / X */}
+              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(blog.title)}`} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-colors" title="Share on Twitter">
+                <Twitter className="w-4 h-4" />
+              </a>
+
+              {/* Instagram (Copy Link Fallback since IG doesn't support web share intent) */}
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText(window.location.href);
+                  alert('Link copied to clipboard! You can now paste it on Instagram.');
+                }}
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white transition-colors" 
+                title="Share on Instagram (Copies Link)"
+              >
+                <Instagram className="w-4 h-4" />
+              </button>
             </div>
           </div>
         </div>

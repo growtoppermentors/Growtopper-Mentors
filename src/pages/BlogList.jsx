@@ -55,8 +55,8 @@ export default function BlogList({ onRequestInvite }) {
               
               <div className="flex items-center justify-between mt-auto">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-purple text-white flex items-center justify-center font-black text-[14px]">
-                    {featuredBlog.author.charAt(0)}
+                  <div className="w-10 h-10 rounded-full bg-brand-purple/5 overflow-hidden flex items-center justify-center border border-gray-100">
+                    <img src={featuredBlog.authorAvatar} alt={featuredBlog.author} className="w-8 h-8 object-cover" />
                   </div>
                   <div>
                     <div className="text-[13px] font-bold text-brand-dark leading-tight">{featuredBlog.author}</div>
@@ -92,9 +92,14 @@ export default function BlogList({ onRequestInvite }) {
                 </p>
                 
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
-                  <div>
-                    <div className="text-[12px] font-bold text-brand-dark">{blog.author}</div>
-                    <div className="text-[11px] font-medium text-gray-400">{blog.date}</div>
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-full bg-brand-purple/5 overflow-hidden flex items-center justify-center border border-gray-100">
+                      <img src={blog.authorAvatar} alt={blog.author} className="w-6 h-6 object-cover" />
+                    </div>
+                    <div>
+                      <div className="text-[12px] font-bold text-brand-dark">{blog.author}</div>
+                      <div className="text-[11px] font-medium text-gray-400">{blog.date}</div>
+                    </div>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-brand-purple transition-colors" />
                 </div>
