@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lock, FileText, CheckCircle2, Zap, Briefcase, Calendar, Video, Download } from 'lucide-react';
+import { Lock, FileText, CheckCircle2, Zap, Briefcase, Calendar, Video, Download, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function ReportCard() {
