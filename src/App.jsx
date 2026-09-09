@@ -18,9 +18,6 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Abode from './pages/Abode';
 import PricingPage from './pages/PricingPage';
-import CareerLanding from './pages/CareerLanding';
-import CounselingRoom from './pages/CounselingRoom';
-import ReportCard from './pages/ReportCard';
 import ClaritySession from './pages/ClaritySession';
 import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
@@ -88,11 +85,6 @@ function App() {
         <Route path="/pricing" element={<PricingPage onRequestInvite={openModal} />} />
         <Route path="/blog" element={<BlogList onRequestInvite={openModal} />} />
         <Route path="/blog/:slug" element={<BlogPost onRequestInvite={openModal} />} />
-
-        {/* AI Career Counseling Routes */}
-        <Route path="/career-counseling" element={<CareerLanding />} />
-        <Route path="/counseling-room" element={<CounselingRoom />} />
-        <Route path="/report" element={<ReportCard />} />
         <Route path="/clarity-session" element={<ClaritySession />} />
       </Routes>
       <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />

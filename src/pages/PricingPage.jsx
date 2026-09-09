@@ -16,7 +16,7 @@ export default function PricingPage({ onRequestInvite }) {
       <Navbar onRequestInvite={onRequestInvite} />
 
       <main className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           
           {/* Header */}
           <div className="text-center mb-12">

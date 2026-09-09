@@ -82,23 +82,19 @@ export default function Footer({ onRequestInvite }) {
 
           {/* Program */}
           <div>
-            <h4 className="font-black text-brand-dark text-[13px] uppercase tracking-widest mb-6">Program</h4>
+            <h4 className="font-black text-brand-dark text-[13px] uppercase tracking-widest mb-6">Explore</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 max-w-[280px] mx-auto lg:mx-0 text-center lg:text-left">
               {[
-                { label: 'Career Counseling', href: '/career-counseling' },
-                { label: 'Abode', href: '/abode' },
-                { label: 'Curriculum', href: '#program' },
-                { label: 'Benefits', href: '#how-it-works' },
-                { label: 'Cohort', href: '#cohort' },
-                { label: 'Pricing', href: '#pricing' },
+                { label: '30-Day Challenge', href: '/30-days-growth-challenge' },
+                { label: 'Clarity Session',  href: '/clarity-session' },
+                { label: 'Pricing',          href: '/pricing' },
+                { label: 'Blog',             href: '/blog' },
+                { label: 'Syllabus',         href: '/syllabus' },
               ].map(l => (
                 <li key={l.label}>
                   <a href={l.href} className="text-[13px] font-bold text-gray-500 hover:text-brand-purple transition-colors">{l.label}</a>
                 </li>
               ))}
-              <li className="col-span-2 lg:col-span-1">
-                <a href="#faq" className="text-[13px] font-bold text-gray-500 hover:text-brand-purple transition-colors">FAQ</a>
-              </li>
             </ul>
           </div>
 
