@@ -12,18 +12,37 @@ export default function Abode() {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
       if (entry.isIntersecting && window.innerWidth < 768) {
-        // Automatically scroll to the right smoothly so they see the Growtopper column
+        
         setTimeout(() => {
-          if (tableContainerRef.current) {
-            tableContainerRef.current.scrollTo({
-              left: 200, // scrolls to the right side
-              behavior: 'smooth'
-            });
+          const container = tableContainerRef.current;
+          if (!container) return;
+
+          const start = container.scrollLeft;
+          const target = 200; // scroll amount
+          const duration = 2500; // 2.5 seconds duration for a premium slow walk
+          const startTime = performance.now();
+
+          // Smooth easeOutQuad function
+          const easeOutQuad = (t) => t * (2 - t);
+
+          function animateScroll(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            const easeProgress = easeOutQuad(progress);
+            container.scrollLeft = start + (target - start) * easeProgress;
+
+            if (progress < 1) {
+              requestAnimationFrame(animateScroll);
+            }
           }
-        }, 300); // Trigger quickly after it enters view
-        observer.disconnect(); // Only trigger once
+
+          requestAnimationFrame(animateScroll);
+        }, 500); // Wait 0.5s after seeing it to start walking
+
+        observer.disconnect(); 
       }
-    }, { threshold: 0.5 }); // Trigger when 50% of the table is visible
+    }, { threshold: 0.5 }); 
 
     if (tableContainerRef.current) {
       observer.observe(tableContainerRef.current);
@@ -109,7 +128,7 @@ export default function Abode() {
 
         {/* Comparison Table */}
         <div className="bg-white rounded-[24px] md:rounded-[32px] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden">
-          <div className="overflow-x-auto scroll-smooth" ref={tableContainerRef}>
+          <div className="overflow-x-auto" ref={tableContainerRef}>
             <table className="w-full text-left border-collapse min-w-[500px] md:min-w-[600px]">
               <thead>
                 <tr>
