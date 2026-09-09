@@ -190,6 +190,90 @@ export default function Abode() {
         </div>
       </section>
 
+      {/* How it Works / Roadmap Section */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-32 max-w-4xl mx-auto w-full">
+        <div className="text-center mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-purple/5 border border-brand-purple/15 text-brand-purple text-[9px] sm:text-[10px] font-black uppercase tracking-widest mb-4">
+            HOW IT WORKS
+          </div>
+          <h2 className="text-[28px] md:text-[36px] font-black text-brand-dark leading-[1.15] tracking-tight mb-3 text-balance">
+            Your Roadmap to 10X Growth
+          </h2>
+          <p className="text-[14px] md:text-[15px] text-gray-500 font-medium">
+            A structured, proven journey from confusion to execution.
+          </p>
+        </div>
+
+        {/* Roadmap Container */}
+        <div className="relative max-w-2xl mx-auto ml-2 sm:ml-auto">
+          {/* Vertical Line */}
+          <div className="absolute left-[15px] md:left-[19px] top-6 bottom-0 w-[2px] bg-gradient-to-b from-brand-purple/30 via-brand-purple/5 to-transparent"></div>
+
+          {/* Steps */}
+          {[
+            {
+              num: 1,
+              title: "Clarity Session",
+              description: "Identify your true baseline and uncover hidden potential.",
+              items: [
+                "30-min AI SWOT Test",
+                "30-min 1-on-1 Mentor Video Call",
+                "Pinpoint academic & non-academic strengths"
+              ]
+            },
+            {
+              num: 2,
+              title: "30-Day Growth Challenge",
+              description: "A tailored, high-intensity sprint to align focus and habit.",
+              items: [
+                "30 Days, 6 Core Skills",
+                "1 Dedicated Expert Mentor",
+                "Receive a personalized Execution Action Plan"
+              ]
+            },
+            {
+              num: 3,
+              title: "Long-Term Mentorship",
+              description: "Monthly guidance to ensure continuous, compounding growth.",
+              items: [
+                "Elite Plan: Dedicated monthly mentorship",
+                "Pro Plan: Mentorship + 6 Skills Knowledge + Academic Growth",
+                "Continuous trajectory tracking and execution review"
+              ]
+            }
+          ].map((step, i) => (
+            <div key={i} className="relative mb-8 md:mb-12 last:mb-0">
+              {/* Node */}
+              <div className="absolute left-0 top-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white border-[3px] border-brand-purple flex items-center justify-center z-10 shadow-sm mt-1">
+                <span className="text-[13px] md:text-[15px] font-black text-brand-purple">{step.num}</span>
+              </div>
+
+              {/* Card */}
+              <div className="ml-12 md:ml-16 bg-white rounded-[24px] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 md:p-8 hover:border-brand-purple/20 hover:shadow-[0_8px_30px_rgba(91,16,255,0.06)] transition-all">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-gray-50 border border-gray-100 text-gray-400 text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-3 md:mb-4">
+                  Step 0{step.num}
+                </div>
+                <h3 className="text-[20px] md:text-[24px] font-black text-brand-dark tracking-tight mb-2">{step.title}</h3>
+                <p className="text-[13px] md:text-[14px] text-gray-500 font-medium mb-5 md:mb-6 leading-relaxed">{step.description}</p>
+                
+                <ul className="space-y-3 md:space-y-4">
+                  {step.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-brand-purple/5 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-brand-purple" strokeWidth={3} />
+                      </div>
+                      <span className="text-[13px] md:text-[14px] font-medium text-gray-700 leading-snug">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <Footer onRequestInvite={() => navigate('/counseling-room')} />
     </div>
   );
