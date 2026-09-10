@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Check, ChevronRight, Zap } from 'lucide-react';
+import { Check, ChevronRight, Zap, Lock } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import FAQ from '../components/sections/FAQ';
@@ -16,11 +16,11 @@ export default function PricingPage({ onRequestInvite }) {
     <div className="min-h-screen bg-[#FAFAFA] font-sans">
       <Navbar onRequestInvite={onRequestInvite} />
 
-      <main className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
+      <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple text-[11px] font-black tracking-widest uppercase mb-4 border border-brand-purple/20">
               🎉 50% OFF TODAY
             </div>
@@ -33,84 +33,102 @@ export default function PricingPage({ onRequestInvite }) {
           </div>
 
           {/* Step 1: Setup Call */}
-          <div className="bg-gradient-to-br from-[#F4F1FF] to-[#FAFAFF] rounded-[24px] border border-purple-100 shadow-sm overflow-hidden mb-8 relative">
-            <div className="absolute top-0 left-0 bg-brand-purple text-white px-4 py-1.5 rounded-br-xl text-[10px] font-black uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
+          <div className="rounded-[26px] bg-gradient-to-br from-[#5B10FF]/20 via-transparent to-[#5B10FF]/10 p-[1.5px] mb-8 relative shadow-sm hover:shadow-md transition-shadow">
+            <div className="absolute top-0 left-0 bg-brand-purple text-white px-4 py-1.5 text-[10px] font-black uppercase tracking-widest flex items-center gap-1.5 shadow-sm rounded-tl-[24px] rounded-br-xl z-10">
               <Zap className="w-3 h-3 fill-current" /> EARLY BIRD: FIRST 100 ONLY
             </div>
             
-            <div className="p-8 md:p-10 text-center">
-              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 mt-2">STEP 1 • ONE-TIME SETUP</div>
-              <h2 className="text-[24px] md:text-[28px] font-black text-brand-dark mb-3">The Setup Call</h2>
-              <p className="text-[14px] font-medium text-gray-500 max-w-lg mx-auto mb-8">
-                Includes the 30-min AI Test, 60-min Parent & Student goal-setting meeting, and custom study roadmap creation.
-              </p>
+            <div className="bg-gradient-to-br from-[#F4F1FF] to-[#FAFAFF] rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
               
-              <div className="flex flex-col md:flex-row items-center justify-between bg-gray-50/50 border border-gray-100 rounded-2xl p-6">
+              <div className="flex-1 text-center md:text-left mt-4 md:mt-0">
+                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">STEP 1 • ONE-TIME SETUP</div>
+                <h2 className="text-[22px] md:text-[26px] font-black text-brand-dark mb-2">The Setup Call</h2>
+                <p className="text-[13px] font-medium text-gray-500 max-w-sm mx-auto md:mx-0">
+                  Includes the 30-min AI Test, 60-min Parent & Student goal-setting meeting, and custom study roadmap creation.
+                </p>
+              </div>
+              
+              <div className="w-full md:w-[45%] flex flex-col items-center bg-white border border-purple-100 rounded-2xl p-5 shadow-sm">
                 
                 {/* Progress Bar */}
-                <div className="w-full md:w-1/2 mb-6 md:mb-0 md:pr-8 md:border-r border-gray-200 text-left">
-                  <div className="flex justify-between items-end mb-2">
-                    <span className="text-[11px] font-black text-gray-800 uppercase tracking-widest">Early Bird Seats</span>
-                    <span className="text-[11px] font-black text-brand-purple">1 left today</span>
+                <div className="w-full mb-4 border-b border-gray-100 pb-4">
+                  <div className="flex justify-between items-end mb-1.5">
+                    <span className="text-[10px] font-black text-gray-800 uppercase tracking-widest">Early Bird Seats</span>
+                    <span className="text-[10px] font-black text-brand-purple">1 left today</span>
                   </div>
-                  <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden mb-2">
+                  <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden mb-1.5">
                     <div className="h-full bg-brand-purple rounded-full" style={{ width: '99%' }}></div>
                   </div>
-                  <div className="text-[10px] font-medium text-gray-400 text-center">99/100 booked. Availability refreshes daily.</div>
+                  <div className="text-[9px] font-medium text-gray-400 text-center">99/100 booked. Refreshes daily.</div>
                 </div>
 
                 {/* Price & CTA */}
-                <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[14px] font-bold text-gray-300 line-through">₹4,999</span>
-                    <span className="text-[14px] font-bold text-gray-400 line-through">₹999</span>
+                <div className="w-full flex items-center justify-between gap-4">
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <span className="text-[11px] font-bold text-gray-300 line-through">₹4,999</span>
+                      <span className="text-[11px] font-bold text-gray-400 line-through">₹999</span>
+                    </div>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-[32px] md:text-[38px] font-black text-brand-purple leading-none tracking-tighter">₹1</span>
+                    </div>
                   </div>
-                  <div className="flex items-end justify-center gap-2 mb-4 relative">
-                    <span className="text-[48px] font-black text-brand-purple leading-none tracking-tighter">₹1</span>
-                    <span className="text-[10px] font-black text-brand-purple uppercase tracking-widest mb-2 border border-brand-purple/20 bg-brand-purple/5 px-2 py-0.5 rounded">OFFER<br/>ONE TIME</span>
-                  </div>
-                  <button onClick={() => window.open('https://pages.razorpay.com/setupcall', '_blank')} className="bg-brand-purple text-white px-8 py-3 rounded-xl font-bold text-[14px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-brand-purple/25 w-full max-w-[200px] flex items-center justify-center gap-2">
+                  <button onClick={() => window.open('https://pages.razorpay.com/setupcall', '_blank')} className="bg-brand-purple text-white px-5 py-2.5 rounded-xl font-bold text-[13px] hover:bg-[#4E0EE6] transition-colors shadow-md shadow-brand-purple/25 flex-1 max-w-[160px] flex items-center justify-center gap-1.5">
                     Book for ₹1 <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
-
               </div>
+
             </div>
           </div>
 
           {/* Step 2: 30-Day Growth Challenge */}
-          <div className="bg-gradient-to-br from-[#FFF4ED] to-[#FFFaf0] rounded-[24px] border border-orange-100 shadow-sm overflow-hidden mb-8">
-            <div className="p-8 md:p-10 text-center">
-              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">STEP 2 • BUILD THE FOUNDATION</div>
-              <h2 className="text-[24px] md:text-[28px] font-black text-brand-dark mb-3">30-Day Growth Challenge</h2>
-              <p className="text-[14px] font-medium text-gray-500 max-w-lg mx-auto mb-8">
-                An intensive 30-day program where your child learns 6 core life skills under the direct guidance of a dedicated mentor.
-              </p>
+          <div className="rounded-[26px] bg-gradient-to-br from-orange-200 via-transparent to-orange-100 p-[1.5px] mb-8 shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-gradient-to-br from-[#FFF4ED] to-[#FFFaf0] rounded-[24px] p-6 md:p-8">
+              <div className="text-center mb-6">
+                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">STEP 2 • BUILD THE FOUNDATION</div>
+                <h2 className="text-[22px] md:text-[26px] font-black text-brand-dark mb-2">30-Day Growth Challenge</h2>
+                <p className="text-[13px] font-medium text-gray-500 max-w-lg mx-auto">
+                  An intensive 30-day program where your child learns 6 core life skills under the direct guidance of a dedicated mentor.
+                </p>
+              </div>
               
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="w-full md:w-3/5 text-left bg-[#F9F4FF] rounded-2xl p-6 border border-brand-purple/10">
+              <div className="flex flex-col md:flex-row items-stretch justify-between gap-6">
+                <div className="w-full md:w-3/5 text-left bg-white/60 rounded-2xl p-5 border border-orange-50">
                   <ul className="space-y-3">
-                    <li className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-brand-purple/20 flex items-center justify-center"><Check className="w-3 h-3 text-brand-purple" strokeWidth={3} /></div>
-                      <span className="text-[14px] font-bold text-gray-800">Learn 6 Core Life Skills (Finance, Communication, etc.)</span>
+                    <li className="flex items-start gap-2.5">
+                      <div className="w-4 h-4 mt-0.5 rounded-full bg-orange-100 flex items-center justify-center shrink-0"><Check className="w-2.5 h-2.5 text-orange-500" strokeWidth={3} /></div>
+                      <span className="text-[13px] font-bold text-gray-800 leading-tight">Learn 6 Core Life Skills (Finance, Communication, etc.)</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-brand-purple/20 flex items-center justify-center"><Check className="w-3 h-3 text-brand-purple" strokeWidth={3} /></div>
-                      <span className="text-[14px] font-bold text-gray-800">Daily guided assignments & tracking</span>
+                    <li className="flex items-start gap-2.5">
+                      <div className="w-4 h-4 mt-0.5 rounded-full bg-orange-100 flex items-center justify-center shrink-0"><Check className="w-2.5 h-2.5 text-orange-500" strokeWidth={3} /></div>
+                      <span className="text-[13px] font-bold text-gray-800 leading-tight">Daily guided assignments & tracking</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-brand-purple/20 flex items-center justify-center"><Check className="w-3 h-3 text-brand-purple" strokeWidth={3} /></div>
-                      <span className="text-[14px] font-bold text-gray-800">Weekly 1-on-1 performance review calls</span>
+                    <li className="flex items-start gap-2.5">
+                      <div className="w-4 h-4 mt-0.5 rounded-full bg-orange-100 flex items-center justify-center shrink-0"><Check className="w-2.5 h-2.5 text-orange-500" strokeWidth={3} /></div>
+                      <span className="text-[13px] font-bold text-gray-800 leading-tight">Weekly 1-on-1 performance review calls</span>
                     </li>
                   </ul>
                 </div>
                 
-                <div className="w-full md:w-2/5 flex flex-col items-center">
-                  <div className="text-[14px] font-bold text-gray-400 line-through mb-1">₹9,999</div>
-                  <div className="text-[48px] font-black text-brand-dark leading-none tracking-tighter mb-4">₹4,999</div>
-                  <button onClick={() => navigate('/abode')} className="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold text-[14px] hover:bg-gray-800 transition-colors shadow-lg w-full max-w-[200px]">
-                    Join Challenge
-                  </button>
+                <div className="w-full md:w-2/5 flex flex-col items-center justify-center bg-white rounded-2xl p-5 border border-orange-100 shadow-sm relative overflow-hidden group">
+                  {/* Premium Locked State background effect */}
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-50/50 via-white to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  
+                  <div className="relative flex flex-col items-center z-10">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-100 to-amber-50 border border-orange-200 flex items-center justify-center mb-3 shadow-sm">
+                      <Lock className="w-4 h-4 text-orange-500" />
+                    </div>
+                    <div className="text-[12px] font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500 uppercase tracking-widest mb-1">
+                      Invite Only
+                    </div>
+                    <div className="text-[11px] font-medium text-gray-400 mb-4 text-center">
+                      Pricing revealed after Setup Call
+                    </div>
+                    <button onClick={onRequestInvite} className="bg-gray-900 text-white px-6 py-2.5 rounded-xl font-bold text-[13px] hover:bg-gray-800 transition-colors shadow-md w-full max-w-[180px]">
+                      Request Invite
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -696,6 +696,13 @@ export default function Home() {
                 tags: ["Maths", "Science", "Exam Strategy"],
                 pill: "Academic (Math & Science)", icon: BookOpen, seed: "Avery",
                 note: "Stronger\nFundamentals\nBigger\nPossibilities", color: "bg-indigo-100", text: "text-indigo-600", bgLight: "bg-indigo-50/50"
+              },
+              {
+                name: "Vikram Singh", uni: "IIM Bangalore", deg: "MBA",
+                quote: "I help students cultivate an entrepreneurial mindset to turn ideas into reality.",
+                tags: ["Business", "Startups", "Strategy"],
+                pill: "Business & Entrepreneurship", icon: Target, seed: "Leo",
+                note: "Think\nLike A\nFounder", color: "bg-orange-100", text: "text-orange-600", bgLight: "bg-orange-50/50"
               }
             ].map((m, i) => (
               <div key={i} className="min-w-[280px] w-[280px] sm:min-w-[300px] sm:w-[300px] md:flex-1 shrink-0 snap-start bg-white rounded-[24px] border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] flex flex-col hover:shadow-lg transition-shadow relative overflow-hidden">
