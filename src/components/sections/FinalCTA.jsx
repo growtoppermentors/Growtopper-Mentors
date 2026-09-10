@@ -81,9 +81,9 @@ export default function FinalCTA({ onRequestInvite }) {
                   {/* Footer Social Proof strip inside the card */}
                   <div className="flex flex-col items-center gap-2 pt-4 border-t border-gray-100 w-full relative z-10">
                     <div className="flex -space-x-2">
-                      <img src="https://api.dicebear.com/9.x/micah/svg?seed=Aanya" alt="Student" className="w-6 h-6 rounded-full border-2 border-white bg-gray-50 shadow-sm" />
-                      <img src="https://api.dicebear.com/9.x/micah/svg?seed=Rohan" alt="Student" className="w-6 h-6 rounded-full border-2 border-white bg-gray-50 shadow-sm" />
-                      <img src="https://api.dicebear.com/9.x/micah/svg?seed=Priya" alt="Student" className="w-6 h-6 rounded-full border-2 border-white bg-gray-50 shadow-sm" />
+                      <img src="https://api.dicebear.com/9.x/notionists/svg?lips=&seed=Aanya" alt="Student" className="w-6 h-6 rounded-full border-2 border-white bg-gray-50 shadow-sm" />
+                      <img src="https://api.dicebear.com/9.x/notionists/svg?lips=&seed=Rohan" alt="Student" className="w-6 h-6 rounded-full border-2 border-white bg-gray-50 shadow-sm" />
+                      <img src="https://api.dicebear.com/9.x/notionists/svg?lips=&seed=Priya" alt="Student" className="w-6 h-6 rounded-full border-2 border-white bg-gray-50 shadow-sm" />
                     </div>
                     <div className="text-[10px] font-bold text-gray-400 tracking-wider uppercase">Join 500+ Parents</div>
                   </div>

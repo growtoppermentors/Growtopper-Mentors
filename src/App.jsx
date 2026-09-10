@@ -16,7 +16,7 @@ import LiveNotification from './components/ui/LiveNotification';
 import SyllabusPage from './pages/SyllabusPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-import Abode from './pages/Abode';
+import Home from './pages/Home';
 import PricingPage from './pages/PricingPage';
 import ClaritySession from './pages/ClaritySession';
 import BlogList from './pages/BlogList';
@@ -73,8 +73,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Abode is now the default homepage */}
-        <Route path="/" element={<Abode />} />
+        {/* Home is now the default homepage */}
+        <Route path="/" element={<Home />} />
 
         {/* Old landing page moved to /30-days-growth-challenge */}
         <Route path="/30-days-growth-challenge" element={<HomePage openModal={openModal} />} />

@@ -55,7 +55,7 @@ export default function ClaritySession() {
       <Navbar onRequestInvite={handleBook} />
 
       {/* ──────────────────── HERO ──────────────────── */}
-      <section className="px-4 sm:px-6 lg:px-8 w-full max-w-[1100px] mx-auto pt-24 pb-12 md:pt-28 md:pb-16">
+      <section className="px-4 sm:px-6 lg:px-8 w-full max-w-[1100px] mx-auto pt-16 pb-12 md:pt-20 md:pb-16">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12">
 
           {/* Left: Text */}
