@@ -13,7 +13,7 @@ export default function PricingPage({ onRequestInvite }) {
   }, []);
 
   const daysPassed = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
-  const bookedSeats = Math.min(99, 20 + (daysPassed % 9) * 10);
+  const bookedSeats = Math.min(99, 40 + (daysPassed % 6) * 10);
   const seatsLeft = 100 - bookedSeats;
 
   return (

@@ -21,26 +21,10 @@ const CITIES = [
 ];
 
 const ACTIONS = [
-  "booked a Clarity Session",
-  "unlocked their AI Growth Report",
-  "started the AI SWOT Test",
-  "scheduled a 1-on-1 Mentor Call",
-  "requested an invite",
-  "secured a spot in the next cohort",
-  "completed the AI Career Assessment",
-  "upgraded to the premium roadmap",
-  "downloaded their personalized plan",
-  "joined the Growtopper community",
-  "claimed the ₹299 special offer",
-  "booked a strategy call with a founder",
-  "is analyzing their 10 growth parameters",
-  "took the first step towards clarity",
-  "locked in their 1-on-1 video call",
-  "received their academic roadmap",
-  "finished the Growtch AI interview",
-  "verified their student profile",
-  "unlocked their custom study strategy",
-  "is discovering their true zone of genius"
+  "just booked the Setup Call for ₹1",
+  "requested an invite to the mentorship program",
+  "just booked the Setup Call for ₹1",
+  "just requested an invite"
 ];
 
 // Pre-generate a shuffled list of 100 unique notifications so they don't repeat quickly

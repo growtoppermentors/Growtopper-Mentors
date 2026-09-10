@@ -860,7 +860,7 @@ export default function Home({ openModal }) {
         </div>
       </section>
 
-      <Footer onRequestInvite={() => navigate('/counseling-room')} />
+      <Footer onRequestInvite={openModal} />
     </div>
   );
 }
