@@ -55,11 +55,11 @@ export default function ClaritySession() {
       <Navbar onRequestInvite={handleBook} />
 
       {/* ──────────────────── HERO ──────────────────── */}
-      <section className="px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto pt-24 pb-12 md:pt-28 md:pb-16">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+      <section className="px-4 sm:px-6 lg:px-8 w-full max-w-[1100px] mx-auto pt-24 pb-12 md:pt-28 md:pb-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12">
 
           {/* Left: Text */}
-          <div className="flex-1 text-center lg:text-left">
+          <div className="w-full lg:max-w-xl text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFF4ED] border border-orange-200 text-orange-600 text-[10px] font-black uppercase tracking-widest mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
               The 60-Minute Turning Point

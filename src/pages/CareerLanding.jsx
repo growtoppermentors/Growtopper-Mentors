@@ -327,7 +327,7 @@ export default function CareerLanding() {
                   </div>
                   
                   {/* Illustration using Dicebear Notionists style */}
-                  <img src={`https://api.dicebear.com/9.x/notionists/svg?seed=${mentor.seed}&backgroundColor=transparent`} alt={mentor.title} className="w-36 h-36 object-contain mt-auto z-0 group-hover:scale-105 transition-transform duration-500" />
+                  <img src={`https://api.dicebear.com/9.x/micah/svg?seed=${mentor.seed}&backgroundColor=transparent`} alt={mentor.title} className="w-36 h-36 object-contain mt-auto z-0 group-hover:scale-105 transition-transform duration-500" />
                   
                   {/* Verified Badge */}
                   <div className="absolute bottom-3 left-3 bg-white text-gray-800 text-[10px] font-bold px-2.5 py-1.5 rounded-lg shadow-sm flex items-center gap-1.5 z-10 border border-gray-100">

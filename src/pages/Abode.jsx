@@ -560,7 +560,7 @@ export default function Abode() {
               Growtopper gave our daughter the clarity and structure she needed. The weekly reports keep us informed, and her confidence has improved so much.
             </p>
             <div className="flex items-center gap-3">
-              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Priya&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100" alt="Parent" />
+              <img src="https://api.dicebear.com/9.x/micah/svg?seed=Priya&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100" alt="Parent" />
               <div>
                 <h4 className="font-bold text-[13px] text-gray-800">Priya Mehta</h4>
                 <p className="text-[10px] text-gray-400 font-medium">Parent of Grade 8 Student</p>
@@ -581,7 +581,7 @@ export default function Abode() {
               The 6 skills training — especially communication and finance — has helped me think differently about my future. It's not just about marks anymore.
             </p>
             <div className="flex items-center gap-3">
-              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Rohan&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-purple-50 border border-purple-100" alt="Student" />
+              <img src="https://api.dicebear.com/9.x/micah/svg?seed=Rohan&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-purple-50 border border-purple-100" alt="Student" />
               <div>
                 <h4 className="font-bold text-[13px] text-gray-800">Rohan K.</h4>
                 <p className="text-[10px] text-gray-400 font-medium">Grade 10, Bhubaneswar</p>
@@ -602,7 +602,7 @@ export default function Abode() {
               We tried multiple tuitions, but nothing changed. Growtopper focuses on the real issues — discipline, mindset and consistent execution. Highly recommended!
             </p>
             <div className="flex items-center gap-3">
-              <img src="https://api.dicebear.com/9.x/notionists/svg?seed=Sandeep&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100" alt="Parent" />
+              <img src="https://api.dicebear.com/9.x/micah/svg?seed=Sandeep&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100" alt="Parent" />
               <div>
                 <h4 className="font-bold text-[13px] text-gray-800">Sandeep Rao</h4>
                 <p className="text-[10px] text-gray-400 font-medium">Parent of Grade 9 Student</p>
@@ -707,7 +707,7 @@ export default function Abode() {
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 text-right rotate-6">
                     <div className="text-[#5B10FF] font-medium text-[12px] leading-tight whitespace-pre-line" style={{ fontFamily: 'Caveat, cursive' }}>{m.note}</div>
                   </div>
-                  <img src={`https://api.dicebear.com/9.x/notionists/svg?seed=${m.seed}&backgroundColor=transparent`} className="w-32 h-32 object-contain" alt={m.name} />
+                  <img src={`https://api.dicebear.com/9.x/micah/svg?seed=${m.seed}&backgroundColor=transparent`} className="w-32 h-32 object-contain" alt={m.name} />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
                   <h3 className="font-black text-[16px] text-gray-900 leading-none mb-1">{m.name}</h3>
@@ -830,7 +830,7 @@ export default function Abode() {
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 relative z-10 text-center md:text-left">
             <div className="flex -space-x-3">
               {['A', 'B', 'C', 'D'].map((seed, i) => (
-                <img key={i} src={`https://api.dicebear.com/9.x/notionists/svg?seed=${seed}&backgroundColor=transparent`} className="w-12 h-12 rounded-full border-2 border-white bg-white shadow-sm" alt="Student avatar" />
+                <img key={i} src={`https://api.dicebear.com/9.x/micah/svg?seed=${seed}&backgroundColor=transparent`} className="w-12 h-12 rounded-full border-2 border-white bg-white shadow-sm" alt="Student avatar" />
               ))}
               <div className="w-12 h-12 rounded-full border-2 border-white bg-white shadow-sm flex items-center justify-center text-[11px] font-black text-[#5B10FF]">+500</div>
             </div>

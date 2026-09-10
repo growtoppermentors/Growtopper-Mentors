@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Check, ChevronRight, Zap } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import FAQ from '../components/sections/FAQ';
 
 export default function PricingPage({ onRequestInvite }) {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function PricingPage({ onRequestInvite }) {
           </div>
 
           {/* Step 1: Setup Call */}
-          <div className="bg-white rounded-[24px] border border-gray-200 shadow-sm overflow-hidden mb-8 relative">
+          <div className="bg-gradient-to-br from-[#F4F1FF] to-[#FAFAFF] rounded-[24px] border border-purple-100 shadow-sm overflow-hidden mb-8 relative">
             <div className="absolute top-0 left-0 bg-brand-purple text-white px-4 py-1.5 rounded-br-xl text-[10px] font-black uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
               <Zap className="w-3 h-3 fill-current" /> EARLY BIRD: FIRST 100 ONLY
             </div>
@@ -78,7 +79,7 @@ export default function PricingPage({ onRequestInvite }) {
           </div>
 
           {/* Step 2: 30-Day Growth Challenge */}
-          <div className="bg-white rounded-[24px] border border-gray-200 shadow-sm overflow-hidden mb-8">
+          <div className="bg-gradient-to-br from-[#FFF4ED] to-[#FFFaf0] rounded-[24px] border border-orange-100 shadow-sm overflow-hidden mb-8">
             <div className="p-8 md:p-10 text-center">
               <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">STEP 2 • BUILD THE FOUNDATION</div>
               <h2 className="text-[24px] md:text-[28px] font-black text-brand-dark mb-3">30-Day Growth Challenge</h2>
@@ -230,6 +231,7 @@ export default function PricingPage({ onRequestInvite }) {
           </div>
 
         </div>
+        <FAQ />
       </main>
 
       <Footer onRequestInvite={onRequestInvite} />

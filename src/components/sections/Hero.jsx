@@ -15,13 +15,13 @@ function getDynamicStudentCount() {
 
 // Subtle smiling school student avatars — notionists style (natural, gentle expressions)
 const STUDENT_AVATARS = [
-  'https://api.dicebear.com/9.x/notionists/svg?seed=Aanya&backgroundColor=b6e3f4',
-  'https://api.dicebear.com/9.x/notionists/svg?seed=Rohan&backgroundColor=c0aede',
-  'https://api.dicebear.com/9.x/notionists/svg?seed=Priya&backgroundColor=d1f0c4',
-  'https://api.dicebear.com/9.x/notionists/svg?seed=Kabir&backgroundColor=ffd5dc',
-  'https://api.dicebear.com/9.x/notionists/svg?seed=Sneha&backgroundColor=ffe4b5',
-  'https://api.dicebear.com/9.x/notionists/svg?seed=Arjun&backgroundColor=dce8f5',
-  'https://api.dicebear.com/9.x/notionists/svg?seed=Meera&backgroundColor=e8d5f5',
+  'https://api.dicebear.com/9.x/micah/svg?seed=Aanya&backgroundColor=b6e3f4',
+  'https://api.dicebear.com/9.x/micah/svg?seed=Rohan&backgroundColor=c0aede',
+  'https://api.dicebear.com/9.x/micah/svg?seed=Priya&backgroundColor=d1f0c4',
+  'https://api.dicebear.com/9.x/micah/svg?seed=Kabir&backgroundColor=ffd5dc',
+  'https://api.dicebear.com/9.x/micah/svg?seed=Sneha&backgroundColor=ffe4b5',
+  'https://api.dicebear.com/9.x/micah/svg?seed=Arjun&backgroundColor=dce8f5',
+  'https://api.dicebear.com/9.x/micah/svg?seed=Meera&backgroundColor=e8d5f5',
 ];
 
 export default function Hero({ onRequestInvite }) {
