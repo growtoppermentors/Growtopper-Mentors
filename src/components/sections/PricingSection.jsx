@@ -92,7 +92,7 @@ export default function PricingSection({ onRequestInvite }) {
             <div className="p-6 sm:p-8 bg-white text-center border-t border-gray-100">
               <button
                 onClick={onRequestInvite}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-brand-purple text-white font-black text-[16px] hover:opacity-90 transition-opacity shadow-[0_8px_20px_rgba(78,20,249,0.25)] active:scale-95"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-brand-purple text-white font-black text-[14px] hover:opacity-90 transition-opacity shadow-[0_8px_20px_rgba(78,20,249,0.25)] active:scale-95"
               >
                 Request Invite Only Access
                 <ArrowRight className="w-4 h-4" />

@@ -12,6 +12,10 @@ export default function PricingPage({ onRequestInvite }) {
     window.scrollTo(0, 0);
   }, []);
 
+  const daysPassed = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
+  const bookedSeats = Math.min(99, 20 + (daysPassed % 9) * 10);
+  const seatsLeft = 100 - bookedSeats;
+
   return (
     <div className="min-h-screen bg-[#FAFAFA] font-sans">
       <Navbar onRequestInvite={onRequestInvite} />
@@ -54,19 +58,18 @@ export default function PricingPage({ onRequestInvite }) {
                 <div className="w-full mb-4 border-b border-gray-100 pb-4">
                   <div className="flex justify-between items-end mb-1.5">
                     <span className="text-[10px] font-black text-gray-800 uppercase tracking-widest">Early Bird Seats</span>
-                    <span className="text-[10px] font-black text-brand-purple">1 left today</span>
+                    <span className="text-[10px] font-black text-brand-purple">{seatsLeft} left today</span>
                   </div>
                   <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden mb-1.5">
-                    <div className="h-full bg-brand-purple rounded-full" style={{ width: '99%' }}></div>
+                    <div className="h-full bg-brand-purple rounded-full transition-all duration-1000" style={{ width: `${bookedSeats}%` }}></div>
                   </div>
-                  <div className="text-[9px] font-medium text-gray-400 text-center">99/100 booked. Refreshes daily.</div>
+                  <div className="text-[9px] font-medium text-gray-400 text-center">{bookedSeats}/100 booked. Refreshes daily.</div>
                 </div>
 
                 {/* Price & CTA */}
                 <div className="w-full flex items-center justify-between gap-4">
                   <div className="flex flex-col">
                     <div className="flex items-center gap-1.5 mb-0.5">
-                      <span className="text-[11px] font-bold text-gray-300 line-through">₹4,999</span>
                       <span className="text-[11px] font-bold text-gray-400 line-through">₹999</span>
                     </div>
                     <div className="flex items-baseline gap-1.5">
@@ -146,19 +149,23 @@ export default function PricingPage({ onRequestInvite }) {
                 <thead>
                   <tr>
                     <th className="w-2/5 p-6 font-black text-[15px] text-gray-800 border-b border-r border-gray-100 bg-gray-50/30">Features</th>
-                    <th className="w-[30%] p-6 text-center border-b border-r border-gray-100 bg-white">
-                      <div className="text-[14px] font-black text-gray-800 mb-1">Elite</div>
-                      <div className="text-[12px] font-bold text-gray-300 line-through mb-0.5">₹1,999</div>
-                      <div className="text-[20px] font-black text-brand-dark">₹999<span className="text-[12px] text-gray-400 font-medium">/mo</span></div>
-                    </th>
-                    <th className="w-[30%] p-0 text-center border-b border-gray-100 bg-[#F9F4FF] relative">
-                      <div className="absolute top-0 left-0 right-0 bg-[#FBBF24] text-[9px] font-black text-white uppercase tracking-widest py-1">PRO PLAN</div>
-                      <div className="pt-8 pb-6 px-6">
-                        <div className="text-[14px] font-black text-brand-purple mb-1">Pro</div>
-                        <div className="text-[12px] font-bold text-purple-200 line-through mb-0.5">₹2,999</div>
-                        <div className="text-[20px] font-black text-brand-purple">₹1,499<span className="text-[12px] text-brand-purple/60 font-medium">/mo</span></div>
-                      </div>
-                    </th>
+                      <th className="w-[30%] p-6 text-center border-b border-r border-gray-100 bg-white">
+                        <div className="text-[14px] font-black text-gray-800 mb-2">Elite</div>
+                        <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-gray-100/80 border border-gray-200">
+                          <Lock className="w-3 h-3 text-gray-500" />
+                          <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Locked</span>
+                        </div>
+                      </th>
+                      <th className="w-[30%] p-0 text-center border-b border-gray-100 bg-[#F9F4FF] relative">
+                        <div className="absolute top-0 left-0 right-0 bg-[#FBBF24] text-[9px] font-black text-white uppercase tracking-widest py-1">PRO PLAN</div>
+                        <div className="pt-8 pb-6 px-6">
+                          <div className="text-[14px] font-black text-brand-purple mb-2">Pro</div>
+                          <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20">
+                            <Lock className="w-3 h-3 text-brand-purple/70" />
+                            <span className="text-[10px] font-bold text-brand-purple/70 uppercase tracking-widest">Locked</span>
+                          </div>
+                        </div>
+                      </th>
                   </tr>
                 </thead>
                 <tbody className="text-[13px] font-bold text-gray-600">
@@ -232,13 +239,13 @@ export default function PricingPage({ onRequestInvite }) {
                   <tr>
                     <td className="p-4 border-r border-gray-100 bg-gray-50/30"></td>
                     <td className="p-6 border-r border-gray-100 text-center">
-                      <button onClick={() => window.open('https://pages.razorpay.com/growtoppereliteplan', '_blank')} className="bg-gray-100 text-gray-800 px-8 py-2.5 rounded-xl font-bold text-[13px] hover:bg-gray-200 transition-colors w-full">
-                        Start Elite
+                      <button disabled className="bg-gray-100/50 text-gray-400 px-8 py-2.5 rounded-xl font-bold text-[13px] border border-gray-200 cursor-not-allowed w-full flex justify-center items-center gap-2">
+                        <Lock className="w-3.5 h-3.5" /> Locked
                       </button>
                     </td>
                     <td className="p-6 text-center bg-[#F9F4FF]">
-                      <button onClick={() => window.open('https://pages.razorpay.com/growtopperproplan', '_blank')} className="bg-brand-purple text-white px-8 py-2.5 rounded-xl font-bold text-[13px] hover:bg-[#4E0EE6] transition-colors shadow-md shadow-brand-purple/20 w-full">
-                        Get Pro
+                      <button disabled className="bg-brand-purple/10 text-brand-purple/40 px-8 py-2.5 rounded-xl font-bold text-[13px] border border-brand-purple/20 cursor-not-allowed w-full flex justify-center items-center gap-2">
+                        <Lock className="w-3.5 h-3.5" /> Locked
                       </button>
                     </td>
                   </tr>

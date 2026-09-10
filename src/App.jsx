@@ -74,7 +74,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Home is now the default homepage */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home openModal={openModal} />} />
 
         {/* Old landing page moved to /30-days-growth-challenge */}
         <Route path="/30-days-growth-challenge" element={<HomePage openModal={openModal} />} />

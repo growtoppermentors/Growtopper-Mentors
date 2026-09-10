@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
-export default function Home() {
+export default function Home({ openModal }) {
   const navigate = useNavigate();
   const tableContainerRef = useRef(null);
 
@@ -61,7 +61,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#111827] font-sans flex flex-col">
-      <Navbar onRequestInvite={() => navigate('/counseling-room')} />
+      <Navbar onRequestInvite={openModal} />
       
       {/* Hero Section (Strictly Full Viewport Height) */}
       <section className="px-4 w-full flex flex-col items-center justify-center min-h-[100dvh] pt-20 pb-4 max-w-7xl mx-auto">
@@ -781,10 +781,10 @@ export default function Home() {
           
           <div className="mt-8 text-center flex flex-col items-center">
             <button 
-              onClick={() => navigate('/career-counseling')}
+              onClick={openModal}
               className="bg-[#5B10FF] text-white px-8 py-3.5 rounded-full font-bold text-[13px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-[#5B10FF]/30 flex items-center gap-2 mb-2"
             >
-              Meet Our Full Mentor Team <ArrowRight className="w-4 h-4" />
+              Request to Invite <ArrowRight className="w-4 h-4" />
             </button>
             <p className="text-[11px] text-gray-500 font-medium">Different backgrounds. One mission — your growth.</p>
           </div>
@@ -850,7 +850,7 @@ export default function Home() {
           
           <div className="relative z-10 flex flex-col items-center md:items-end">
             <button 
-              onClick={() => navigate('/career-counseling')}
+              onClick={() => window.open('https://pages.razorpay.com/setupcall', '_blank')}
               className="bg-[#5B10FF] text-white px-8 py-3.5 rounded-full font-bold text-[14px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-[#5B10FF]/30 flex items-center gap-2 mb-3 w-full md:w-auto justify-center"
             >
               Start Today <ChevronRight className="w-4 h-4" />
