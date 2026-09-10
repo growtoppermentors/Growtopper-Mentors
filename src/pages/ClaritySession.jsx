@@ -1,298 +1,375 @@
-import React, { useState } from 'react';
-import { ArrowRight, Brain, Heart, CheckCircle2, Target, BarChart, Clock, Shield, Zap, BookOpen, MessageSquare, Layout, Activity, Compass, Users, FileText, Star, Check, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Brain, Heart, CheckCircle2, Target, BarChart, Clock, Shield, Zap, BookOpen, MessageSquare, Layout, Activity, Compass, Users, FileText, Star, Check, ChevronRight, Video } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
 const parameters = [
-  { name: "Digital Usage",          icon: Layout,      color: "bg-violet-50 text-violet-600" },
-  { name: "Education Ecosystem",    icon: BookOpen,    color: "bg-blue-50 text-blue-600" },
-  { name: "Academic Knowledge",     icon: Brain,       color: "bg-purple-50 text-purple-600" },
-  { name: "Accountability",         icon: Shield,      color: "bg-green-50 text-green-600" },
-  { name: "Communication Skills",   icon: MessageSquare, color: "bg-pink-50 text-pink-600" },
-  { name: "Resources & Strategies", icon: Target,      color: "bg-orange-50 text-orange-600" },
-  { name: "Aspirations & Roadmap",  icon: Compass,     color: "bg-sky-50 text-sky-600" },
-  { name: "Time Utilization",       icon: Clock,       color: "bg-teal-50 text-teal-600" },
-  { name: "Mindset & Motivation",   icon: Zap,         color: "bg-amber-50 text-amber-600" },
-  { name: "Routine & Habits",       icon: Activity,    color: "bg-rose-50 text-rose-600" },
+  { name: "Digital Usage", desc: "Screen time habits & device dependency", Icon: Layout, color: 'bg-gradient-to-br from-purple-50 to-white text-purple-600 border-purple-100' },
+  { name: "Education Ecosystem", desc: "Impact of school & coaching environment", Icon: BookOpen, color: 'bg-gradient-to-br from-blue-50 to-white text-blue-600 border-blue-100' },
+  { name: "Academic Knowledge", desc: "Core conceptual clarity and learning gaps", Icon: Brain, color: 'bg-gradient-to-br from-indigo-50 to-white text-indigo-600 border-indigo-100' },
+  { name: "Accountability", desc: "Level of self-discipline & ownership", Icon: Shield, color: 'bg-gradient-to-br from-green-50 to-white text-green-600 border-green-100' },
+  { name: "Communication Skills", desc: "Ability to express thoughts confidently", Icon: MessageSquare, color: 'bg-gradient-to-br from-sky-50 to-white text-sky-600 border-sky-100' },
+  { name: "Resources & Strategies", desc: "Effectiveness of current study methods", Icon: Target, color: 'bg-gradient-to-br from-orange-50 to-white text-orange-600 border-orange-100' },
+  { name: "Aspirations & Roadmap", desc: "Clarity on future goals and direction", Icon: Compass, color: 'bg-gradient-to-br from-pink-50 to-white text-pink-600 border-pink-100' },
+  { name: "Time Utilization", desc: "How effectively the 24 hours are used", Icon: Clock, color: 'bg-gradient-to-br from-teal-50 to-white text-teal-600 border-teal-100' },
+  { name: "Mindset & Motivation", desc: "Drive to succeed and resilience", Icon: Zap, color: 'bg-gradient-to-br from-amber-50 to-white text-amber-600 border-amber-100' },
+  { name: "Routine & Habits", desc: "Consistency in productive daily behaviors", Icon: Activity, color: 'bg-gradient-to-br from-rose-50 to-white text-rose-600 border-rose-100' },
 ];
 
-const problems = {
-  parents: [
-    { title: "High Investment, Low Clarity", desc: "Parents spend ₹20,000–₹1,00,000+ a year on courses and coaching yet still have no clear understanding of what's helping or harming their child's growth.", accent: true },
-    { title: "Solving Problems Blindly", desc: "When performance drops, parents buy new courses without identifying the root cause — which keeps the cycle repeating." },
-    { title: "Weak Parent–School Communication", desc: "Communication with schools is usually superficial, providing little real insight into the child's actual development journey." },
-    { title: "Desire for Holistic Growth, but No Guidance", desc: "Parents want their child to grow emotionally, academically, mentally, and socially — but don't know how to begin or who can help.", dark: true },
-  ],
-  students: [
-    { title: "Confusion Despite Coaching", desc: "Students attend school and coaching, yet still feel confused and burnt out because no one aligns school + coaching + daily routine.", dark: true },
-    { title: "Scattered Daily Routine", desc: "Out of 24 hours, 6 go to school, 8 to sleep — the remaining 10 lack structure. 6–8 of those are lost to distractions.", purple: true },
-    { title: "Mental Overload & Low Confidence", desc: "Students feel mentally overloaded and emotionally drained. They don't know where to start, which creates procrastination.", accent: true },
-    { title: "No Clarity on What or Why to Study", desc: "Most students don't know why they're studying a topic, how to study it, or what to prioritize — leading to wasted time." },
-  ],
+const stats = [
+  { val: '60', unit: 'min', label: 'Deep Dive Session' },
+  { val: '10+', unit: '',   label: 'AI Parameters' },
+  { val: '₹1', unit: '',    label: 'One-Time Setup' },
+  { val: '500+', unit: '',  label: 'Students Helped' },
+];
+
+const parentProblems = [
+  { n:'01', title:'High Investment, Low Clarity', desc:"Parents spend ₹20,000–₹1,00,000+ a year on courses yet have no clear understanding of what's helping or harming growth.", style:'orange' },
+  { n:'02', title:'Solving Problems Blindly', desc:"When performance drops, parents buy new courses without identifying root cause — the cycle keeps repeating.", style:'purple' },
+  { n:'03', title:'Weak Parent–School Communication', desc:"Communication with schools is usually superficial, providing little real insight into the child's actual development.", style:'green' },
+  { n:'04', title:'Desire for Holistic Growth, but No Guidance', desc:"Parents want emotional, academic, mental & social growth — but don't know how to begin or who can help.", style:'multi' },
+];
+
+const studentProblems = [
+  { n:'01', title:'Confusion Despite Coaching', desc:"Students attend school and coaching yet still feel confused and burnt out because no one aligns school + coaching + routine.", style:'multi' },
+  { n:'02', title:'Scattered Daily Routine', desc:"Out of 24 hours, 6 go to school, 8 to sleep — the remaining 10 lack structure. 6–8 of those are lost to distractions.", style:'purple' },
+  { n:'03', title:'Mental Overload & Low Confidence', desc:"Mentally overloaded and emotionally drained. They don't know where to start — creating procrastination and loss of confidence.", style:'orange' },
+  { n:'04', title:'No Clarity on What or Why to Study', desc:"Most students don't know why they're studying a topic, how to study it, or what to prioritize — leading to wasted time.", style:'green' },
+];
+
+const getGradientClass = (style) => {
+  switch(style) {
+      case 'orange': return 'bg-gradient-to-br from-[#FFF4ED] to-[#FFFaf0] border-orange-100 text-gray-900';
+      case 'purple': return 'bg-gradient-to-br from-[#F4F1FF] to-[#FAFAFF] border-purple-100 text-gray-900';
+      case 'green': return 'bg-gradient-to-br from-[#F0FDF4] to-[#F8FAFC] border-green-100 text-gray-900';
+      case 'multi': return 'bg-gradient-to-br from-[#FFF0E5] via-[#F3E8FF] to-[#E0F2FE] border-purple-100 text-gray-900';
+      default: return 'bg-white border-gray-100 text-gray-900';
+  }
 };
 
-const steps = [
-  { n: "01", title: "Identify The Problem", desc: "We decode the real picture of your child's journey from the AI SWOT test — no assumptions, just data-backed insights.", icon: BarChart },
-  { n: "02", title: "Strategic Correction", desc: "If we find flaws in execution or mindset, our mentor explains exactly how to strategically correct them with precision.", icon: Target },
-  { n: "03", title: "The Execution Roadmap", desc: "We map out the exact areas to work on to achieve desired goals and keep the student ahead of every academic trend.", icon: FileText },
-];
-
 export default function ClaritySession() {
-  const [openModal, setOpenModal] = useState(false);
-
-  const handleBook = () => {
-    window.open('https://calendly.com/growtopper', '_blank');
-  };
+  const handleBook = () => window.open('https://pages.razorpay.com/setupcall', '_blank');
 
   return (
-    <div className="min-h-screen bg-[#F8F9FE] text-[#111827] font-sans selection:bg-brand-purple/20">
+    <div className="min-h-screen bg-[#FAFAFA] text-[#111827] font-sans flex flex-col">
       <Navbar onRequestInvite={handleBook} />
 
-      <main className="pt-24 lg:pt-32 pb-20">
+      {/* ──────────────────── HERO ──────────────────── */}
+      <section className="px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto pt-24 pb-12 md:pt-28 md:pb-16">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
 
-        {/* ─── HERO ─── */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-28">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/10 text-brand-purple font-bold text-[11px] tracking-widest uppercase mb-6 border border-brand-purple/20">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-purple animate-pulse" />
-            The 60-Minute Turning Point
-          </div>
-
-          <h1 className="text-[38px] md:text-[56px] lg:text-[64px] font-black leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto text-gray-900">
-            1-on-1 Video Call for<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-purple-500 to-pink-500">
-              Student Growth Check.
-            </span>
-          </h1>
-
-          <p className="text-[16px] md:text-[18px] text-gray-500 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
-            A comprehensive 60-minute intervention: 30 minutes of deep AI-powered SWOT analysis, followed by a 30-minute 1-on-1 Mentor strategy call to decode reality and build an execution roadmap.
-          </p>
-
-          {/* Stats Row */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
-            {[
-              { val: "60 min", label: "Deep Dive Session" },
-              { val: "10+", label: "AI Parameters Analysed" },
-              { val: "Free", label: "Zero Cost to Start" },
-            ].map((s, i) => (
-              <div key={i} className="flex flex-col items-center px-6 py-3 bg-white rounded-2xl border border-gray-100 shadow-sm min-w-[120px]">
-                <span className="text-[22px] font-black text-brand-purple">{s.val}</span>
-                <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">{s.label}</span>
-              </div>
-            ))}
-          </div>
-
-          <button
-            onClick={handleBook}
-            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-brand-purple text-white font-black text-[16px] hover:opacity-90 transition-all shadow-xl shadow-brand-purple/20 hover:-translate-y-1 active:scale-[0.98]"
-          >
-            Book Free Clarity Session <ArrowRight className="w-5 h-5" />
-          </button>
-        </section>
-
-        {/* ─── PROBLEMS (2-col) ─── */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-28">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 text-gray-500 font-bold text-[11px] tracking-widest uppercase mb-4">
-              The Reality of Modern Education
+          {/* Left: Text */}
+          <div className="flex-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFF4ED] border border-orange-200 text-orange-600 text-[10px] font-black uppercase tracking-widest mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+              The 60-Minute Turning Point
             </div>
-            <h2 className="text-[28px] md:text-[38px] font-black tracking-tight">Problems we decode and solve.</h2>
+
+            <h1 className="text-[30px] md:text-[40px] lg:text-[46px] font-black leading-[1.05] tracking-tight mb-5 text-balance">
+              1-on-1 Video Call for<br />
+              <span className="text-[#5B10FF]">Student Growth Check.</span>
+            </h1>
+
+            <p className="text-[14px] md:text-[15px] text-gray-500 font-medium max-w-lg mx-auto lg:mx-0 mb-6 leading-relaxed">
+              A comprehensive 60-minute intervention: 30 minutes of deep AI-powered SWOT analysis, followed by a 30-minute 1-on-1 Mentor strategy call to decode reality and build an execution roadmap.
+            </p>
+
+            {/* Stats row */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 max-w-lg mx-auto lg:mx-0">
+              {stats.map((s, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-3 text-center">
+                  <div className="font-black text-[20px] md:text-[22px] text-[#5B10FF] leading-none">
+                    {s.val}<span className="text-[14px]">{s.unit}</span>
+                  </div>
+                  <div className="text-[9px] font-bold text-gray-400 uppercase tracking-wide mt-1">{s.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={handleBook}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#5B10FF] text-white font-bold text-[14px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-[#5B10FF]/25"
+            >
+              Book for ₹1 <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10">
-            {/* Parents */}
-            <div>
-              <h3 className="text-[11px] font-black uppercase tracking-widest text-gray-400 mb-5 text-center lg:text-left">What Parents Face Every Day</h3>
-              <div className="space-y-4">
-                {problems.parents.map((p, i) => (
-                  <div key={i} className={`p-5 rounded-2xl border ${
-                    p.accent ? 'bg-brand-purple text-white border-brand-purple' :
-                    p.dark   ? 'bg-[#1a1a1a] text-white border-transparent' :
-                    'bg-white text-gray-900 border-gray-100'
-                  }`}>
-                    <div className="flex items-start gap-3">
-                      <span className={`text-[11px] font-black shrink-0 mt-0.5 ${p.accent || p.dark ? 'text-white/50' : 'text-brand-purple'}`}>{String(i+1).padStart(2,'0')}</span>
-                      <div>
-                        <h4 className={`font-bold text-[15px] mb-1 ${p.accent ? 'text-white' : p.dark ? 'text-white' : 'text-gray-900'}`}>{p.title}</h4>
-                        <p className={`text-[13px] leading-relaxed ${p.accent ? 'text-white/75' : p.dark ? 'text-gray-400' : 'text-gray-500'}`}>{p.desc}</p>
+          {/* Right: Hero Card (Abode-style) */}
+          <div className="w-full lg:w-[380px] shrink-0">
+            <div className="rounded-[28px] bg-gradient-to-br from-[#5B10FF]/20 via-transparent to-[#5B10FF]/10 p-[1.5px] shadow-md">
+              <div className="bg-white rounded-[27px] p-6 lg:p-7">
+                <div className="inline-block px-3 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[9px] font-black uppercase tracking-widest mb-4">
+                  CLARITY SESSION
+                </div>
+                <h3 className="text-[20px] font-black text-brand-dark leading-[1.1] mb-4">
+                  Understand your child holistically.
+                </h3>
+
+                <div className="flex flex-col gap-3 mb-5">
+                  {[
+                    { icon: FileText, color: 'bg-blue-50 text-blue-500', title: '30 min AI SWOT Test', desc: 'Data-driven insights on strengths, weaknesses & interests.' },
+                    { icon: Video,    color: 'bg-purple-50 text-[#5B10FF]', title: '30 min 1:1 Mentor Call', desc: 'Personalized discussion to decode results & set direction.' },
+                  ].map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={i} className="bg-gray-50/60 rounded-xl p-3 border border-gray-100">
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${item.color}`}>
+                            <Icon className="w-3.5 h-3.5" strokeWidth={2.5} />
+                          </div>
+                          <h4 className="font-bold text-[12px] text-gray-800">{item.title}</h4>
+                        </div>
+                        <p className="text-[11px] text-gray-500 font-medium leading-relaxed">{item.desc}</p>
                       </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+                    );
+                  })}
+                </div>
 
-            {/* Students */}
-            <div>
-              <h3 className="text-[11px] font-black uppercase tracking-widest text-gray-400 mb-5 text-center lg:text-left">What Students Struggle With</h3>
-              <div className="space-y-4">
-                {problems.students.map((p, i) => (
-                  <div key={i} className={`p-5 rounded-2xl border ${
-                    p.purple ? 'bg-brand-purple text-white border-brand-purple' :
-                    p.dark   ? 'bg-[#1a1a1a] text-white border-transparent' :
-                    p.accent ? 'bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-100' :
-                    'bg-white text-gray-900 border-gray-100'
-                  }`}>
-                    <div className="flex items-start gap-3">
-                      <span className={`text-[11px] font-black shrink-0 mt-0.5 ${p.purple || p.dark ? 'text-white/50' : 'text-brand-purple'}`}>{String(i+1).padStart(2,'0')}</span>
-                      <div>
-                        <h4 className={`font-bold text-[15px] mb-1 ${p.purple ? 'text-white' : p.dark ? 'text-white' : 'text-gray-900'}`}>{p.title}</h4>
-                        <p className={`text-[13px] leading-relaxed ${p.purple ? 'text-white/75' : p.dark ? 'text-gray-400' : 'text-gray-500'}`}>{p.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                {/* SWOT mini card */}
+                <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 p-4">
+                  <h4 className="font-bold text-[11px] text-gray-800 mb-2.5 pb-2 border-b border-gray-100">SWOT Report Preview</h4>
+                  <ul className="space-y-2">
+                    {[
+                      { label: 'Strengths',    color: 'bg-green-500',   w: 'w-4/5' },
+                      { label: 'Weaknesses',   color: 'bg-red-400',     w: 'w-3/5' },
+                      { label: 'Opportunities',color: 'bg-[#5B10FF]',   w: 'w-[90%]' },
+                      { label: 'Growth Areas', color: 'bg-amber-400',   w: 'w-2/3' },
+                    ].map(s => (
+                      <li key={s.label} className="flex items-center gap-2">
+                        <div className={`w-1.5 h-1.5 rounded-full ${s.color} shrink-0`} />
+                        <span className="text-[10px] font-semibold text-gray-600 w-20 shrink-0">{s.label}</span>
+                        <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                          <div className={`h-full ${s.color} rounded-full ${s.w}`} />
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ─── 10 PARAMETERS ─── */}
-        <section className="bg-white border-y border-gray-100 py-24 mb-28">
-          <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <div className="w-14 h-14 bg-brand-purple/10 text-brand-purple rounded-2xl flex items-center justify-center mx-auto mb-5">
-                <BarChart className="w-7 h-7" />
-              </div>
-              <h2 className="text-[28px] md:text-[38px] font-black mb-4 tracking-tight">The 10-Parameter AI SWOT Analysis</h2>
-              <p className="text-gray-500 font-medium text-[15px] leading-relaxed">
-                During the first 30 minutes, our AI evaluates the student across 10 critical dimensions to calculate their exact Growth Score and developmental Stage.
-              </p>
-            </div>
+      {/* ──────────────────── PROBLEMS (2 col) ──────────────────── */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-20">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-purple/5 text-brand-purple text-[10px] font-black uppercase tracking-widest mb-4">
+            THE REAL PROBLEM
+          </div>
+          <h2 className="text-[26px] md:text-[36px] font-black text-brand-dark leading-[1.1] tracking-tight text-balance">
+            Problems we decode & solve.
+          </h2>
+        </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {parameters.map((param, idx) => {
-                const Icon = param.icon;
-                return (
-                  <div key={idx} className="bg-[#F8F9FE] border border-gray-100 p-5 rounded-2xl flex flex-col items-center text-center hover:border-brand-purple/30 hover:shadow-lg transition-all duration-300 group cursor-default">
-                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform ${param.color}`}>
-                      <Icon className="w-5 h-5" />
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
+          {/* Parents */}
+          <div>
+            <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4 text-center lg:text-left">What Parents Face</p>
+            <div className="space-y-4">
+              {parentProblems.map((p) => (
+                <div key={p.n} className={`p-6 md:p-8 rounded-2xl border shadow-sm ${getGradientClass(p.style)}`}>
+                  <div className="flex items-start gap-4">
+                    <span className="text-[12px] font-black shrink-0 mt-0.5 text-gray-400 opacity-60">{p.n}</span>
+                    <div>
+                      <h4 className="font-bold text-[15px] md:text-[16px] mb-2 text-gray-900">{p.title}</h4>
+                      <p className="text-[13px] md:text-[14px] leading-relaxed text-gray-600">{p.desc}</p>
                     </div>
-                    <h3 className="font-bold text-[12px] text-gray-800 leading-tight">{param.name}</h3>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
-        </section>
 
-        {/* ─── AI + HUMAN ENGINE ─── */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-28">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-purple/20 bg-brand-purple/5 text-brand-purple font-bold text-[11px] tracking-widest uppercase mb-5">
-              <Zap className="w-3 h-3" /> The Growtopper Engine
+          {/* Students */}
+          <div>
+            <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4 text-center lg:text-left">What Students Struggle With</p>
+            <div className="space-y-4">
+              {studentProblems.map((p) => (
+                <div key={p.n} className={`p-6 md:p-8 rounded-2xl border shadow-sm ${getGradientClass(p.style)}`}>
+                  <div className="flex items-start gap-4">
+                    <span className="text-[12px] font-black shrink-0 mt-0.5 text-gray-400 opacity-60">{p.n}</span>
+                    <div>
+                      <h4 className="font-bold text-[15px] md:text-[16px] mb-2 text-gray-900">{p.title}</h4>
+                      <p className="text-[13px] md:text-[14px] leading-relaxed text-gray-600">{p.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <h2 className="text-[28px] md:text-[42px] font-black tracking-tight mb-3">
-              AI Intelligence.{' '}
-              <span className="text-brand-purple">Human Empathy.</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────── 10 PARAMETERS ──────────────────── */}
+      <section className="bg-white border-y border-gray-100 py-20 mb-0">
+        <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-purple/5 text-brand-purple text-[10px] font-black uppercase tracking-widest mb-4">
+              <BarChart className="w-3 h-3" /> AI ANALYSIS ENGINE
+            </div>
+            <h2 className="text-[26px] md:text-[36px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3">
+              The 10-Parameter AI SWOT Analysis
             </h2>
-            <p className="text-gray-500 font-medium max-w-xl mx-auto text-[15px]">
-              Technology alone can't motivate a teenager. Humans alone can't track millions of data points. We combine both.
+            <p className="text-[14px] text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">
+              Our AI evaluates the student across 10 critical dimensions to calculate their exact Growth Score and developmental Stage. Here is what we measure:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {/* AI Brain */}
-            <div className="bg-white border border-gray-100 p-8 lg:p-10 rounded-[28px] shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-gray-50 border border-gray-200 rounded-2xl flex items-center justify-center mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {parameters.map((p, idx) => {
+              const Icon = p.Icon;
+              return (
+                <div key={idx} className={`rounded-2xl p-5 flex flex-col border shadow-sm hover:shadow-md transition-all group ${p.color}`}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3 bg-white shadow-sm group-hover:scale-110 transition-transform">
+                    <Icon className="w-5 h-5" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="font-bold text-[14px] text-gray-900 leading-tight mb-1">{p.name}</h3>
+                  <p className="text-[11px] text-gray-600 font-medium leading-relaxed">{p.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────── AI + HUMAN ENGINE ──────────────────── */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-20">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#FFF4ED] border border-orange-200 text-orange-600 text-[10px] font-black uppercase tracking-widest mb-4">
+            THE GROWTOPPER ENGINE
+          </div>
+          <h2 className="text-[26px] md:text-[36px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3">
+            AI Intelligence. <span className="text-[#5B10FF]">Human Empathy.</span>
+          </h2>
+          <p className="text-[14px] text-gray-500 font-medium max-w-xl mx-auto">
+            Technology alone can't motivate a teenager. Humans alone can't track millions of data points. We combine both.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+          {/* AI Brain Card */}
+          <div className="rounded-[28px] bg-gradient-to-br from-[#5B10FF]/20 via-transparent to-[#5B10FF]/10 p-[1.5px] shadow-sm hover:shadow-md hover:shadow-[#5B10FF]/5 transition-all">
+            <div className="bg-white rounded-[27px] p-7">
+              <div className="w-12 h-12 bg-gray-50 border border-gray-200 rounded-2xl flex items-center justify-center mb-5">
                 <Brain className="w-6 h-6 text-gray-700" />
               </div>
-              <h3 className="text-[20px] font-black mb-6">The AI Brain</h3>
-              <ul className="space-y-5">
+              <div className="inline-block px-3 py-1 rounded-md bg-[#5B10FF]/5 text-[#5B10FF] text-[9px] font-black uppercase tracking-widest mb-3">THE AI BRAIN</div>
+              <h3 className="text-[20px] font-black text-brand-dark mb-5">Precision Analysis</h3>
+              <ul className="space-y-4">
                 {[
-                  { icon: Target,    text: "Analyzes the 30-min psychology & focus test to identify precise learning gaps." },
-                  { icon: FileText,  text: "Generates hyper-personalized, realistic daily study roadmaps." },
-                  { icon: Activity,  text: "Tracks habit streaks and automatically flags burnout risks." },
-                ].map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-brand-purple/10 rounded-xl flex items-center justify-center shrink-0">
-                        <Icon className="w-4 h-4 text-brand-purple" />
-                      </div>
-                      <span className="text-gray-600 font-medium text-[13px] leading-relaxed pt-1">{item.text}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-
-            {/* Human Heart */}
-            <div className="bg-gradient-to-br from-brand-purple/5 to-purple-50 border border-purple-100 p-8 lg:p-10 rounded-[28px] shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-white border border-purple-100 rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                <Heart className="w-6 h-6 text-brand-purple" />
-              </div>
-              <h3 className="text-[20px] font-black mb-6">The Human Heart</h3>
-              <ul className="space-y-5">
-                {[
-                  { icon: Users,         text: "1-on-1 weekly video calls to review progress and remove blockers." },
-                  { icon: Shield,        text: "Provides deep emotional support and builds real-world confidence." },
-                  { icon: CheckCircle2,  text: "Strict but friendly daily accountability to ensure the AI plan is executed." },
-                ].map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-brand-purple/15 rounded-xl flex items-center justify-center shrink-0">
-                        <Icon className="w-4 h-4 text-brand-purple" />
-                      </div>
-                      <span className="text-gray-700 font-medium text-[13px] leading-relaxed pt-1">{item.text}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── HOW THE SESSION WORKS ─── */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mb-28">
-          <div className="text-center mb-14">
-            <h2 className="text-[28px] md:text-[38px] font-black tracking-tight">What happens on the call?</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-14">
-            {steps.map((step, i) => {
-              const Icon = step.icon;
-              return (
-                <div key={i} className="bg-white border border-gray-100 rounded-[24px] p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group">
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-[11px] font-black text-brand-purple tracking-widest">{step.n}</span>
-                    <div className="w-9 h-9 bg-brand-purple/10 rounded-xl flex items-center justify-center group-hover:bg-brand-purple group-hover:text-white transition-colors">
-                      <Icon className="w-4 h-4 text-brand-purple group-hover:text-white transition-colors" />
+                  { Icon: Target,   text: "Analyzes the 30-min psychology & focus test to identify precise learning gaps." },
+                  { Icon: FileText, text: "Generates hyper-personalized, realistic daily study roadmaps." },
+                  { Icon: Activity, text: "Tracks habit streaks and automatically flags burnout risks." },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-[#5B10FF]/8 rounded-xl flex items-center justify-center shrink-0">
+                      <item.Icon className="w-4 h-4 text-[#5B10FF]" strokeWidth={2} />
                     </div>
+                    <span className="text-gray-500 font-medium text-[13px] leading-relaxed pt-1">{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Human Heart Card */}
+          <div className="rounded-[28px] bg-gradient-to-br from-orange-200/40 via-amber-100/20 to-orange-100/30 p-[1.5px] shadow-sm hover:shadow-md transition-all">
+            <div className="bg-gradient-to-br from-[#FFF9F5] to-white rounded-[27px] p-7">
+              <div className="w-12 h-12 bg-white border border-orange-100 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+                <Heart className="w-6 h-6 text-orange-500" />
+              </div>
+              <div className="inline-block px-3 py-1 rounded-md bg-orange-50 text-orange-600 text-[9px] font-black uppercase tracking-widest mb-3">THE HUMAN HEART</div>
+              <h3 className="text-[20px] font-black text-brand-dark mb-5">Empathy & Accountability</h3>
+              <ul className="space-y-4">
+                {[
+                  { Icon: Users,        text: "1-on-1 weekly video calls to review progress and remove blockers." },
+                  { Icon: Shield,       text: "Provides deep emotional support and builds real-world confidence." },
+                  { Icon: CheckCircle2, text: "Strict but friendly daily accountability to ensure the AI plan is executed." },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-orange-50 rounded-xl flex items-center justify-center shrink-0">
+                      <item.Icon className="w-4 h-4 text-orange-500" strokeWidth={2} />
+                    </div>
+                    <span className="text-gray-600 font-medium text-[13px] leading-relaxed pt-1">{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────── HOW THE SESSION WORKS ──────────────────── */}
+      <section className="bg-white border-t border-gray-100 py-20">
+        <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-purple/5 text-brand-purple text-[10px] font-black uppercase tracking-widest mb-4">
+              HOW IT WORKS
+            </div>
+            <h2 className="text-[26px] md:text-[36px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3">
+              What happens on the call?
+            </h2>
+            <p className="text-[14px] text-gray-500 font-medium max-w-lg mx-auto">
+              Three focused steps that give your child the clearest roadmap they've ever had.
+            </p>
+          </div>
+
+          {/* 3-step card grid */}
+          <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-16">
+            {[
+              { n:'01', Icon: BarChart, title:'Identify The Problem', desc:"We decode the real picture of your child's journey from the AI SWOT test — no assumptions, just data-backed insights." },
+              { n:'02', Icon: Target,   title:'Strategic Correction', desc:"If we find flaws in execution or mindset, our mentor explains exactly how to strategically correct them with precision." },
+              { n:'03', Icon: FileText, title:'The Execution Roadmap', desc:"We map out the exact areas to work on to achieve desired goals and keep the student consistently ahead of trends." },
+            ].map((step, i) => {
+              const Icon = step.Icon;
+              return (
+                <div key={i} className="rounded-[28px] bg-gradient-to-br from-[#5B10FF]/15 via-transparent to-[#5B10FF]/8 p-[1px] hover:shadow-lg hover:shadow-[#5B10FF]/5 transition-all group">
+                  <div className="bg-white rounded-[27px] p-6">
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="text-[10px] font-black text-[#5B10FF] tracking-widest">{step.n}</span>
+                      <div className="w-9 h-9 bg-[#5B10FF]/8 rounded-xl flex items-center justify-center group-hover:bg-[#5B10FF] transition-colors">
+                        <Icon className="w-4 h-4 text-[#5B10FF] group-hover:text-white transition-colors" strokeWidth={2} />
+                      </div>
+                    </div>
+                    <h4 className="font-black text-[16px] text-brand-dark mb-2">{step.title}</h4>
+                    <p className="text-[13px] text-gray-500 font-medium leading-relaxed">{step.desc}</p>
                   </div>
-                  <h4 className="font-black text-[16px] text-gray-900 mb-2">{step.title}</h4>
-                  <p className="text-gray-500 text-[13px] leading-relaxed font-medium">{step.desc}</p>
                 </div>
               );
             })}
           </div>
 
-          {/* CTA Card */}
-          <div className="bg-gradient-to-br from-brand-purple to-purple-600 rounded-[32px] p-10 md:p-14 text-center text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-white/5 rounded-full pointer-events-none" />
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 text-white font-bold text-[11px] tracking-widest uppercase mb-5">
-                <Star className="w-3 h-3 fill-white" /> Completely Free
+          {/* CTA Banner — Abode-style orange+white gradient */}
+          <div className="rounded-[32px] bg-gradient-to-br from-[#FFF4ED] via-white to-[#FDF0FF] border border-orange-100 p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto shadow-sm">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF4ED] border border-orange-200 text-orange-600 text-[10px] font-black uppercase tracking-widest mb-4">
+                <Star className="w-3 h-3 fill-orange-500" /> One-Time Setup Fee
               </div>
-              <h3 className="text-[26px] md:text-[34px] font-black mb-3 leading-tight">
-                Ready to see where your child<br />actually stands?
+              <h3 className="text-[24px] md:text-[30px] font-black text-brand-dark leading-tight mb-2">
+                Ready to see where your<br />child actually stands?
               </h3>
-              <p className="text-white/75 font-medium text-[14px] max-w-lg mx-auto mb-8">
-                No commitments. No sales pitch. Just 60 minutes of honest, data-backed clarity about your child's growth trajectory.
+              <p className="text-[13px] text-gray-500 font-medium max-w-md leading-relaxed">
+                Just 60 minutes of honest, data-backed clarity. No long-term commitments. No pressure.
               </p>
+            </div>
+            <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
               <button
                 onClick={handleBook}
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-white text-brand-purple font-black text-[15px] hover:bg-gray-50 transition-all shadow-xl hover:-translate-y-1 active:scale-[0.98]"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#5B10FF] text-white font-bold text-[14px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-[#5B10FF]/25"
               >
-                Book Free Clarity Session <ArrowRight className="w-5 h-5" />
+                Book for ₹1 <ArrowRight className="w-4 h-4" />
               </button>
+              <a
+                href="/pricing"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white border border-gray-200 text-gray-700 font-bold text-[14px] hover:border-[#5B10FF]/30 hover:text-[#5B10FF] transition-colors"
+              >
+                View Plans <ChevronRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
-        </section>
-
-      </main>
+        </div>
+      </section>
 
       <Footer onRequestInvite={handleBook} />
     </div>
