@@ -217,6 +217,8 @@ export default function ApplicationModal({ isOpen, onClose }) {
         }
       }
 
+      if (window.gtag) window.gtag('event', 'generate_lead', { currency: 'INR', value: 99 });
+      if (window.fbq) window.fbq('track', 'Lead');
       goToNextStep(6);
     } catch (err) {
       console.error('OTP Verification Error:', err);

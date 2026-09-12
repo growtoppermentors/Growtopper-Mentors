@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Analytics from './components/utils/Analytics';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
@@ -72,6 +73,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Analytics />
       <React.Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-brand-dark font-bold">Loading...</div>}><Routes>
         {/* Home is now the default homepage */}
         <Route path="/" element={<Home openModal={openModal} />} />
