@@ -11,7 +11,7 @@ export default function Analytics() {
     // 1. Google Analytics Initialization
     if (gaId && !window.gtag) {
       const script = document.createElement('script');
-      script.src = https://www.googletagmanager.com/gtag/js?id= + gaId;
+      script.src =  'https://www.googletagmanager.com/gtag/js?id='  + gaId;
       script.async = true;
       document.head.appendChild(script);
 
