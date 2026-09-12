@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://growtopper-mentors.vercel.app/sitemap.xml
+Sitemap: https://growtopper.app/sitemap.xml

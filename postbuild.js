@@ -31,7 +31,7 @@ const generateHtml = (meta) => {
   if (meta.image) {
     html = html.replace(/<meta\s+property="og:image"\s+content=".*?"\s*\/?>/gi, <meta property="og:image" content=" + meta.image + " />);
   }
-  html = html.replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/gi, <meta property="og:url" content="https://growtopper-mentors.vercel.app + meta.urlPath + " />);
+  html = html.replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/gi, <meta property="og:url" content="https://growtopper.app + meta.urlPath + " />);
   
   // Replace Twitter Tags
   html = html.replace(/<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/gi, <meta name="twitter:title" content=" + meta.title.replace(/"/g, '&quot;') + " />);
@@ -41,7 +41,7 @@ const generateHtml = (meta) => {
   }
 
   // Replace Canonical
-  html = html.replace(/<link\s+rel="canonical"\s+href=".*?"\s*\/?>/gi, <link rel="canonical" href="https://growtopper-mentors.vercel.app + meta.urlPath + " />);
+  html = html.replace(/<link\s+rel="canonical"\s+href=".*?"\s*\/?>/gi, <link rel="canonical" href="https://growtopper.app + meta.urlPath + " />);
 
   return html;
 };
@@ -133,7 +133,7 @@ if (sitemapContent) {
   blogs.forEach(blog => {
     blogUrls += 
   <url>
-    <loc>https://growtopper-mentors.vercel.app/blog/ + blog.slug + </loc>
+    <loc>https://growtopper.app/blog/ + blog.slug + </loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>;
