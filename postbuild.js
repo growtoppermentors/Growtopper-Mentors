@@ -22,26 +22,26 @@ const generateHtml = (meta) => {
   let html = baseHtml;
   
   // Replace Title
-  html = html.replace(/<title>.*?<\/title>/gi, <title> + meta.title + </title>);
-  html = html.replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/gi, <meta name="description" content=" + meta.description.replace(/"/g, '&quot;') + " />);
+  html = html.replace(/<title>.*?<\/title>/gi, `<title>${meta.title}</title>`);
+  html = html.replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/gi, `<meta name="description" content="${meta.description.replace(/"/g, '&quot;')}" />`);
   
   // Replace OG Tags (using regex to catch existing meta tags)
-  html = html.replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/gi, <meta property="og:title" content=" + meta.title.replace(/"/g, '&quot;') + " />);
-  html = html.replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/gi, <meta property="og:description" content=" + meta.description.replace(/"/g, '&quot;') + " />);
+  html = html.replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/gi, `<meta property="og:title" content="${meta.title.replace(/"/g, '&quot;')}" />`);
+  html = html.replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/gi, `<meta property="og:description" content="${meta.description.replace(/"/g, '&quot;')}" />`);
   if (meta.image) {
-    html = html.replace(/<meta\s+property="og:image"\s+content=".*?"\s*\/?>/gi, <meta property="og:image" content=" + meta.image + " />);
+    html = html.replace(/<meta\s+property="og:image"\s+content=".*?"\s*\/?>/gi, `<meta property="og:image" content="${meta.image}" />`);
   }
-  html = html.replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/gi, <meta property="og:url" content="https://growtopper.app + meta.urlPath + " />);
+  html = html.replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/gi, `<meta property="og:url" content="https://growtopper.app${meta.urlPath}" />`);
   
   // Replace Twitter Tags
-  html = html.replace(/<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/gi, <meta name="twitter:title" content=" + meta.title.replace(/"/g, '&quot;') + " />);
-  html = html.replace(/<meta\s+name="twitter:description"\s+content=".*?"\s*\/?>/gi, <meta name="twitter:description" content=" + meta.description.replace(/"/g, '&quot;') + " />);
+  html = html.replace(/<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/gi, `<meta name="twitter:title" content="${meta.title.replace(/"/g, '&quot;')}" />`);
+  html = html.replace(/<meta\s+name="twitter:description"\s+content=".*?"\s*\/?>/gi, `<meta name="twitter:description" content="${meta.description.replace(/"/g, '&quot;')}" />`);
   if (meta.image) {
-    html = html.replace(/<meta\s+name="twitter:image"\s+content=".*?"\s*\/?>/gi, <meta name="twitter:image" content=" + meta.image + " />);
+    html = html.replace(/<meta\s+name="twitter:image"\s+content=".*?"\s*\/?>/gi, `<meta name="twitter:image" content="${meta.image}" />`);
   }
 
   // Replace Canonical
-  html = html.replace(/<link\s+rel="canonical"\s+href=".*?"\s*\/?>/gi, <link rel="canonical" href="https://growtopper.app + meta.urlPath + " />);
+  html = html.replace(/<link\s+rel="canonical"\s+href=".*?"\s*\/?>/gi, `<link rel="canonical" href="https://growtopper.app${meta.urlPath}" />`);
 
   return html;
 };
@@ -88,7 +88,7 @@ mainPages.forEach(page => {
   const html = generateHtml(page);
   fs.writeFileSync(path.resolve(specificDir, 'index.html'), html);
 });
-console.log('Successfully generated static HTML pages for ' + mainPages.length + ' main routes!');
+console.log(`Successfully generated static HTML pages for ${mainPages.length} main routes!`);
 
 // --- 2. GENERATE STATIC PAGES FOR BLOGS ---
 const blogDir = path.resolve(distDir, 'blog');
@@ -104,10 +104,10 @@ blogs.forEach(blog => {
   }
   
   const meta = {
-    title: blog.title + ' | Growtopper Mentors',
+    title: `${blog.title} | Growtopper Mentors`,
     description: blog.excerpt,
     image: blog.image,
-    urlPath: '/blog/' + blog.slug
+    urlPath: `/blog/${blog.slug}`
   };
 
   const html = generateHtml(meta);
@@ -115,7 +115,7 @@ blogs.forEach(blog => {
   count++;
 });
 
-console.log('Successfully generated static HTML pages for ' + count + ' blogs!');
+console.log(`Successfully generated static HTML pages for ${count} blogs!`);
 
 // --- 3. APPEND BLOGS TO SITEMAP.XML ---
 const sitemapPath = path.resolve(__dirname, 'public/sitemap.xml');
@@ -131,12 +131,12 @@ if (fs.existsSync(distSitemapPath)) {
 if (sitemapContent) {
   let blogUrls = '';
   blogs.forEach(blog => {
-    blogUrls += 
+    blogUrls += `
   <url>
-    <loc>https://growtopper.app/blog/ + blog.slug + </loc>
+    <loc>https://growtopper.app/blog/${blog.slug}</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>;
+  </url>`;
   });
   
   sitemapContent = sitemapContent.replace('</urlset>', blogUrls + '\n</urlset>');
