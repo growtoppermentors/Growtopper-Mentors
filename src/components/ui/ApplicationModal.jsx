@@ -24,6 +24,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
   const [otp, setOtp] = useState('');
   const [otpSending, setOtpSending] = useState(false);
   const [otpVerifying, setOtpVerifying] = useState(false);
+  const [checkingPhone, setCheckingPhone] = useState(false);
   const [error, setError] = useState('');
   
   const [animationKey, setAnimationKey] = useState(0);
@@ -84,12 +85,19 @@ export default function ApplicationModal({ isOpen, onClose }) {
     setError('');
     // Check for duplicate phone using secure RPC
     if (supabase) {
-      const { data, error } = await supabase.rpc('check_phone_exists', { check_phone: phone.trim() });
-      
-      if (data === true) {
-        setError('already_submitted');
-        return;
+      setCheckingPhone(true);
+      try {
+        const { data, error } = await supabase.rpc('check_phone_exists', { check_phone: phone.trim() });
+        
+        if (data === true) {
+          setError('already_submitted');
+          setCheckingPhone(false);
+          return;
+        }
+      } catch (err) {
+        console.error(err);
       }
+      setCheckingPhone(false);
     }
     goToNextStep(2);
   };
@@ -317,8 +325,12 @@ export default function ApplicationModal({ isOpen, onClose }) {
                       <p className="text-amber-700 text-[13px] font-medium leading-relaxed">You've already submitted your application with this number. Our mentor team will get back to you shortly — please wait!</p>
                     </div>
                   ) : (
-                    <button type="submit" disabled={phone.length < 10} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 disabled:opacity-50 shadow-md active:scale-[0.98]">
-                      Continue <ArrowRight className="w-4 h-4" />
+                    <button type="submit" disabled={phone.length < 10 || checkingPhone} className="w-full py-3.5 rounded-xl bg-brand-purple hover:bg-brand-purple/90 text-white font-bold text-[14px] sm:text-[15px] transition-all flex items-center justify-center gap-2 disabled:opacity-50 shadow-md active:scale-[0.98]">
+                      {checkingPhone ? (
+                        <><span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></span> Checking…</>
+                      ) : (
+                        <>Continue <ArrowRight className="w-4 h-4" /></>
+                      )}
                     </button>
                   )}
                 </form>
@@ -466,7 +478,32 @@ export default function ApplicationModal({ isOpen, onClose }) {
                     <div className="relative group">
                       <label className={labelClass}>Exact Time</label>
                       <Clock className={`${iconClass} hidden sm:block`} />
-                      <input required type="time" value={callTime} onChange={(e) => setCallTime(e.target.value)} className={`${inputClass} sm:pl-10 pl-3 text-[12px] sm:text-sm tracking-tighter sm:tracking-normal min-w-0`} style={{colorScheme: 'light'}} />
+                      <select required value={callTime} onChange={(e) => setCallTime(e.target.value)} className={`${inputClass} sm:pl-10 pl-3 text-[12px] sm:text-sm tracking-tighter sm:tracking-normal min-w-0 appearance-none`}>
+                        <option value="">Select time</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="09:30">09:30 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="10:30">10:30 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="11:30">11:30 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="12:30">12:30 PM</option>
+                        <option value="13:00">01:00 PM</option>
+                        <option value="13:30">01:30 PM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="14:30">02:30 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="15:30">03:30 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                        <option value="16:30">04:30 PM</option>
+                        <option value="17:00">05:00 PM</option>
+                        <option value="17:30">05:30 PM</option>
+                        <option value="18:00">06:00 PM</option>
+                        <option value="18:30">06:30 PM</option>
+                        <option value="19:00">07:00 PM</option>
+                        <option value="19:30">07:30 PM</option>
+                        <option value="20:00">08:00 PM</option>
+                      </select>
                     </div>
                   </div>
 
