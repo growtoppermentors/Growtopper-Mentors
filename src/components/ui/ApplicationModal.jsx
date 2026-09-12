@@ -82,15 +82,11 @@ export default function ApplicationModal({ isOpen, onClose }) {
       return;
     }
     setError('');
-    // Check for duplicate phone
+    // Check for duplicate phone using secure RPC
     if (supabase) {
-      const { data, error } = await supabase
-        .from('applications')
-        .select('id')
-        .eq('phone', phone.trim())
-        .limit(1);
+      const { data, error } = await supabase.rpc('check_phone_exists', { check_phone: phone.trim() });
       
-      if (data && data.length > 0) {
+      if (data === true) {
         setError('already_submitted');
         return;
       }
@@ -116,15 +112,11 @@ export default function ApplicationModal({ isOpen, onClose }) {
       return;
     }
     setError('');
-    // Check for duplicate email
+    // Check for duplicate email using secure RPC
     if (supabase) {
-      const { data, error } = await supabase
-        .from('applications')
-        .select('id')
-        .eq('email', email.trim().toLowerCase())
-        .limit(1);
+      const { data, error } = await supabase.rpc('check_email_exists', { check_email: email.trim().toLowerCase() });
         
-      if (data && data.length > 0) {
+      if (data === true) {
         setError('already_submitted');
         return;
       }
