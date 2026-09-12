@@ -346,7 +346,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
                   <div className="relative group">
                     <label className={labelClass}>Student Name</label>
                     <User className={iconClass} />
-                    <input required type="text" value={studentName} onChange={(e)=>setStudentName(e.target.value)} className={inputClass} placeholder="E.g. Rohan" />
+                    <input required type="text" maxLength="80" value={studentName} onChange={(e)=>setStudentName(e.target.value)} className={inputClass} placeholder="E.g. Rohan" />
                   </div>
                   
                   <div className="grid grid-cols-2 gap-3">
@@ -395,13 +395,13 @@ export default function ApplicationModal({ isOpen, onClose }) {
                   <div className="relative group">
                     <label className={labelClass}>School Name</label>
                     <Building className={iconClass} />
-                    <input required type="text" value={school} onChange={(e)=>setSchool(e.target.value)} className={inputClass} placeholder="Enter school name" />
+                    <input required type="text" maxLength="80" value={school} onChange={(e)=>setSchool(e.target.value)} className={inputClass} placeholder="Enter school name" />
                   </div>
 
                   <div className="relative group">
                     <label className={labelClass}>Parent Name</label>
                     <User className={iconClass} />
-                    <input required type="text" value={parentName} onChange={(e)=>setParentName(e.target.value)} className={inputClass} placeholder="Your full name" />
+                    <input required type="text" maxLength="80" value={parentName} onChange={(e)=>setParentName(e.target.value)} className={inputClass} placeholder="Your full name" />
                   </div>
 
                   <div className="relative group">
@@ -409,7 +409,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
                     <Building className={iconClass} />
                     <input 
                       required 
-                      type="text" 
+                      type="text" maxLength="80" 
                       list="cities"
                       value={city} 
                       onChange={(e)=>setCity(e.target.value)} 
@@ -516,7 +516,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
                       <input 
                         required 
                         autoFocus
-                        type="text"
+                        type="text" maxLength="80"
                         inputMode="numeric"
                         maxLength={6}
                         value={otp}
