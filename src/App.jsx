@@ -13,14 +13,14 @@ import FAQ from './components/sections/FAQ';
 import FinalCTA from './components/sections/FinalCTA';
 import ApplicationModal from './components/ui/ApplicationModal';
 import LiveNotification from './components/ui/LiveNotification';
-import SyllabusPage from './pages/SyllabusPage';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
+const SyllabusPage = React.lazy(() => import('./pages/SyllabusPage'));
+const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = React.lazy(() => import('./pages/TermsOfService'));
 import Home from './pages/Home';
-import PricingPage from './pages/PricingPage';
-import ClaritySession from './pages/ClaritySession';
-import BlogList from './pages/BlogList';
-import BlogPost from './pages/BlogPost';
+const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+const ClaritySession = React.lazy(() => import('./pages/ClaritySession'));
+const BlogList = React.lazy(() => import('./pages/BlogList'));
+const BlogPost = React.lazy(() => import('./pages/BlogPost'));
 
 function HomePage({ openModal }) {
   return (
@@ -72,7 +72,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
+      <React.Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-brand-dark font-bold">Loading...</div>}><Routes>
         {/* Home is now the default homepage */}
         <Route path="/" element={<Home openModal={openModal} />} />
 
@@ -86,7 +86,7 @@ function App() {
         <Route path="/blog" element={<BlogList onRequestInvite={openModal} />} />
         <Route path="/blog/:slug" element={<BlogPost onRequestInvite={openModal} />} />
         <Route path="/clarity-session" element={<ClaritySession />} />
-      </Routes>
+      </Routes></React.Suspense>
       <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />
       <LiveNotification />
     </BrowserRouter>
