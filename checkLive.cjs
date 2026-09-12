@@ -1,6 +1,6 @@
 const https = require('https');
 
-https.get('https://growtopper-mentors.vercel.app/', (res) => {
+https.get('https://growtopper.app/', (res) => {
   let data = '';
   res.on('data', chunk => data += chunk);
   res.on('end', () => {
@@ -9,7 +9,7 @@ https.get('https://growtopper-mentors.vercel.app/', (res) => {
   });
 });
 
-https.get('https://growtopper-mentors.vercel.app/og-custom.png', (res) => {
+https.get('https://growtopper.app/og-custom.png', (res) => {
   console.log("Image /og-custom.png HTTP Status:", res.statusCode);
   console.log("Image /og-custom.png Content-Length:", res.headers['content-length']);
 });
