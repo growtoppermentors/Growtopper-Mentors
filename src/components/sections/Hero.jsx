@@ -70,7 +70,7 @@ export default function Hero({ onRequestInvite }) {
             <div className="relative w-full aspect-video rounded-[22px] sm:rounded-[29px] overflow-hidden bg-black">
               <iframe 
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/M7lc1UVf-VE?rel=0&modestbranding=1" 
+                src="https://www.youtube.com/embed/uTZyyhW5zk4?rel=0&modestbranding=1" 
                 title="Explainer Video"
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
