@@ -175,6 +175,18 @@ export default function BlogPost({ onRequestInvite }) {
             .prose-custom em {
               color: #5B10FF;
             }
+            .prose-custom a {
+              color: #5B10FF;
+              font-weight: 700;
+              text-decoration: none;
+              border-bottom: 2px solid rgba(91,16,255,0.2);
+              transition: all 0.2s ease;
+              padding-bottom: 1px;
+            }
+            .prose-custom a:hover {
+              border-bottom-color: #5B10FF;
+              background-color: rgba(91,16,255,0.05);
+            }
           `}} />
 
           {/* Bottom CTA within Article */}
