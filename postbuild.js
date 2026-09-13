@@ -21,6 +21,12 @@ const baseHtml = fs.readFileSync(indexPath, 'utf-8');
 const generateHtml = (meta) => {
   let html = baseHtml;
   
+  // Ensure absolute image URL for OG Tags
+  let absoluteImage = meta.image;
+  if (absoluteImage && absoluteImage.startsWith('/')) {
+    absoluteImage = `https://growtopper.app${absoluteImage}`;
+  }
+
   // Replace Title
   html = html.replace(/<title>.*?<\/title>/gi, `<title>${meta.title}</title>`);
   html = html.replace(/<meta\s+name="description"\s+content=".*?"\s*\/?>/gi, `<meta name="description" content="${meta.description.replace(/"/g, '&quot;')}" />`);
@@ -28,16 +34,16 @@ const generateHtml = (meta) => {
   // Replace OG Tags (using regex to catch existing meta tags)
   html = html.replace(/<meta\s+property="og:title"\s+content=".*?"\s*\/?>/gi, `<meta property="og:title" content="${meta.title.replace(/"/g, '&quot;')}" />`);
   html = html.replace(/<meta\s+property="og:description"\s+content=".*?"\s*\/?>/gi, `<meta property="og:description" content="${meta.description.replace(/"/g, '&quot;')}" />`);
-  if (meta.image) {
-    html = html.replace(/<meta\s+property="og:image"\s+content=".*?"\s*\/?>/gi, `<meta property="og:image" content="${meta.image}" />`);
+  if (absoluteImage) {
+    html = html.replace(/<meta\s+property="og:image"\s+content=".*?"\s*\/?>/gi, `<meta property="og:image" content="${absoluteImage}" />`);
   }
   html = html.replace(/<meta\s+property="og:url"\s+content=".*?"\s*\/?>/gi, `<meta property="og:url" content="https://growtopper.app${meta.urlPath}" />`);
   
   // Replace Twitter Tags
   html = html.replace(/<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/gi, `<meta name="twitter:title" content="${meta.title.replace(/"/g, '&quot;')}" />`);
   html = html.replace(/<meta\s+name="twitter:description"\s+content=".*?"\s*\/?>/gi, `<meta name="twitter:description" content="${meta.description.replace(/"/g, '&quot;')}" />`);
-  if (meta.image) {
-    html = html.replace(/<meta\s+name="twitter:image"\s+content=".*?"\s*\/?>/gi, `<meta name="twitter:image" content="${meta.image}" />`);
+  if (absoluteImage) {
+    html = html.replace(/<meta\s+name="twitter:image"\s+content=".*?"\s*\/?>/gi, `<meta name="twitter:image" content="${absoluteImage}" />`);
   }
 
   // Replace Canonical
