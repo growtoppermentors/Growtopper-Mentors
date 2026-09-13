@@ -27,7 +27,7 @@ export default function BlogPost({ onRequestInvite }) {
   }
 
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-brand-purple/20 selection:text-brand-purple">
+    <div className="min-h-screen bg-white font-sans allow-select selection:bg-brand-purple/20 selection:text-brand-purple">
       <Navbar onRequestInvite={onRequestInvite} />
 
       <main className="pt-24 md:pt-32 pb-24">

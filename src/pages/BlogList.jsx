@@ -14,7 +14,7 @@ export default function BlogList({ onRequestInvite }) {
   const remainingBlogs = blogs.slice(1);
 
   return (
-    <div className="min-h-screen bg-[#F8F9FE] font-sans">
+    <div className="min-h-screen bg-[#F8F9FE] font-sans allow-select">
       <Navbar onRequestInvite={onRequestInvite} />
 
       <main className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
