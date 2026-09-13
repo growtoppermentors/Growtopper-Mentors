@@ -87,7 +87,7 @@ function App() {
         <Route path="/pricing" element={<PricingPage onRequestInvite={openModal} />} />
         <Route path="/blog" element={<BlogList onRequestInvite={openModal} />} />
         <Route path="/blog/:slug" element={<BlogPost onRequestInvite={openModal} />} />
-        <Route path="/clarity-session" element={<ClaritySession />} />
+        <Route path="/1-1-clarity-session-call" element={<ClaritySession />} />
       </Routes></React.Suspense>
       <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />
       <LiveNotification />

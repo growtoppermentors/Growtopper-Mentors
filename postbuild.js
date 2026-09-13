@@ -55,10 +55,10 @@ const mainPages = [
     urlPath: '/30-days-growth-challenge'
   },
   {
-    path: '/clarity-session',
+    path: '/1-1-clarity-session-call',
     title: '1-1 Clarity Session Call | Growtopper Mentors',
     description: 'Book a 1-on-1 Clarity Session with an expert mentor. Get an AI-driven SWOT analysis and a personalized growth roadmap for your child.',
-    urlPath: '/clarity-session'
+    urlPath: '/1-1-clarity-session-call'
   },
   {
     path: '/pricing',

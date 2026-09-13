@@ -86,7 +86,7 @@ export default function Footer({ onRequestInvite }) {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 max-w-[280px] mx-auto lg:mx-0 text-center lg:text-left">
               {[
                 { label: '30 Days Growth Challenge', href: '/30-days-growth-challenge' },
-                { label: '1-1 Clarity Session Call',  href: '/clarity-session' },
+                { label: '1-1 Clarity Session Call',  href: '/1-1-clarity-session-call' },
                 { label: 'Pricing',          href: '/pricing' },
                 { label: 'Blog',             href: '/blog' },
                 { label: 'Syllabus',         href: '/syllabus' },

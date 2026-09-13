@@ -32,7 +32,7 @@ export default function Navbar({ onRequestInvite }) {
 
   const navLinks = [
     { name: '30 Days Growth Challenge', href: '/30-days-growth-challenge', Icon: Flame },
-    { name: '1-1 Clarity Session Call',  href: '/clarity-session',          Icon: Zap },
+    { name: '1-1 Clarity Session Call',  href: '/1-1-clarity-session-call',          Icon: Zap },
     { name: 'Pricing',          href: '/pricing',                   Icon: Coins },
     { name: 'Blog',             href: '/blog',                      Icon: BookOpen },
   ];
