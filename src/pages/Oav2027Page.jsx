@@ -9,8 +9,44 @@ import {
   Info,
   GraduationCap,
   ClipboardCheck,
-  MapPin
+  MapPin,
+  Clock,
+  BookOpen,
+  Award,
+  Users,
+  AlertTriangle,
+  Lightbulb,
+  CheckSquare,
+  ShieldCheck,
+  Zap,
+  Globe,
+  Wallet
 } from 'lucide-react';
+
+const GradientCard = ({ children, title, icon: Icon }) => (
+  <div className="relative rounded-[32px] p-[2px] bg-gradient-to-r from-[#7280DE]/30 via-[#B28BFF]/40 to-[#7280DE]/30 bg-[length:200%_100%] shadow-[0_10px_30px_rgba(114,128,222,0.05)] hover:shadow-[0_15px_40px_rgba(114,128,222,0.1)] transition-shadow h-full mb-8">
+    <div className="relative rounded-[30px] overflow-hidden bg-white bg-gradient-to-br from-[#7280DE]/10 via-[#7280DE]/5 to-transparent p-6 sm:p-8 h-full w-full">
+      {title && (
+        <div className="flex items-center gap-3 mb-6 border-b border-[#7280DE]/10 pb-4">
+          {Icon && <Icon className="w-7 h-7 text-[#7280DE]" />}
+          <h2 className="text-xl sm:text-2xl font-black text-brand-dark">{title}</h2>
+        </div>
+      )}
+      <div className="text-gray-700 leading-relaxed text-[15px] sm:text-[16px] space-y-4">
+        {children}
+      </div>
+    </div>
+  </div>
+);
+
+const SectionTitle = ({ number, title }) => (
+  <h2 className="text-2xl sm:text-3xl font-black text-brand-dark mb-6 flex items-center gap-3">
+    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#7280DE] to-[#B28BFF] text-white text-lg flex-shrink-0 shadow-sm">
+      {number}
+    </span>
+    {title}
+  </h2>
+);
 
 const Oav2027Page = ({ onRequestInvite }) => {
   useEffect(() => {
@@ -18,12 +54,12 @@ const Oav2027Page = ({ onRequestInvite }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-brand-light font-sans allow-select">
+    <div className="min-h-screen bg-[#F8F9FE] font-sans allow-select">
       <Navbar onRequestInvite={onRequestInvite} />
 
       {/* Hero Banner Section */}
-      <section className="pt-28 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="w-full mb-10 overflow-hidden rounded-2xl shadow-xl border border-gray-100">
+      <section className="pt-24 pb-8 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div className="w-full mb-8 overflow-hidden rounded-[32px] shadow-2xl border-4 border-white">
           <img 
             src="/images/oav2027-banner.png" 
             alt="OAV Admission 2027: Complete Guide for Students and Parents" 
@@ -31,289 +67,769 @@ const Oav2027Page = ({ onRequestInvite }) => {
           />
         </div>
         
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-dark mb-4">OAV Admission Process & Eligibility 2027</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Everything you need to know about the Odisha Adarsha Vidyalaya Entrance Test (OAVET) 2027. 
-            Official guidelines, dates, eligibility matrix, and preparation strategies in one place.
+        <div className="text-center mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark mb-4 leading-tight">Odisha Adarsha Vidyalaya Entrance Exam 2027</h1>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-medium">
+            Planning to appear for the OAV Entrance Examination 2027? Here is the essential information you and your parents need to know.
           </p>
-          <div className="mt-4 inline-flex items-center gap-2 text-sm text-yellow-700 bg-yellow-50 px-4 py-2 rounded-full font-medium border border-yellow-200">
-            <Info className="w-5 h-5" />
-            Note: 2027 expected timeline based on 2026 patterns. Official notification expected November 2026.
+          <div className="mt-6 inline-flex items-center gap-2 text-[13px] sm:text-sm text-yellow-800 bg-yellow-100 px-5 py-3 rounded-2xl font-bold border border-yellow-200 text-left shadow-sm">
+            <AlertTriangle className="w-6 h-6 flex-shrink-0 text-yellow-600" />
+            <p><strong>Important:</strong> The official OAV Admission 2027 notification has not yet been released. Dates shown for 2027 are expected based on the previous admission cycle.</p>
           </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 space-y-12">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 space-y-16">
         
-        {/* Quick Summary Grid */}
+        {/* 1. Quick Overview */}
         <section>
-          <div className="flex items-center gap-3 mb-6">
-            <Calendar className="w-8 h-8 text-brand-purple" />
-            <h2 className="text-2xl font-bold text-brand-dark">Quick Summary (2027 Expectations)</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="text-gray-500 font-medium text-sm">Application Period</h3>
-              <p className="text-xl font-bold text-brand-dark mt-1">Nov – Dec 2026</p>
-              <p className="text-sm text-gray-400 mt-2">Expected</p>
+          <SectionTitle number="1" title="OAV Admission 2027 — Quick Overview" />
+          <GradientCard icon={Calendar}>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <tbody>
+                  {[
+                    ['Notification', 'November 2026'],
+                    ['Application', 'November–December 2026'],
+                    ['Admit Card', 'Late December 2026'],
+                    ['Entrance Exam', 'January 2027'],
+                    ['Result', 'February 2027'],
+                    ['Merit List', 'February–March 2027'],
+                    ['Document Verification', 'March–April 2027'],
+                    ['Final Admission', 'April–May 2027'],
+                    ['Waiting List', 'May–June 2027'],
+                    ['Application Mode', 'Online'],
+                    ['Exam Mode', 'Offline / OMR'],
+                    ['Exam Language', 'Odia & English'],
+                    ['Negative Marking', 'No'],
+                  ].map((row, i) => (
+                    <tr key={i} className="border-b border-[#7280DE]/10 last:border-0 hover:bg-white/50 transition-colors">
+                      <td className="py-3 px-3 font-bold text-gray-900 w-1/2">{row[0]}</td>
+                      <td className="py-3 px-3 font-medium text-[#7280DE]">{row[1]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="text-gray-500 font-medium text-sm">Entrance Exam Date</h3>
-              <p className="text-xl font-bold text-brand-dark mt-1">January 2027</p>
-              <p className="text-sm text-gray-400 mt-2">OMR Based (Expected)</p>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="text-gray-500 font-medium text-sm">Result Declaration</h3>
-              <p className="text-xl font-bold text-brand-dark mt-1">February 2027</p>
-              <p className="text-sm text-gray-400 mt-2">Expected</p>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="text-gray-500 font-medium text-sm">Final Admission</h3>
-              <p className="text-xl font-bold text-brand-dark mt-1">April – May 2027</p>
-              <p className="text-sm text-gray-400 mt-2">Expected</p>
-            </div>
-          </div>
+            <p className="text-sm text-gray-500 mt-4 italic">* These 2027 dates are expected, not officially announced.</p>
+          </GradientCard>
         </section>
 
-        {/* Eligibility Criteria */}
-        <section className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-          <div className="flex items-center gap-3 mb-8">
-            <CheckCircle className="w-8 h-8 text-brand-purple" />
-            <h2 className="text-2xl font-bold text-brand-dark">Eligibility Criteria 2027</h2>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">A. Basic Eligibility</h3>
-            <ul className="space-y-4">
-              <li className="flex gap-3">
-                <MapPin className="w-6 h-6 text-brand-purple flex-shrink-0" />
-                <div>
-                  <strong className="text-gray-900">Odisha Domicile:</strong> 
-                  <span className="text-gray-600 ml-2">Permanent resident of Odisha only (mandatory).</span>
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <AlertCircle className="w-6 h-6 text-brand-purple flex-shrink-0" />
-                <div>
-                  <strong className="text-gray-900">Current OAV Students:</strong> 
-                  <span className="text-gray-600 ml-2">Already enrolled in any OAV = NOT eligible.</span>
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <GraduationCap className="w-6 h-6 text-brand-purple flex-shrink-0" />
-                <div>
-                  <strong className="text-gray-900">School Type:</strong> 
-                  <span className="text-gray-600 ml-2">Must be studying in Government, CBSE, ICSE, or recognized Odia-medium private school (Certificate of Recognition required).</span>
-                </div>
-              </li>
+        {/* 2. Who Can Apply */}
+        <section>
+          <SectionTitle number="2" title="Who Can Apply?" />
+          <GradientCard icon={Users} title="Basic Eligibility">
+            <ul className="space-y-4 font-medium">
+              <li className="flex gap-3"><CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" /> <span className="pt-0.5">Must be a <strong>permanent resident of Odisha.</strong></span></li>
+              <li className="flex gap-3"><CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" /> <span className="pt-0.5">Must apply to the OAV located in the student's <strong>native residential block.</strong></span></li>
+              <li className="flex gap-3"><AlertCircle className="w-6 h-6 text-red-500 flex-shrink-0" /> <span className="pt-0.5">A student already enrolled in an OAV is <strong>not eligible</strong> for fresh admission.</span></li>
+              <li className="flex gap-3"><CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" /> <span className="pt-0.5">Students studying in Government, CBSE, ICSE or recognized Odia-medium private schools may be eligible.</span></li>
+              <li className="flex gap-3"><CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" /> <span className="pt-0.5">Private-school students must have a valid <strong>Certificate of Recognition (CoR)</strong> where required.</span></li>
             </ul>
-          </div>
+            <div className="mt-6 p-5 bg-white rounded-[20px] shadow-sm border border-[#7280DE]/20 text-brand-dark font-bold flex gap-3 items-center">
+              <Info className="w-6 h-6 text-[#7280DE]" />
+              Only one OAV application is allowed according to the eligibility guidelines.
+            </div>
+          </GradientCard>
+        </section>
 
-          <div className="overflow-x-auto">
-            <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">B. Class-wise Age & Eligibility (2027–28 Expected)</h3>
-            <table className="w-full text-left border-collapse min-w-[600px]">
-              <thead>
-                <tr className="bg-brand-light text-gray-700 text-sm">
-                  <th className="p-4 rounded-tl-xl font-semibold border-b">Class</th>
-                  <th className="p-4 font-semibold border-b">Age Limit (As on 31 Mar 2027)</th>
-                  <th className="p-4 font-semibold border-b">Date of Birth Range</th>
-                  <th className="p-4 rounded-tr-xl font-semibold border-b">Current Status</th>
-                </tr>
-              </thead>
-              <tbody className="text-sm text-gray-600">
-                <tr className="border-b border-gray-50 hover:bg-gray-50">
-                  <td className="p-4 font-bold text-gray-900">VI (Primary)</td>
-                  <td className="p-4">10 – 12 years</td>
-                  <td className="p-4">01 Apr 2014 – 31 Mar 2017</td>
-                  <td className="p-4">Continuing Class V or VI</td>
-                </tr>
-                <tr className="border-b border-gray-50 hover:bg-gray-50">
-                  <td className="p-4 font-bold text-gray-900">VII (Lateral)</td>
-                  <td className="p-4">11 – 13 years</td>
-                  <td className="p-4">01 Apr 2013 – 31 Mar 2016</td>
-                  <td className="p-4">Continuing Class VI or VII</td>
-                </tr>
-                <tr className="border-b border-gray-50 hover:bg-gray-50">
-                  <td className="p-4 font-bold text-gray-900">VIII (Lateral)</td>
-                  <td className="p-4">12 – 14 years</td>
-                  <td className="p-4">01 Apr 2012 – 31 Mar 2015</td>
-                  <td className="p-4">Continuing Class VII or VIII</td>
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="p-4 font-bold text-gray-900">IX (Lateral)</td>
-                  <td className="p-4">13 – 15 years</td>
-                  <td className="p-4">01 Apr 2011 – 31 Mar 2014</td>
-                  <td className="p-4">Continuing Class VIII or IX</td>
-                </tr>
-              </tbody>
-            </table>
-            <p className="text-xs text-gray-500 mt-3">* PwD Relaxation: Upper age limit relaxed by 2 years for candidates with 40%+ disability.</p>
+        {/* 3. Class-Wise Eligibility */}
+        <section>
+          <SectionTitle number="3" title="Class-Wise Eligibility" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <GradientCard title="Class VI">
+              <ul className="space-y-3 font-medium">
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Age</span> <strong>10–12 years</strong></li>
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Expected DOB</span> <strong>1 Apr 2014 – 31 Mar 2017</strong></li>
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Previous/Current Level</span> <strong>Class V</strong></li>
+                <li className="flex justify-between items-center"><span className="text-gray-500 text-sm">Entrance Syllabus</span> <strong className="text-[#7280DE]">Class V</strong></li>
+              </ul>
+            </GradientCard>
+            <GradientCard title="Class VII">
+              <ul className="space-y-3 font-medium">
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Age</span> <strong>11–13 years</strong></li>
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Expected DOB</span> <strong>1 Apr 2013 – 31 Mar 2016</strong></li>
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Previous/Current Level</span> <strong>Class VI</strong></li>
+                <li className="flex justify-between items-center"><span className="text-gray-500 text-sm">Entrance Syllabus</span> <strong className="text-[#7280DE]">Class VI</strong></li>
+              </ul>
+              <div className="mt-4 text-sm text-[#9D68A1] font-bold bg-white p-3 rounded-xl border border-[#9D68A1]/20">Admission depends on vacancies.</div>
+            </GradientCard>
+            <GradientCard title="Class VIII">
+              <ul className="space-y-3 font-medium">
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Age</span> <strong>12–14 years</strong></li>
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Expected DOB</span> <strong>1 Apr 2012 – 31 Mar 2015</strong></li>
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Previous/Current Level</span> <strong>Class VII</strong></li>
+                <li className="flex justify-between items-center"><span className="text-gray-500 text-sm">Entrance Syllabus</span> <strong className="text-[#7280DE]">Class VII</strong></li>
+              </ul>
+              <div className="mt-4 text-sm text-[#9D68A1] font-bold bg-white p-3 rounded-xl border border-[#9D68A1]/20">Admission depends on vacancies.</div>
+            </GradientCard>
+            <GradientCard title="Class IX">
+              <ul className="space-y-3 font-medium">
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Age</span> <strong>13–15 years</strong></li>
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Expected DOB</span> <strong>1 Apr 2011 – 31 Mar 2014</strong></li>
+                <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Previous/Current Level</span> <strong>Class VIII</strong></li>
+                <li className="flex justify-between items-center"><span className="text-gray-500 text-sm">Entrance Syllabus</span> <strong className="text-[#7280DE]">Class VIII</strong></li>
+              </ul>
+              <div className="mt-4 text-sm text-[#9D68A1] font-bold bg-white p-3 rounded-xl border border-[#9D68A1]/20">Admission depends on vacancies.</div>
+            </GradientCard>
+          </div>
+          <div className="p-5 bg-white rounded-[20px] shadow-sm border border-[#7280DE]/20 mt-4 flex items-start gap-4">
+            <Info className="w-6 h-6 text-[#7280DE] flex-shrink-0" />
+            <p className="text-sm text-gray-700 font-medium leading-relaxed">
+              The age is calculated as of <strong>31 March 2027</strong>. Candidates with 40%+ certified disability receive a <strong>2-year upper-age relaxation</strong>.
+            </p>
           </div>
         </section>
 
-        {/* Exam Pattern & Syllabus */}
-        <section className="bg-brand-dark rounded-3xl p-8 shadow-xl text-white">
-          <div className="flex items-center gap-3 mb-8">
-            <ClipboardCheck className="w-8 h-8 text-brand-purple" />
-            <h2 className="text-2xl font-bold">Exam Pattern & Syllabus 2027</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold text-brand-purple mb-4">Class VI (OAVET)</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex justify-between border-b border-white/10 pb-2"><span>English (Class V Level)</span> <span className="font-bold">15 Marks</span></li>
-                <li className="flex justify-between border-b border-white/10 pb-2"><span>Mathematics (Class V Level)</span> <span className="font-bold">15 Marks</span></li>
-                <li className="flex justify-between border-b border-white/10 pb-2"><span>Science (Class V Level)</span> <span className="font-bold">15 Marks</span></li>
-                <li className="flex justify-between border-b border-white/10 pb-2"><span>Social Science (Class V Level)</span> <span className="font-bold">15 Marks</span></li>
-                <li className="flex justify-between text-white font-bold pt-2 text-lg mt-4"><span>Total</span> <span>60 Marks (2 Hrs)</span></li>
-              </ul>
+        {/* 4. Important Rules */}
+        <section>
+          <SectionTitle number="4" title="Important Eligibility Rules" />
+          <GradientCard icon={ShieldCheck}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-5 rounded-2xl border border-[#7280DE]/10 shadow-sm">
+                <h4 className="font-bold text-lg text-brand-dark mb-2">Native Block Rule</h4>
+                <p className="text-sm text-gray-600">You normally need to apply for the OAV in your <strong>native residential block</strong>.</p>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-[#7280DE]/10 shadow-sm">
+                <h4 className="font-bold text-lg text-brand-dark mb-2">Studying Outside</h4>
+                <p className="text-sm text-gray-600">A student may be eligible even if they study in another block, provided the required residential documentation is available.</p>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-[#7280DE]/10 shadow-sm">
+                <h4 className="font-bold text-lg text-brand-dark mb-2">Private School Students</h4>
+                <p className="text-sm text-gray-600">Students from private schools need a valid <strong>Certificate of Recognition (CoR)</strong> from the State Government where applicable.</p>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-[#7280DE]/10 shadow-sm">
+                <h4 className="font-bold text-lg text-brand-dark mb-2">Transfer</h4>
+                <p className="text-sm text-gray-600">Transfer is permitted only for <strong>Classes VI–VIII</strong>, subject to rules. No transfer admission for Classes IX–XII.</p>
+              </div>
             </div>
-
-            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold text-brand-purple mb-4">Classes VII, VIII, IX</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex justify-between border-b border-white/10 pb-2"><span>English</span> <span className="font-bold">20 Marks</span></li>
-                <li className="flex justify-between border-b border-white/10 pb-2"><span>Odia</span> <span className="font-bold">20 Marks</span></li>
-                <li className="flex justify-between border-b border-white/10 pb-2"><span>Mathematics, Science, SST</span> <span className="font-bold">60 Marks</span></li>
-                <li className="flex justify-between text-white font-bold pt-2 text-lg mt-8"><span>Total</span> <span>100 Marks (3 Hrs)</span></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="mt-6 flex flex-wrap gap-4">
-            <span className="bg-brand-purple/20 text-brand-purple px-4 py-2 rounded-full text-sm font-bold border border-brand-purple/30">OMR Based (Offline)</span>
-            <span className="bg-brand-purple/20 text-brand-purple px-4 py-2 rounded-full text-sm font-bold border border-brand-purple/30">No Negative Marking</span>
-            <span className="bg-brand-purple/20 text-brand-purple px-4 py-2 rounded-full text-sm font-bold border border-brand-purple/30">Bilingual (Odia & English)</span>
-          </div>
+          </GradientCard>
         </section>
 
-        {/* Admission Process Step-by-Step */}
-        <section className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-           <div className="flex items-center gap-3 mb-8">
-            <FileText className="w-8 h-8 text-brand-purple" />
-            <h2 className="text-2xl font-bold text-brand-dark">Admission Process</h2>
-          </div>
-          
-          <div className="relative border-l-2 border-brand-purple/20 ml-4 space-y-8 pb-4">
+        {/* 5. Reservation */}
+        <section>
+          <SectionTitle number="5" title="Reservation" />
+          <GradientCard icon={MapPin}>
+            <p className="mb-6 font-medium text-gray-700">OAV admission follows category-based and horizontal reservation provisions.</p>
+            <div className="overflow-x-auto bg-white rounded-2xl border border-[#7280DE]/10 shadow-sm">
+              <table className="w-full text-left border-collapse">
+                <tbody>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">SC</td><td className="py-3 px-4 text-gray-600">According to block-level SC population</td></tr>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">ST</td><td className="py-3 px-4 text-gray-600">According to block-level ST population</td></tr>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">SEBC</td><td className="py-3 px-4 text-gray-600">Remaining seats after applicable SC/ST reservation</td></tr>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">General / UR</td><td className="py-3 px-4 text-gray-600">Remaining seats</td></tr>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">PwD</td><td className="py-3 px-4 text-gray-600">4% horizontal reservation</td></tr>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">Girls</td><td className="py-3 px-4 text-gray-600">50% in each category</td></tr>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">OAV Employees' Wards</td><td className="py-3 px-4 text-gray-600">Preference subject to appearing in exam</td></tr>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">MLA Quota</td><td className="py-3 px-4 text-gray-600">2 seats per OAV, Class VI</td></tr>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">MP Quota</td><td className="py-3 px-4 text-gray-600">1 seat per OAV, Class VI</td></tr>
+                  <tr className="border-b border-[#7280DE]/10 hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">Collector Quota</td><td className="py-3 px-4 text-gray-600">2 seats, Class VI</td></tr>
+                  <tr className="hover:bg-gray-50"><td className="py-3 px-4 font-bold text-gray-900 w-1/3">State Govt/PSU</td><td className="py-3 px-4 text-gray-600">5% within respective categories</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-6 flex gap-3 text-sm bg-red-50 p-5 rounded-2xl text-red-900 border border-red-100 shadow-sm">
+              <AlertTriangle className="w-6 h-6 flex-shrink-0" />
+              <p><strong>Important:</strong> Even candidates recommended under MLA/MP/Collector quotas must appear in the entrance examination; recommendation does not mean direct admission.</p>
+            </div>
+          </GradientCard>
+        </section>
+
+        {/* 6. How to Apply */}
+        <section>
+          <SectionTitle number="6" title="How to Apply" />
+          <GradientCard icon={CheckSquare}>
+            <div className="space-y-8 relative border-l-2 border-[#7280DE]/30 ml-4 pl-8 py-2">
+              
+              <div className="relative">
+                <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gradient-to-r from-[#7280DE] to-[#B28BFF] ring-4 ring-white shadow-sm"></div>
+                <h4 className="font-black text-xl text-brand-dark">Step 1 — Wait for the Official Notification</h4>
+                <div className="inline-block mt-2 mb-3 bg-white border border-gray-200 px-3 py-1 rounded-full text-xs font-bold text-gray-500">Expected: November 2026</div>
+                <p className="text-gray-600">It will confirm application dates, exam date, eligibility, reservation, syllabus, and other admission instructions.</p>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gradient-to-r from-[#7280DE] to-[#B28BFF] ring-4 ring-white shadow-sm"></div>
+                <h4 className="font-black text-xl text-brand-dark">Step 2 — Complete Online Application</h4>
+                <div className="inline-block mt-2 mb-3 bg-white border border-gray-200 px-3 py-1 rounded-full text-xs font-bold text-gray-500">Expected: November–December 2026</div>
+                <p className="text-gray-600">Application is expected to be available through <strong>oav.edu.in</strong> or <strong>bseodisha.ac.in</strong>. Keep mobile numbers available for login/OTP.</p>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gradient-to-r from-[#7280DE] to-[#B28BFF] ring-4 ring-white shadow-sm"></div>
+                <h4 className="font-black text-xl text-brand-dark">Step 3 — Download Admit Card</h4>
+                <div className="inline-block mt-2 mb-3 bg-white border border-gray-200 px-3 py-1 rounded-full text-xs font-bold text-gray-500">Expected: Late December 2026</div>
+                <p className="text-gray-600">Contains examination centre, exam date, exam time, and candidate details.</p>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-gradient-to-r from-[#7280DE] to-[#B28BFF] ring-4 ring-white shadow-sm"></div>
+                <h4 className="font-black text-xl text-brand-dark">Step 4 — Appear for OAV Entrance</h4>
+                <div className="inline-block mt-2 mb-3 bg-white border border-gray-200 px-3 py-1 rounded-full text-xs font-bold text-gray-500">Expected: January 2027</div>
+                <p className="text-gray-600">The examination is conducted <strong>offline using OMR</strong>. It is bilingual in Odia and English and has <strong>no negative marking</strong>.</p>
+              </div>
+
+            </div>
+          </GradientCard>
+        </section>
+
+        {/* 7. Exam Pattern */}
+        <section>
+          <SectionTitle number="7" title="OAV Entrance Exam Pattern" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <GradientCard title="Class VI">
+              <div className="bg-white rounded-2xl border border-[#7280DE]/10 overflow-hidden shadow-sm mb-6">
+                <table className="w-full text-left border-collapse">
+                  <thead className="bg-[#7280DE]/5">
+                    <tr><th className="py-3 px-4 font-bold text-gray-900">Subject</th><th className="py-3 px-4 text-right font-bold text-gray-900">Questions</th><th className="py-3 px-4 text-right font-bold text-gray-900">Marks</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-[#7280DE]/5"><td className="py-3 px-4 text-gray-600">English</td><td className="py-3 px-4 text-right font-medium">15</td><td className="py-3 px-4 text-right font-medium text-[#7280DE]">15</td></tr>
+                    <tr className="border-b border-[#7280DE]/5"><td className="py-3 px-4 text-gray-600">Mathematics</td><td className="py-3 px-4 text-right font-medium">15</td><td className="py-3 px-4 text-right font-medium text-[#7280DE]">15</td></tr>
+                    <tr className="border-b border-[#7280DE]/5"><td className="py-3 px-4 text-gray-600">Science</td><td className="py-3 px-4 text-right font-medium">15</td><td className="py-3 px-4 text-right font-medium text-[#7280DE]">15</td></tr>
+                    <tr className="border-b border-[#7280DE]/5"><td className="py-3 px-4 text-gray-600">Social Science</td><td className="py-3 px-4 text-right font-medium">15</td><td className="py-3 px-4 text-right font-medium text-[#7280DE]">15</td></tr>
+                    <tr className="font-black bg-[#7280DE]/10"><td className="py-3 px-4 text-brand-dark">Total</td><td className="py-3 px-4 text-right text-brand-dark">60</td><td className="py-3 px-4 text-right text-brand-dark">60</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100"><span className="block text-gray-500 mb-1">Duration</span> <strong className="text-gray-900">2 hours</strong></div>
+                <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100"><span className="block text-gray-500 mb-1">Type & Mode</span> <strong className="text-gray-900">MCQ (OMR)</strong></div>
+                <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100"><span className="block text-gray-500 mb-1">Language</span> <strong className="text-gray-900">Odia & English</strong></div>
+                <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100"><span className="block text-gray-500 mb-1">Negative Marking</span> <strong className="text-green-600">No</strong></div>
+                <div className="col-span-2 bg-[#7280DE]/10 p-3 rounded-xl border border-[#7280DE]/20 text-center"><span className="text-gray-700">Syllabus:</span> <strong className="text-brand-dark">Class V</strong></div>
+              </div>
+            </GradientCard>
             
-            <div className="relative pl-8">
-              <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-purple"></div>
-              <h3 className="text-lg font-bold text-gray-900">1. Official Notification</h3>
-              <p className="text-gray-600 mt-1">Released on <span className="font-medium">oav.edu.in</span> and <span className="font-medium">bseodisha.ac.in</span> (Expected Nov 2026).</p>
-            </div>
-
-            <div className="relative pl-8">
-              <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-purple"></div>
-              <h3 className="text-lg font-bold text-gray-900">2. Online Application</h3>
-              <p className="text-gray-600 mt-1">Parents apply online via BSE portal. Upload photo, signature, Residential & Caste certificates.</p>
-            </div>
-
-            <div className="relative pl-8">
-              <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-purple"></div>
-              <h3 className="text-lg font-bold text-gray-900">3. Admit Card Download</h3>
-              <p className="text-gray-600 mt-1">Available online in late December containing exam centre details.</p>
-            </div>
-
-            <div className="relative pl-8">
-              <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-purple"></div>
-              <h3 className="text-lg font-bold text-gray-900">4. Entrance Examination (OAVET)</h3>
-              <p className="text-gray-600 mt-1">Offline OMR-based test held across designated centers in January 2027.</p>
-            </div>
-
-            <div className="relative pl-8">
-              <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-purple"></div>
-              <h3 className="text-lg font-bold text-gray-900">5. Result Declaration & Verification</h3>
-              <p className="text-gray-600 mt-1">Scores published district-wise (February 2027). Selected candidates report with original documents.</p>
-            </div>
-
+            <GradientCard title="Classes VII–IX">
+               <div className="bg-white rounded-2xl border border-[#7280DE]/10 overflow-hidden shadow-sm mb-6">
+                <table className="w-full text-left border-collapse">
+                  <thead className="bg-[#7280DE]/5">
+                    <tr><th className="py-3 px-4 font-bold text-gray-900">Subject</th><th className="py-3 px-4 text-right font-bold text-gray-900">Questions</th><th className="py-3 px-4 text-right font-bold text-gray-900">Marks</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-[#7280DE]/5"><td className="py-3 px-4 text-gray-600">English</td><td className="py-3 px-4 text-right font-medium">20</td><td className="py-3 px-4 text-right font-medium text-[#7280DE]">20</td></tr>
+                    <tr className="border-b border-[#7280DE]/5"><td className="py-3 px-4 text-gray-600">Odia</td><td className="py-3 px-4 text-right font-medium">20</td><td className="py-3 px-4 text-right font-medium text-[#7280DE]">20</td></tr>
+                    <tr className="border-b border-[#7280DE]/5"><td className="py-3 px-4 text-gray-600">Mathematics</td><td className="py-3 px-4 text-right font-medium">20</td><td className="py-3 px-4 text-right font-medium text-[#7280DE]">20</td></tr>
+                    <tr className="border-b border-[#7280DE]/5"><td className="py-3 px-4 text-gray-600">Science</td><td className="py-3 px-4 text-right font-medium">20</td><td className="py-3 px-4 text-right font-medium text-[#7280DE]">20</td></tr>
+                    <tr className="border-b border-[#7280DE]/5"><td className="py-3 px-4 text-gray-600">Social Science</td><td className="py-3 px-4 text-right font-medium">20</td><td className="py-3 px-4 text-right font-medium text-[#7280DE]">20</td></tr>
+                    <tr className="font-black bg-[#7280DE]/10"><td className="py-3 px-4 text-brand-dark">Total</td><td className="py-3 px-4 text-right text-brand-dark">100</td><td className="py-3 px-4 text-right text-brand-dark">100</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100"><span className="block text-gray-500 mb-1">Duration</span> <strong className="text-gray-900">3 hours</strong></div>
+                <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100"><span className="block text-gray-500 mb-1">Type & Mode</span> <strong className="text-gray-900">MCQ (OMR)</strong></div>
+                <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100"><span className="block text-gray-500 mb-1">Language</span> <strong className="text-gray-900">Odia & English</strong></div>
+                <div className="bg-white p-3 rounded-xl shadow-sm border border-gray-100"><span className="block text-gray-500 mb-1">Negative Marking</span> <strong className="text-green-600">No</strong></div>
+                <div className="col-span-2 bg-[#7280DE]/10 p-3 rounded-xl border border-[#7280DE]/20 text-center"><span className="text-gray-700">Syllabus:</span> <strong className="text-brand-dark">Previous class</strong></div>
+              </div>
+            </GradientCard>
           </div>
         </section>
 
-        {/* Document Checklist & Reservation */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          
-          <section className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-            <h2 className="text-2xl font-bold text-brand-dark mb-6">Document Checklist</h2>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700"><strong>Birth Certificate</strong> (Original + Photocopy)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700"><strong>Residential Certificate</strong> (Sarpanch/Tahsildar)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700"><strong>Transfer Certificate (TC)</strong> from previous school</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700"><strong>Aadhaar Card</strong> of student and parents</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700"><strong>Caste/PwD Certificate</strong> (If applicable)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700"><strong>Certificate of Recognition (CoR)</strong> (For private school students only)</span>
-              </li>
-            </ul>
-          </section>
+        {/* 8. Syllabus */}
+        <section>
+          <SectionTitle number="8" title="What Syllabus Should You Study?" />
+          <GradientCard icon={BookOpen}>
+            <p className="mb-6 font-medium text-gray-700 text-lg">The entrance examination is based on the <strong>previous class level</strong>.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-gray-900 mb-2">Class VI aspirants</h4>
+                <p className="text-sm text-gray-600">Study the <strong>complete Class V syllabus</strong> (English, Math, Science, Social Science).</p>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-gray-900 mb-2">Class VII aspirants</h4>
+                <p className="text-sm text-gray-600">Study the <strong>Class VI syllabus</strong> (English, Odia, Math, Science, Social Science).</p>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-gray-900 mb-2">Class VIII aspirants</h4>
+                <p className="text-sm text-gray-600">Study the <strong>Class VII syllabus</strong>.</p>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-gray-900 mb-2">Class IX aspirants</h4>
+                <p className="text-sm text-gray-600">Study the <strong>Class VIII syllabus</strong>.</p>
+              </div>
+            </div>
+            <div className="mt-6 flex items-start gap-3 p-4 bg-[#7280DE]/10 rounded-xl border border-[#7280DE]/20">
+               <Info className="w-5 h-5 text-[#7280DE] mt-0.5" />
+               <p className="text-sm font-medium text-brand-dark">For Class VI, completing the NCERT Class V textbooks across all four subjects is specifically recommended in the preparation guidance.</p>
+            </div>
+          </GradientCard>
+        </section>
 
-          <section className="bg-brand-purple/5 rounded-3xl p-8 border border-brand-purple/10">
-            <h2 className="text-2xl font-bold text-brand-dark mb-6">Reservation Policy</h2>
+        {/* 9. 90-Day Plan */}
+        <section>
+          <SectionTitle number="9" title="90-Day Preparation Plan — Class VI" />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <GradientCard>
+                <div className="flex justify-center mb-6"><div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-500 text-white flex items-center justify-center font-black text-2xl shadow-lg">1</div></div>
+                <h4 className="font-black text-xl text-center text-brand-dark mb-1">Days 1–30</h4>
+                <p className="text-center text-gray-500 text-sm font-bold mb-4 uppercase tracking-wider">Build Foundation</p>
+                <div className="bg-white p-3 rounded-xl text-center text-sm font-bold text-[#7280DE] mb-4 border border-[#7280DE]/10">Daily study: 3–4 hours</div>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Complete textbook chapters.</li>
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Understand concepts.</li>
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Make short notes.</li>
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Identify weak subjects/topics.</li>
+                </ul>
+            </GradientCard>
+            <GradientCard>
+                <div className="flex justify-center mb-6"><div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#7280DE] to-[#B28BFF] text-white flex items-center justify-center font-black text-2xl shadow-lg">2</div></div>
+                <h4 className="font-black text-xl text-center text-brand-dark mb-1">Days 31–60</h4>
+                <p className="text-center text-gray-500 text-sm font-bold mb-4 uppercase tracking-wider">Strengthen Prep</p>
+                <div className="bg-white p-3 rounded-xl text-center text-sm font-bold text-[#7280DE] mb-4 border border-[#7280DE]/10">Daily study: 4–5 hours</div>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Revise difficult topics.</li>
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Practice MCQs regularly.</li>
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Analyse mistakes.</li>
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Improve accuracy and speed.</li>
+                </ul>
+            </GradientCard>
+            <GradientCard>
+                <div className="flex justify-center mb-6"><div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-white flex items-center justify-center font-black text-2xl shadow-lg">3</div></div>
+                <h4 className="font-black text-xl text-center text-brand-dark mb-1">Days 61–90</h4>
+                <p className="text-center text-gray-500 text-sm font-bold mb-4 uppercase tracking-wider">Revision + Speed</p>
+                <div className="bg-white p-3 rounded-xl text-center text-sm font-bold text-[#7280DE] mb-4 border border-[#7280DE]/10">Daily study: 5–6 hours</div>
+                <ul className="space-y-3 text-sm text-gray-700">
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Revise complete syllabus.</li>
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Take full-length mock tests.</li>
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Practise OMR-style answering.</li>
+                  <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Improve time management.</li>
+                </ul>
+            </GradientCard>
+          </div>
+          <div className="text-center mt-2 text-gray-600 font-medium bg-white p-4 rounded-xl border border-gray-100 shadow-sm max-w-2xl mx-auto">
+            Recommended practice includes <strong>500+ MCQs per subject</strong> and progressively increasing mock-test frequency.
+          </div>
+        </section>
+
+        {/* 10. Exam Strategy */}
+        <section>
+          <SectionTitle number="10" title="Exam-Day Strategy" />
+          <GradientCard icon={Lightbulb}>
+            <p className="mb-6 font-bold text-brand-dark text-lg md:text-xl">Because there is <span className="text-red-500">no negative marking</span>, students should aim to attempt all questions.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex gap-3"><CheckCircle className="w-6 h-6 text-[#7280DE] flex-shrink-0" /> <span className="text-gray-700 font-medium">Read every question carefully.</span></div>
+              <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex gap-3"><CheckCircle className="w-6 h-6 text-[#7280DE] flex-shrink-0" /> <span className="text-gray-700 font-medium">Do not spend too long on one question.</span></div>
+              <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex gap-3"><CheckCircle className="w-6 h-6 text-[#7280DE] flex-shrink-0" /> <span className="text-gray-700 font-medium">Keep track of time throughout.</span></div>
+              <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex gap-3"><CheckCircle className="w-6 h-6 text-[#7280DE] flex-shrink-0" /> <span className="text-gray-700 font-medium">Mark answers carefully on OMR.</span></div>
+              <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex gap-3"><CheckCircle className="w-6 h-6 text-[#7280DE] flex-shrink-0" /> <span className="text-gray-700 font-medium">Return to difficult questions later.</span></div>
+              <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex gap-3"><CheckCircle className="w-6 h-6 text-[#7280DE] flex-shrink-0" /> <span className="text-gray-700 font-medium">Use final minutes to check empty ones.</span></div>
+            </div>
+            <div className="bg-[#7280DE]/10 p-4 rounded-xl border border-[#7280DE]/20 flex items-center justify-center gap-3">
+              <Clock className="w-6 h-6 text-[#7280DE]" />
+              <p className="text-brand-dark font-bold">For Class VI, the examination provides 120 minutes for 60 questions.</p>
+            </div>
+          </GradientCard>
+        </section>
+
+        {/* 11. After Exam */}
+        <section>
+          <SectionTitle number="11" title="After the Examination" />
+          <GradientCard icon={Award}>
+             <div className="space-y-4">
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
+                  <h4 className="font-bold text-lg text-brand-dark">Result</h4>
+                  <span className="bg-[#7280DE]/10 text-[#7280DE] px-3 py-1 rounded-full text-xs font-bold w-max">Expected: February 2027</span>
+                </div>
+                <p className="text-gray-600 text-sm">The result is expected to include the student's score and merit information.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
+                  <h4 className="font-bold text-lg text-brand-dark">Merit List</h4>
+                  <span className="bg-[#7280DE]/10 text-[#7280DE] px-3 py-1 rounded-full text-xs font-bold w-max">Expected: Feb–Mar 2027</span>
+                </div>
+                <p className="text-gray-600 text-sm">A common merit list is prepared, followed by category-wise selection. Lists may be published through district-level channels and the respective OAV.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
+                  <h4 className="font-bold text-lg text-brand-dark">Document Verification</h4>
+                  <span className="bg-[#7280DE]/10 text-[#7280DE] px-3 py-1 rounded-full text-xs font-bold w-max">Expected: March–April 2027</span>
+                </div>
+                <p className="text-gray-600 text-sm">Selected candidates must report for verification with the required original documents and photocopies.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
+                  <h4 className="font-bold text-lg text-brand-dark">Final Admission</h4>
+                  <span className="bg-[#7280DE]/10 text-[#7280DE] px-3 py-1 rounded-full text-xs font-bold w-max">Expected: April–May 2027</span>
+                </div>
+                <p className="text-gray-600 text-sm">After successful verification, students complete admission formalities and hostel arrangements where applicable.</p>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
+                  <h4 className="font-bold text-lg text-brand-dark">Waiting List</h4>
+                  <span className="bg-[#7280DE]/10 text-[#7280DE] px-3 py-1 rounded-full text-xs font-bold w-max">Expected: May–June 2027</span>
+                </div>
+                <p className="text-gray-600 text-sm">If seats remain vacant, approved waiting-list candidates may be considered (maximum of three phases).</p>
+              </div>
+             </div>
+          </GradientCard>
+        </section>
+
+        {/* 12. Documents */}
+        <section>
+          <SectionTitle number="12" title="Documents You Must Keep Ready" />
+          <GradientCard icon={FileText}>
+            <p className="mb-6 font-bold text-gray-700 text-lg">Prepare these documents <strong>before the application window opens</strong>.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-2xl border border-green-100 shadow-sm">
+                <h4 className="font-bold text-xl text-green-700 mb-4 border-b border-green-50 pb-2">Essential Documents</h4>
+                <ul className="space-y-3 font-medium text-gray-700 text-sm">
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-green-500" /> Birth Certificate</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-green-500" /> Aadhaar Card</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-green-500" /> Residential Certificate</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-green-500" /> Previous Class Marksheet</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-green-500" /> Transfer Certificate (TC)</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-green-500" /> Passport-size Photograph</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-green-500" /> Student Signature</li>
+                </ul>
+              </div>
+              <div className="bg-white p-6 rounded-2xl border border-blue-100 shadow-sm">
+                <h4 className="font-bold text-xl text-blue-700 mb-4 border-b border-blue-50 pb-2">Where Applicable</h4>
+                <ul className="space-y-3 font-medium text-gray-700 text-sm">
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Caste Certificate</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Certificate of Recognition (CoR)</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> PwD Certificate</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Employer Certificate</li>
+                  <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500" /> MLA/MP/Collector Letter</li>
+                </ul>
+              </div>
+            </div>
+            <p className="mt-4 text-sm text-gray-500 italic">Some documents are required during online application, while originals and photocopies are required during verification.</p>
+          </GradientCard>
+        </section>
+
+        {/* 13. Rejection Reasons */}
+        <section>
+          <SectionTitle number="13" title="Why Applications Can Be Rejected" />
+          <GradientCard icon={AlertTriangle}>
+            <p className="font-bold text-gray-700 mb-6">Avoid these common mistakes to prevent disqualification:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white p-5 rounded-2xl border border-red-100 shadow-sm">
+                <h4 className="font-bold text-red-700 mb-3 border-b border-red-50 pb-2">Application Problems</h4>
+                <ul className="space-y-2 text-sm font-medium text-gray-700">
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Incomplete application form</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Missing documents</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Incorrect information</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Incorrect photograph/signature</li>
+                </ul>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-red-100 shadow-sm">
+                <h4 className="font-bold text-red-700 mb-3 border-b border-red-50 pb-2">Eligibility Problems</h4>
+                <ul className="space-y-2 text-sm font-medium text-gray-700">
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Age outside the permitted range</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Not meeting residence requirements</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Already enrolled in an OAV</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Applying to the wrong OAV/block</li>
+                </ul>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-red-100 shadow-sm">
+                <h4 className="font-bold text-red-700 mb-3 border-b border-red-50 pb-2">Document Problems</h4>
+                <ul className="space-y-2 text-sm font-medium text-gray-700">
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Invalid Residential Certificate</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Missing/invalid Caste Certificate</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Missing CoR for private schools</li>
+                </ul>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-red-100 shadow-sm">
+                <h4 className="font-bold text-red-700 mb-3 border-b border-red-50 pb-2">Admission Problems</h4>
+                <ul className="space-y-2 text-sm font-medium text-gray-700">
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Not reporting within deadline</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Missing original documents</li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5" /> Found ineligible during verification</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 p-4 bg-red-50 rounded-xl border border-red-100 flex gap-3">
+              <Info className="w-6 h-6 text-red-600 flex-shrink-0" />
+              <p className="text-sm font-bold text-red-900">Selection: Meeting eligibility does not guarantee selection. Selection depends on examination performance, merit, reservation and available seats.</p>
+            </div>
+          </GradientCard>
+        </section>
+
+        {/* 14. Class Wise Admission */}
+        <section>
+          <SectionTitle number="14" title="Class-Wise Admission" />
+          <GradientCard icon={GraduationCap}>
+             <div className="space-y-4">
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-xl text-brand-dark mb-2">Class VI — Main Entry Point</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Admission through OAV Entrance Test (Class V syllabus).</li>
+                  <li>• Available across OAVs (Standard intake is 80 students per class).</li>
+                  <li>• Special quotas exist, but candidates must still appear in the examination.</li>
+                </ul>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-xl text-brand-dark mb-2">Classes VII–IX — Lateral Entry</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Admission is subject to <strong>vacancies</strong> (Only OAVs with available seats participate).</li>
+                  <li>• Examination is based on the previous class syllabus.</li>
+                  <li>• Exam pattern: 100 marks, 100 questions, 3 hours.</li>
+                </ul>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-xl text-brand-dark mb-2">Class XI</h4>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• <strong>No entrance examination.</strong> Selection is merit-based (Class X board marks).</li>
+                  <li>• Science, Commerce and Arts may be available depending on the OAV.</li>
+                  <li>• Existing OAV students receive preference. External students may also apply.</li>
+                </ul>
+              </div>
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-bold text-xl text-brand-dark mb-2">Classes X & XII</h4>
+                <p className="text-sm text-gray-600">There is <strong>no fresh admission</strong>; students continue from the previous stage.</p>
+              </div>
+             </div>
+          </GradientCard>
+        </section>
+
+        {/* 15. Fees */}
+        <section>
+          <SectionTitle number="15" title="Fees & Cost" />
+          <GradientCard icon={Wallet}>
+            <div className="text-center bg-green-50 p-6 rounded-2xl border border-green-200 mb-6">
+              <p className="font-black text-2xl text-green-700">OAV provides free tuition / state-funded education.</p>
+            </div>
+            <p className="font-medium text-gray-700 mb-3 text-center">Parents may still have to bear certain expenses, such as:</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <span className="bg-white px-4 py-2 rounded-full border border-gray-200 text-sm font-bold text-gray-700 shadow-sm">Boarding/hostel charges</span>
+              <span className="bg-white px-4 py-2 rounded-full border border-gray-200 text-sm font-bold text-gray-700 shadow-sm">Mess/food charges</span>
+              <span className="bg-white px-4 py-2 rounded-full border border-gray-200 text-sm font-bold text-gray-700 shadow-sm">Uniform</span>
+              <span className="bg-white px-4 py-2 rounded-full border border-gray-200 text-sm font-bold text-gray-700 shadow-sm">Books</span>
+              <span className="bg-white px-4 py-2 rounded-full border border-gray-200 text-sm font-bold text-gray-700 shadow-sm">Other personal expenses</span>
+            </div>
+            <p className="mt-6 text-sm text-gray-500 italic text-center">The exact 2027 fee amounts have not been publicly verified in the available information.</p>
+          </GradientCard>
+        </section>
+
+        {/* 16. Important Dates Recap */}
+        <section>
+          <SectionTitle number="16" title="Important Dates — Save These" />
+          <GradientCard icon={Clock}>
+            <p className="text-sm font-bold text-yellow-800 mb-6 bg-yellow-100 px-4 py-2 rounded-xl inline-block border border-yellow-200">These dates are expected only. Wait for the official 2027 notification before treating them as final.</p>
             <div className="space-y-4">
-              <div className="bg-white p-4 rounded-xl shadow-sm">
-                <p className="font-bold text-gray-900">SC / ST Category</p>
-                <p className="text-sm text-gray-600">Reserved as per the specific block's population percentage.</p>
+              <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="w-1/3 md:w-1/4 font-black text-[#7280DE]">November 2026</div>
+                <div className="w-2/3 md:w-3/4 font-medium text-gray-700">Notification</div>
               </div>
-              <div className="bg-white p-4 rounded-xl shadow-sm">
-                <p className="font-bold text-gray-900">Girls Quota (Horizontal)</p>
-                <p className="text-sm text-gray-600">50% seats reserved for girls within every category.</p>
+              <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="w-1/3 md:w-1/4 font-black text-[#7280DE]">Nov–Dec 2026</div>
+                <div className="w-2/3 md:w-3/4 font-medium text-gray-700">Online Application</div>
               </div>
-              <div className="bg-white p-4 rounded-xl shadow-sm">
-                <p className="font-bold text-gray-900">PwD Category</p>
-                <p className="text-sm text-gray-600">4% horizontal reservation for 40%+ disability.</p>
+              <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="w-1/3 md:w-1/4 font-black text-[#7280DE]">Late Dec 2026</div>
+                <div className="w-2/3 md:w-3/4 font-medium text-gray-700">Admit Card</div>
+              </div>
+              <div className="flex items-center gap-4 bg-[#7280DE]/10 p-4 rounded-xl shadow-sm border border-[#7280DE]/20 transform scale-[1.02]">
+                <div className="w-1/3 md:w-1/4 font-black text-brand-dark">January 2027</div>
+                <div className="w-2/3 md:w-3/4 font-black text-brand-dark">Entrance Examination</div>
+              </div>
+              <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="w-1/3 md:w-1/4 font-black text-[#7280DE]">February 2027</div>
+                <div className="w-2/3 md:w-3/4 font-medium text-gray-700">Result</div>
+              </div>
+              <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="w-1/3 md:w-1/4 font-black text-[#7280DE]">Feb–Mar 2027</div>
+                <div className="w-2/3 md:w-3/4 font-medium text-gray-700">Merit/Selection List</div>
+              </div>
+              <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="w-1/3 md:w-1/4 font-black text-[#7280DE]">Mar–Apr 2027</div>
+                <div className="w-2/3 md:w-3/4 font-medium text-gray-700">Document Verification</div>
+              </div>
+              <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="w-1/3 md:w-1/4 font-black text-[#7280DE]">Apr–May 2027</div>
+                <div className="w-2/3 md:w-3/4 font-medium text-gray-700">Final Admission</div>
+              </div>
+              <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <div className="w-1/3 md:w-1/4 font-black text-[#7280DE]">May–June 2027</div>
+                <div className="w-2/3 md:w-3/4 font-medium text-gray-700">Waiting List Movement</div>
               </div>
             </div>
-            <p className="text-xs text-gray-500 mt-4">* Note: Unfilled reserved seats are transferred sequentially according to state rules.</p>
-          </section>
+          </GradientCard>
+        </section>
 
+        {/* 17. Checklist */}
+        <section>
+          <SectionTitle number="17" title="Parent & Student Checklist" />
+          <GradientCard icon={CheckSquare}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-black text-lg text-brand-dark mb-4 border-b pb-2 border-gray-100">Before Application</h4>
+                <ul className="space-y-3 text-sm text-gray-700 font-medium">
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Check age eligibility.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Confirm Odisha permanent residence.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Identify the native-block OAV.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Arrange Residential Certificate.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Arrange Caste Certificate if applicable.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Arrange CoR if studying in a private school.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Keep photograph and signature ready.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Keep Aadhaar and school documents ready.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-black text-lg text-brand-dark mb-4 border-b pb-2 border-gray-100">During Application</h4>
+                <ul className="space-y-3 text-sm text-gray-700 font-medium">
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Register on the official portal.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Enter student details correctly.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Enter parent/school details.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Upload required documents.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Upload photograph and signature.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Pay the applicable fee if required.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Submit the application.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Save/print application number.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-black text-lg text-brand-dark mb-4 border-b pb-2 border-gray-100">Before the Exam</h4>
+                <ul className="space-y-3 text-sm text-gray-700 font-medium">
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Download the admit card.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Check exam centre, date, time.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Complete previous-class syllabus.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Practise MCQs & full-length mock tests.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Prepare OMR answering strategy.</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                <h4 className="font-black text-lg text-brand-dark mb-4 border-b pb-2 border-gray-100">After the Exam</h4>
+                <ul className="space-y-3 text-sm text-gray-700 font-medium">
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Check result and merit list.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Prepare original documents.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Attend document verification.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Complete admission within deadline.</li>
+                  <li className="flex items-center gap-3"><input type="checkbox" className="w-4 h-4 rounded text-[#7280DE] focus:ring-[#7280DE]" /> Complete hostel formalities.</li>
+                </ul>
+              </div>
+
+            </div>
+          </GradientCard>
+        </section>
+
+        {/* 18. Websites */}
+        <section>
+          <SectionTitle number="18" title="Official Websites & Updates" />
+          <GradientCard icon={Globe}>
+            <p className="mb-6 font-medium text-gray-700">For the latest and final information, always check the official sources:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <a href="https://oav.edu.in" target="_blank" rel="noopener noreferrer" className="bg-white border-2 border-[#7280DE] text-[#7280DE] px-4 py-4 rounded-xl font-black text-center hover:bg-[#7280DE] hover:text-white transition-all shadow-sm">oav.edu.in</a>
+              <a href="https://bseodisha.ac.in" target="_blank" rel="noopener noreferrer" className="bg-white border-2 border-[#7280DE] text-[#7280DE] px-4 py-4 rounded-xl font-black text-center hover:bg-[#7280DE] hover:text-white transition-all shadow-sm">bseodisha.ac.in</a>
+              <a href="https://oav.edu.in/notifications.php?GROUP_CODE=OAVS" target="_blank" rel="noopener noreferrer" className="bg-white border-2 border-[#7280DE] text-[#7280DE] px-4 py-4 rounded-xl font-black text-center hover:bg-[#7280DE] hover:text-white transition-all shadow-sm">OAV Notifications</a>
+            </div>
+            <p className="text-sm bg-yellow-50 p-4 rounded-xl text-yellow-800 border border-yellow-200 font-medium">The official notification should be treated as the final authority for the 2027 exam date, application dates, fees, eligibility changes and other admission rules.</p>
+          </GradientCard>
+        </section>
+
+        {/* 19. Confirmed vs Expected */}
+        <section>
+          <SectionTitle number="19" title="What Is Confirmed vs What Is Expected?" />
+          <GradientCard>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-black text-xl text-green-700 mb-4 flex items-center gap-2"><CheckCircle className="w-6 h-6" /> Confirmed</h4>
+                <p className="text-xs text-green-600 mb-4 bg-green-50 px-2 py-1 rounded inline-block font-bold border border-green-200">Based on Official Guidelines</p>
+                <ul className="space-y-3 text-sm font-medium text-gray-700">
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> Odisha permanent residence requirement</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> Class-wise eligibility framework</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> Native-block application rule</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> Online application process</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> OMR-based examination</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> Bilingual examination</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> No negative marking</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> Reservation provisions</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> Required documents</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> Free tuition</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-green-500 rounded-full mt-1.5" /> Applicable transfer rules</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-black text-xl text-brand-purple mb-4 flex items-center gap-2"><Clock className="w-6 h-6" /> Expected for 2027</h4>
+                <p className="text-xs text-[#7280DE] mb-4 bg-[#7280DE]/10 px-2 py-1 rounded inline-block font-bold border border-[#7280DE]/20">Await Official Notification</p>
+                <ul className="space-y-3 text-sm font-medium text-gray-700 mb-6">
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-brand-purple rounded-full mt-1.5" /> Exact notification date</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-brand-purple rounded-full mt-1.5" /> Exact application dates</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-brand-purple rounded-full mt-1.5" /> Exact exam date</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-brand-purple rounded-full mt-1.5" /> Exact result date</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-brand-purple rounded-full mt-1.5" /> Exact application fee</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-brand-purple rounded-full mt-1.5" /> Exact 2027 vacancy details</li>
+                  <li className="flex gap-2"><div className="w-2 h-2 bg-brand-purple rounded-full mt-1.5" /> Final 2027 admission schedule</li>
+                </ul>
+                <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm text-sm text-brand-dark font-bold">
+                  As of 14 September 2026, the 2027 notification has not been officially released.
+                </div>
+              </div>
+            </div>
+          </GradientCard>
+        </section>
+
+        {/* 20. 10 Things to Know */}
+        <section>
+          <SectionTitle number="20" title="The 10 Things Every OAV Aspirant Should Know" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">1. Check eligibility first.</strong>
+              <p className="text-sm text-gray-600">Your age, residence and class eligibility matter.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">2. Apply to the correct OAV.</strong>
+              <p className="text-sm text-gray-600">The native residential block rule is important.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">3. Study previous class syllabus.</strong>
+              <p className="text-sm text-gray-600">For Class VI, prepare Class V.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">4. Know the exam pattern.</strong>
+              <p className="text-sm text-gray-600">Class VI: 60 questions, 60 marks, 2 hours.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">5. Classes VII–IX differ.</strong>
+              <p className="text-sm text-gray-600">100 questions, 100 marks, 3 hours.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">6. No negative marking.</strong>
+              <p className="text-sm text-gray-600">Attempt every question carefully.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">7. Keep documents ready early.</strong>
+              <p className="text-sm text-gray-600">Do not wait until the application deadline.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">8. Admission is merit-based.</strong>
+              <p className="text-sm text-gray-600">Eligibility alone does not guarantee selection.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">9. Lateral entry depends on seats.</strong>
+              <p className="text-sm text-gray-600">Classes VII–IX do not have the same availability as Class VI.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#7280DE]/30 transition-colors">
+              <strong className="text-brand-purple block text-lg mb-1">10. Follow official updates.</strong>
+              <p className="text-sm text-gray-600">The 2027 dates are currently expected, not final.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Final Disclaimer */}
+        <div className="bg-gradient-to-r from-gray-900 to-black text-white p-8 md:p-12 rounded-[32px] text-center shadow-2xl relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+          <div className="relative z-10">
+            <h3 className="text-2xl font-black mb-4 tracking-tight">Important Notice</h3>
+            <p className="text-gray-300 max-w-3xl mx-auto mb-6 text-lg leading-relaxed">
+              OAV Admission 2027 notification is yet to be officially released. The information marked "Expected" is based on the previous admission cycle and should be used for planning and preparation only. Students and parents should verify the final details from the official OAVS/BSE Odisha notification when it is published.
+            </p>
+            <p className="text-sm font-bold text-gray-400 bg-white/10 inline-block px-4 py-2 rounded-full border border-white/10">Last updated: 14 September 2026</p>
+          </div>
         </div>
-
-        {/* Warning Section */}
-        <section className="bg-red-50 rounded-3xl p-8 border border-red-100 flex flex-col md:flex-row gap-6 items-center">
-          <div className="bg-red-100 p-4 rounded-full flex-shrink-0">
-            <AlertCircle className="w-10 h-10 text-red-600" />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-red-900 mb-2">Common Reasons for Rejection</h3>
-            <p className="text-red-800 text-sm mb-3">Ensure your application is flawless to prevent disqualification:</p>
-            <ul className="text-red-800 text-sm list-disc pl-5 space-y-1">
-              <li>Applying to an OAV outside your native residential block.</li>
-              <li>Missing or invalid Certificate of Recognition (CoR) for private school students.</li>
-              <li>Date of birth falling outside the strict 10–12 year age bracket for Class VI.</li>
-              <li>Failing to produce original documents during the physical verification stage.</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Official Links */}
-        <section className="text-center pb-8 border-t border-gray-200 pt-12">
-          <h3 className="text-lg font-bold text-gray-900 mb-4">Official Verification Sources</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://oav.edu.in" target="_blank" rel="noopener noreferrer" className="text-brand-purple hover:underline font-medium">OAVS Official Website</a>
-            <span className="text-gray-300">|</span>
-            <a href="https://bseodisha.ac.in" target="_blank" rel="noopener noreferrer" className="text-brand-purple hover:underline font-medium">BSE Odisha Portal</a>
-            <span className="text-gray-300">|</span>
-            <a href="https://oav.edu.in/notifications.php?GROUP_CODE=OAVS" target="_blank" rel="noopener noreferrer" className="text-brand-purple hover:underline font-medium">Official Notifications</a>
-          </div>
-        </section>
 
       </main>
       
@@ -323,4 +839,3 @@ const Oav2027Page = ({ onRequestInvite }) => {
 };
 
 export default Oav2027Page;
-
