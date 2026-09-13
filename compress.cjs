@@ -11,4 +11,4 @@ async function compressImage(filePath) {
   console.log('Compressed:', filePath);
 }
 
-compressImage('public/images/og-glf-ai.png');
+compressImage('public/images/og-iit-madras.png');
