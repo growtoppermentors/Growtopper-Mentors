@@ -88,7 +88,7 @@ const mainPages = [
     description: 'Insights, tips, and strategies for students and parents on education, career building, and holistic growth.',
     urlPath: '/blog',
     image: 'https://growtopper.app/og-blog.png'
-  }  },
+  },
   {
     path: '/oav2027',
     title: 'OAV Admission 2027: Complete Guide | Growtopper',
@@ -161,4 +161,5 @@ if (sitemapContent) {
   fs.writeFileSync(distSitemapPath, sitemapContent);
   console.log('Successfully updated sitemap.xml with blog URLs!');
 }
+
 
