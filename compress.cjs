@@ -11,4 +11,4 @@ async function compressImage(filePath) {
   console.log('Compressed:', filePath);
 }
 
-compressImage('public/images/og-haryana-bagless.png');
+compressImage('public/images/oav2027-banner.png');
