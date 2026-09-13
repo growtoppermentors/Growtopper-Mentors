@@ -66,8 +66,8 @@ export default function ProblemSection() {
   return (
     <section className="pt-16 md:pt-24 pb-20 md:pb-28 bg-white relative overflow-hidden" id="benefits">
       {/* Background Decor */}
-      <div className="hidden md:block absolute top-0 right-0 w-[500px] h-[500px] bg-brand-purple/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none will-change-transform"></div>
-      <div className="hidden md:block absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-purple/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/3 pointer-events-none will-change-transform"></div>
+      <div className="hidden md:block absolute top-0 right-0 w-[500px] h-[500px] bg-brand-purple/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+      <div className="hidden md:block absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-purple/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -94,7 +94,7 @@ export default function ProblemSection() {
             <div className="flex-1 bg-[#FCFBF8] rounded-md shadow-2xl border-[8px] border-[#1C2033] p-1.5 relative flex flex-col">
               
               {/* Inner Authentic Decorative Border */}
-              <div className="flex-1 border-[1.5px] border-amber-400/50 p-5 sm:p-6 flex flex-col items-center justify-center text-center relative bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]">
+              <div className="flex-1 border-[1.5px] border-amber-400/50 p-5 sm:p-6 flex flex-col items-center justify-center text-center relative">
                 
                 {/* Background watermark logo */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">

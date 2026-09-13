@@ -30,7 +30,7 @@ export default function Hero({ onRequestInvite }) {
     <section className="pt-20 lg:pt-24 pb-10 lg:pb-16 bg-[#F8F9FE] relative overflow-hidden flex flex-col justify-center items-center">
       
       {/* Soft Center Radial Glow — hidden on mobile for performance */}
-      <div className="hidden md:block absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#E8E2FF]/60 rounded-full blur-[100px] pointer-events-none z-0 will-change-transform"></div>
+      <div className="hidden md:block absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#E8E2FF]/60 rounded-full blur-[100px] pointer-events-none z-0"></div>
 
       <div className="max-w-[1200px] mx-auto w-full px-4 sm:px-8 flex flex-col items-center relative z-10">
         

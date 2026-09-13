@@ -15,12 +15,12 @@ export default function FinalCTA({ onRequestInvite }) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Premium gradient card — shimmer only on desktop for mobile perf */}
-        <div className="relative rounded-[32px] p-[2px] bg-gradient-to-r from-[#A5D172] via-[#6A9A3B] to-[#A5D172] md:animate-[shimmer_3s_linear_infinite] bg-[length:200%_100%] shadow-[0_20px_40px_rgba(116,171,85,0.15)] hover:shadow-[0_20px_50px_rgba(116,171,85,0.2)] transition-shadow">
+        <div className="relative rounded-[32px] p-[2px] bg-gradient-to-r from-[#A5D172] via-[#6A9A3B] to-[#A5D172] bg-[length:200%_100%] shadow-[0_20px_40px_rgba(116,171,85,0.15)] hover:shadow-[0_20px_50px_rgba(116,171,85,0.2)] transition-shadow">
           <div className="relative rounded-[30px] overflow-hidden bg-white bg-gradient-to-br from-[#74AB55]/10 via-[#74AB55]/5 to-transparent h-full w-full">
 
             {/* Blur orbs — hidden on mobile for performance */}
-            <div className="hidden md:block absolute top-0 right-0 w-[400px] h-[400px] bg-[#74AB55]/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3 pointer-events-none will-change-transform"></div>
-            <div className="hidden md:block absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#74AB55]/5 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none will-change-transform"></div>
+            <div className="hidden md:block absolute top-0 right-0 w-[400px] h-[400px] bg-[#74AB55]/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+            <div className="hidden md:block absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#74AB55]/5 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
 
             <div className="relative z-10 p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-6">
 
