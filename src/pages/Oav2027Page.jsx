@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import {
-  CalendarIcon,
-  CheckCircleIcon,
-  DocumentTextIcon,
-  ExclamationCircleIcon,
-  InformationCircleIcon,
-  AcademicCapIcon,
-  ClipboardDocumentCheckIcon,
-  MapPinIcon
-} from '@heroicons/react/24/outline';
+  Calendar,
+  CheckCircle,
+  FileText,
+  AlertCircle,
+  Info,
+  GraduationCap,
+  ClipboardCheck,
+  MapPin
+} from 'lucide-react';
 
 const Oav2027Page = ({ onRequestInvite }) => {
   useEffect(() => {
@@ -38,7 +38,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
             Official guidelines, dates, eligibility matrix, and preparation strategies in one place.
           </p>
           <div className="mt-4 inline-flex items-center gap-2 text-sm text-yellow-700 bg-yellow-50 px-4 py-2 rounded-full font-medium border border-yellow-200">
-            <InformationCircleIcon className="w-5 h-5" />
+            <Info className="w-5 h-5" />
             Note: 2027 expected timeline based on 2026 patterns. Official notification expected November 2026.
           </div>
         </div>
@@ -50,7 +50,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* Quick Summary Grid */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <CalendarIcon className="w-8 h-8 text-brand-purple" />
+            <Calendar className="w-8 h-8 text-brand-purple" />
             <h2 className="text-2xl font-bold text-brand-dark">Quick Summary (2027 Expectations)</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -80,7 +80,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* Eligibility Criteria */}
         <section className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
           <div className="flex items-center gap-3 mb-8">
-            <CheckCircleIcon className="w-8 h-8 text-brand-purple" />
+            <CheckCircle className="w-8 h-8 text-brand-purple" />
             <h2 className="text-2xl font-bold text-brand-dark">Eligibility Criteria 2027</h2>
           </div>
 
@@ -88,21 +88,21 @@ const Oav2027Page = ({ onRequestInvite }) => {
             <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">A. Basic Eligibility</h3>
             <ul className="space-y-4">
               <li className="flex gap-3">
-                <MapPinIcon className="w-6 h-6 text-brand-purple flex-shrink-0" />
+                <MapPin className="w-6 h-6 text-brand-purple flex-shrink-0" />
                 <div>
                   <strong className="text-gray-900">Odisha Domicile:</strong> 
                   <span className="text-gray-600 ml-2">Permanent resident of Odisha only (mandatory).</span>
                 </div>
               </li>
               <li className="flex gap-3">
-                <ExclamationCircleIcon className="w-6 h-6 text-brand-purple flex-shrink-0" />
+                <AlertCircle className="w-6 h-6 text-brand-purple flex-shrink-0" />
                 <div>
                   <strong className="text-gray-900">Current OAV Students:</strong> 
                   <span className="text-gray-600 ml-2">Already enrolled in any OAV = NOT eligible.</span>
                 </div>
               </li>
               <li className="flex gap-3">
-                <AcademicCapIcon className="w-6 h-6 text-brand-purple flex-shrink-0" />
+                <GraduationCap className="w-6 h-6 text-brand-purple flex-shrink-0" />
                 <div>
                   <strong className="text-gray-900">School Type:</strong> 
                   <span className="text-gray-600 ml-2">Must be studying in Government, CBSE, ICSE, or recognized Odia-medium private school (Certificate of Recognition required).</span>
@@ -156,7 +156,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* Exam Pattern & Syllabus */}
         <section className="bg-brand-dark rounded-3xl p-8 shadow-xl text-white">
           <div className="flex items-center gap-3 mb-8">
-            <ClipboardDocumentCheckIcon className="w-8 h-8 text-brand-purple" />
+            <ClipboardCheck className="w-8 h-8 text-brand-purple" />
             <h2 className="text-2xl font-bold">Exam Pattern & Syllabus 2027</h2>
           </div>
 
@@ -193,7 +193,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* Admission Process Step-by-Step */}
         <section className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
            <div className="flex items-center gap-3 mb-8">
-            <DocumentTextIcon className="w-8 h-8 text-brand-purple" />
+            <FileText className="w-8 h-8 text-brand-purple" />
             <h2 className="text-2xl font-bold text-brand-dark">Admission Process</h2>
           </div>
           
@@ -239,27 +239,27 @@ const Oav2027Page = ({ onRequestInvite }) => {
             <h2 className="text-2xl font-bold text-brand-dark mb-6">Document Checklist</h2>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700"><strong>Birth Certificate</strong> (Original + Photocopy)</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700"><strong>Residential Certificate</strong> (Sarpanch/Tahsildar)</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700"><strong>Transfer Certificate (TC)</strong> from previous school</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700"><strong>Aadhaar Card</strong> of student and parents</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700"><strong>Caste/PwD Certificate</strong> (If applicable)</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700"><strong>Certificate of Recognition (CoR)</strong> (For private school students only)</span>
               </li>
             </ul>
@@ -289,7 +289,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* Warning Section */}
         <section className="bg-red-50 rounded-3xl p-8 border border-red-100 flex flex-col md:flex-row gap-6 items-center">
           <div className="bg-red-100 p-4 rounded-full flex-shrink-0">
-            <ExclamationCircleIcon className="w-10 h-10 text-red-600" />
+            <AlertCircle className="w-10 h-10 text-red-600" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-red-900 mb-2">Common Reasons for Rejection</h3>
@@ -323,3 +323,4 @@ const Oav2027Page = ({ onRequestInvite }) => {
 };
 
 export default Oav2027Page;
+
