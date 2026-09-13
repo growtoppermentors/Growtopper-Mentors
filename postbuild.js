@@ -135,7 +135,7 @@ if (sitemapContent) {
   <url>
     <loc>https://growtopper.app/blog/${blog.slug}</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>`;
   });
   
