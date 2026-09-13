@@ -93,7 +93,7 @@ export default function BlogPost({ onRequestInvite }) {
 
         {/* Hero Image */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-20">
-          <div className="w-full h-[300px] md:h-[500px] lg:h-[600px] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl shadow-brand-purple/5">
+          <div className="w-full aspect-[1200/630] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl shadow-brand-purple/5 flex items-center justify-center">
             <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
           </div>
         </div>
