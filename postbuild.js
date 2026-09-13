@@ -52,31 +52,36 @@ const mainPages = [
     path: '/30-days-growth-challenge',
     title: '30 Days Growth Challenge | Growtopper Mentors',
     description: 'Master Math, Science, AI, and Business in just 30 days. Join the #1 mentor-led student growth program in India.',
-    urlPath: '/30-days-growth-challenge'
+    urlPath: '/30-days-growth-challenge',
+    image: 'https://growtopper.app/og-30-days.png'
   },
   {
     path: '/1-1-clarity-session-call',
     title: '1-1 Clarity Session Call | Growtopper Mentors',
     description: 'Book a 1-on-1 Clarity Session with an expert mentor. Get an AI-driven SWOT analysis and a personalized growth roadmap for your child.',
-    urlPath: '/1-1-clarity-session-call'
+    urlPath: '/1-1-clarity-session-call',
+    image: 'https://growtopper.app/og-clarity-session.png'
   },
   {
     path: '/pricing',
     title: 'Pricing & Plans | Growtopper Mentors',
     description: 'View pricing for our Clarity Session, 30-Day Growth Challenge, and Elite/Pro Long-Term Mentorship plans.',
-    urlPath: '/pricing'
+    urlPath: '/pricing',
+    image: 'https://growtopper.app/og-pricing.png'
   },
   {
     path: '/syllabus',
     title: 'Curriculum & Syllabus | Growtopper Mentors',
     description: 'Explore the full 30-day curriculum covering Mathematics, Science, Technology, Financial Literacy, and Communication skills.',
-    urlPath: '/syllabus'
+    urlPath: '/syllabus',
+    image: 'https://growtopper.app/og-syllabus.png'
   },
   {
     path: '/blog',
     title: 'Blog & Resources | Growtopper Mentors',
     description: 'Insights, tips, and strategies for students and parents on education, career building, and holistic growth.',
-    urlPath: '/blog'
+    urlPath: '/blog',
+    image: 'https://growtopper.app/og-home.png'
   }
 ];
 
