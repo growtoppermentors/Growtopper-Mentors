@@ -501,6 +501,7 @@ export default function Home({ openModal }) {
               <img 
                 src="/images/arshi-banner.png" 
                 alt="Student Testimonial"
+                loading="lazy"
                 className="w-full h-auto object-contain rounded-[16px]"
               />
             </div>
