@@ -35,8 +35,8 @@ export default function BlogList({ onRequestInvite }) {
 
         {/* Featured Blog (Large Card) */}
         <Link to={`/blog/${featuredBlog.slug}`} className="group block mb-12 md:mb-20">
-            <div className="bg-white rounded-[32px] p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-5 md:gap-8 hover:shadow-xl hover:shadow-brand-purple/5 transition-all duration-500 relative overflow-hidden items-stretch">
-              <div className="w-full md:w-1/2 h-[260px] md:h-auto md:min-h-[300px] lg:min-h-[340px] rounded-[24px] overflow-hidden relative">
+            <div className="bg-white rounded-[32px] p-4 md:p-5 lg:p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-5 md:gap-8 hover:shadow-xl hover:shadow-brand-purple/5 transition-all duration-500 relative overflow-hidden items-center">
+              <div className="w-full md:w-1/2 aspect-[1200/630] rounded-[24px] overflow-hidden relative">
                 <img src={featuredBlog.image} alt={featuredBlog.title} className="w-full h-full object-cover absolute inset-0 transform group-hover:scale-105 transition-transform duration-700 ease-out" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
               </div>
@@ -75,8 +75,8 @@ export default function BlogList({ onRequestInvite }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {remainingBlogs.map((blog) => (
             <Link key={blog.id} to={`/blog/${blog.slug}`} className="group flex flex-col bg-white rounded-[28px] p-3 md:p-4 shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-brand-purple/5 transition-all duration-500 h-full">
-              <div className="w-full h-[220px] rounded-[20px] overflow-hidden mb-5 relative">
-                <img src={blog.image} alt={blog.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" />
+              <div className="w-full aspect-[1200/630] rounded-[20px] overflow-hidden mb-5 relative flex-shrink-0">
+                <img src={blog.image} alt={blog.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out absolute inset-0" />
                 <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-brand-dark text-[10px] font-black uppercase tracking-widest shadow-sm">
                   {blog.category}
                 </div>
