@@ -497,9 +497,9 @@ export default function Home({ openModal }) {
         {/* Featured Video Card */}
         <div className="bg-white rounded-[32px] border border-gray-100 shadow-[0_12px_40px_rgb(0,0,0,0.04)] p-4 md:p-6 mb-20 flex flex-col md:flex-row gap-6 md:gap-10 hover:shadow-[0_12px_40px_rgba(91,16,255,0.06)] transition-all">
           {/* Image Container */}
-            <div className="w-full md:w-1/2 rounded-[24px] overflow-hidden relative border border-gray-100 bg-gray-50 flex items-center p-2">
+            <div className="w-full md:w-1/2 rounded-[24px] overflow-hidden relative flex items-center justify-center">
               <img 
-                src="/images/arshi_testimonial.webp" 
+                src="/images/arshi-banner.png" 
                 alt="Student Testimonial"
                 className="w-full h-auto object-contain rounded-[16px]"
               />
