@@ -2,6 +2,19 @@ import { moreBlogs } from './moreBlogs.js';
 
 const initialBlogs = [
   {
+    id: "cbse-class-10-12-date-sheet-2027-expected",
+    slug: "cbse-class-10-12-date-sheet-2027-expected",
+    title: "CBSE Class 10 and 12 Date Sheet 2027: What Students Should Know",
+    excerpt: "The Central Board of Secondary Education (CBSE) has not yet released the official subject-wise date sheet for the 2027 Class 10 and 12 exams. Here is everything you need to know about the expected release.",
+    category: "Board Exams",
+    readTime: "3 min read",
+    date: "Sep 14, 2026",
+    author: "Growtopper Team",
+    authorAvatar: "https://api.dicebear.com/9.x/notionists/svg?lips=&seed=CBSE&backgroundColor=e8d5f5",
+    image: "/images/og-cbse.png",
+    content: `<h2>When will the date sheet be released?</h2><p>Current reports suggest that the CBSE 2027 date sheet may be released between November and December 2026. Some education sources expect a tentative schedule earlier, possibly in September or October, but these dates are only predictions and are not official CBSE announcements.</p><p>Students should therefore avoid treating date sheets shared on social media as final.</p><h2>When are the exams expected?</h2><p>The Class 10 and Class 12 board examinations are expected to take place during February and March 2027. However, the final subject-wise dates, examination timings and practical-examination schedule will be known only after CBSE publishes the official notification.</p><h2>What will the date sheet contain?</h2><p>The official PDF is expected to include:</p><ul><li>Subject-wise examination dates.</li><li>Examination timings.</li><li>Reporting instructions.</li><li>Practical and internal-assessment information, wherever applicable.</li><li>Special instructions for students.</li><li>Details for different subjects and subject codes.</li></ul><p>Class 12 students should check their stream-specific subjects carefully, while Class 10 students should verify whether the listed paper is Mathematics Basic, Mathematics Standard or another subject.</p><h2>How to download the official date sheet</h2><p>After CBSE releases the timetable, students can download it by following these steps:</p><ol><li>Visit the official CBSE website: <a href="https://www.cbse.gov.in/" target="_blank" rel="noopener noreferrer">cbse.gov.in</a>.</li><li>Open the examination or latest-circular section.</li><li>Find the notification for the Class 10 and Class 12 Board Examination 2027 date sheet.</li><li>Open the PDF.</li><li>Check the subject, date and examination timing.</li><li>Download and save the file.</li></ol><h2>What students should do now</h2><p>Students should not wait for the date sheet before beginning serious revision. They can:</p><ul><li>Complete the syllabus according to the school's academic plan.</li><li>Prepare a weekly revision timetable.</li><li>Practise sample papers and previous-year questions.</li><li>Identify subjects that need additional attention.</li><li>Keep checking the official CBSE website.</li><li>Confirm all subject details with the school after the date sheet is released.</li></ul><h2>Important clarification</h2><p>The 2027 CBSE date sheet is not officially available yet. Expected release periods reported by media and education websites may change, so students should rely on the PDF published by CBSE rather than unofficial schedules.</p><h2>Bottom line</h2><p>CBSE Class 10 and 12 board examinations are expected to be held in February–March 2027, while the official date sheet is likely to be released later in 2026. Students should continue preparation now and use the final timetable only for arranging revision and examination-day planning.</p>`
+  },
+  {
     id: "neet-ug-computer-based-test-cbt-update",
     slug: "neet-ug-computer-based-test-cbt-update",
     title: "NEET UG Transitioning to Computer-Based Test (CBT): What Medical Aspirants Must Know",
