@@ -81,7 +81,7 @@ const mainPages = [
     title: 'Blog & Resources | Growtopper Mentors',
     description: 'Insights, tips, and strategies for students and parents on education, career building, and holistic growth.',
     urlPath: '/blog',
-    image: 'https://growtopper.app/og-home.png'
+    image: 'https://growtopper.app/og-blog.png'
   }
 ];
 
