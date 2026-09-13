@@ -50,7 +50,7 @@ const generateHtml = (meta) => {
 const mainPages = [
   {
     path: '/30-days-growth-challenge',
-    title: '30-Day Growth Challenge | Growtopper Mentors',
+    title: '30 Days Growth Challenge | Growtopper Mentors',
     description: 'Master Math, Science, AI, and Business in just 30 days. Join the #1 mentor-led student growth program in India.',
     urlPath: '/30-days-growth-challenge'
   },

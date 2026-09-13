@@ -31,8 +31,8 @@ export default function Navbar({ onRequestInvite }) {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: '30-Day Challenge', href: '/30-days-growth-challenge', Icon: Flame },
-    { name: '1-1 Clarity Session',  href: '/clarity-session',          Icon: Zap },
+    { name: '30 Days Growth Challenge', href: '/30-days-growth-challenge', Icon: Flame },
+    { name: '1-1 Clarity Session Call',  href: '/clarity-session',          Icon: Zap },
     { name: 'Pricing',          href: '/pricing',                   Icon: Coins },
     { name: 'Blog',             href: '/blog',                      Icon: BookOpen },
   ];
