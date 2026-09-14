@@ -89,6 +89,7 @@ function App() {
         <Route path="/blog" element={<BlogList onRequestInvite={openModal} />} />
         <Route path="/blog/:slug" element={<BlogPost onRequestInvite={openModal} />} />
         <Route path="/1-1-clarity-session-call" element={<ClaritySession />} />`n        <Route path="/oav2027" element={<Oav2027Page onRequestInvite={openModal} />} />
+          <Route path="/jnv2027" element={<Jnv2027Page onRequestInvite={openModal} />} />
       </Routes></React.Suspense>
       <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />
       <LiveNotification />
@@ -97,4 +98,5 @@ function App() {
 }
 
 export default App;
+
 
