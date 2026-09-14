@@ -58,10 +58,12 @@ function App() {
   const schedulePopup = React.useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
 
-    const count = parseInt(localStorage.getItem('gt_popup_count') || '0', 10);
-    if (count >= 3) return; // Max 3 times across all sessions
+    // Using sessionStorage so it resets if they close the browser/tab, 
+    // but survives all page reloads and navigation within the same session.
+    const count = parseInt(sessionStorage.getItem('gt_popup_count') || '0', 10);
+    if (count >= 3) return; // Max 3 times per session
 
-    const lastClosed = parseInt(localStorage.getItem('gt_last_closed') || '0', 10);
+    const lastClosed = parseInt(sessionStorage.getItem('gt_last_closed') || '0', 10);
     
     let delay;
     if (count === 0) delay = 60000; // 60s for 1st
@@ -88,13 +90,13 @@ function App() {
 
     timerRef.current = setTimeout(() => {
       setIsModalOpen(true);
-      localStorage.setItem('gt_popup_count', (count + 1).toString());
+      sessionStorage.setItem('gt_popup_count', (count + 1).toString());
     }, timeToWait);
   }, []);
 
   const closeModal = React.useCallback(() => {
     setIsModalOpen(false);
-    localStorage.setItem('gt_last_closed', Date.now().toString());
+    sessionStorage.setItem('gt_last_closed', Date.now().toString());
     schedulePopup(); // Schedule the next popup in the sequence
   }, [schedulePopup]);
 
