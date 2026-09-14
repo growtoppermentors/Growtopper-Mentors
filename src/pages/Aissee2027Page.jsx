@@ -62,19 +62,19 @@ const Aissee2027Page = ({ onRequestInvite }) => {
       <Navbar onRequestInvite={onRequestInvite} />
 
       {/* Responsive Mobile Hero Section */}
-      <section className="pt-24 sm:pt-32 pb-8 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="bg-gradient-to-br from-[#F0F4F8] via-white to-[#E6EDF5] rounded-[24px] sm:rounded-[32px] border border-blue-100 shadow-sm p-6 sm:p-12 text-center relative overflow-hidden">
+      <section className="pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="bg-gradient-to-br from-[#F0F4F8] via-white to-[#E6EDF5] rounded-[24px] sm:rounded-[32px] border border-blue-100 shadow-sm p-6 sm:p-10 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-indigo-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           
           <div className="relative z-10 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-widest mb-4 sm:mb-6 border border-blue-200/50">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-widest mb-4 sm:mb-5 border border-blue-200/50">
               <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Official Guide 2027
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-brand-dark mb-4 sm:mb-6 leading-tight tracking-tight">
-              All India Sainik School <br className="hidden sm:block"/> Entrance Exam <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">(AISSEE)</span> 2027
+            <h1 className="text-3xl sm:text-5xl font-black text-brand-dark mb-4 sm:mb-5 leading-tight tracking-tight">
+              All India Sainik School Entrance Exam <br className="hidden lg:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">(AISSEE)</span> 2027
             </h1>
-            <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto font-medium px-2">
+            <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-7 max-w-2xl mx-auto font-medium px-2">
               The complete research playbook for admission into India's prestigious 102+ Sainik Schools. Prepare for Class VI & IX lateral entry with verified eligibility, syllabi, and strategies.
             </p>
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-bold text-gray-500">
