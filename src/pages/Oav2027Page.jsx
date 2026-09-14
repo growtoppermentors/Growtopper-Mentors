@@ -78,7 +78,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F8F9FE] font-sans allow-select">
+    <div className="min-h-screen bg-[#E9E2CD] bg-[radial-gradient(#d5ceb6_1px,transparent_1px)] [background-size:20px_20px] font-sans allow-select">
       <Navbar onRequestInvite={onRequestInvite} />
 
       {/* Hero Banner Section */}
@@ -863,3 +863,5 @@ const Oav2027Page = ({ onRequestInvite }) => {
 };
 
 export default Oav2027Page;
+
+
