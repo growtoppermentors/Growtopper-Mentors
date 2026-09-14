@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { 
@@ -44,14 +43,12 @@ const Aissee2027Page = ({ onRequestInvite }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = 'Sainik School Entrance Exam (AISSEE) 2027 Guide | Growtopper';
   }, []);
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] font-sans allow-select">
-      <Helmet>
-        <title>Sainik School Entrance Exam (AISSEE) 2027 Guide | Growtopper</title>
-        <meta name="description" content="Complete research playbook for All India Sainik School Entrance Exam (AISSEE) 2027. Get eligibility, exam pattern, dates, and syllabus for Class 6 & 9." />
-      </Helmet>
+      
 
       <Navbar onRequestInvite={onRequestInvite} />
 
@@ -153,13 +150,13 @@ const Aissee2027Page = ({ onRequestInvite }) => {
             {activeTab === 'class6' ? (
               <ul className="space-y-4">
                 <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Age Range:</strong> 10 to 12 years (as on 31 Mar 2027)</span></li>
-                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>DOB Range:</strong> Born between 01 Apr 2015 – 31 Mar 2017 (both inclusive)</span></li>
+                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>DOB Range:</strong> Born between 01 Apr 2015 ï¿½ 31 Mar 2017 (both inclusive)</span></li>
                 <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Education:</strong> Must have passed or currently appearing in Class V from a recognised school.</span></li>
               </ul>
             ) : (
               <ul className="space-y-4">
                 <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Age Range:</strong> 13 to 15 years (as on 31 Mar 2027)</span></li>
-                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>DOB Range:</strong> Born between 01 Apr 2012 – 31 Mar 2014 (both inclusive)</span></li>
+                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>DOB Range:</strong> Born between 01 Apr 2012 ï¿½ 31 Mar 2014 (both inclusive)</span></li>
                 <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Education:</strong> Must have passed or currently appearing in Class VIII from a recognised school.</span></li>
               </ul>
             )}
@@ -306,7 +303,7 @@ const Aissee2027Page = ({ onRequestInvite }) => {
               <div className="h-px w-full bg-gray-200"></div>
               <div>
                 <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Annual School Fees (Approx)</p>
-                <p className="text-xl font-black text-gray-900">?2.0 Lakh – ?2.63 Lakh</p>
+                <p className="text-xl font-black text-gray-900">?2.0 Lakh ï¿½ ?2.63 Lakh</p>
                 <p className="text-xs text-gray-500 mt-1">Includes tuition (~?90k), boarding (~?45k), mess (~?50k), uniform, and books. SC/ST may receive state subsidies.</p>
               </div>
             </div>
