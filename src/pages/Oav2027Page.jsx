@@ -23,12 +23,36 @@ import {
   Wallet
 } from 'lucide-react';
 
-const GradientCard = ({ children, title, icon: Icon }) => (
-  <div className="relative rounded-[32px] p-[2px] bg-gradient-to-r from-[#7280DE]/30 via-[#B28BFF]/40 to-[#7280DE]/30 bg-[length:200%_100%] shadow-[0_10px_30px_rgba(114,128,222,0.05)] hover:shadow-[0_15px_40px_rgba(114,128,222,0.1)] transition-shadow h-full mb-8">
-    <div className="relative rounded-[30px] overflow-hidden bg-white bg-gradient-to-br from-[#7280DE]/10 via-[#7280DE]/5 to-transparent p-6 sm:p-8 h-full w-full">
+const GradientCard = ({ children, title, icon: Icon, color = 'multi' }) => {
+  const styles = {
+    orange: 'bg-gradient-to-br from-[#FFF4ED] to-[#FFFaf0] border-orange-100',
+    purple: 'bg-gradient-to-br from-[#F4F1FF] to-[#FAFAFF] border-purple-100',
+    green: 'bg-gradient-to-br from-[#F0FDF4] to-[#F8FAFC] border-green-100',
+    blue: 'bg-gradient-to-br from-[#EFF6FF] to-[#F8FAFC] border-blue-100',
+    multi: 'bg-gradient-to-br from-[#FFF0E5] via-[#F3E8FF] to-[#E0F2FE] border-purple-100',
+    default: 'bg-white border-gray-100'
+  };
+
+  const activeStyle = styles[color] || styles.default;
+  const iconColors = {
+    orange: 'text-orange-600 bg-orange-100/50',
+    purple: 'text-[#5B10FF] bg-[#5B10FF]/10',
+    green: 'text-green-600 bg-green-100/50',
+    blue: 'text-blue-600 bg-blue-100/50',
+    multi: 'text-[#7280DE] bg-[#7280DE]/10',
+    default: 'text-gray-500 bg-gray-100'
+  };
+  const iconColor = iconColors[color] || iconColors.default;
+
+  return (
+    <div className={`relative rounded-[24px] border shadow-sm hover:shadow-md transition-shadow p-6 sm:p-8 h-full mb-8 ${activeStyle}`}>
       {title && (
-        <div className="flex items-center gap-3 mb-6 border-b border-[#7280DE]/10 pb-4">
-          {Icon && <Icon className="w-7 h-7 text-[#7280DE]" />}
+        <div className="flex items-center gap-4 mb-6">
+          {Icon && (
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${iconColor}`}>
+              <Icon className="w-6 h-6" />
+            </div>
+          )}
           <h2 className="text-xl sm:text-2xl font-black text-brand-dark">{title}</h2>
         </div>
       )}
@@ -36,8 +60,8 @@ const GradientCard = ({ children, title, icon: Icon }) => (
         {children}
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const SectionTitle = ({ number, title }) => (
   <h2 className="text-2xl sm:text-3xl font-black text-brand-dark mb-6 flex items-center gap-3">
@@ -119,7 +143,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 2. Who Can Apply */}
         <section>
           <SectionTitle number="2" title="Who Can Apply?" />
-          <GradientCard icon={Users} title="Basic Eligibility">
+          <GradientCard color="orange" icon={Users} title="Basic Eligibility">
             <ul className="space-y-4 font-medium">
               <li className="flex gap-3"><CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" /> <span className="pt-0.5">Must be a <strong>permanent resident of Odisha.</strong></span></li>
               <li className="flex gap-3"><CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" /> <span className="pt-0.5">Must apply to the OAV located in the student's <strong>native residential block.</strong></span></li>
@@ -138,7 +162,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         <section>
           <SectionTitle number="3" title="Class-Wise Eligibility" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <GradientCard title="Class VI">
+            <GradientCard color="green" title="Class VI">
               <ul className="space-y-3 font-medium">
                 <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Age</span> <strong>10–12 years</strong></li>
                 <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Expected DOB</span> <strong>1 Apr 2014 – 31 Mar 2017</strong></li>
@@ -146,7 +170,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
                 <li className="flex justify-between items-center"><span className="text-gray-500 text-sm">Entrance Syllabus</span> <strong className="text-[#7280DE]">Class V</strong></li>
               </ul>
             </GradientCard>
-            <GradientCard title="Class VII">
+            <GradientCard color="blue" title="Class VII">
               <ul className="space-y-3 font-medium">
                 <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Age</span> <strong>11–13 years</strong></li>
                 <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Expected DOB</span> <strong>1 Apr 2013 – 31 Mar 2016</strong></li>
@@ -155,7 +179,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
               </ul>
               <div className="mt-4 text-sm text-[#9D68A1] font-bold bg-white p-3 rounded-xl border border-[#9D68A1]/20">Admission depends on vacancies.</div>
             </GradientCard>
-            <GradientCard title="Class VIII">
+            <GradientCard color="purple" title="Class VIII">
               <ul className="space-y-3 font-medium">
                 <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Age</span> <strong>12–14 years</strong></li>
                 <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Expected DOB</span> <strong>1 Apr 2012 – 31 Mar 2015</strong></li>
@@ -164,7 +188,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
               </ul>
               <div className="mt-4 text-sm text-[#9D68A1] font-bold bg-white p-3 rounded-xl border border-[#9D68A1]/20">Admission depends on vacancies.</div>
             </GradientCard>
-            <GradientCard title="Class IX">
+            <GradientCard color="orange" title="Class IX">
               <ul className="space-y-3 font-medium">
                 <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Age</span> <strong>13–15 years</strong></li>
                 <li className="flex justify-between items-center border-b border-[#7280DE]/10 pb-2"><span className="text-gray-500 text-sm">Expected DOB</span> <strong>1 Apr 2011 – 31 Mar 2014</strong></li>
@@ -210,7 +234,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 5. Reservation */}
         <section>
           <SectionTitle number="5" title="Reservation" />
-          <GradientCard icon={MapPin}>
+          <GradientCard color="purple" icon={MapPin}>
             <p className="mb-6 font-medium text-gray-700">OAV admission follows category-based and horizontal reservation provisions.</p>
             <div className="overflow-x-auto bg-white rounded-2xl border border-[#7280DE]/10 shadow-sm">
               <table className="w-full text-left border-collapse">
@@ -239,7 +263,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 6. How to Apply */}
         <section>
           <SectionTitle number="6" title="How to Apply" />
-          <GradientCard icon={CheckSquare}>
+          <GradientCard color="green" icon={CheckSquare}>
             <div className="space-y-8 relative border-l-2 border-[#7280DE]/30 ml-4 pl-8 py-2">
               
               <div className="relative">
@@ -278,7 +302,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         <section>
           <SectionTitle number="7" title="OAV Entrance Exam Pattern" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <GradientCard title="Class VI">
+            <GradientCard color="blue" title="Class VI">
               <div className="bg-white rounded-2xl border border-[#7280DE]/10 overflow-hidden shadow-sm mb-6">
                 <table className="w-full text-left border-collapse">
                   <thead className="bg-[#7280DE]/5">
@@ -302,7 +326,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
               </div>
             </GradientCard>
             
-            <GradientCard title="Classes VII–IX">
+            <GradientCard color="orange" title="Classes VII–IX">
                <div className="bg-white rounded-2xl border border-[#7280DE]/10 overflow-hidden shadow-sm mb-6">
                 <table className="w-full text-left border-collapse">
                   <thead className="bg-[#7280DE]/5">
@@ -363,7 +387,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         <section>
           <SectionTitle number="9" title="90-Day Preparation Plan — Class VI" />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <GradientCard>
+            <GradientCard color="blue">
                 <div className="flex justify-center mb-6"><div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-500 text-white flex items-center justify-center font-black text-2xl shadow-lg">1</div></div>
                 <h4 className="font-black text-xl text-center text-brand-dark mb-1">Days 1–30</h4>
                 <p className="text-center text-gray-500 text-sm font-bold mb-4 uppercase tracking-wider">Build Foundation</p>
@@ -375,7 +399,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
                   <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Identify weak subjects/topics.</li>
                 </ul>
             </GradientCard>
-            <GradientCard>
+            <GradientCard color="purple">
                 <div className="flex justify-center mb-6"><div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#7280DE] to-[#B28BFF] text-white flex items-center justify-center font-black text-2xl shadow-lg">2</div></div>
                 <h4 className="font-black text-xl text-center text-brand-dark mb-1">Days 31–60</h4>
                 <p className="text-center text-gray-500 text-sm font-bold mb-4 uppercase tracking-wider">Strengthen Prep</p>
@@ -387,7 +411,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
                   <li className="flex gap-2 items-start"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /> Improve accuracy and speed.</li>
                 </ul>
             </GradientCard>
-            <GradientCard>
+            <GradientCard color="orange">
                 <div className="flex justify-center mb-6"><div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-white flex items-center justify-center font-black text-2xl shadow-lg">3</div></div>
                 <h4 className="font-black text-xl text-center text-brand-dark mb-1">Days 61–90</h4>
                 <p className="text-center text-gray-500 text-sm font-bold mb-4 uppercase tracking-wider">Revision + Speed</p>
@@ -408,7 +432,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 10. Exam Strategy */}
         <section>
           <SectionTitle number="10" title="Exam-Day Strategy" />
-          <GradientCard icon={Lightbulb}>
+          <GradientCard color="green" icon={Lightbulb}>
             <p className="mb-6 font-bold text-brand-dark text-lg md:text-xl">Because there is <span className="text-red-500">no negative marking</span>, students should aim to attempt all questions.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex gap-3"><CheckCircle className="w-6 h-6 text-[#7280DE] flex-shrink-0" /> <span className="text-gray-700 font-medium">Read every question carefully.</span></div>
@@ -476,7 +500,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 12. Documents */}
         <section>
           <SectionTitle number="12" title="Documents You Must Keep Ready" />
-          <GradientCard icon={FileText}>
+          <GradientCard color="orange" icon={FileText}>
             <p className="mb-6 font-bold text-gray-700 text-lg">Prepare these documents <strong>before the application window opens</strong>.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-2xl border border-green-100 shadow-sm">
@@ -509,7 +533,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 13. Rejection Reasons */}
         <section>
           <SectionTitle number="13" title="Why Applications Can Be Rejected" />
-          <GradientCard icon={AlertTriangle}>
+          <GradientCard color="purple" icon={AlertTriangle}>
             <p className="font-bold text-gray-700 mb-6">Avoid these common mistakes to prevent disqualification:</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-5 rounded-2xl border border-red-100 shadow-sm">
@@ -557,7 +581,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 14. Class Wise Admission */}
         <section>
           <SectionTitle number="14" title="Class-Wise Admission" />
-          <GradientCard icon={GraduationCap}>
+          <GradientCard color="blue" icon={GraduationCap}>
              <div className="space-y-4">
               <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
                 <h4 className="font-bold text-xl text-brand-dark mb-2">Class VI — Main Entry Point</h4>
@@ -594,7 +618,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 15. Fees */}
         <section>
           <SectionTitle number="15" title="Fees & Cost" />
-          <GradientCard icon={Wallet}>
+          <GradientCard color="green" icon={Wallet}>
             <div className="text-center bg-green-50 p-6 rounded-2xl border border-green-200 mb-6">
               <p className="font-black text-2xl text-green-700">OAV provides free tuition / state-funded education.</p>
             </div>
@@ -659,7 +683,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 17. Checklist */}
         <section>
           <SectionTitle number="17" title="Parent & Student Checklist" />
-          <GradientCard icon={CheckSquare}>
+          <GradientCard color="orange" icon={CheckSquare}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
@@ -719,7 +743,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 18. Websites */}
         <section>
           <SectionTitle number="18" title="Official Websites & Updates" />
-          <GradientCard icon={Globe}>
+          <GradientCard color="blue" icon={Globe}>
             <p className="mb-6 font-medium text-gray-700">For the latest and final information, always check the official sources:</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
               <a href="https://oav.edu.in" target="_blank" rel="noopener noreferrer" className="bg-white border-2 border-[#7280DE] text-[#7280DE] px-4 py-4 rounded-xl font-black text-center hover:bg-[#7280DE] hover:text-white transition-all shadow-sm">oav.edu.in</a>
@@ -839,5 +863,6 @@ const Oav2027Page = ({ onRequestInvite }) => {
 };
 
 export default Oav2027Page;
+
 
 
