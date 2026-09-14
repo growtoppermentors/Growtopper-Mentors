@@ -65,7 +65,7 @@ const GradientCard = ({ children, title, icon: Icon, color = 'multi' }) => {
 
 const SectionTitle = ({ number, title }) => (
   <h2 className="text-2xl sm:text-3xl font-black text-brand-dark mb-6 flex items-center gap-3">
-    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#7280DE] to-[#B28BFF] text-white text-lg flex-shrink-0 shadow-sm">
+    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#5B10FF] text-white text-lg font-black flex-shrink-0 shadow-md">
       {number}
     </span>
     {title}
@@ -83,11 +83,11 @@ const Oav2027Page = ({ onRequestInvite }) => {
 
       {/* Hero Banner Section */}
       <section className="pt-24 pb-8 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="w-full mb-8 overflow-hidden rounded-[32px] shadow-2xl border-4 border-white aspect-[1200/630] bg-gray-100 flex items-center justify-center">
+        <div className="w-full mb-8 overflow-hidden rounded-[32px] shadow-2xl border-4 border-white bg-gray-100">
           <img 
             src="/images/oav2027-banner.png" 
             alt="OAV Admission 2027: Complete Guide for Students and Parents" 
-            className="w-full h-full object-cover" 
+            className="w-full h-auto" 
           />
         </div>
         
@@ -863,5 +863,6 @@ const Oav2027Page = ({ onRequestInvite }) => {
 };
 
 export default Oav2027Page;
+
 
 
