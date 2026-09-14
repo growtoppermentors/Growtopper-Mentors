@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import CohortSection from '../components/sections/CohortSection';
+import FinalCTA from '../components/sections/FinalCTA';
 import {
   Calendar,
   CheckCircle,

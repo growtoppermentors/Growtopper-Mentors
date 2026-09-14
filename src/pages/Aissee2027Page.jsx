@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import CohortSection from '../components/sections/CohortSection';
+import FinalCTA from '../components/sections/FinalCTA';
 import { 
   Calendar, Shield, Users, BookOpen, GraduationCap, Clock, 
   MapPin, CheckCircle, AlertTriangle, FileText, Activity, CreditCard,
@@ -528,6 +530,15 @@ const Aissee2027Page = ({ onRequestInvite }) => {
               <p className="text-sm text-blue-100">Full OMR mock tests 3x a week for speed.</p>
             </div>
           </div>
+
+          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10 w-full pb-4">
+            <button onClick={onRequestInvite} className="bg-white text-blue-700 px-8 py-3.5 rounded-full font-black shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center border-2 border-transparent">
+              Request an Invite to Start Preparing
+            </button>
+            <a href="/1-1-clarity-session-call" className="bg-transparent text-white border-2 border-white/40 hover:bg-white/10 px-8 py-3.5 rounded-full font-bold shadow-sm transition-all w-full sm:w-auto text-center">
+              Book 1-1 Strategy Call
+            </a>
+          </div>
         </div>
 
         {/* Official Contacts */}
@@ -551,6 +562,8 @@ const Aissee2027Page = ({ onRequestInvite }) => {
 
       </section>
 
+      <CohortSection onRequestInvite={onRequestInvite} />
+      <FinalCTA onRequestInvite={onRequestInvite} />
       <Footer onRequestInvite={onRequestInvite} />
     </div>
   );

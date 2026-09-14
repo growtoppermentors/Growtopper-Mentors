@@ -3,6 +3,8 @@ import { BookOpen, Calendar, CheckSquare, Clock, Globe, GraduationCap, Users, Li
 import { Link } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import CohortSection from '../components/sections/CohortSection';
+import FinalCTA from '../components/sections/FinalCTA';
 
 const GradientCard = ({ children, color = "orange", icon: Icon, className = "" }) => {
   const colorStyles = {
