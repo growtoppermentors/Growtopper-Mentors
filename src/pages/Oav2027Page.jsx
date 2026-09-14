@@ -29,7 +29,7 @@ const GradientCard = ({ children, title, icon: Icon, color = 'multi' }) => {
     purple: 'bg-gradient-to-br from-[#F4F1FF] to-[#FAFAFF] border-purple-100',
     green: 'bg-gradient-to-br from-[#F0FDF4] to-[#F8FAFC] border-green-100',
     blue: 'bg-gradient-to-br from-[#EFF6FF] to-[#F8FAFC] border-blue-100',
-    multi: 'bg-gradient-to-br from-[#FFF0E5] via-[#F3E8FF] to-[#E0F2FE] border-purple-100',
+    multi: 'bg-gradient-to-br from-white via-[#FCFBFF] to-[#F4F1FF] border-purple-100',
     default: 'bg-white border-gray-100'
   };
 

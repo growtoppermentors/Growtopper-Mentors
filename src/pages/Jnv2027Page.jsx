@@ -10,7 +10,7 @@ const GradientCard = ({ children, color = "orange", icon: Icon, className = "" }
     purple: "bg-gradient-to-br from-[#F5F3FF] to-[#FAFAFF] border-purple-100",
     green: "bg-gradient-to-br from-[#F0FDF4] to-[#F8FFFA] border-green-100",
     blue: "bg-gradient-to-br from-[#EFF6FF] to-[#F8FAFF] border-blue-100",
-    multi: "bg-gradient-to-br from-[#FFF4ED] via-[#F5F3FF] to-[#EFF6FF] border-purple-100"
+    multi: "bg-gradient-to-br from-white via-[#FCFBFF] to-[#F4F1FF] border-purple-100"
   };
 
   const iconColors = {
@@ -79,16 +79,16 @@ const Jnv2027Page = ({ onRequestInvite }) => {
 
         {/* Tab Toggle */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white p-2 rounded-2xl shadow-lg border border-gray-200 inline-flex gap-2">
+          <div className="bg-white p-2 rounded-2xl shadow-lg border border-gray-200 flex flex-col sm:flex-row w-full sm:w-auto gap-2">
             <button 
               onClick={() => setActiveTab('IX')}
-              className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${activeTab === 'IX' ? 'bg-[#5B10FF] text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
+              className={`px-4 sm:px-8 py-3 rounded-xl font-bold text-base sm:text-lg transition-all flex-1 text-center ${activeTab === 'IX' ? 'bg-[#5B10FF] text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
             >
               Class IX Guide
             </button>
             <button 
               onClick={() => setActiveTab('XI')}
-              className={`px-8 py-3 rounded-xl font-bold text-lg transition-all ${activeTab === 'XI' ? 'bg-[#5B10FF] text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
+              className={`px-4 sm:px-8 py-3 rounded-xl font-bold text-base sm:text-lg transition-all flex-1 text-center ${activeTab === 'XI' ? 'bg-[#5B10FF] text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
             >
               Class XI Guide
             </button>
