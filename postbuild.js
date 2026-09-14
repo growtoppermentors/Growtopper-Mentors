@@ -94,7 +94,7 @@ const mainPages = [
     title: 'OAV Admission 2027: Complete Guide | Growtopper',
     description: 'Everything you need to know about the Odisha Adarsha Vidyalaya Entrance Test (OAVET) 2027. Official guidelines, dates, and eligibility.',
     urlPath: '/oav2027',
-    image: 'https://growtopper.app/images/oav2027-banner.png'
+    image: 'https://growtopper.app/images/oav2027-preview.png'
   }
 ];
 
@@ -161,5 +161,6 @@ if (sitemapContent) {
   fs.writeFileSync(distSitemapPath, sitemapContent);
   console.log('Successfully updated sitemap.xml with blog URLs!');
 }
+
 
 
