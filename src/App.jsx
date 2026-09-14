@@ -49,39 +49,61 @@ function HomePage({ openModal }) {
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const autoOpenCount = React.useRef(0);
+  const timerRef = React.useRef(null);
 
   const openModal = React.useCallback(() => {
     setIsModalOpen(true);
   }, []);
 
-  const scheduleAutoPopup = React.useCallback((delay) => {
-    setTimeout(() => {
-      if (autoOpenCount.current < 3) {
-        setIsModalOpen(true);
-        autoOpenCount.current += 1;
-      }
-    }, delay);
+  const schedulePopup = React.useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    const count = parseInt(localStorage.getItem('gt_popup_count') || '0', 10);
+    if (count >= 3) return; // Max 3 times across all sessions
+
+    const lastClosed = parseInt(localStorage.getItem('gt_last_closed') || '0', 10);
+    
+    let delay;
+    if (count === 0) delay = 60000; // 60s for 1st
+    else if (count === 1) delay = 150000; // 2.5m for 2nd
+    else delay = 180000; // 3m for 3rd
+
+    let timeToWait = delay;
+
+    if (count > 0 && lastClosed > 0) {
+       // If it's the 2nd or 3rd popup, calculate remaining time based on when it was last closed
+       const timePassed = Date.now() - lastClosed;
+       timeToWait = Math.max(0, delay - timePassed);
+    } else if (count === 0) {
+       // For the 1st popup, track session start to prevent reset on refresh
+       const sessionStart = parseInt(sessionStorage.getItem('gt_session_start') || '0', 10);
+       if (!sessionStart) {
+           sessionStorage.setItem('gt_session_start', Date.now().toString());
+           timeToWait = delay;
+       } else {
+           const timePassed = Date.now() - sessionStart;
+           timeToWait = Math.max(0, delay - timePassed);
+       }
+    }
+
+    timerRef.current = setTimeout(() => {
+      setIsModalOpen(true);
+      localStorage.setItem('gt_popup_count', (count + 1).toString());
+    }, timeToWait);
   }, []);
 
   const closeModal = React.useCallback(() => {
     setIsModalOpen(false);
-    
-    // Dynamic progressive delays requested by user:
-    // 1st popup was at 60s.
-    // Next popup (2nd) -> 2.5 minutes (150,000ms) after closing
-    // Next popup (3rd) -> 3 minutes (180,000ms) after closing
-    if (autoOpenCount.current === 1) {
-      scheduleAutoPopup(150000); 
-    } else if (autoOpenCount.current === 2) {
-      scheduleAutoPopup(180000);
-    }
-  }, [scheduleAutoPopup]);
+    localStorage.setItem('gt_last_closed', Date.now().toString());
+    schedulePopup(); // Schedule the next popup in the sequence
+  }, [schedulePopup]);
 
   useEffect(() => {
-    // 1st popup after 60 seconds (60,000ms)
-    scheduleAutoPopup(60000); 
-  }, [scheduleAutoPopup]);
+    schedulePopup();
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [schedulePopup]);
 
   return (
     <BrowserRouter>
