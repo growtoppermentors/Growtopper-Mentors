@@ -108,7 +108,7 @@ const mainPages = [
     title: 'Top Exams & Scholarships 2027 | Growtopper',
     description: 'Discover and track the best school-level entrance exams (OAV, JNV, Sainik School) and government scholarships (NMMS, PMST, NTSE).',
     urlPath: '/exams-scholarships',
-    image: 'https://growtopper.app/og-exams.png'
+    image: 'https://growtopper.app/images/exams-preview.jpg'
   }
 ];
 
