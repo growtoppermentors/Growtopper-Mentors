@@ -83,11 +83,11 @@ const Oav2027Page = ({ onRequestInvite }) => {
 
       {/* Hero Banner Section */}
       <section className="pt-24 pb-8 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="w-full mb-8 overflow-hidden rounded-[32px] shadow-2xl border-4 border-white">
+        <div className="w-full mb-8 overflow-hidden rounded-[32px] shadow-2xl border-4 border-white aspect-[1200/630] bg-gray-100 flex items-center justify-center">
           <img 
             src="/images/oav2027-banner.png" 
             alt="OAV Admission 2027: Complete Guide for Students and Parents" 
-            className="w-full h-auto aspect-[1200/630] object-cover" 
+            className="w-full h-full object-cover" 
           />
         </div>
         
@@ -109,7 +109,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 1. Quick Overview */}
         <section>
           <SectionTitle number="1" title="OAV Admission 2027 — Quick Overview" />
-          <GradientCard icon={Calendar}>
+          <GradientCard color="multi" icon={Calendar}>
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <tbody>
@@ -209,7 +209,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 4. Important Rules */}
         <section>
           <SectionTitle number="4" title="Important Eligibility Rules" />
-          <GradientCard icon={ShieldCheck}>
+          <GradientCard color="multi" icon={ShieldCheck}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-5 rounded-2xl border border-[#7280DE]/10 shadow-sm">
                 <h4 className="font-bold text-lg text-brand-dark mb-2">Native Block Rule</h4>
@@ -356,7 +356,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 8. Syllabus */}
         <section>
           <SectionTitle number="8" title="What Syllabus Should You Study?" />
-          <GradientCard icon={BookOpen}>
+          <GradientCard color="multi" icon={BookOpen}>
             <p className="mb-6 font-medium text-gray-700 text-lg">The entrance examination is based on the <strong>previous class level</strong>.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
@@ -412,7 +412,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
                 </ul>
             </GradientCard>
             <GradientCard color="orange">
-                <div className="flex justify-center mb-6"><div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-white flex items-center justify-center font-black text-2xl shadow-lg">3</div></div>
+                <div className="flex justify-center mb-6"><div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-400 to-pink-500 text-white flex items-center justify-center font-black text-2xl shadow-lg">3</div></div>
                 <h4 className="font-black text-xl text-center text-brand-dark mb-1">Days 61–90</h4>
                 <p className="text-center text-gray-500 text-sm font-bold mb-4 uppercase tracking-wider">Revision + Speed</p>
                 <div className="bg-white p-3 rounded-xl text-center text-sm font-bold text-[#7280DE] mb-4 border border-[#7280DE]/10">Daily study: 5–6 hours</div>
@@ -452,7 +452,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 11. After Exam */}
         <section>
           <SectionTitle number="11" title="After the Examination" />
-          <GradientCard icon={Award}>
+          <GradientCard color="multi" icon={Award}>
              <div className="space-y-4">
               <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
@@ -637,7 +637,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 16. Important Dates Recap */}
         <section>
           <SectionTitle number="16" title="Important Dates — Save These" />
-          <GradientCard icon={Clock}>
+          <GradientCard color="multi" icon={Clock}>
             <p className="text-sm font-bold text-yellow-800 mb-6 bg-yellow-100 px-4 py-2 rounded-xl inline-block border border-yellow-200">These dates are expected only. Wait for the official 2027 notification before treating them as final.</p>
             <div className="space-y-4">
               <div className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
@@ -757,7 +757,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
         {/* 19. Confirmed vs Expected */}
         <section>
           <SectionTitle number="19" title="What Is Confirmed vs What Is Expected?" />
-          <GradientCard>
+          <GradientCard color="multi">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h4 className="font-black text-xl text-green-700 mb-4 flex items-center gap-2"><CheckCircle className="w-6 h-6" /> Confirmed</h4>
@@ -863,6 +863,3 @@ const Oav2027Page = ({ onRequestInvite }) => {
 };
 
 export default Oav2027Page;
-
-
-
