@@ -267,6 +267,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
             <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-8 flex items-center gap-3">
               <Clock className="w-6 h-6 text-orange-500" /> Timeline (Expected)
             </h2>
+            <div className="mb-6 bg-orange-50 p-4 rounded-xl border border-orange-100 flex gap-3"><AlertTriangle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5"/><p className="text-sm text-orange-800"><strong>Important Notice:</strong> Admission 2027 notification is yet to be officially released. The information marked "Expected" should be used for early preparation only.</p></div>
             <div className="ml-2">
               <TimelineItem title="Official Notification" date="November 2026" isExpected={true} />
               <TimelineItem title="Application Window" date="Dec 2026 - Jan 2027" isExpected={true} />
@@ -339,6 +340,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
               <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Residential / Domicile Certificate (Block level)</span></li>
               <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Caste Certificate (SC/ST only)</span></li>
               <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Employer Certificate (For State Govt. Quota)</span></li>
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">MLA / MP / Collector Letter (If applying under Special Quota)</span></li>
             </ul>
           </GradientCard>
         </div>

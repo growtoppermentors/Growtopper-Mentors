@@ -135,6 +135,7 @@ const Jnv2027Page = ({ onRequestInvite }) => {
               <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> <span className="text-sm text-gray-600"><strong>Classes:</strong> VI to XII (Fully residential)</span></li>
               <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> <span className="text-sm text-gray-600"><strong>Total Schools:</strong> 650+ across India</span></li>
               <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> <span className="text-sm text-gray-600"><strong>Medium:</strong> Mother tongue till VIII, then English/Hindi (CBSE Board)</span></li>
+              <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> <span className="text-sm text-gray-600"><strong>National Integration:</strong> 30% of Class IX students migrate to a JNV in a different linguistic state.</span></li>
             </ul>
           </div>
 
@@ -170,24 +171,33 @@ const Jnv2027Page = ({ onRequestInvite }) => {
           
           <div className="flex justify-center mb-8">
             <div className="bg-gray-100 p-1.5 rounded-full inline-flex relative shadow-inner overflow-hidden max-w-full">
-              <div className={`absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-white rounded-full shadow-sm transition-all duration-300 ${activeTab === 'class6' ? 'left-1.5' : 'left-[calc(50%+4.5px)]'}`} />
+              <div className={`absolute top-1.5 bottom-1.5 w-[calc(33.33%-6px)] bg-white rounded-full shadow-sm transition-all duration-300 ${activeTab === 'class6' ? 'left-1.5' : activeTab === 'class9' ? 'left-[calc(33.33%+1.5px)]' : 'left-[calc(66.66%+1.5px)]'}`} />
               <button onClick={() => setActiveTab('class6')} className={`relative z-10 px-4 sm:px-8 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors ${activeTab === 'class6' ? 'text-blue-700' : 'text-gray-500'}`}>Class VI (6th)</button>
               <button onClick={() => setActiveTab('class9')} className={`relative z-10 px-4 sm:px-8 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors ${activeTab === 'class9' ? 'text-blue-700' : 'text-gray-500'}`}>Class IX (9th)</button>
+              <button onClick={() => setActiveTab('class11')} className={`relative z-10 px-4 sm:px-8 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors ${activeTab === 'class11' ? 'text-blue-700' : 'text-gray-500'}`}>Class XI (11th)</button>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8">
             <GradientCard title="Age & Education" icon={GraduationCap} theme="blue">
-              {activeTab === 'class6' ? (
+              {activeTab === 'class6' && (
                 <ul className="space-y-4">
                   <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>DOB Range:</strong> Born between 1 May 2015 and 30 Apr 2017 (both inclusive)</span></li>
                   <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Education:</strong> Must be studying in Class-V for the whole academic session in a Govt/Govt-aided school.</span></li>
                   <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>District Rule:</strong> Must study and reside in the same district where the JNV is located.</span></li>
                 </ul>
-              ) : (
+              )}
+              {activeTab === 'class9' && (
                 <ul className="space-y-4">
                   <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>DOB Range:</strong> Born between 1 May 2012 and 30 Apr 2014 (both inclusive)</span></li>
-                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Education:</strong> Must be studying in Class-VIII in a Govt/Govt-aided school.</span></li>
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Education:</strong> Must be studying in Class-VIII in a Govt/Govt-aided school. Lateral entry against vacant seats.</span></li>
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>District Rule:</strong> Must study and reside in the same district where the JNV is located.</span></li>
+                </ul>
+              )}
+              {activeTab === 'class11' && (
+                <ul className="space-y-4">
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>DOB Range:</strong> Born between 1 June 2008 and 31 July 2010 (approx based on past year).</span></li>
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Education:</strong> Must be studying in Class-X in a Govt/Govt-aided school. Admission against vacant seats.</span></li>
                   <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>District Rule:</strong> Must study and reside in the same district where the JNV is located.</span></li>
                 </ul>
               )}
@@ -203,6 +213,7 @@ const Jnv2027Page = ({ onRequestInvite }) => {
                 <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"/><span><strong>Rural Candidates:</strong> Must have studied Class III, IV, and V continuously in a school located in a rural area (for Class VI entry).</span></li>
                 <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"/><span><strong>Urban Candidates:</strong> If a candidate has studied in an urban school even for a single day in Class III, IV, or V, they will be considered an urban candidate.</span></li>
                 <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"/><span><strong>NIOS Students:</strong> Must produce a rural status certificate issued by the District Magistrate/Tehsildar.</span></li>
+                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"/><span><strong>Central OBC List:</strong> OBC candidates must be strictly listed in the Central List to avail of the quota.</span></li>
               </ul>
             </GradientCard>
           </div>
@@ -350,7 +361,7 @@ const Jnv2027Page = ({ onRequestInvite }) => {
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">VVN Fee (Class IX - XII Only)</p>
                 <p className="text-sm font-semibold text-gray-900">₹600 per month</p>
                 <p className="text-xs text-gray-500 leading-relaxed mt-1">
-                  Applicable ONLY to Boys of Gen/OBC categories. SC/ST, Girls, and BPL families are fully exempted.
+                  Applicable ONLY to Boys of Gen/OBC categories. <strong>SC/ST, All Girls, and BPL (Below Poverty Line) families are completely exempted.</strong> Govt employees pay ₹1,500/month.
                 </p>
               </div>
             </div>
