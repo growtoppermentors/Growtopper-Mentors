@@ -63,7 +63,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
           <img 
             src="/images/oav2027-banner.png" 
             alt="OAV Admission 2027: Complete Guide for Students and Parents" 
-            className="w-full h-auto object-cover" 
+            className="w-full h-auto aspect-[1200/630] object-cover" 
           />
         </div>
         
@@ -839,3 +839,5 @@ const Oav2027Page = ({ onRequestInvite }) => {
 };
 
 export default Oav2027Page;
+
+
