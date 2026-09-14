@@ -547,8 +547,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
                       <input 
                         required 
                         autoFocus
-                        type="text" maxLength="80"
-                        inputMode="numeric"
+                        type="text" inputMode="numeric"
                         maxLength={6}
                         value={otp}
                         onChange={(e) => { setOtp(e.target.value.replace(/\D/g, '').slice(0, 6)); setError(''); }}
