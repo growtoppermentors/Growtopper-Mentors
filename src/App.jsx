@@ -66,13 +66,21 @@ function App() {
 
   const closeModal = React.useCallback(() => {
     setIsModalOpen(false);
-    if (autoOpenCount.current < 3) {
-      scheduleAutoPopup(300000); // Popup again 5 minutes (300,000ms) after closing, up to 3 times
+    
+    // Dynamic progressive delays requested by user:
+    // 1st popup was at 60s.
+    // Next popup (2nd) -> 2.5 minutes (150,000ms) after closing
+    // Next popup (3rd) -> 3 minutes (180,000ms) after closing
+    if (autoOpenCount.current === 1) {
+      scheduleAutoPopup(150000); 
+    } else if (autoOpenCount.current === 2) {
+      scheduleAutoPopup(180000);
     }
   }, [scheduleAutoPopup]);
 
   useEffect(() => {
-    scheduleAutoPopup(300000); // First popup after 5 minutes (300,000ms)
+    // 1st popup after 60 seconds (60,000ms)
+    scheduleAutoPopup(60000); 
   }, [scheduleAutoPopup]);
 
   return (
