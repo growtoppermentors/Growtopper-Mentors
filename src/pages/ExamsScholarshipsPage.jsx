@@ -17,7 +17,7 @@ import {
   Zap,
   Sparkles,
   Filter,
-  Users
+  ExternalLink
 } from 'lucide-react';
 
 const ExamsScholarshipsPage = ({ onRequestInvite }) => {
@@ -37,9 +37,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'JNV Selection Test (JNVST)',
       type: 'National Level',
       status: 'Active',
-      eligibility: 'Class VI, IX, XI',
-      examDate: 'Jan / Apr 2027',
-      features: ['75% Rural Quota', 'Free Residential', '660+ Schools'],
+      conductedBy: 'NVS (Ministry of Edu)',
+      totalSchools: '661+ JNVs',
+      classes: 'VI, IX, XI',
+      examFreq: 'Annual (Nov-Dec)',
+      fee: 'Free',
+      website: 'navodaya.gov.in',
+      features: ['75% Rural Quota', 'Free Residential'],
       link: '/jnv2027',
       icon: Building,
       color: 'blue'
@@ -49,9 +53,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'All India Sainik School Exam (AISSEE)',
       type: 'Defence School',
       status: 'Active',
-      eligibility: 'Class VI, IX',
-      examDate: 'Jan 2027',
-      features: ['Defence Focus', '102+ Schools', 'NDA Prep'],
+      conductedBy: 'NTA (Ministry of Def)',
+      totalSchools: '102+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Jan)',
+      fee: '₹850 (Gen), ₹700 (SC/ST)',
+      website: 'aissee.nta.nic.in',
+      features: ['Defence Focus', 'Medical Mandatory'],
       link: '/aissee2027',
       icon: Shield,
       color: 'green'
@@ -61,9 +69,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Rashtriya Military School CET (RMS)',
       type: 'Defence School',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Dec 2026',
-      features: ['67% Defence Quota', 'Highly Competitive', '5 Elite Schools'],
+      conductedBy: 'DGMS (Min of Defence)',
+      totalSchools: '5 RMS Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Dec)',
+      fee: '₹850 (Gen), ₹700 (SC/ST)',
+      website: 'rashtriyamilitaryschools.edu.in',
+      features: ['67% Defence Quota', 'Boys Only'],
       link: '#',
       icon: Shield,
       color: 'orange'
@@ -73,9 +85,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'National EMRS Selection Test',
       type: 'National Level',
       status: 'Coming Soon',
-      eligibility: 'Class VI',
-      examDate: 'Feb 2027',
-      features: ['100% ST Quota', 'Fully Free', '740+ Target Schools'],
+      conductedBy: 'NESTS (NTA)',
+      totalSchools: '740+ Target Schools',
+      classes: 'VI',
+      examFreq: 'Annual (Feb-Mar)',
+      fee: 'Free',
+      website: 'nests.tribal.gov.in',
+      features: ['100% ST Quota', 'Fully Free'],
       link: '#',
       icon: Building,
       color: 'purple'
@@ -85,9 +101,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'SHRESHTA NETS',
       type: 'National Level',
       status: 'Coming Soon',
-      eligibility: 'Class IX, XI',
-      examDate: 'Dec 2026',
-      features: ['SC/ST Focused', 'Top Private Schools', 'Fully Funded'],
+      conductedBy: 'NTA (Min of Social Justice)',
+      totalSchools: '100+ Top Pvt Schools',
+      classes: 'IX, XI',
+      examFreq: 'Annual (Dec)',
+      fee: 'Free',
+      website: 'shreshta.admissions.nic.in',
+      features: ['SC/ST Focused', 'Fully Funded'],
       link: '#',
       icon: Star,
       color: 'blue'
@@ -97,9 +117,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Kendriya Vidyalaya Admission',
       type: 'National Level',
       status: 'Coming Soon',
-      eligibility: 'Class I to XI',
-      examDate: 'Mar-Apr 2027',
-      features: ['1,260+ Schools', 'Lottery Based', 'Priority Categories'],
+      conductedBy: 'KVS (Ministry of Edu)',
+      totalSchools: '1,260+ KVs',
+      classes: 'I to XI',
+      examFreq: 'Annual (Mar-Apr)',
+      fee: 'Free',
+      website: 'kvsangathan.nic.in',
+      features: ['Priority System', 'Lottery Based'],
       link: '#',
       icon: GraduationCap,
       color: 'orange'
@@ -108,12 +132,16 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     // --- STATE LEVEL (ODISHA) ---
     {
       id: 'oavet',
-      title: 'Odisha Adarsha Vidyalaya Entrance (OAV)',
+      title: 'Odisha Adarsha Vidyalaya (OAV)',
       type: 'State (Odisha)',
       status: 'Active',
-      eligibility: 'Class VI, VII, VIII, IX',
-      examDate: 'Feb-Mar 2027',
-      features: ['50% Girls Quota', 'Block Domicile', 'CBSE English'],
+      conductedBy: 'BSE Odisha + OAVS',
+      totalSchools: '314 Schools',
+      classes: 'VI, VII, VIII, IX, XI',
+      examFreq: 'Annual (Jan)',
+      fee: 'Nominal / Free',
+      website: 'oav.edu.in',
+      features: ['50% Girls Quota', 'Block Domicile'],
       link: '/oav2027',
       icon: Building,
       color: 'purple'
@@ -123,9 +151,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'EMRS Selection Test (Odisha)',
       type: 'State (Odisha)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, VIII',
-      examDate: 'Feb-Mar 2027',
-      features: ['ST Students Only', 'CBSE Curriculum', 'Free Education'],
+      conductedBy: 'ST & SC Dept, Odisha',
+      totalSchools: '20+ EMRSs',
+      classes: 'VI, VIII',
+      examFreq: 'Annual (Feb-Mar)',
+      fee: 'Free',
+      website: 'stsc.odisha.gov.in',
+      features: ['ST Students Only', 'CBSE Curriculum'],
       link: '#',
       icon: Building,
       color: 'green'
@@ -135,21 +167,29 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Kalinga Model Residential (KMRS)',
       type: 'State (Odisha)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, VIII',
-      examDate: 'Feb-Mar 2027',
-      features: ['SC/ST Focus', 'Free Residential', 'Govt Funded'],
+      conductedBy: 'ST & SC Dept, Odisha',
+      totalSchools: '10+ KMRSs',
+      classes: 'VI, VIII',
+      examFreq: 'Annual (Feb-Mar)',
+      fee: 'Free',
+      website: 'stsc.odisha.gov.in',
+      features: ['SC/ST Focus', 'Free Residential'],
       link: '#',
       icon: Building,
       color: 'orange'
     },
     {
       id: 'bpav-odisha',
-      title: 'Biju Patnaik Adarsha Vidyalaya (BPAV)',
+      title: 'Biju Patnaik Adarsha Vidyalaya',
       type: 'State (Odisha)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, VIII',
-      examDate: 'Feb-Mar 2027',
-      features: ['SC/ST Focus', 'CBSE Curriculum', 'Free Boarding'],
+      conductedBy: 'ST & SC Dept, Odisha',
+      totalSchools: '10+ BPAVs',
+      classes: 'VI, VIII',
+      examFreq: 'Annual (Feb-Mar)',
+      fee: 'Free',
+      website: 'stsc.odisha.gov.in',
+      features: ['SC/ST Focus', 'CBSE Curriculum'],
       link: '#',
       icon: Building,
       color: 'blue'
@@ -161,9 +201,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'AP EMRS CET (Andhra Pradesh)',
       type: 'State (AP/TS)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, VIII',
-      examDate: 'Apr 2027',
-      features: ['ST Focus', '100+ Schools', 'Free Residential'],
+      conductedBy: 'APTWREIS',
+      totalSchools: '100+ EMRSs',
+      classes: 'VI, VIII',
+      examFreq: 'Annual (Apr)',
+      fee: 'Free',
+      website: 'aptwgurukulam.ap.gov.in',
+      features: ['ST Focus', 'Income Limit ₹2.5L'],
       link: '#',
       icon: Building,
       color: 'green'
@@ -173,9 +217,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'APRS 5th Class Admission (AP)',
       type: 'State (AP/TS)',
       status: 'Coming Soon',
-      eligibility: 'Class V (Entry)',
-      examDate: 'Apr 2027',
-      features: ['Gurukulam', 'Income Ceiling ₹2.5L', 'SC/ST/BC'],
+      conductedBy: 'APREIS',
+      totalSchools: '100+ AP Gurukulam',
+      classes: 'V (Entry to VI)',
+      examFreq: 'Annual (Apr)',
+      fee: '₹100',
+      website: 'aprs.apcfss.in',
+      features: ['SC/ST/BC', 'Income Limit ₹2.5L'],
       link: '#',
       icon: BookOpen,
       color: 'orange'
@@ -185,21 +233,29 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Telangana Gurukul CET (TGCET)',
       type: 'State (AP/TS)',
       status: 'Coming Soon',
-      eligibility: 'Class V (Entry)',
-      examDate: 'May 2027',
-      features: ['100+ Schools', 'SC/ST/BC/Gen', 'Free Boarding'],
+      conductedBy: 'TS Gurukulam',
+      totalSchools: '100+ Schools',
+      classes: 'V (Entry to VI)',
+      examFreq: 'Annual (May)',
+      fee: 'Free',
+      website: 'tgcet.cgg.gov.in',
+      features: ['SC/ST/BC/Gen', 'Free Boarding'],
       link: '#',
       icon: BookOpen,
       color: 'purple'
     },
     {
       id: 'ts-wreis',
-      title: 'Telangana Tribal Welfare (TS WR REIS)',
+      title: 'Telangana Tribal Welfare',
       type: 'State (AP/TS)',
       status: 'Coming Soon',
-      eligibility: 'Class VI to IX',
-      examDate: 'Feb 2027',
-      features: ['ST Only', '50+ Schools', 'Income Ceiling ₹2.5L'],
+      conductedBy: 'TTWREIS',
+      totalSchools: '50+ Schools',
+      classes: 'VI to IX',
+      examFreq: 'Annual (Feb)',
+      fee: 'Free',
+      website: 'ttwreis.cgg.gov.in',
+      features: ['ST Only', 'Free Residential'],
       link: '#',
       icon: Building,
       color: 'blue'
@@ -208,12 +264,16 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     // --- STATE LEVEL (OTHERS) ---
     {
       id: 'cm-shri',
-      title: 'CM SHRI Schools Admission (Delhi)',
+      title: 'CM SHRI Schools Admission',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX, XI',
-      examDate: 'Apr 2027',
-      features: ['100+ Schools', 'Delhi Specific', 'Modern Infra'],
+      conductedBy: 'DoE Delhi',
+      totalSchools: '100+ Schools',
+      classes: 'VI, IX, XI',
+      examFreq: 'Annual (Apr)',
+      fee: 'Free',
+      website: 'edudel.nic.in',
+      features: ['Delhi Specific', 'Modern Infra'],
       link: '#',
       icon: Star,
       color: 'blue'
@@ -223,21 +283,29 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Atal Residential Exam (UP)',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Mar 2027',
-      features: ['100+ Schools', 'UP Domicile', 'Merit-Based'],
+      conductedBy: 'UP Education Dept',
+      totalSchools: '100+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Mar)',
+      fee: 'Free',
+      website: 'up.gov.in',
+      features: ['UP Domicile', 'Merit-Based'],
       link: '#',
       icon: Building,
       color: 'purple'
     },
     {
       id: 'gyanshakti-guj',
-      title: 'Gyanshakti / Rakshashakti CET (Gujarat)',
+      title: 'Gyanshakti / Rakshashakti CET',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class I, VI',
-      examDate: 'Jan 2027',
-      features: ['50+ Schools', 'Tribal & Defence', 'Free Education'],
+      conductedBy: 'Gujarat Education Dept',
+      totalSchools: '50+ Schools',
+      classes: 'I, VI',
+      examFreq: 'Annual (Jan)',
+      fee: 'Free',
+      website: 'gujarat.gov.in',
+      features: ['Tribal/Defence', 'Free Edu'],
       link: '#',
       icon: Shield,
       color: 'orange'
@@ -247,21 +315,29 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Karnataka Residential (KRS/EMRS)',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Mar-Apr 2027',
-      features: ['50+ Schools', 'SC/ST/BC Focus', 'Free Residential'],
+      conductedBy: 'KREIS',
+      totalSchools: '50+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Mar-Apr)',
+      fee: 'Free',
+      website: 'karnataka.gov.in',
+      features: ['SC/ST/BC Focus', 'Free Residential'],
       link: '#',
       icon: Building,
       color: 'blue'
     },
     {
       id: 'tn-adi',
-      title: 'TN Adi Dravidar Welfare Schools',
+      title: 'TN Adi Dravidar Welfare',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Apr-May 2027',
-      features: ['100+ Schools', 'SC/ST Students', 'Free Education'],
+      conductedBy: 'Adi Dravidar Dept',
+      totalSchools: '100+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Apr-May)',
+      fee: 'Free',
+      website: 'tn.gov.in',
+      features: ['SC/ST Students', 'Free Education'],
       link: '#',
       icon: Building,
       color: 'green'
@@ -271,9 +347,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Maharashtra Ashram Shala',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Mar-Apr 2027',
-      features: ['100+ Schools', 'Tribal Welfare', 'Free Residential'],
+      conductedBy: 'Social Justice Dept',
+      totalSchools: '100+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Mar-Apr)',
+      fee: 'Free',
+      website: 'maharashtra.gov.in',
+      features: ['Tribal Welfare', 'Free Residential'],
       link: '#',
       icon: Building,
       color: 'purple'
@@ -283,9 +363,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Bihar Residential Schools',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Apr-May 2027',
-      features: ['50+ Schools', 'Bihar Domicile', 'Merit-Based'],
+      conductedBy: 'Bihar Edu Dept',
+      totalSchools: '50+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Apr-May)',
+      fee: 'Free',
+      website: 'bihar.gov.in',
+      features: ['Bihar Domicile', 'Merit-Based'],
       link: '#',
       icon: Building,
       color: 'blue'
@@ -295,9 +379,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Jharkhand Residential (JAC)',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Mar-Apr 2027',
-      features: ['30+ Schools', 'SC/ST Focus', 'Free Education'],
+      conductedBy: 'JAC & Tribal Welfare',
+      totalSchools: '30+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Mar-Apr)',
+      fee: 'Free',
+      website: 'jac.jharkhand.gov.in',
+      features: ['SC/ST Focus', 'Free Education'],
       link: '#',
       icon: Building,
       color: 'green'
@@ -307,9 +395,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'West Bengal State Residential',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Apr-May 2027',
-      features: ['50+ Schools', 'SC/ST/BC Focus', 'Free Education'],
+      conductedBy: 'WB Edu Dept',
+      totalSchools: '50+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Apr-May)',
+      fee: 'Free',
+      website: 'wbeducation.gov.in',
+      features: ['SC/ST/BC Focus', 'Free Education'],
       link: '#',
       icon: Building,
       color: 'orange'
@@ -319,9 +411,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Rajasthan Residential Schools',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Mar-Apr 2027',
-      features: ['50+ Schools', 'Tribal Welfare', 'Free Education'],
+      conductedBy: 'Raj Edu Dept',
+      totalSchools: '50+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Mar-Apr)',
+      fee: 'Free',
+      website: 'rajasthan.gov.in',
+      features: ['SC/ST Focus', 'Free Education'],
       link: '#',
       icon: Building,
       color: 'purple'
@@ -331,9 +427,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Haryana Residential Schools',
       type: 'State (Others)',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX',
-      examDate: 'Apr 2027',
-      features: ['20+ Schools', 'SC/ST/BC Focus', 'Free Education'],
+      conductedBy: 'Haryana Edu Dept',
+      totalSchools: '20+ Schools',
+      classes: 'VI, IX',
+      examFreq: 'Annual (Apr)',
+      fee: 'Free',
+      website: 'haryana.gov.in',
+      features: ['SC/ST/BC Focus', 'Free Education'],
       link: '#',
       icon: Building,
       color: 'blue'
@@ -346,9 +446,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'National Means-cum-Merit Scholarship (NMMS)',
       type: 'Govt. Scholarship',
       status: 'Coming Soon',
-      eligibility: 'Class VIII',
-      examDate: 'Nov 2026',
-      features: ['₹12,000/year', 'Govt Schools', 'Merit + Means'],
+      conductedBy: 'MoE, Govt of India',
+      totalSchools: 'All Govt Schools',
+      classes: 'Class VIII',
+      examFreq: 'Annual (Nov)',
+      fee: 'Free',
+      website: 'scholarships.gov.in',
+      features: ['₹12,000/year', 'Merit + Means'],
       link: '#',
       icon: Award,
       color: 'orange'
@@ -358,9 +462,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'Pathani Samanta Math Scholarship (PMST)',
       type: 'State Scholarship',
       status: 'Coming Soon',
-      eligibility: 'Class VI, IX, XI',
-      examDate: 'Dec 2026',
-      features: ['Math Talent', 'Financial Reward', 'Certificate'],
+      conductedBy: 'BSE Odisha',
+      totalSchools: 'Odisha Schools',
+      classes: 'Class VI, IX, XI',
+      examFreq: 'Annual (Dec)',
+      fee: 'Free',
+      website: 'bseodisha.ac.in',
+      features: ['Math Talent', 'Financial Reward'],
       link: '#',
       icon: Calculator,
       color: 'purple'
@@ -370,9 +478,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       title: 'National Talent Search Exam (NTSE)',
       type: 'National Scholarship',
       status: 'Coming Soon',
-      eligibility: 'Class X',
-      examDate: 'Expected 2027',
-      features: ['Prestigious Tag', 'Monthly Stipend', 'PhD Support'],
+      conductedBy: 'NCERT',
+      totalSchools: 'All India',
+      classes: 'Class X',
+      examFreq: 'Annual',
+      fee: 'Free',
+      website: 'ncert.nic.in',
+      features: ['Monthly Stipend', 'PhD Support'],
       link: '#',
       icon: Star,
       color: 'blue'
@@ -401,13 +513,13 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
 
   const getStatusBadge = (status) => {
     if (status === 'Upcoming') {
-      return <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-600 text-[10px] font-bold border border-emerald-100"><Calendar className="w-2.5 h-2.5" /> Upcoming</span>;
+      return <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-600 text-[10px] font-bold border border-emerald-100 shrink-0"><Calendar className="w-2.5 h-2.5" /> Upcoming</span>;
     }
     if (status === 'Coming Soon') {
-      return <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-amber-50 text-amber-600 text-[10px] font-bold border border-amber-100"><Clock className="w-2.5 h-2.5" /> Coming Soon</span>;
+      return <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-amber-50 text-amber-600 text-[10px] font-bold border border-amber-100 shrink-0"><Clock className="w-2.5 h-2.5" /> Coming Soon</span>;
     }
     if (status === 'Active') {
-      return <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-blue-50 text-blue-600 text-[10px] font-bold border border-blue-100"><CheckCircle className="w-2.5 h-2.5" /> Active</span>;
+      return <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-blue-50 text-blue-600 text-[10px] font-bold border border-blue-100 shrink-0"><CheckCircle className="w-2.5 h-2.5" /> Active</span>;
     }
     return null;
   };
@@ -490,7 +602,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
           {displayedData.length > 0 ? (
             displayedData.map((item) => {
               const Icon = item.icon;
@@ -498,40 +610,53 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
               const isComingSoon = item.status === 'Coming Soon';
 
               return (
-                <div key={item.id} className={`rounded-[20px] sm:rounded-[24px] border ${colors.border} ${colors.hoverBorder} ${colors.bg} shadow-sm hover:shadow-md transition-all duration-300 flex flex-col p-5 group relative transform hover:-translate-y-1`}>
+                <div key={item.id} className={`rounded-[24px] border ${colors.border} ${colors.hoverBorder} ${colors.bg} shadow-sm hover:shadow-md transition-all duration-300 flex flex-col p-6 group relative transform hover:-translate-y-1`}>
                   
                   {/* Header Area */}
-                  <div className="flex justify-between items-start mb-4">
-                    <div className={`w-10 h-10 rounded-xl ${colors.iconBg} flex items-center justify-center border ${colors.border} shadow-sm group-hover:scale-105 transition-transform`}>
-                      <Icon className={`w-5 h-5 ${colors.text}`} />
+                  <div className="flex justify-between items-start mb-5">
+                    <div className={`w-12 h-12 rounded-xl ${colors.iconBg} flex items-center justify-center border ${colors.border} shadow-sm group-hover:scale-105 transition-transform shrink-0`}>
+                      <Icon className={`w-6 h-6 ${colors.text}`} />
                     </div>
                     {getStatusBadge(item.status)}
                   </div>
 
                   {/* Title Area */}
                   <div className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5">{item.type}</div>
-                  <h3 className="text-[17px] leading-snug font-black text-brand-dark mb-4 group-hover:text-brand-purple transition-colors line-clamp-2 min-h-[42px]">{item.title}</h3>
+                  <h3 className="text-[18px] leading-snug font-black text-brand-dark mb-4 group-hover:text-brand-purple transition-colors line-clamp-2 min-h-[46px]">{item.title}</h3>
                   
-                  {/* Info Points */}
-                  <div className="space-y-2.5 mb-5 flex-1">
-                    <div className="flex items-center gap-2.5 text-[13px] text-gray-600">
-                      <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 border border-gray-100 shadow-sm">
-                        <GraduationCap className="w-3 h-3 text-gray-400" />
-                      </div>
-                      <span className="font-semibold">{item.eligibility}</span>
+                  {/* Dense Data Grid (The Game Changer) */}
+                  <div className="grid grid-cols-2 gap-y-4 gap-x-3 mb-5 p-4 bg-white/60 rounded-xl border border-gray-100/60 flex-1">
+                    <div>
+                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">Conducted By</span>
+                      <span className="text-gray-800 text-[12px] font-bold line-clamp-2 leading-tight" title={item.conductedBy}>{item.conductedBy}</span>
                     </div>
-                    <div className="flex items-center gap-2.5 text-[13px] text-gray-600">
-                      <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 border border-gray-100 shadow-sm">
-                        <Calendar className="w-3 h-3 text-gray-400" />
-                      </div>
-                      <span className="font-semibold">{item.examDate}</span>
+                    <div>
+                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">Total Schools</span>
+                      <span className="text-gray-800 text-[12px] font-bold line-clamp-2 leading-tight">{item.totalSchools}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">Classes</span>
+                      <span className="text-gray-800 text-[12px] font-bold line-clamp-1">{item.classes}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">App Fee</span>
+                      <span className="text-gray-800 text-[12px] font-bold line-clamp-1">{item.fee}</span>
+                    </div>
+                    <div className="col-span-2 flex items-center justify-between border-t border-gray-100/80 pt-3 mt-1">
+                       <div>
+                         <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">Exam Freq.</span>
+                         <span className="text-gray-800 text-[12px] font-bold">{item.examFreq}</span>
+                       </div>
+                       <a href={`https://${item.website}`} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[11px] font-bold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-2.5 py-1.5 rounded-lg transition-colors">
+                         {item.website} <ExternalLink className="w-3 h-3" />
+                       </a>
                     </div>
                   </div>
 
                   {/* Feature Tags (Compact) */}
-                  <div className="flex flex-wrap gap-1.5 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {item.features.map((feature, idx) => (
-                      <span key={idx} className="px-2 py-1 bg-white border border-gray-100 text-gray-500 text-[10px] font-bold rounded-md whitespace-nowrap shadow-sm">
+                      <span key={idx} className="px-2.5 py-1.5 bg-white border border-gray-100 text-gray-600 text-[11px] font-bold rounded-lg whitespace-nowrap shadow-sm">
                         {feature}
                       </span>
                     ))}
@@ -539,25 +664,25 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
 
                   {/* Action Button */}
                   {isComingSoon ? (
-                    <button disabled className="w-full py-3 rounded-xl bg-gray-50 text-gray-400 font-bold text-[13px] border border-gray-200 cursor-not-allowed flex justify-center items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5" /> Coming Soon
+                    <button disabled className="w-full py-3.5 rounded-xl bg-gray-50 text-gray-400 font-bold text-[14px] border border-gray-200 cursor-not-allowed flex justify-center items-center gap-2">
+                      <Clock className="w-4 h-4" /> Coming Soon
                     </button>
                   ) : (
-                    <Link to={item.link} className="w-full py-3 rounded-xl bg-white border border-gray-200 text-brand-purple hover:bg-brand-purple hover:text-white hover:border-brand-purple font-black text-[13px] transition-all duration-300 flex items-center justify-center gap-1.5 group/btn shadow-sm">
-                      View Guide
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    <Link to={item.link} className="w-full py-3.5 rounded-xl bg-white border border-gray-200 text-brand-purple hover:bg-brand-purple hover:text-white hover:border-brand-purple font-black text-[14px] transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-sm">
+                      View Full Guide
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   )}
                 </div>
               );
             })
           ) : (
-            <div className="col-span-full py-12 text-center bg-white rounded-2xl border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-3 border border-gray-100">
-                <Filter className="w-5 h-5 text-gray-300" />
+            <div className="col-span-full py-16 text-center bg-white rounded-3xl border border-gray-100 shadow-sm">
+              <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-100">
+                <Filter className="w-6 h-6 text-gray-300" />
               </div>
-              <h3 className="text-base font-bold text-gray-900 mb-1">No matches found</h3>
-              <p className="text-gray-500 text-[13px]">Try selecting a different filter category.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">No matches found</h3>
+              <p className="text-gray-500 text-[14px]">Try selecting a different filter category.</p>
             </div>
           )}
         </div>
