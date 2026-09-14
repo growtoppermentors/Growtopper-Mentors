@@ -65,7 +65,7 @@ const GradientCard = ({ children, title, icon: Icon, color = 'multi' }) => {
 
 const SectionTitle = ({ number, title }) => (
   <h2 className="text-2xl sm:text-3xl font-black text-brand-dark mb-6 flex items-center gap-3">
-    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#5B10FF] text-white text-lg font-black flex-shrink-0 shadow-md">
+    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#7280DE] to-[#B28BFF] text-white text-lg flex-shrink-0 shadow-sm">
       {number}
     </span>
     {title}
@@ -863,6 +863,3 @@ const Oav2027Page = ({ onRequestInvite }) => {
 };
 
 export default Oav2027Page;
-
-
-

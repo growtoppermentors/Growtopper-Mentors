@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BookOpen, Calendar, CheckSquare, Clock, Globe, GraduationCap, Users, Lightbulb, AlertTriangle, FileText, Settings, FileCheck, Award, Briefcase, Calculator, Building, MapPin, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/layout/Navbar';
+import Footer from '../components/layout/Footer';
 
 const GradientCard = ({ children, color = "orange", icon: Icon, className = "" }) => {
   const colorStyles = {
@@ -51,10 +53,11 @@ const Jnv2027Page = ({ onRequestInvite }) => {
 
   return (
     <div className="min-h-screen bg-[#E9E2CD] bg-[radial-gradient(#d5ceb6_1px,transparent_1px)] [background-size:20px_20px] font-sans allow-select">
+      <Navbar onRequestInvite={onRequestInvite} />
       
       {/* 1. Header / Banner */}
       <section className="pt-24 pb-8 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="w-full mb-8 overflow-hidden rounded-[32px] shadow-2xl border-4 border-white bg-gray-100">
+        <div className="w-full max-w-4xl mx-auto mb-8 overflow-hidden rounded-[32px] shadow-2xl border-4 border-white bg-gray-100">
           <img 
             src="/images/jnv2027-banner.png" 
             alt="JNV Admission 2027: Complete Guide for Class IX and Class XI Lateral Entry" 
@@ -461,6 +464,7 @@ const Jnv2027Page = ({ onRequestInvite }) => {
 
         </div>
       </section>
+      <Footer onRequestInvite={onRequestInvite} />
     </div>
   );
 };
