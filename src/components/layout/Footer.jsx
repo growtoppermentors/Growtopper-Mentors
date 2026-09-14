@@ -90,6 +90,7 @@ export default function Footer({ onRequestInvite }) {
                 { label: 'Pricing',          href: '/pricing' },
                 { label: 'Blog',             href: '/blog' },
                 { label: 'Syllabus',         href: '/syllabus' },
+                { label: 'Exams & Scholarships', href: '/exams-scholarships' },
               ].map(l => (
                 <li key={l.label}>
                   <a href={l.href} className="text-[13px] font-bold text-gray-500 hover:text-brand-purple transition-colors">{l.label}</a>

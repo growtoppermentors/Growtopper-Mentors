@@ -102,6 +102,13 @@ const mainPages = [
     description: 'Everything you need to know about Jawahar Navodaya Vidyalaya lateral entry for Class IX & XI 2027. Official guidelines, dates, and eligibility.',
     urlPath: '/jnv2027',
     image: 'https://growtopper.app/images/jnv2027-preview.jpg'
+  },
+  {
+    path: '/exams-scholarships',
+    title: 'Top Exams & Scholarships 2027 | Growtopper',
+    description: 'Discover and track the best school-level entrance exams (OAV, JNV, Sainik School) and government scholarships (NMMS, PMST, NTSE).',
+    urlPath: '/exams-scholarships',
+    image: 'https://growtopper.app/og-exams.png'
   }
 ];
 

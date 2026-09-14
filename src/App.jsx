@@ -16,6 +16,7 @@ import ApplicationModal from './components/ui/ApplicationModal';
 import LiveNotification from './components/ui/LiveNotification';
 const SyllabusPage = React.lazy(() => import('./pages/SyllabusPage'));
 const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
+const ExamsScholarshipsPage = React.lazy(() => import('./pages/ExamsScholarshipsPage'));
 const TermsOfService = React.lazy(() => import('./pages/TermsOfService'));
 import Home from './pages/Home';
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
@@ -92,6 +93,7 @@ function App() {
         <Route path="/1-1-clarity-session-call" element={<ClaritySession />} />
         <Route path="/oav2027" element={<Oav2027Page onRequestInvite={openModal} />} />
         <Route path="/jnv2027" element={<Jnv2027Page onRequestInvite={openModal} />} />
+          <Route path="/exams-scholarships" element={<ExamsScholarshipsPage onRequestInvite={openModal} />} />
       </Routes></React.Suspense>
       <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />
       <LiveNotification />
