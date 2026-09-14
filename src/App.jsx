@@ -23,6 +23,7 @@ const ClaritySession = React.lazy(() => import('./pages/ClaritySession'));
 const BlogList = React.lazy(() => import('./pages/BlogList'));
 const BlogPost = React.lazy(() => import('./pages/BlogPost'));
 const Oav2027Page = React.lazy(() => import('./pages/Oav2027Page'));
+const Jnv2027Page = React.lazy(() => import('./pages/Jnv2027Page'));
 
 function HomePage({ openModal }) {
   return (
@@ -88,8 +89,9 @@ function App() {
         <Route path="/pricing" element={<PricingPage onRequestInvite={openModal} />} />
         <Route path="/blog" element={<BlogList onRequestInvite={openModal} />} />
         <Route path="/blog/:slug" element={<BlogPost onRequestInvite={openModal} />} />
-        <Route path="/1-1-clarity-session-call" element={<ClaritySession />} />`n        <Route path="/oav2027" element={<Oav2027Page onRequestInvite={openModal} />} />
-          <Route path="/jnv2027" element={<Jnv2027Page onRequestInvite={openModal} />} />
+        <Route path="/1-1-clarity-session-call" element={<ClaritySession />} />
+        <Route path="/oav2027" element={<Oav2027Page onRequestInvite={openModal} />} />
+        <Route path="/jnv2027" element={<Jnv2027Page onRequestInvite={openModal} />} />
       </Routes></React.Suspense>
       <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />
       <LiveNotification />
