@@ -24,7 +24,7 @@ const GradientCard = ({ children, color = "orange", icon: Icon, className = "" }
   return (
     <div className={`rounded-3xl p-6 sm:p-8 border-2 shadow-xl shadow-gray-200/50 relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${colorStyles[color]} ${className}`}>
       {Icon && (
-        <div className={`absolute top-6 right-6 w-12 h-12 rounded-2xl flex items-center justify-center opacity-80 ${iconColors[color]}`}>
+        <div className={`mb-6 w-14 h-14 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center shadow-sm ${iconColors[color]}`}>
           <Icon className="w-6 h-6" />
         </div>
       )}
