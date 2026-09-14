@@ -16,7 +16,8 @@ import {
   ArrowRight,
   Zap,
   Sparkles,
-  Filter
+  Filter,
+  Users
 } from 'lucide-react';
 
 const ExamsScholarshipsPage = ({ onRequestInvite }) => {
@@ -26,44 +27,316 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = 'Exams & Scholarships | Growtopper';
   }, []);
 
   const exams = [
+    // --- NATIONAL LEVEL ---
     {
-      id: 'oav2027',
-      title: 'Odisha Adarsha Vidyalaya (OAV) 2027',
-      type: 'School Entrance',
-      status: 'Upcoming', 
-      eligibility: 'Class VI to IX',
-      examDate: 'Expected Feb 2027',
-      features: ['Free Education', 'CBSE Board', 'English Medium'],
+      id: 'jnvst',
+      title: 'JNV Selection Test (JNVST)',
+      type: 'National Level',
+      status: 'Active',
+      eligibility: 'Class VI, IX, XI',
+      examDate: 'Jan / Apr 2027',
+      features: ['75% Rural Quota', 'Free Residential', '660+ Schools'],
+      link: '/jnv2027',
+      icon: Building,
+      color: 'blue'
+    },
+    {
+      id: 'aissee',
+      title: 'All India Sainik School Exam (AISSEE)',
+      type: 'Defence School',
+      status: 'Active',
+      eligibility: 'Class VI, IX',
+      examDate: 'Jan 2027',
+      features: ['Defence Focus', '102+ Schools', 'NDA Prep'],
+      link: '/aissee2027',
+      icon: Shield,
+      color: 'green'
+    },
+    {
+      id: 'rms-cet',
+      title: 'Rashtriya Military School CET (RMS)',
+      type: 'Defence School',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Dec 2026',
+      features: ['67% Defence Quota', 'Highly Competitive', '5 Elite Schools'],
+      link: '#',
+      icon: Shield,
+      color: 'orange'
+    },
+    {
+      id: 'emrsst-nat',
+      title: 'National EMRS Selection Test',
+      type: 'National Level',
+      status: 'Coming Soon',
+      eligibility: 'Class VI',
+      examDate: 'Feb 2027',
+      features: ['100% ST Quota', 'Fully Free', '740+ Target Schools'],
+      link: '#',
+      icon: Building,
+      color: 'purple'
+    },
+    {
+      id: 'shreshta',
+      title: 'SHRESHTA NETS',
+      type: 'National Level',
+      status: 'Coming Soon',
+      eligibility: 'Class IX, XI',
+      examDate: 'Dec 2026',
+      features: ['SC/ST Focused', 'Top Private Schools', 'Fully Funded'],
+      link: '#',
+      icon: Star,
+      color: 'blue'
+    },
+    {
+      id: 'kvs',
+      title: 'Kendriya Vidyalaya Admission',
+      type: 'National Level',
+      status: 'Coming Soon',
+      eligibility: 'Class I to XI',
+      examDate: 'Mar-Apr 2027',
+      features: ['1,260+ Schools', 'Lottery Based', 'Priority Categories'],
+      link: '#',
+      icon: GraduationCap,
+      color: 'orange'
+    },
+
+    // --- STATE LEVEL (ODISHA) ---
+    {
+      id: 'oavet',
+      title: 'Odisha Adarsha Vidyalaya Entrance (OAV)',
+      type: 'State (Odisha)',
+      status: 'Active',
+      eligibility: 'Class VI, VII, VIII, IX',
+      examDate: 'Feb-Mar 2027',
+      features: ['50% Girls Quota', 'Block Domicile', 'CBSE English'],
       link: '/oav2027',
       icon: Building,
       color: 'purple'
     },
     {
-      id: 'jnv2027',
-      title: 'Jawahar Navodaya Vidyalaya (JNV) 2027',
-      type: 'Lateral Entry',
-      status: 'Upcoming',
-      eligibility: 'Class IX & XI',
-      examDate: 'Expected Feb 2027',
-      features: ['Fully Residential', 'CBSE Board', 'Co-educational'],
-      link: '/jnv2027',
-      icon: GraduationCap,
+      id: 'emrs-odisha',
+      title: 'EMRS Selection Test (Odisha)',
+      type: 'State (Odisha)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, VIII',
+      examDate: 'Feb-Mar 2027',
+      features: ['ST Students Only', 'CBSE Curriculum', 'Free Education'],
+      link: '#',
+      icon: Building,
+      color: 'green'
+    },
+    {
+      id: 'kmrs-odisha',
+      title: 'Kalinga Model Residential (KMRS)',
+      type: 'State (Odisha)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, VIII',
+      examDate: 'Feb-Mar 2027',
+      features: ['SC/ST Focus', 'Free Residential', 'Govt Funded'],
+      link: '#',
+      icon: Building,
+      color: 'orange'
+    },
+    {
+      id: 'bpav-odisha',
+      title: 'Biju Patnaik Adarsha Vidyalaya (BPAV)',
+      type: 'State (Odisha)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, VIII',
+      examDate: 'Feb-Mar 2027',
+      features: ['SC/ST Focus', 'CBSE Curriculum', 'Free Boarding'],
+      link: '#',
+      icon: Building,
+      color: 'blue'
+    },
+
+    // --- STATE LEVEL (AP/TS) ---
+    {
+      id: 'emrs-ap',
+      title: 'AP EMRS CET (Andhra Pradesh)',
+      type: 'State (AP/TS)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, VIII',
+      examDate: 'Apr 2027',
+      features: ['ST Focus', '100+ Schools', 'Free Residential'],
+      link: '#',
+      icon: Building,
+      color: 'green'
+    },
+    {
+      id: 'aprs',
+      title: 'APRS 5th Class Admission (AP)',
+      type: 'State (AP/TS)',
+      status: 'Coming Soon',
+      eligibility: 'Class V (Entry)',
+      examDate: 'Apr 2027',
+      features: ['Gurukulam', 'Income Ceiling ₹2.5L', 'SC/ST/BC'],
+      link: '#',
+      icon: BookOpen,
+      color: 'orange'
+    },
+    {
+      id: 'tgcet',
+      title: 'Telangana Gurukul CET (TGCET)',
+      type: 'State (AP/TS)',
+      status: 'Coming Soon',
+      eligibility: 'Class V (Entry)',
+      examDate: 'May 2027',
+      features: ['100+ Schools', 'SC/ST/BC/Gen', 'Free Boarding'],
+      link: '#',
+      icon: BookOpen,
+      color: 'purple'
+    },
+    {
+      id: 'ts-wreis',
+      title: 'Telangana Tribal Welfare (TS WR REIS)',
+      type: 'State (AP/TS)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI to IX',
+      examDate: 'Feb 2027',
+      features: ['ST Only', '50+ Schools', 'Income Ceiling ₹2.5L'],
+      link: '#',
+      icon: Building,
+      color: 'blue'
+    },
+
+    // --- STATE LEVEL (OTHERS) ---
+    {
+      id: 'cm-shri',
+      title: 'CM SHRI Schools Admission (Delhi)',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX, XI',
+      examDate: 'Apr 2027',
+      features: ['100+ Schools', 'Delhi Specific', 'Modern Infra'],
+      link: '#',
+      icon: Star,
       color: 'blue'
     },
     {
-      id: 'sainik2027',
-      title: 'All India Sainik School (AISSEE) 2027',
-      type: 'Defence School',
-      status: 'Active',
-      eligibility: 'Class VI & IX',
+      id: 'atal-up',
+      title: 'Atal Residential Exam (UP)',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Mar 2027',
+      features: ['100+ Schools', 'UP Domicile', 'Merit-Based'],
+      link: '#',
+      icon: Building,
+      color: 'purple'
+    },
+    {
+      id: 'gyanshakti-guj',
+      title: 'Gyanshakti / Rakshashakti CET (Gujarat)',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class I, VI',
       examDate: 'Jan 2027',
-      features: ['Military Training', 'NDA Prep', 'Discipline'],
-      link: '/aissee2027',
+      features: ['50+ Schools', 'Tribal & Defence', 'Free Education'],
+      link: '#',
       icon: Shield,
+      color: 'orange'
+    },
+    {
+      id: 'kar-res',
+      title: 'Karnataka Residential (KRS/EMRS)',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Mar-Apr 2027',
+      features: ['50+ Schools', 'SC/ST/BC Focus', 'Free Residential'],
+      link: '#',
+      icon: Building,
+      color: 'blue'
+    },
+    {
+      id: 'tn-adi',
+      title: 'TN Adi Dravidar Welfare Schools',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Apr-May 2027',
+      features: ['100+ Schools', 'SC/ST Students', 'Free Education'],
+      link: '#',
+      icon: Building,
       color: 'green'
+    },
+    {
+      id: 'maha-ashram',
+      title: 'Maharashtra Ashram Shala',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Mar-Apr 2027',
+      features: ['100+ Schools', 'Tribal Welfare', 'Free Residential'],
+      link: '#',
+      icon: Building,
+      color: 'purple'
+    },
+    {
+      id: 'bihar-res',
+      title: 'Bihar Residential Schools',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Apr-May 2027',
+      features: ['50+ Schools', 'Bihar Domicile', 'Merit-Based'],
+      link: '#',
+      icon: Building,
+      color: 'blue'
+    },
+    {
+      id: 'jharkhand-res',
+      title: 'Jharkhand Residential (JAC)',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Mar-Apr 2027',
+      features: ['30+ Schools', 'SC/ST Focus', 'Free Education'],
+      link: '#',
+      icon: Building,
+      color: 'green'
+    },
+    {
+      id: 'wb-res',
+      title: 'West Bengal State Residential',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Apr-May 2027',
+      features: ['50+ Schools', 'SC/ST/BC Focus', 'Free Education'],
+      link: '#',
+      icon: Building,
+      color: 'orange'
+    },
+    {
+      id: 'raj-res',
+      title: 'Rajasthan Residential Schools',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Mar-Apr 2027',
+      features: ['50+ Schools', 'Tribal Welfare', 'Free Education'],
+      link: '#',
+      icon: Building,
+      color: 'purple'
+    },
+    {
+      id: 'har-res',
+      title: 'Haryana Residential Schools',
+      type: 'State (Others)',
+      status: 'Coming Soon',
+      eligibility: 'Class VI, IX',
+      examDate: 'Apr 2027',
+      features: ['20+ Schools', 'SC/ST/BC Focus', 'Free Education'],
+      link: '#',
+      icon: Building,
+      color: 'blue'
     }
   ];
 
@@ -75,7 +348,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       status: 'Coming Soon',
       eligibility: 'Class VIII',
       examDate: 'Nov 2026',
-      features: ['?12,000/year', 'Govt Schools', 'Merit + Means'],
+      features: ['₹12,000/year', 'Govt Schools', 'Merit + Means'],
       link: '#',
       icon: Award,
       color: 'orange'
@@ -106,7 +379,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     }
   ];
 
-  const examFilters = ['All', 'School Entrance', 'Lateral Entry', 'Defence School'];
+  const examFilters = ['All', 'National Level', 'Defence School', 'State (Odisha)', 'State (AP/TS)', 'State (Others)'];
   const scholarshipFilters = ['All', 'Govt. Scholarship', 'State Scholarship', 'National Scholarship'];
 
   const activeData = activeTab === 'exams' ? exams : scholarships;
@@ -191,9 +464,9 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       </section>
 
       {/* Filter & Content Section */}
-      <section className="pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <section className="pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         {/* Dynamic Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-4 mb-4 sm:mb-6 justify-start sm:justify-center px-1">
+        <div className="flex flex-wrap items-center gap-2 pb-4 mb-4 sm:mb-6 justify-center px-1">
           <div className="hidden sm:flex items-center gap-1.5 text-gray-400 mr-1 shrink-0">
             <Filter className="w-3.5 h-3.5" />
             <span className="text-[11px] font-bold uppercase tracking-wider">Filter By:</span>
