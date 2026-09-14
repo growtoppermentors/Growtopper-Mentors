@@ -1,471 +1,489 @@
 import React, { useEffect, useState } from 'react';
-import { BookOpen, Calendar, CheckSquare, Clock, Globe, GraduationCap, Users, Lightbulb, AlertTriangle, FileText, Settings, FileCheck, Award, Briefcase, Calculator, Building, MapPin, Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import CohortSection from '../components/sections/CohortSection';
 import FinalCTA from '../components/sections/FinalCTA';
+import { 
+  Calendar, Shield, Users, BookOpen, GraduationCap, Clock, 
+  MapPin, CheckCircle, AlertTriangle, FileText, Activity, CreditCard,
+  XCircle, CheckSquare, Target, Phone, AlertCircle
+} from 'lucide-react';
 
-const GradientCard = ({ children, color = "orange", icon: Icon, className = "" }) => {
-  const colorStyles = {
-    orange: "bg-gradient-to-br from-[#FFF4ED] to-[#FFFaf0] border-orange-100",
-    purple: "bg-gradient-to-br from-[#F5F3FF] to-[#FAFAFF] border-purple-100",
-    green: "bg-gradient-to-br from-[#F0FDF4] to-[#F8FFFA] border-green-100",
-    blue: "bg-gradient-to-br from-[#EFF6FF] to-[#F8FAFF] border-blue-100",
-    multi: "bg-gradient-to-br from-white via-[#FCFBFF] to-[#F4F1FF] border-purple-100"
+const GradientCard = ({ title, icon: Icon, children, theme = 'blue', className = "" }) => {
+  const themes = {
+    blue: 'from-blue-50/50 to-white border-blue-100',
+    indigo: 'from-indigo-50/50 to-white border-indigo-100',
+    emerald: 'from-emerald-50/50 to-white border-emerald-100',
+    orange: 'from-orange-50/50 to-white border-orange-100',
+    slate: 'from-slate-50/50 to-white border-slate-100',
+    red: 'from-red-50/50 to-white border-red-100'
   };
 
-  const iconColors = {
-    orange: "text-orange-500 bg-orange-100",
-    purple: "text-purple-500 bg-purple-100",
-    green: "text-green-500 bg-green-100",
-    blue: "text-blue-500 bg-blue-100",
-    multi: "text-[#5B10FF] bg-purple-100"
+  const iconThemes = {
+    blue: 'bg-blue-100 text-blue-600',
+    indigo: 'bg-indigo-100 text-indigo-600',
+    emerald: 'bg-emerald-100 text-emerald-600',
+    orange: 'bg-orange-100 text-orange-600',
+    slate: 'bg-slate-100 text-slate-600',
+    red: 'bg-red-100 text-red-600'
   };
 
   return (
-    <div className={`rounded-3xl p-6 sm:p-8 border-2 shadow-xl shadow-gray-200/50 relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${colorStyles[color]} ${className}`}>
-      {Icon && (
-        <div className={`mb-6 w-14 h-14 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center shadow-sm ${iconColors[color]}`}>
-          <Icon className="w-6 h-6" />
+    <div className={`bg-gradient-to-b ${themes[theme]} rounded-2xl border shadow-sm p-5 sm:p-8 hover:shadow-md transition-shadow h-full flex flex-col ${className}`}>
+      <div className="flex items-center gap-4 mb-5 sm:mb-6">
+        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 ${iconThemes[theme]}`}>
+          <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
         </div>
-      )}
-      <div className="relative z-10">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">{title}</h3>
+      </div>
+      <div className="text-gray-600 space-y-4 flex-1 text-sm sm:text-base">
         {children}
       </div>
     </div>
   );
 };
 
-const SectionTitle = ({ number, title }) => (
-  <h2 className="text-2xl sm:text-3xl font-black text-brand-dark mb-6 flex items-start sm:items-center gap-3">
-    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#5B10FF] text-white text-lg font-black flex-shrink-0 shadow-md mt-1 sm:mt-0">
-      {number}
-    </span>
-    <span className="leading-tight">{title}</span>
-  </h2>
+const TimelineItem = ({ title, date, isExpected }) => (
+  <div className="relative pl-6 pb-6 border-l-2 border-blue-200 last:border-0 last:pb-0">
+    <div className="absolute left-[-9px] top-0 w-4 h-4 bg-white border-2 border-blue-500 rounded-full" />
+    <h4 className="font-bold text-gray-900 text-sm sm:text-base">{title}</h4>
+    <p className="text-blue-600 font-semibold text-sm mt-1">{date} {isExpected && <span className="text-xs text-gray-400 font-normal ml-1">(Expected)</span>}</p>
+  </div>
 );
 
 const Jnv2027Page = ({ onRequestInvite }) => {
-  const [activeTab, setActiveTab] = useState('IX');
+  const [activeTab, setActiveTab] = useState('class6');
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = 'JNV Selection Test (JNVST) 2027 Guide | Growtopper';
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#E9E2CD] bg-[radial-gradient(#d5ceb6_1px,transparent_1px)] [background-size:20px_20px] font-sans allow-select">
+    <div className="min-h-screen bg-[#FDFBF7] font-sans allow-select">
       <Navbar onRequestInvite={onRequestInvite} />
-      
-      {/* 1. Header / Banner */}
-      <section className="pt-24 pb-8 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="w-full max-w-4xl mx-auto mb-8 overflow-hidden rounded-[32px] shadow-2xl border-4 border-white bg-gray-100">
-          <img 
-            src="/images/jnv2027-banner.png" 
-            alt="JNV Admission 2027: Complete Guide for Class IX and Class XI Lateral Entry" 
-            className="w-full h-auto" 
-          />
-        </div>
-        
-        <div className="text-center mb-8">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-orange-800 font-bold text-sm mb-4 border border-orange-200">
-            Admissions 2027-28
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-brand-dark tracking-tight mb-6 leading-tight">
-            JNV Admission <span className="text-[#5B10FF]">2027</span>
-          </h1>
-          <p className="text-xl text-gray-700 font-medium max-w-3xl mx-auto leading-relaxed">
-            Your complete guide to Jawahar Navodaya Vidyalaya <strong className="text-brand-dark">Class IX & Class XI Lateral Entry</strong>. Find eligibility, exam patterns, syllabi, and official dates.
-          </p>
-        </div>
 
-        {/* Tab Toggle */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-white p-2 rounded-2xl shadow-lg border border-gray-200 flex flex-col sm:flex-row w-full sm:w-auto gap-2">
-            <button 
-              onClick={() => setActiveTab('IX')}
-              className={`px-4 sm:px-8 py-3 rounded-xl font-bold text-base sm:text-lg transition-all flex-1 text-center ${activeTab === 'IX' ? 'bg-[#5B10FF] text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
-            >
-              Class IX Guide
-            </button>
-            <button 
-              onClick={() => setActiveTab('XI')}
-              className={`px-4 sm:px-8 py-3 rounded-xl font-bold text-base sm:text-lg transition-all flex-1 text-center ${activeTab === 'XI' ? 'bg-[#5B10FF] text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
-            >
-              Class XI Guide
-            </button>
+      {/* Responsive Mobile Hero Section */}
+      <section className="pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="bg-gradient-to-br from-[#F0F4F8] via-white to-[#E6EDF5] rounded-[24px] sm:rounded-[32px] border border-blue-100 shadow-sm p-6 sm:p-10 text-center relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-indigo-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          
+          <div className="relative z-10 max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-widest mb-4 sm:mb-5 border border-blue-200/50">
+              <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Official Guide 2027
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-black text-brand-dark mb-4 sm:mb-5 leading-tight tracking-tight">
+              Navodaya Vidyalaya Selection <br className="hidden lg:block"/> Test <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">(JNVST)</span> 2027
+            </h1>
+            <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-7 max-w-2xl mx-auto font-medium px-2">
+              The complete research playbook for admission into 650+ Jawahar Navodaya Vidyalayas across India. Prepare for Class VI & IX lateral entry with verified eligibility, syllabi, and strategies.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-bold text-gray-500">
+              <span className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-md border border-gray-100 shadow-sm"><Calendar className="w-4 h-4 text-blue-500" /> Exam: Jan & April 2027</span>
+              <span className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-md border border-gray-100 shadow-sm"><MapPin className="w-4 h-4 text-blue-500" /> All India Level (NVS)</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Content */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-24 max-w-5xl mx-auto">
-        <div className="space-y-12">
+      {/* Main Content Sections */}
+      <section className="pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12 sm:space-y-16">
+        
+        {/* Quick Summary Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+            <div className="p-2.5 sm:p-3 bg-blue-50 text-blue-600 rounded-xl shrink-0"><Calendar className="w-5 h-5 sm:w-6 sm:h-6" /></div>
+            <div>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Notification</p>
+              <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Jul - Aug 2026</p>
+            </div>
+          </div>
+          <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+            <div className="p-2.5 sm:p-3 bg-indigo-50 text-indigo-600 rounded-xl shrink-0"><CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" /></div>
+            <div>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Conducting Body</p>
+              <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">NVS / CBSE</p>
+            </div>
+          </div>
+          <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+            <div className="p-2.5 sm:p-3 bg-emerald-50 text-emerald-600 rounded-xl shrink-0"><Users className="w-5 h-5 sm:w-6 sm:h-6" /></div>
+            <div>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Gender</p>
+              <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Boys & Girls</p>
+            </div>
+          </div>
+          <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+            <div className="p-2.5 sm:p-3 bg-orange-50 text-orange-600 rounded-xl shrink-0"><Target className="w-5 h-5 sm:w-6 sm:h-6" /></div>
+            <div>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Goal</p>
+              <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Rural Talent Growth</p>
+            </div>
+          </div>
+        </div>
 
-          {/* About JNV */}
-          <section>
-            <SectionTitle number="1" title="What is Jawahar Navodaya Vidyalaya (JNV)?" />
-            <GradientCard color="blue" icon={Building}>
-              <p className="mb-4 text-gray-700 font-medium text-lg leading-relaxed">
-                Jawahar Navodaya Vidyalayas are <strong>co-educational, fully residential, CBSE-affiliated schools</strong> administered by the Navodaya Vidyalaya Samiti under the Ministry of Education, Government of India. 
-              </p>
-              <p className="mb-4 text-gray-700 font-medium text-lg leading-relaxed">
-                Education includes boarding, lodging, uniforms, textbooks, and stationery (subject to VVN rules). There are currently <strong>665 functional JNVs across 27 States and 8 Union Territories</strong> (excluding Tamil Nadu).
-              </p>
-              <div className="bg-white p-4 rounded-xl border border-blue-100 shadow-sm mt-6">
-                <p className="font-bold text-red-600 flex items-center gap-2 mb-2">
-                  <AlertTriangle className="w-5 h-5" />
-                  Crucial Note for Lateral Entry
-                </p>
-                <p className="text-gray-700 text-sm font-medium">
-                  These are <strong>NOT</strong> regular Class VI JNV admissions. Class IX and XI admissions are Lateral Entry Selection Tests conducted <strong>ONLY against available/anticipated vacant seats</strong> in participating JNVs.
-                </p>
-              </div>
-            </GradientCard>
-          </section>
+        {/* Overview & Schools */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm">
+            <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+              <Shield className="w-6 h-6 text-blue-600" /> What are Navodaya Vidyalayas?
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">
+              Jawahar Navodaya Vidyalayas (JNVs) are a system of central schools for talented students predominantly from rural areas in India. They are fully residential, co-educational, and managed by Navodaya Vidyalaya Samiti (NVS), an autonomous organization under the Ministry of Education.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> <span className="text-sm text-gray-600"><strong>Classes:</strong> VI to XII (Fully residential)</span></li>
+              <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> <span className="text-sm text-gray-600"><strong>Total Schools:</strong> 650+ across India</span></li>
+              <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> <span className="text-sm text-gray-600"><strong>Medium:</strong> Mother tongue till VIII, then English/Hindi (CBSE Board)</span></li>
+            </ul>
+          </div>
 
-          {/* Important Dates */}
-          <section>
-            <SectionTitle number="2" title="Important Dates (2027 Cycle)" />
-            <GradientCard color="orange" icon={Calendar}>
-              <div className="overflow-x-auto rounded-xl border border-orange-200">
-                <table className="w-full text-left bg-white">
-                  <thead>
-                    <tr className="bg-orange-50 border-b border-orange-200">
-                      <th className="p-4 font-black text-gray-800 whitespace-nowrap">Event</th>
-                      <th className="p-4 font-black text-gray-800">Class IX</th>
-                      <th className="p-4 font-black text-gray-800">Class XI</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-100">
-                    <tr>
-                      <td className="p-4 font-bold text-gray-700">Application Mode</td>
-                      <td className="p-4 text-gray-600">Online</td>
-                      <td className="p-4 text-gray-600">Online</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-bold text-gray-700">Registration Last Date</td>
-                      <td className="p-4 text-red-600 font-black">30 September 2026</td>
-                      <td className="p-4 text-red-600 font-black">30 September 2026</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-bold text-gray-700">Selection Test Date</td>
-                      <td className="p-4 text-brand-dark font-black">10 April 2027</td>
-                      <td className="p-4 text-brand-dark font-black">10 April 2027</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-bold text-gray-700">Exam Time</td>
-                      <td className="p-4 text-gray-600">11:00 AM – 1:30 PM (2½ hrs)</td>
-                      <td className="p-4 text-gray-600">11:00 AM – 1:30 PM (2½ hrs)</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-bold text-gray-700">Result Declaration</td>
-                      <td className="p-4 text-gray-600">Via NVS portal & JNV</td>
-                      <td className="p-4 text-gray-600 font-bold">Likely May/June 2027</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </GradientCard>
-          </section>
-
-          {/* DYNAMIC SECTION: ELIGIBILITY */}
-          <section>
-            <SectionTitle number="3" title={`Who Can Apply for Class ${activeTab}?`} />
-            <GradientCard color="purple" icon={Users}>
-              {activeTab === 'IX' ? (
-                <div className="space-y-4">
-                  <p className="font-bold text-lg text-gray-800 mb-4">A student is eligible for Class IX if they meet ALL of the following:</p>
-                  <ul className="space-y-3">
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">The student is an <strong>Indian national</strong>.</span></li>
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">Currently studying in <strong>Class VIII during 2026–27</strong> in a Govt. or Govt.-recognized school.</span></li>
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">The school is located in the <strong>same district</strong> where the JNV is located.</span></li>
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">The student's <strong>district of residence and district of Class VIII study must be the same</strong>.</span></li>
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">Date of birth must be between <strong>1 May 2012 and 31 July 2014</strong> (both inclusive).</span></li>
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">Has not already passed Class VIII in an earlier academic session.</span></li>
-                  </ul>
-                  <div className="bg-white p-4 rounded-xl border border-purple-100 shadow-sm mt-6">
-                    <h4 className="font-bold text-purple-800 mb-2">Rural vs Urban Status</h4>
-                    <p className="text-sm text-gray-700">Studying in a rural-area school qualifies for the Rural + Open quota. If a student has studied in an urban-area school <strong>even for one day</strong> during the session, they are treated as an urban candidate.</p>
-                  </div>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  <p className="font-bold text-lg text-gray-800 mb-4">A student is eligible for Class XI if they meet ALL of the following:</p>
-                  <ul className="space-y-3">
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">The student is an <strong>Indian national</strong>.</span></li>
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">Currently studying in <strong>Class X during 2026–27</strong> in a Govt. or Govt.-recognized school.</span></li>
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">The school is in the <strong>district where the JNV is located</strong>.</span></li>
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">Date of birth must be between <strong>1 June 2010 and 31 July 2012</strong> (both inclusive).</span></li>
-                    <li className="flex gap-3"><CheckSquare className="w-6 h-6 text-purple-600 flex-shrink-0" /><span className="text-gray-700">Must <strong>not</strong> have passed Class X before the 2026–27 session.</span></li>
-                  </ul>
-                  <div className="bg-white p-4 rounded-xl border border-red-100 shadow-sm mt-6">
-                    <h4 className="font-bold text-red-700 mb-2 flex items-center gap-2"><AlertTriangle className="w-5 h-5"/> The Most Important Difference</h4>
-                    <p className="text-sm text-gray-700">Class XI admission is <strong>ONLY against vacant seats</strong> remaining after existing JNV Class X students are accommodated. A candidate from one State cannot seek admission in another State.</p>
-                  </div>
-                </div>
-              )}
-            </GradientCard>
-          </section>
-
-          {/* DYNAMIC SECTION: EXAM PATTERN & SYLLABUS */}
-          <section>
-            <SectionTitle number="4" title={`Class ${activeTab} Exam Pattern & Syllabus`} />
-            
-            {activeTab === 'IX' ? (
-              <div className="space-y-6">
-                <GradientCard color="multi" icon={FileText}>
-                  <h3 className="font-black text-xl text-brand-dark mb-4">Exam Pattern</h3>
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg text-sm font-bold text-gray-700">Level: Class VIII</span>
-                    <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg text-sm font-bold text-gray-700">Duration: 2½ hrs</span>
-                    <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg text-sm font-bold text-gray-700">MCQ (OMR)</span>
-                    <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg text-sm font-bold text-green-600">No Negative Marking</span>
-                  </div>
-                  
-                  <div className="overflow-x-auto rounded-xl border border-gray-200 mb-6">
-                    <table className="w-full text-left bg-white min-w-[300px]">
-                      <thead>
-                        <tr className="bg-gray-50 border-b border-gray-200">
-                          <th className="p-3 font-bold text-gray-800">Subject</th>
-                          <th className="p-3 font-bold text-gray-800 text-right">Questions</th>
-                          <th className="p-3 font-bold text-gray-800 text-right">Marks</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-gray-100">
-                        <tr><td className="p-3 font-medium">English</td><td className="p-3 text-right">15</td><td className="p-3 text-right text-gray-600">15</td></tr>
-                        <tr><td className="p-3 font-medium">Hindi</td><td className="p-3 text-right">15</td><td className="p-3 text-right text-gray-600">15</td></tr>
-                        <tr><td className="p-3 font-medium">Mathematics</td><td className="p-3 text-right">35</td><td className="p-3 text-right text-gray-600">35</td></tr>
-                        <tr><td className="p-3 font-medium">General Science</td><td className="p-3 text-right">35</td><td className="p-3 text-right text-gray-600">35</td></tr>
-                        <tr className="bg-gray-50"><td className="p-3 font-black">Total</td><td className="p-3 text-right font-black">100</td><td className="p-3 text-right font-black">100</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
-                    <h4 className="font-bold text-blue-800 mb-2">Selection Rule</h4>
-                    <p className="text-sm text-gray-700">You must achieve the minimum qualifying score in ALL four subjects. However, merit calculation is based on: <strong>Mathematics + Science + higher-scoring language (English or Hindi).</strong></p>
-                  </div>
-                </GradientCard>
-
-                <GradientCard color="green" icon={BookOpen}>
-                  <h3 className="font-black text-xl text-brand-dark mb-4">Syllabus Overview</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="bg-white p-4 rounded-xl border border-gray-100">
-                      <h4 className="font-bold text-green-700 mb-2 border-b pb-2">Math (35 Marks)</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">Rational Numbers, Squares & Cubes, Exponents, Proportions, Percentages, Profit/Loss, SI/CI, Algebraic Expressions, Linear Equations, Quadrilaterals, Mensuration, Data Handling (Graphs, Probability).</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-xl border border-gray-100">
-                      <h4 className="font-bold text-green-700 mb-2 border-b pb-2">Science (35 Marks)</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">Crop Production, Microorganisms, Coal/Petroleum, Combustion, Reproduction, Adolescence, Force/Pressure, Friction, Sound, Chemical Effects of Current, Light.</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-xl border border-gray-100">
-                      <h4 className="font-bold text-green-700 mb-2 border-b pb-2">English (15 Marks)</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">Comprehension, Passives, Degrees of Comparison, Modals, Prepositions, Tenses, Reported Speech.</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-xl border border-gray-100">
-                      <h4 className="font-bold text-green-700 mb-2 border-b pb-2">Hindi (15 Marks)</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">वर्ण-विचार, पर्यायवाची/विलोम, मुहावरे/लोकोक्तियाँ, वाक्य शुद्धि, अपठित गद्यांश।</p>
-                    </div>
-                  </div>
-                </GradientCard>
-              </div>
-            ) : (
-              <div className="space-y-6">
-                
-                {/* Class XI Streams */}
-                <GradientCard color="orange" icon={Briefcase}>
-                  <h3 className="font-black text-xl text-brand-dark mb-4">Available Streams & Choices</h3>
-                  <p className="text-gray-700 mb-4">Candidates may apply for <strong>up to two streams</strong>. You can choose <strong>up to three JNVs per stream</strong>.</p>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
-                    <div className="bg-white p-3 rounded-xl border text-center shadow-sm">
-                      <h4 className="font-bold text-orange-700">Science</h4>
-                      <span className="text-xs text-gray-500">Phys & Chem req.</span>
-                    </div>
-                    <div className="bg-white p-3 rounded-xl border text-center shadow-sm">
-                      <h4 className="font-bold text-orange-700">Commerce</h4>
-                      <span className="text-xs text-gray-500">Acc, Bus, Eco req.</span>
-                    </div>
-                    <div className="bg-white p-3 rounded-xl border text-center shadow-sm">
-                      <h4 className="font-bold text-orange-700">Humanities</h4>
-                      <span className="text-xs text-gray-500">Hist, Geo, Eco req.</span>
-                    </div>
-                    <div className="bg-white p-3 rounded-xl border text-center shadow-sm">
-                      <h4 className="font-bold text-orange-700">Vocational</h4>
-                      <span className="text-xs text-gray-500">Vocational req.</span>
-                    </div>
-                  </div>
-                </GradientCard>
-
-                {/* Class XI Pattern */}
-                <GradientCard color="multi" icon={FileText}>
-                  <h3 className="font-black text-xl text-brand-dark mb-4">Exam Pattern</h3>
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg text-sm font-bold text-gray-700">Duration: 2½ hrs</span>
-                    <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg text-sm font-bold text-gray-700">MCQ (OMR)</span>
-                    <span className="bg-white border border-gray-200 px-3 py-1 rounded-lg text-sm font-bold text-green-600">No Negative Marking</span>
-                  </div>
-                  
-                  <div className="overflow-x-auto rounded-xl border border-gray-200 mb-6">
-                    <table className="w-full text-left bg-white min-w-[400px]">
-                      <thead>
-                        <tr className="bg-gray-50 border-b border-gray-200">
-                          <th className="p-3 font-bold text-gray-800">Subject</th>
-                          <th className="p-3 font-bold text-gray-800 text-right">Questions</th>
-                          <th className="p-3 font-bold text-gray-800 text-right">Marks</th>
-                          <th className="p-3 font-bold text-gray-800 text-right hidden sm:table-cell">Time</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-gray-100">
-                        <tr><td className="p-3 font-medium">Mental Ability</td><td className="p-3 text-right">20</td><td className="p-3 text-right">20</td><td className="p-3 text-right text-gray-500 text-sm hidden sm:table-cell">30 min</td></tr>
-                        <tr><td className="p-3 font-medium">English</td><td className="p-3 text-right">20</td><td className="p-3 text-right">20</td><td className="p-3 text-right text-gray-500 text-sm hidden sm:table-cell">30 min</td></tr>
-                        <tr><td className="p-3 font-medium">Science</td><td className="p-3 text-right">20</td><td className="p-3 text-right">20</td><td className="p-3 text-right text-gray-500 text-sm hidden sm:table-cell">30 min</td></tr>
-                        <tr><td className="p-3 font-medium">Social Science</td><td className="p-3 text-right">20</td><td className="p-3 text-right">20</td><td className="p-3 text-right text-gray-500 text-sm hidden sm:table-cell">30 min</td></tr>
-                        <tr><td className="p-3 font-medium">Mathematics</td><td className="p-3 text-right">20</td><td className="p-3 text-right">20</td><td className="p-3 text-right text-gray-500 text-sm hidden sm:table-cell">30 min</td></tr>
-                        <tr className="bg-gray-50"><td className="p-3 font-black">Total</td><td className="p-3 text-right font-black">100</td><td className="p-3 text-right font-black">100</td><td className="p-3 text-right font-black hidden sm:table-cell">2½ hrs</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div className="bg-purple-50 p-5 rounded-xl border border-purple-200">
-                    <h4 className="font-bold text-purple-800 mb-3">Merit Calculation (Out of 60)</h4>
-                    <p className="text-sm text-gray-700 mb-3">You must score at least <strong>6/20 in each of the five subjects</strong> to qualify.</p>
-                    <ul className="space-y-2 text-sm text-gray-800">
-                      <li><span className="font-bold">Science Stream:</span> Mental Ability + Science + Mathematics</li>
-                      <li><span className="font-bold">Commerce Stream:</span> Mental Ability + Social Science + Mathematics</li>
-                      <li><span className="font-bold">Humanities Stream:</span> Mental Ability + Social Science + Highest of remaining 3</li>
-                      <li><span className="font-bold">Vocational Stream:</span> Mental Ability + Best 2 of remaining 4</li>
-                    </ul>
-                  </div>
-                </GradientCard>
-              </div>
-            )}
-          </section>
-
-          {/* Application Process & Documents */}
-          <section>
-            <SectionTitle number="5" title="Application & Documents" />
-            <GradientCard color="blue" icon={CheckSquare}>
-              <div className="mb-6">
-                <p className="font-bold text-lg text-gray-800 mb-2">Apply Online (Free of Cost)</p>
-                <a href="https://navodaya.gov.in" target="_blank" rel="noopener noreferrer" className="inline-block bg-white border-2 border-blue-500 text-blue-600 px-6 py-3 rounded-xl font-black hover:bg-blue-600 hover:text-white transition-all shadow-sm">
-                  navodaya.gov.in
-                </a>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-                  <h4 className="font-bold text-brand-dark mb-3 border-b pb-2">Keep Ready to Apply (JPG 10-100KB)</h4>
-                  <ul className="space-y-2 text-sm text-gray-600 list-disc pl-4">
-                    <li>Candidate photograph</li>
-                    <li>Candidate signature</li>
-                    <li>Parent signature</li>
-                    <li>Aadhaar details</li>
-                    <li>State & district details</li>
-                    {activeTab === 'IX' && <li>APAAR ID/PEN</li>}
-                  </ul>
-                </div>
-                <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-                  <h4 className="font-bold text-brand-dark mb-3 border-b pb-2">Documents for Verification Later</h4>
-                  <ul className="space-y-2 text-sm text-gray-600 list-disc pl-4">
-                    <li>Birth Certificate</li>
-                    <li>Proof of eligibility</li>
-                    {activeTab === 'XI' && <li><strong>Class X Pass Certificate</strong></li>}
-                    <li>Residence & Rural Area certificate (if applicable)</li>
-                    <li>OBC Central List / SC / ST / Divyang certificate</li>
-                    <li><strong>Transfer Certificate</strong> (ONLY after admission confirmation)</li>
-                  </ul>
-                </div>
-              </div>
-            </GradientCard>
-          </section>
-
-          {/* Fees */}
-          <section>
-            <SectionTitle number="6" title="Fees & JNV Life" />
-            <GradientCard color="green" icon={Award}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm">
+            <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+              <MapPin className="w-6 h-6 text-indigo-600" /> Core Focus & Reservation
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 mb-6">
+              JNVs are structurally designed to uplift rural talent. The reservation system strictly enforces this mandate across all districts in India.
+            </p>
+            <div className="space-y-4">
+              <div className="p-4 bg-indigo-50/50 rounded-xl border border-indigo-100 flex items-center gap-4">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center font-black text-indigo-600 shrink-0">75%</div>
                 <div>
-                  <h4 className="font-bold text-green-800 text-lg mb-3">JNV School Life</h4>
-                  <ul className="space-y-2 text-gray-700 text-sm">
-                    <li>Fully residential & co-educational (CBSE)</li>
-                    <li>Free boarding, lodging, uniform & textbooks</li>
-                    <li>Three-Language Formula</li>
-                    <li>Migration programme for national integration (Class IX)</li>
-                  </ul>
+                  <h4 className="font-bold text-gray-900">Rural Quota</h4>
+                  <p className="text-xs text-gray-600">A minimum of 75% of seats are strictly reserved for students studying in rural schools.</p>
                 </div>
+              </div>
+              <div className="p-4 bg-indigo-50/50 rounded-xl border border-indigo-100 flex items-center gap-4">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center font-black text-indigo-600 shrink-0">1/3</div>
                 <div>
-                  <h4 className="font-bold text-green-800 text-lg mb-3">Vidyalaya Vikas Nidhi (VVN)</h4>
-                  <p className="text-gray-700 text-sm mb-2"><strong>₹600/month</strong> for Classes IX–XII.</p>
-                  <p className="text-gray-700 text-sm mb-2"><strong>Exempted completely:</strong> SC/ST, Divyang, All Girls, BPL Families.</p>
-                  <p className="text-gray-700 text-sm">Govt. employees pay ₹1,500/month (or actual CEA received, whichever is lower).</p>
+                  <h4 className="font-bold text-gray-900">Girls Quota</h4>
+                  <p className="text-xs text-gray-600">One-third (33%) of the total seats are reserved for girl students.</p>
                 </div>
-              </div>
-            </GradientCard>
-          </section>
-
-          {/* Exam Rules */}
-          <section>
-            <SectionTitle number="7" title="Exam-Day Rules" />
-            <GradientCard color="multi" icon={Settings}>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700 font-medium">
-                <li className="flex items-center gap-2 bg-white p-3 rounded-lg border shadow-sm"><CheckSquare className="w-5 h-5 text-green-500 flex-shrink-0" /> Bring Admit Card & Govt ID</li>
-                <li className="flex items-center gap-2 bg-white p-3 rounded-lg border shadow-sm"><CheckSquare className="w-5 h-5 text-green-500 flex-shrink-0" /> Use Blue or Black Ball Point Pen</li>
-                <li className="flex items-center gap-2 bg-white p-3 rounded-lg border shadow-sm"><AlertTriangle className="w-5 h-5 text-red-500 flex-shrink-0" /> Pencils are strictly prohibited</li>
-                <li className="flex items-center gap-2 bg-white p-3 rounded-lg border shadow-sm"><AlertTriangle className="w-5 h-5 text-red-500 flex-shrink-0" /> OMR answers cannot be changed</li>
-              </ul>
-            </GradientCard>
-          </section>
-
-          {/* 10 Things */}
-          <section>
-            <SectionTitle number="8" title="10 Things Every JNV Aspirant Must Remember" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">1. Lateral entry only.</strong>
-                <p className="text-sm text-gray-600">Admission is strictly against vacant seats in IX & XI.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">2. Deadline is 30 Sept 2026.</strong>
-                <p className="text-sm text-gray-600">Don't wait for the last minute to apply online.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">3. Exam is 10 April 2027.</strong>
-                <p className="text-sm text-gray-600">Both exams are 2½ hours on the same day.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">4. No negative marking.</strong>
-                <p className="text-sm text-gray-600">Attempt all questions freely on the OMR sheet.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">5. District match required.</strong>
-                <p className="text-sm text-gray-600">Your school & residence must be in the JNV district.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">6. Central OBC List.</strong>
-                <p className="text-sm text-gray-600">OBC candidates must be in the Central List to get quota.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">7. IX Merit Calculation.</strong>
-                <p className="text-sm text-gray-600">Math + Science + Higher Language score.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">8. XI Stream Selection.</strong>
-                <p className="text-sm text-gray-600">Choose streams and JNVs carefully in the portal.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">9. Passing ≠ Admission.</strong>
-                <p className="text-sm text-gray-600">Selection is provisional until document verification.</p>
-              </div>
-              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:border-[#5B10FF]/30 transition-colors">
-                <strong className="text-brand-purple block text-lg mb-1">10. Don't take TC early.</strong>
-                <p className="text-sm text-gray-600">Only submit your Transfer Certificate after confirmation.</p>
               </div>
             </div>
-          </section>
-
+          </div>
         </div>
+
+        {/* Eligibility & Reservation */}
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6 sm:mb-8 text-center">Eligibility Policy</h2>
+          
+          <div className="flex justify-center mb-8">
+            <div className="bg-gray-100 p-1.5 rounded-full inline-flex relative shadow-inner overflow-hidden max-w-full">
+              <div className={`absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-white rounded-full shadow-sm transition-all duration-300 ${activeTab === 'class6' ? 'left-1.5' : 'left-[calc(50%+4.5px)]'}`} />
+              <button onClick={() => setActiveTab('class6')} className={`relative z-10 px-4 sm:px-8 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors ${activeTab === 'class6' ? 'text-blue-700' : 'text-gray-500'}`}>Class VI (6th)</button>
+              <button onClick={() => setActiveTab('class9')} className={`relative z-10 px-4 sm:px-8 py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors ${activeTab === 'class9' ? 'text-blue-700' : 'text-gray-500'}`}>Class IX (9th)</button>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8">
+            <GradientCard title="Age & Education" icon={GraduationCap} theme="blue">
+              {activeTab === 'class6' ? (
+                <ul className="space-y-4">
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>DOB Range:</strong> Born between 1 May 2015 and 30 Apr 2017 (both inclusive)</span></li>
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Education:</strong> Must be studying in Class-V for the whole academic session in a Govt/Govt-aided school.</span></li>
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>District Rule:</strong> Must study and reside in the same district where the JNV is located.</span></li>
+                </ul>
+              ) : (
+                <ul className="space-y-4">
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>DOB Range:</strong> Born between 1 May 2012 and 30 Apr 2014 (both inclusive)</span></li>
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>Education:</strong> Must be studying in Class-VIII in a Govt/Govt-aided school.</span></li>
+                  <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"/><span><strong>District Rule:</strong> Must study and reside in the same district where the JNV is located.</span></li>
+                </ul>
+              )}
+              <div className="mt-4 p-4 bg-orange-50 border border-orange-100 rounded-xl text-xs text-orange-800 flex items-start gap-2">
+                <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5 text-orange-600" />
+                <p><strong>Note:</strong> No candidate is allowed to appear in the selection test for the second time under any circumstances.</p>
+              </div>
+            </GradientCard>
+
+            <GradientCard title="Urban vs Rural Criteria" icon={MapPin} theme="indigo">
+              <p className="text-sm text-gray-700 mb-4">The determination of rural/urban status is extremely strict and critical for admission.</p>
+              <ul className="space-y-4 text-sm">
+                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"/><span><strong>Rural Candidates:</strong> Must have studied Class III, IV, and V continuously in a school located in a rural area (for Class VI entry).</span></li>
+                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"/><span><strong>Urban Candidates:</strong> If a candidate has studied in an urban school even for a single day in Class III, IV, or V, they will be considered an urban candidate.</span></li>
+                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0"/><span><strong>NIOS Students:</strong> Must produce a rural status certificate issued by the District Magistrate/Tehsildar.</span></li>
+              </ul>
+            </GradientCard>
+          </div>
+        </div>
+
+        {/* Detailed Syllabus & Exam Pattern */}
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6 sm:mb-8 text-center">Exam Pattern & Syllabus</h2>
+          <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden mb-6">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm border-collapse min-w-[700px]">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <th className="p-4 font-bold text-gray-700">Subject</th>
+                    <th className="p-4 font-bold text-gray-700">Questions</th>
+                    <th className="p-4 font-bold text-gray-700">Marks</th>
+                    <th className="p-4 font-bold text-gray-700">Time / Weightage</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {activeTab === 'class6' ? (
+                    <>
+                      <tr className="hover:bg-gray-50/50">
+                        <td className="p-4 font-medium text-gray-900">Mental Ability Test (MAT)</td>
+                        <td className="p-4 text-gray-600">40</td>
+                        <td className="p-4 font-bold text-blue-600">50</td>
+                        <td className="p-4 text-xs text-gray-600">60 Minutes (Odd-Man Out, Figure Matching, Pattern Completion)</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50/50">
+                        <td className="p-4 font-medium text-gray-900">Arithmetic Test</td>
+                        <td className="p-4 text-gray-600">20</td>
+                        <td className="p-4 font-bold text-blue-600">25</td>
+                        <td className="p-4 text-xs text-gray-600">30 Minutes (Number System, Fractions, Decimals, Distance/Time)</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50/50">
+                        <td className="p-4 font-medium text-gray-900">Language Test</td>
+                        <td className="p-4 text-gray-600">20</td>
+                        <td className="p-4 font-bold text-blue-600">25</td>
+                        <td className="p-4 text-xs text-gray-600">30 Minutes (Reading Comprehension passages & Grammar)</td>
+                      </tr>
+                      <tr className="bg-blue-50/30">
+                        <td className="p-4 font-black text-gray-900">Total (120 Minutes)</td>
+                        <td className="p-4 font-black text-gray-900">80 Qs</td>
+                        <td className="p-4 font-black text-blue-700">100 Marks</td>
+                        <td className="p-4 text-xs text-emerald-600 font-bold">No Negative Marking</td>
+                      </tr>
+                    </>
+                  ) : (
+                    <>
+                      <tr className="hover:bg-gray-50/50">
+                        <td className="p-4 font-medium text-gray-900">English</td>
+                        <td className="p-4 text-gray-600">15</td>
+                        <td className="p-4 font-bold text-blue-600">15</td>
+                        <td className="p-4 text-xs text-gray-600">Comprehension, Grammar, Spelling</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50/50">
+                        <td className="p-4 font-medium text-gray-900">Hindi</td>
+                        <td className="p-4 text-gray-600">15</td>
+                        <td className="p-4 font-bold text-blue-600">15</td>
+                        <td className="p-4 text-xs text-gray-600">Vyakaran, Comprehension</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50/50">
+                        <td className="p-4 font-medium text-gray-900">Mathematics</td>
+                        <td className="p-4 text-gray-600">35</td>
+                        <td className="p-4 font-bold text-blue-600">35</td>
+                        <td className="p-4 text-xs text-gray-600">Rational numbers, Squares, Cubes, Direct/Inverse Proportions</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50/50">
+                        <td className="p-4 font-medium text-gray-900">General Science</td>
+                        <td className="p-4 text-gray-600">35</td>
+                        <td className="p-4 font-bold text-blue-600">35</td>
+                        <td className="p-4 text-xs text-gray-600">Crop Production, Microorganisms, Force, Light, Solar System</td>
+                      </tr>
+                      <tr className="bg-blue-50/30">
+                        <td className="p-4 font-black text-gray-900">Total (150 Minutes)</td>
+                        <td className="p-4 font-black text-gray-900">100 Qs</td>
+                        <td className="p-4 font-black text-blue-700">100 Marks</td>
+                        <td className="p-4 text-xs text-emerald-600 font-bold">No Negative Marking</td>
+                      </tr>
+                    </>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {/* Process Row */}
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm">
+            <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-8 flex items-center gap-3">
+              <Clock className="w-6 h-6 text-orange-500" /> Timeline (Expected)
+            </h2>
+            <div className="ml-2">
+              <TimelineItem title="Online Application Starts" date="July 2026" isExpected={true} />
+              <TimelineItem title="Application Deadline" date="September 2026" isExpected={true} />
+              <TimelineItem title="Correction Window" date="October 2026" isExpected={true} />
+              <TimelineItem title="Phase 1 Exam (Hilly Areas)" date="January 2027" isExpected={true} />
+              <TimelineItem title="Phase 2 Exam (Rest of India)" date="April 2027" isExpected={true} />
+              <TimelineItem title="Result Declaration" date="June 2027" isExpected={true} />
+            </div>
+          </div>
+
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm flex flex-col justify-center">
+            <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
+              <BookOpen className="w-6 h-6 text-blue-600" /> Admission Process
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 mb-8 leading-relaxed">
+              Admission to JNVs is made strictly on the basis of the JNVST. Selection is localized to the district.
+            </p>
+            <div className="space-y-5">
+              <div className="flex gap-4 items-start">
+                 <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-black shrink-0 shadow-sm">1</div>
+                 <p className="text-sm font-semibold text-gray-700 pt-1">Apply completely free of cost via navodaya.gov.in portal</p>
+              </div>
+              <div className="flex gap-4 items-start">
+                 <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-black shrink-0 shadow-sm">2</div>
+                 <p className="text-sm font-semibold text-gray-700 pt-1">Appear for the offline OMR-based entrance test</p>
+              </div>
+              <div className="flex gap-4 items-start">
+                 <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-black shrink-0 shadow-sm">3</div>
+                 <p className="text-sm font-semibold text-gray-700 pt-1">Merit list generated at District, State, and National level</p>
+              </div>
+              <div className="flex gap-4 items-start">
+                 <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-black shrink-0 shadow-sm">4</div>
+                 <p className="text-sm font-semibold text-gray-700 pt-1">Submit physical documents to the allotted JNV for verification</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Requirements Row */}
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
+          <GradientCard title="Fees & Perks" icon={CreditCard} theme="slate">
+            <div className="space-y-4">
+              <div>
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Education Fee</p>
+                <p className="text-xl font-black text-emerald-600 mb-2">Completely Free</p>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  Boarding, lodging, uniforms, and textbooks are provided free of charge by the Govt. of India.
+                </p>
+              </div>
+              <div className="h-px w-full bg-gray-200"></div>
+              <div>
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">VVN Fee (Class IX - XII Only)</p>
+                <p className="text-sm font-semibold text-gray-900">₹600 per month</p>
+                <p className="text-xs text-gray-500 leading-relaxed mt-1">
+                  Applicable ONLY to Boys of Gen/OBC categories. SC/ST, Girls, and BPL families are fully exempted.
+                </p>
+              </div>
+            </div>
+          </GradientCard>
+
+          <GradientCard title="Medical Standards" icon={Activity} theme="emerald">
+            <ul className="space-y-4 text-sm">
+              <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"/><span className="leading-relaxed"><strong>Fitness:</strong> Basic medical fitness is required for residential stay.</span></li>
+              <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"/><span className="leading-relaxed"><strong>PwD Students:</strong> Divyang (Orthopedically, Hearing, or Visually Impaired) have a 3% reservation.</span></li>
+            </ul>
+          </GradientCard>
+
+          <GradientCard title="Document Checklist" icon={FileText} theme="indigo">
+            <ul className="text-sm text-gray-700 space-y-4">
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Headmaster Certified Study Certificate</span></li>
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Residence / Domicile Certificate</span></li>
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Rural Status Certificate (Crucial for 75% quota)</span></li>
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Category Certificate (SC/ST/OBC/PwD)</span></li>
+            </ul>
+          </GradientCard>
+        </div>
+
+        {/* Comparison Table */}
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6 sm:mb-8 text-center">AISSEE vs OAV vs JNV</h2>
+          <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm border-collapse min-w-[700px]">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <th className="p-4 font-bold text-gray-700">Feature</th>
+                    <th className="p-4 font-bold text-gray-700">Sainik School (AISSEE)</th>
+                    <th className="p-4 font-bold text-gray-700">OAV</th>
+                    <th className="p-4 font-bold text-blue-700">JNV</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  <tr className="hover:bg-gray-50/50">
+                    <td className="p-4 font-medium">Conducting Body</td>
+                    <td className="p-4">NTA (Ministry of Defence)</td>
+                    <td className="p-4">BSE Odisha (Govt of Odisha)</td>
+                    <td className="p-4 text-blue-700 font-medium">NVS (Ministry of Education)</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50/50">
+                    <td className="p-4 font-medium">Focus</td>
+                    <td className="p-4">Defence / NDA Entry</td>
+                    <td className="p-4">Rural talent (Odisha)</td>
+                    <td className="p-4 font-medium">Rural talent (National)</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50/50">
+                    <td className="p-4 font-medium">Eligibility</td>
+                    <td className="p-4">All-India</td>
+                    <td className="p-4">Odisha Domicile Only</td>
+                    <td className="p-4">District-Specific (75% rural)</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50/50">
+                    <td className="p-4 font-medium">Fees (Annual)</td>
+                    <td className="p-4">₹2.0 — 2.6 Lakh</td>
+                    <td className="p-4">Free (Nominal boarding)</td>
+                    <td className="p-4 font-bold text-emerald-600">Completely Free</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {/* Myths & Reasons for Rejection */}
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+          <GradientCard title="Common Myths Busted" icon={AlertCircle} theme="blue">
+            <ul className="space-y-4">
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> 
+                <span className="text-sm leading-relaxed"><strong>Myth: Urban kids can't apply.</strong><br/>Reality: False! 25% of seats are completely open for urban students.</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> 
+                <span className="text-sm leading-relaxed"><strong>Myth: Only Hindi medium.</strong><br/>Reality: False. Instruction is in the mother tongue/regional language up to Class VIII.</span>
+              </li>
+            </ul>
+          </GradientCard>
+
+          <GradientCard title="Top Reasons for Rejection" icon={XCircle} theme="red">
+            <ul className="space-y-4">
+              <li className="flex gap-3">
+                <AlertTriangle className="w-5 h-5 text-red-500 shrink-0" /> 
+                <span className="text-sm leading-relaxed"><strong>Fake Rural Status:</strong> If you studied even a single day of Class 3/4/5 in an urban school, you forfeit the 75% rural quota.</span>
+              </li>
+              <li className="flex gap-3">
+                <AlertTriangle className="w-5 h-5 text-red-500 shrink-0" /> 
+                <span className="text-sm leading-relaxed"><strong>Repeat Attempts:</strong> NVS strictly bans applying a second time. Aadhaar tracking enforces this.</span>
+              </li>
+            </ul>
+          </GradientCard>
+        </div>
+
+        {/* Preparation Strategy */}
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 sm:p-12 text-white shadow-lg text-center relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <h2 className="text-2xl sm:text-3xl font-black mb-4 relative z-10">90-Day Strategy to Crack JNVST</h2>
+          <p className="text-blue-100 max-w-2xl mx-auto mb-8 relative z-10">
+            For Class VI, Mental Ability Test (MAT) forms <strong>50% of the entire paper</strong>. Master patterns and spatial reasoning!
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4 relative z-10">
+            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20">
+              <h4 className="font-bold mb-1">Days 1-30</h4>
+              <p className="text-sm text-blue-100">Build fundamentals in Arithmetic and non-verbal MAT reasoning.</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20">
+              <h4 className="font-bold mb-1">Days 31-60</h4>
+              <p className="text-sm text-blue-100">Drill language comprehension passages daily & solve 1000+ MCQs.</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20">
+              <h4 className="font-bold mb-1">Days 61-90</h4>
+              <p className="text-sm text-blue-100">Practice full OMR tests focusing purely on speed and accuracy.</p>
+            </div>
+          </div>
+          
+          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10 w-full pb-4">
+            <button onClick={onRequestInvite} className="bg-white text-blue-700 px-8 py-3.5 rounded-full font-black shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto text-center border-2 border-transparent">
+              Request an Invite to Start Preparing
+            </button>
+            <a href="/1-1-clarity-session-call" className="bg-transparent text-white border-2 border-white/40 hover:bg-white/10 px-8 py-3.5 rounded-full font-bold shadow-sm transition-all w-full sm:w-auto text-center">
+              Book 1-1 Strategy Call
+            </a>
+          </div>
+        </div>
+
       </section>
+
+      <CohortSection onRequestInvite={onRequestInvite} />
+      <FinalCTA onRequestInvite={onRequestInvite} />
+
       <Footer onRequestInvite={onRequestInvite} />
     </div>
   );
