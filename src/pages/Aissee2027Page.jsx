@@ -324,9 +324,9 @@ const Aissee2027Page = ({ onRequestInvite }) => {
           </div>
         </div>
 
-        {/* Admission Process & Timeline */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-1 bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm">
+        {/* Process Row: Admission Timeline & E-Counselling */}
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm">
             <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-8 flex items-center gap-3">
               <Clock className="w-6 h-6 text-orange-500" /> Timeline (Expected)
             </h2>
@@ -341,60 +341,76 @@ const Aissee2027Page = ({ onRequestInvite }) => {
             </div>
           </div>
 
-          <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6 sm:gap-8">
-            <GradientCard title="Fees Structure" icon={CreditCard} theme="slate">
-              <div className="space-y-4">
-                <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Application Fee</p>
-                  <p className="text-sm font-semibold">Gen / OBC / Defence: ₹850</p>
-                  <p className="text-sm font-semibold">SC / ST: ₹700</p>
-                </div>
-                <div className="h-px w-full bg-gray-200"></div>
-                <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Annual School Fees (Approx)</p>
-                  <p className="text-xl font-black text-gray-900">₹2.0 Lakh — ₹2.63 Lakh</p>
-                  <p className="text-xs text-gray-500 mt-2">Includes tuition (~₹90k), boarding (~₹45k), mess (~₹50k), uniform, and books. Note: SC/ST candidates may receive state subsidies.</p>
-                </div>
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm flex flex-col justify-center">
+            <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
+              <BookOpen className="w-6 h-6 text-blue-600" /> AISSAC E-Counselling
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 mb-8 leading-relaxed">
+              Post-exam seat allocation happens strictly via the online AISSAC portal over multiple rounds. The process is entirely digital.
+            </p>
+            <div className="space-y-5">
+              <div className="flex gap-4 items-start">
+                 <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-black shrink-0 shadow-sm">1</div>
+                 <p className="text-sm font-semibold text-gray-700 pt-1">Register using AISSEE application number</p>
               </div>
-            </GradientCard>
-
-            <GradientCard title="Medical Standards" icon={Activity} theme="emerald">
-              <ul className="space-y-3 text-sm">
-                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"/><span><strong>Eyesight:</strong> 6/6 one eye, 6/9 other. Myopia not exceeding -1.5D. NO Color Blindness (CP-III required).</span></li>
-                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"/><span><strong>Orthopedic:</strong> No knock knees, no flat foot, straight spine (no scoliosis).</span></li>
-                <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"/><span><strong>General:</strong> BMI appropriate. No stammering, hearing issues, or chronic diseases (heart, lung, kidney).</span></li>
-              </ul>
-            </GradientCard>
+              <div className="flex gap-4 items-start">
+                 <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-black shrink-0 shadow-sm">2</div>
+                 <p className="text-sm font-semibold text-gray-700 pt-1">Fill choice of up to 10 Sainik Schools (Traditional + New)</p>
+              </div>
+              <div className="flex gap-4 items-start">
+                 <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-black shrink-0 shadow-sm">3</div>
+                 <p className="text-sm font-semibold text-gray-700 pt-1">Wait for Seat Allotment (Round 1, 2, Special, Spot)</p>
+              </div>
+              <div className="flex gap-4 items-start">
+                 <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-black shrink-0 shadow-sm">4</div>
+                 <p className="text-sm font-semibold text-gray-700 pt-1">Accept, Reconsider, or Exit based on allotted seat</p>
+              </div>
+              <div className="flex gap-4 items-start">
+                 <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-black shrink-0 shadow-sm">5</div>
+                 <p className="text-sm font-semibold text-gray-700 pt-1">Report to school for Medical Test upon Acceptance</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* E-Counselling & Documents */}
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm">
-            <h2 className="text-xl font-black text-gray-900 mb-4 flex items-center gap-3">
-              <BookOpen className="w-6 h-6 text-blue-600" /> AISSAC E-Counselling
-            </h2>
-            <p className="text-sm text-gray-600 mb-4">Post-exam seat allocation happens strictly via the online AISSAC portal over multiple rounds.</p>
-            <ol className="list-decimal list-inside text-sm text-gray-700 space-y-2 font-medium">
-              <li>Register using AISSEE application number</li>
-              <li>Fill choice of up to 10 Sainik Schools (Traditional + New)</li>
-              <li>Wait for Seat Allotment (Round 1, 2, Special, Spot)</li>
-              <li>Accept, Reconsider, or Exit based on allotted seat</li>
-              <li>Report to school for Medical Test upon Acceptance</li>
-            </ol>
-          </div>
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm">
-            <h2 className="text-xl font-black text-gray-900 mb-4 flex items-center gap-3">
-              <FileText className="w-6 h-6 text-indigo-600" /> Document Checklist
-            </h2>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li className="flex items-center gap-2"><CheckSquare className="w-4 h-4 text-emerald-500"/> Birth Certificate (Original) & Aadhaar</li>
-              <li className="flex items-center gap-2"><CheckSquare className="w-4 h-4 text-emerald-500"/> Domicile Certificate (For Home State Quota)</li>
-              <li className="flex items-center gap-2"><CheckSquare className="w-4 h-4 text-emerald-500"/> Caste / EWS / Disability Certificate (If applicable)</li>
-              <li className="flex items-center gap-2"><CheckSquare className="w-4 h-4 text-emerald-500"/> Defence Service Certificate (If applicable)</li>
-              <li className="flex items-center gap-2"><CheckSquare className="w-4 h-4 text-emerald-500"/> Class V/VIII Pass Marksheet & TC</li>
+        {/* Requirements Row: Fees, Medical, Documents */}
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
+          <GradientCard title="Fees Structure" icon={CreditCard} theme="slate">
+            <div className="space-y-4">
+              <div>
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Application Fee</p>
+                <p className="text-sm font-semibold text-gray-900">Gen / OBC / Defence: ₹850</p>
+                <p className="text-sm font-semibold text-gray-900">SC / ST: ₹700</p>
+              </div>
+              <div className="h-px w-full bg-gray-200"></div>
+              <div>
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Annual School Fees</p>
+                <p className="text-xl font-black text-gray-900 mb-2">₹2.0 Lakh — ₹2.63 Lakh</p>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  Includes tuition (~₹90k), boarding (~₹45k), mess (~₹50k), uniform, and books. 
+                  SC/ST candidates may receive state subsidies.
+                </p>
+              </div>
+            </div>
+          </GradientCard>
+
+          <GradientCard title="Medical Standards" icon={Activity} theme="emerald">
+            <ul className="space-y-4 text-sm">
+              <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"/><span className="leading-relaxed"><strong>Eyesight:</strong> 6/6 one eye, 6/9 other. Myopia not exceeding -1.5D. NO Color Blindness (CP-III required).</span></li>
+              <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"/><span className="leading-relaxed"><strong>Orthopedic:</strong> No knock knees, no flat foot, straight spine (no scoliosis).</span></li>
+              <li className="flex gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"/><span className="leading-relaxed"><strong>General:</strong> BMI appropriate. No stammering, hearing issues, or chronic diseases.</span></li>
             </ul>
-          </div>
+          </GradientCard>
+
+          <GradientCard title="Document Checklist" icon={FileText} theme="indigo">
+            <ul className="text-sm text-gray-700 space-y-4">
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Birth Certificate (Original) & Aadhaar</span></li>
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Domicile Certificate (For Home State Quota)</span></li>
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Caste / EWS / Disability Certificate</span></li>
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Defence Service Certificate (If applicable)</span></li>
+              <li className="flex items-start gap-2"><CheckSquare className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"/> <span className="leading-relaxed font-medium">Class V/VIII Pass Marksheet & TC</span></li>
+            </ul>
+          </GradientCard>
         </div>
 
         {/* Comparison Table */}
@@ -460,15 +476,15 @@ const Aissee2027Page = ({ onRequestInvite }) => {
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> 
-                <span className="text-sm"><strong>Myth: Only Boys can apply.</strong><br/>Reality: False! Girls are eligible (10% quota in Class VI since 2021).</span>
+                <span className="text-sm leading-relaxed"><strong>Myth: Only Boys can apply.</strong><br/>Reality: False! Girls are eligible (10% quota in Class VI since 2021).</span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> 
-                <span className="text-sm"><strong>Myth: Fixed height/weight required.</strong><br/>Reality: False. No fixed minimum at tender age, just age-appropriate BMI.</span>
+                <span className="text-sm leading-relaxed"><strong>Myth: Fixed height/weight required.</strong><br/>Reality: False. No fixed minimum at tender age, just age-appropriate BMI.</span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" /> 
-                <span className="text-sm"><strong>Myth: Only defence kids get in.</strong><br/>Reality: False. 25% is defence quota, meaning 75% is entirely open for civilians.</span>
+                <span className="text-sm leading-relaxed"><strong>Myth: Only defence kids get in.</strong><br/>Reality: False. 25% is defence quota, meaning 75% is entirely open for civilians.</span>
               </li>
             </ul>
           </GradientCard>
@@ -477,15 +493,15 @@ const Aissee2027Page = ({ onRequestInvite }) => {
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <AlertTriangle className="w-5 h-5 text-red-500 shrink-0" /> 
-                <span className="text-sm"><strong>Age Mismatch:</strong> Strict DOB cutoff. Do not apply if outside the exact date range for your class.</span>
+                <span className="text-sm leading-relaxed"><strong>Age Mismatch:</strong> Strict DOB cutoff. Do not apply if outside the exact date range for your class.</span>
               </li>
               <li className="flex gap-3">
                 <AlertTriangle className="w-5 h-5 text-red-500 shrink-0" /> 
-                <span className="text-sm"><strong>Medical Failures:</strong> Color blindness, knock knees, or high myopia (&gt; -1.5D) cause immediate rejection.</span>
+                <span className="text-sm leading-relaxed"><strong>Medical Failures:</strong> Color blindness, knock knees, or high myopia (&gt; -1.5D) cause immediate rejection.</span>
               </li>
               <li className="flex gap-3">
                 <AlertTriangle className="w-5 h-5 text-red-500 shrink-0" /> 
-                <span className="text-sm"><strong>Missing Documents:</strong> Failing to produce valid Caste, Domicile, or Disability certificates at counselling.</span>
+                <span className="text-sm leading-relaxed"><strong>Missing Documents:</strong> Failing to produce valid Caste, Domicile, or Disability certificates at counselling.</span>
               </li>
             </ul>
           </GradientCard>
