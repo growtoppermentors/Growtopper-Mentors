@@ -67,36 +67,38 @@ function App() {
   const closeModal = React.useCallback(() => {
     setIsModalOpen(false);
     if (autoOpenCount.current < 3) {
-      scheduleAutoPopup(30000); // Popup again 30 seconds after closing, up to 3 times
+      scheduleAutoPopup(300000); // Popup again 5 minutes (300,000ms) after closing, up to 3 times
     }
   }, [scheduleAutoPopup]);
 
   useEffect(() => {
-    scheduleAutoPopup(5500); // First popup after 5.5s
+    scheduleAutoPopup(300000); // First popup after 5 minutes (300,000ms)
   }, [scheduleAutoPopup]);
 
   return (
     <BrowserRouter>
       <Analytics />
-      <React.Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-brand-dark font-bold">Loading...</div>}><Routes>
-        {/* Home is now the default homepage */}
-        <Route path="/" element={<Home openModal={openModal} />} />
+      <React.Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-brand-dark font-bold">Loading...</div>}>
+        <Routes>
+          {/* Home is now the default homepage */}
+          <Route path="/" element={<Home openModal={openModal} />} />
 
-        {/* Old landing page moved to /30-days-growth-challenge */}
-        <Route path="/30-days-growth-challenge" element={<HomePage openModal={openModal} />} />
+          {/* Old landing page moved to /30-days-growth-challenge */}
+          <Route path="/30-days-growth-challenge" element={<HomePage openModal={openModal} />} />
 
-        <Route path="/syllabus" element={<SyllabusPage onRequestInvite={openModal} />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/pricing" element={<PricingPage onRequestInvite={openModal} />} />
-        <Route path="/blog" element={<BlogList onRequestInvite={openModal} />} />
-        <Route path="/blog/:slug" element={<BlogPost onRequestInvite={openModal} />} />
-        <Route path="/1-1-clarity-session-call" element={<ClaritySession />} />
-        <Route path="/oav2027" element={<Oav2027Page onRequestInvite={openModal} />} />
-        <Route path="/jnv2027" element={<Jnv2027Page onRequestInvite={openModal} />} />
+          <Route path="/syllabus" element={<SyllabusPage onRequestInvite={openModal} />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/pricing" element={<PricingPage onRequestInvite={openModal} />} />
+          <Route path="/blog" element={<BlogList onRequestInvite={openModal} />} />
+          <Route path="/blog/:slug" element={<BlogPost onRequestInvite={openModal} />} />
+          <Route path="/1-1-clarity-session-call" element={<ClaritySession />} />
+          <Route path="/oav2027" element={<Oav2027Page onRequestInvite={openModal} />} />
+          <Route path="/jnv2027" element={<Jnv2027Page onRequestInvite={openModal} />} />
           <Route path="/exams-scholarships" element={<ExamsScholarshipsPage onRequestInvite={openModal} />} />
           <Route path="/aissee2027" element={<Aissee2027Page onRequestInvite={openModal} />} />
-      </Routes></React.Suspense>
+        </Routes>
+      </React.Suspense>
       <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />
       <LiveNotification />
     </BrowserRouter>
@@ -104,5 +106,3 @@ function App() {
 }
 
 export default App;
-
-
