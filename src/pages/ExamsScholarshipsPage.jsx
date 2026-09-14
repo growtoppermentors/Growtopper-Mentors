@@ -57,11 +57,11 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       id: 'sainik2027',
       title: 'All India Sainik School (AISSEE) 2027',
       type: 'Defence School',
-      status: 'Coming Soon',
+      status: 'Active',
       eligibility: 'Class VI & IX',
       examDate: 'Jan 2027',
       features: ['Military Training', 'NDA Prep', 'Discipline'],
-      link: '#',
+      link: '/aissee2027',
       icon: Shield,
       color: 'green'
     }

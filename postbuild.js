@@ -109,6 +109,13 @@ const mainPages = [
     description: 'Discover and track the best school-level entrance exams (OAV, JNV, Sainik School) and government scholarships (NMMS, PMST, NTSE).',
     urlPath: '/exams-scholarships',
     image: 'https://growtopper.app/images/exams-preview.jpg'
+  },
+  {
+    path: '/aissee2027',
+    title: 'Sainik School Entrance Exam (AISSEE) 2027 Guide | Growtopper',
+    description: 'Complete research playbook for All India Sainik School Entrance Exam (AISSEE) 2027. Get eligibility, exam pattern, dates, and syllabus for Class 6 & 9.',
+    urlPath: '/aissee2027',
+    image: 'https://growtopper.app/images/aissee2027-preview.jpg'
   }
 ];
 
