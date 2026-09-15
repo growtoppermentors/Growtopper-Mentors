@@ -161,7 +161,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
-                <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                   <div className="relative z-10">
                     <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 font-black text-xs uppercase tracking-wider rounded-lg mb-4">
@@ -188,7 +188,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                   <div className="relative z-10">
                     <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 font-black text-xs uppercase tracking-wider rounded-lg mb-4">
@@ -229,18 +229,18 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
-                    <Shield className="w-5 h-5 text-orange-600" />
+                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
+                  <div className="w-12 h-12 sm:w-10 sm:h-10 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
+                    <Shield className="w-6 h-6 sm:w-5 sm:h-5 text-orange-600" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Caste Category</h3>
                     <p className="text-sm text-gray-600 font-medium">Strictly reserved for candidates belonging to the Scheduled Caste (SC) category.</p>
                   </div>
                 </div>
-                <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
-                    <Wallet className="w-5 h-5 text-emerald-600" />
+                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
+                  <div className="w-12 h-12 sm:w-10 sm:h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                    <Wallet className="w-6 h-6 sm:w-5 sm:h-5 text-emerald-600" />
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Income Limit</h3>
@@ -449,7 +449,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
               </div>
 
               {/* Documents Needed */}
-              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200">
+              <div className="bg-gray-50 rounded-3xl p-5 sm:p-8 border border-gray-200">
                 <h3 className="font-black text-xl text-gray-900 mb-6 flex items-center gap-2">
                   <FileCheck2 className="w-5 h-5 text-gray-600" /> Essential Documents Checklist
                 </h3>
