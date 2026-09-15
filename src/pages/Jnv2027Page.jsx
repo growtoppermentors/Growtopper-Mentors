@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import CohortSection from '../components/sections/CohortSection';
 import FinalCTA from '../components/sections/FinalCTA';
 import { 
+  ArrowLeft,
   Calendar, Shield, Users, BookOpen, GraduationCap, Clock, 
   MapPin, CheckCircle, AlertTriangle, FileText, Activity, CreditCard,
   XCircle, CheckSquare, Target, Phone, AlertCircle
@@ -13,32 +15,18 @@ const GradientCard = ({ title, icon: Icon, children, theme = 'blue', className =
   const themes = {
     blue: 'from-blue-50/50 to-white border-blue-100',
     indigo: 'from-indigo-50/50 to-white border-indigo-100',
-    emerald: 'from-emerald-50/50 to-white border-emerald-100',
-    orange: 'from-orange-50/50 to-white border-orange-100',
-    slate: 'from-slate-50/50 to-white border-slate-100',
-    red: 'from-red-50/50 to-white border-red-100'
+    purple: 'from-purple-50/50 to-white border-purple-100',
+    emerald: 'from-emerald-50/50 to-white border-emerald-100'
   };
-
-  const iconThemes = {
-    blue: 'bg-blue-100 text-blue-600',
-    indigo: 'bg-indigo-100 text-indigo-600',
-    emerald: 'bg-emerald-100 text-emerald-600',
-    orange: 'bg-orange-100 text-orange-600',
-    slate: 'bg-slate-100 text-slate-600',
-    red: 'bg-red-100 text-red-600'
-  };
-
   return (
-    <div className={`bg-gradient-to-b ${themes[theme]} rounded-2xl border shadow-sm p-5 sm:p-8 hover:shadow-md transition-shadow h-full flex flex-col ${className}`}>
-      <div className="flex items-center gap-4 mb-5 sm:mb-6">
-        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 ${iconThemes[theme]}`}>
-          <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+    <div className={`p-6 sm:p-8 rounded-3xl bg-gradient-to-br ${themes[theme]} border shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group ${className}`}>
+      <div className="flex items-center gap-4 mb-4 relative z-10">
+        <div className={`p-3 rounded-2xl bg-white shadow-sm shrink-0 group-hover:scale-110 transition-transform`}>
+          <Icon className={`w-6 h-6 text-${theme}-600`} />
         </div>
-        <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">{title}</h3>
+        <h3 className="font-bold text-xl sm:text-2xl text-gray-900">{title}</h3>
       </div>
-      <div className="text-gray-600 space-y-4 flex-1 text-sm sm:text-base">
-        {children}
-      </div>
+      <div className="relative z-10">{children}</div>
     </div>
   );
 };
@@ -64,24 +52,27 @@ const Jnv2027Page = ({ onRequestInvite }) => {
       <Navbar onRequestInvite={onRequestInvite} />
 
       {/* Responsive Mobile Hero Section */}
-      <section className="pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <div className="bg-gradient-to-br from-[#F0F4F8] via-white to-[#E6EDF5] rounded-[24px] sm:rounded-[32px] border border-blue-100 shadow-sm p-6 sm:p-10 text-center relative overflow-hidden">
+      <section className="pt-20 sm:pt-24 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <Link to="/exams-scholarships" className="inline-flex items-center gap-1.5 text-gray-500 hover:text-blue-600 transition-colors text-sm font-bold mb-4">
+          <ArrowLeft className="w-4 h-4" /> Back to Exams
+        </Link>
+        <div className="bg-gradient-to-br from-[#F0F4F8] via-white to-[#E6EDF5] rounded-[24px] sm:rounded-[32px] border border-blue-100 shadow-sm p-5 sm:p-8 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-indigo-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           
           <div className="relative z-10 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-widest mb-4 sm:mb-5 border border-blue-200/50">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-widest mb-4 border border-blue-200/50">
               <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Official Guide 2027
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black text-brand-dark mb-4 sm:mb-5 leading-tight tracking-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-brand-dark mb-3 sm:mb-4 leading-tight tracking-tight">
               Navodaya Vidyalaya Selection <br className="hidden lg:block"/> Test <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">(JNVST)</span> 2027
             </h1>
-            <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-7 max-w-2xl mx-auto font-medium px-2">
+            <p className="text-sm sm:text-base text-gray-600 mb-6 max-w-2xl mx-auto font-medium px-2">
               The complete research playbook for admission into 650+ Jawahar Navodaya Vidyalayas across India. Prepare for Class VI & IX lateral entry with verified eligibility, syllabi, and strategies.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-bold text-gray-500">
-              <span className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-md border border-gray-100 shadow-sm"><Calendar className="w-4 h-4 text-blue-500" /> Exam: Jan & April 2027</span>
-              <span className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-md border border-gray-100 shadow-sm"><MapPin className="w-4 h-4 text-blue-500" /> All India Level (NVS)</span>
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-2 sm:gap-4 mb-2">
+              <span className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white rounded-md border border-gray-100 shadow-sm w-full sm:w-auto"><Calendar className="w-4 h-4 text-blue-500 shrink-0" /> Exam: Jan & April 2027</span>
+              <span className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white rounded-md border border-gray-100 shadow-sm w-full sm:w-auto"><MapPin className="w-4 h-4 text-blue-500 shrink-0" /> All India Level (NVS)</span>
             </div>
           </div>
         </div>

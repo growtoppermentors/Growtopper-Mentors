@@ -4,6 +4,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { 
   ArrowRight, 
+  ArrowLeft, 
   BookOpen, 
   Calendar, 
   CheckCircle, 
@@ -64,51 +65,45 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
       <Navbar onRequestInvite={onRequestInvite} />
 
       {/* Responsive Mobile Hero Section */}
-      <section className="pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <div className="bg-gradient-to-br from-[#F0F4F8] via-white to-[#E6EDF5] rounded-[24px] sm:rounded-[32px] border border-blue-100 shadow-sm p-6 sm:p-10 text-center relative overflow-hidden">
+      <section className="pt-20 sm:pt-24 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <Link to="/exams-scholarships" className="inline-flex items-center gap-1.5 text-gray-500 hover:text-blue-600 transition-colors text-sm font-bold mb-4">
+          <ArrowLeft className="w-4 h-4" /> Back to Exams
+        </Link>
+        <div className="bg-gradient-to-br from-[#F0F4F8] via-white to-[#E6EDF5] rounded-[24px] sm:rounded-[32px] border border-blue-100 shadow-sm p-5 sm:p-8 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-indigo-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           
           <div className="relative z-10 max-w-4xl mx-auto">
-            {/* Breadcrumb */}
-            <div className="flex items-center justify-center gap-2 text-gray-500 text-xs sm:text-sm font-semibold mb-6">
-              <Link to="/" className="hover:text-blue-600 transition-colors">Home</Link>
-              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <Link to="/exams-scholarships" className="hover:text-blue-600 transition-colors">Exams & Scholarships</Link>
-              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <span className="text-gray-900">SHRESHTA NETS</span>
-            </div>
-
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-widest mb-4 sm:mb-5 border border-blue-200/50">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-xs sm:text-sm uppercase tracking-widest mb-4 border border-blue-200/50">
               <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-500 fill-yellow-500" /> Scheme for Residential Education (SC Students)
             </div>
             
-            <h1 className="text-3xl sm:text-5xl font-black text-brand-dark mb-4 sm:mb-5 leading-tight tracking-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-brand-dark mb-3 sm:mb-4 leading-tight tracking-tight">
               SHRESHTA NETS <br className="hidden lg:block"/> Admissions <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">2026-27</span>
             </h1>
             
-            <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-7 max-w-2xl mx-auto font-medium px-2">
+            <p className="text-sm sm:text-base text-gray-600 mb-6 max-w-2xl mx-auto font-medium px-2">
               A central sector scheme providing meritorious SC students access to high-quality residential school education in top private CBSE/State Board schools across India.
             </p>
             
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-bold text-gray-500 mb-8">
-              <span className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-md border border-gray-100 shadow-sm"><Users className="w-4 h-4 text-blue-500" /> ~3,000 Seats (Class 9 & 11)</span>
-              <span className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-md border border-gray-100 shadow-sm"><Wallet className="w-4 h-4 text-blue-500" /> Up to ₹1.35L/Year</span>
-              <span className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-md border border-gray-100 shadow-sm"><FileText className="w-4 h-4 text-blue-500" /> NETS Exam by NTA</span>
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-2 sm:gap-4 mb-6 sm:mb-8">
+              <span className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white rounded-md border border-gray-100 shadow-sm w-full sm:w-auto"><Users className="w-4 h-4 text-blue-500 shrink-0" /> ~3,000 Seats (Class 9 & 11)</span>
+              <span className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white rounded-md border border-gray-100 shadow-sm w-full sm:w-auto"><Wallet className="w-4 h-4 text-blue-500 shrink-0" /> Up to ₹1.35L/Year</span>
+              <span className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white rounded-md border border-gray-100 shadow-sm w-full sm:w-auto"><FileText className="w-4 h-4 text-blue-500 shrink-0" /> NETS Exam by NTA</span>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <a 
                 href="https://exams.nta.nic.in/shreshta/" 
                 target="_blank"
                 rel="noreferrer"
-                className="bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-black text-sm sm:text-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
+                className="bg-blue-600 text-white px-6 sm:px-8 py-3.5 rounded-xl font-black text-sm sm:text-base hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 Official NTA Portal <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <button 
                 onClick={() => scrollToSection('eligibility')}
-                className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-lg text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow-sm"
+                className="px-6 sm:px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow-sm w-full sm:w-auto"
               >
                 Check Eligibility
               </button>
