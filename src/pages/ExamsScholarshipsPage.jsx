@@ -442,57 +442,457 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
 
   const scholarships = [
     {
-      id: 'nmms',
-      title: 'National Means-cum-Merit Scholarship (NMMS)',
-      type: 'Govt. Scholarship',
+      id: 'schaeffler',
+      title: 'Schaeffler India Hope Engg Scholarship',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
-      conductedBy: 'MoE, Govt of India',
-      totalSchools: 'All Govt Schools',
-      classes: 'Class VIII',
-      examFreq: 'Annual (Nov)',
-      fee: 'Free',
-      website: 'scholarships.gov.in',
-      features: ['₹12,000/year', 'Merit + Means'],
+      conductedBy: 'Schaeffler India',
+      totalSchools: 'Engg Undergraduates',
+      classes: 'Merit-cum-means',
+      examFreq: '30 Sep 2026',
+      fee: '₹50,000/year',
+      website: 'buddy4study.com',
+      features: ['All-India', 'Online App'],
+      link: '#',
+      icon: Award,
+      color: 'blue'
+    },
+    {
+      id: 'adobe-ai',
+      title: 'Adobe India AI Research Fellowship',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Adobe India',
+      totalSchools: 'PG/PhD AI/ML',
+      classes: 'AI Research Focus',
+      examFreq: '31 Oct 2026',
+      fee: '₹12,00,000 (Total)',
+      website: 'adobe.com',
+      features: ['High Value', 'Research'],
+      link: '#',
+      icon: Star,
+      color: 'purple'
+    },
+    {
+      id: 'bharti-airtel',
+      title: 'Bharti Airtel Scholarship Program',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Bharti Foundation',
+      totalSchools: 'UG / PG Students',
+      classes: 'Merit-cum-means',
+      examFreq: '31 Oct 2026',
+      fee: '₹3,00,000',
+      website: 'buddy4study.com',
+      features: ['All-India', 'High Value'],
       link: '#',
       icon: Award,
       color: 'orange'
     },
     {
-      id: 'pmst',
-      title: 'Pathani Samanta Math Scholarship (PMST)',
-      type: 'State Scholarship',
+      id: 'iocl-sports',
+      title: 'IndianOil Sports Scholarship',
+      type: 'Corporate CSR',
       status: 'Coming Soon',
-      conductedBy: 'BSE Odisha',
-      totalSchools: 'Odisha Schools',
-      classes: 'Class VI, IX, XI',
-      examFreq: 'Annual (Dec)',
-      fee: 'Free',
-      website: 'bseodisha.ac.in',
-      features: ['Math Talent', 'Financial Reward'],
+      conductedBy: 'IOCL',
+      totalSchools: 'Sportspersons',
+      classes: 'Performance-based',
+      examFreq: '31 Oct 2026',
+      fee: '₹1.4L–₹2.4L/yr',
+      website: 'iocl.com',
+      features: ['Sports Focus', 'Elite Players'],
       link: '#',
-      icon: Calculator,
-      color: 'purple'
+      icon: Award,
+      color: 'green'
     },
     {
-      id: 'ntse',
-      title: 'National Talent Search Exam (NTSE)',
-      type: 'National Scholarship',
+      id: 'google-apac',
+      title: 'Generation Google Scholarship',
+      type: 'Corporate CSR',
       status: 'Coming Soon',
-      conductedBy: 'NCERT',
-      totalSchools: 'All India',
-      classes: 'Class X',
-      examFreq: 'Annual',
-      fee: 'Free',
-      website: 'ncert.nic.in',
-      features: ['Monthly Stipend', 'PhD Support'],
+      conductedBy: 'Google',
+      totalSchools: 'UG CS/STEM',
+      classes: 'Diversity & Merit',
+      examFreq: '31 Oct 2026',
+      fee: '₹2,10,000',
+      website: 'buildyourfuture.withgoogle.com',
+      features: ['Women in Tech', 'STEM Focus'],
       link: '#',
       icon: Star,
       color: 'blue'
+    },
+    {
+      id: 'idfc-mba',
+      title: 'IDFC FIRST Bank MBA Scholarship',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'IDFC FIRST Bank',
+      totalSchools: 'MBA Students',
+      classes: 'Enrolled in MBA',
+      examFreq: '31 Oct 2026',
+      fee: '₹1L–₹2L/year',
+      website: 'idfcfirstbank.com',
+      features: ['Merit-cum-means', 'All-India'],
+      link: '#',
+      icon: Building,
+      color: 'purple'
+    },
+    {
+      id: 'lnt-build',
+      title: 'L&T Build India Scholarship',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Larsen & Toubro',
+      totalSchools: 'Civil/Mech Final Yr',
+      classes: 'M.Tech Tie-up',
+      examFreq: '31 Oct 2026',
+      fee: '₹1.6L + M.Tech Fee',
+      website: 'lntecc.com',
+      features: ['Service Bond', 'Sponsorship'],
+      link: '#',
+      icon: Building,
+      color: 'orange'
+    },
+    {
+      id: 'infosys-stem',
+      title: 'Infosys Foundation STEM Stars',
+      type: 'NGO / Foundation',
+      status: 'Coming Soon',
+      conductedBy: 'Infosys Foundation',
+      totalSchools: '1st-yr Female UG',
+      classes: 'Income ≤₹8 Lakh',
+      examFreq: '31 Oct 2026',
+      fee: '₹1,00,000/year',
+      website: 'infosys.org',
+      features: ['Girls Only', 'STEM'],
+      link: '#',
+      icon: Star,
+      color: 'green'
+    },
+    {
+      id: 'loreal-fywis',
+      title: 'L’Oréal India FYWIS',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'L’Oréal India',
+      totalSchools: 'Women in Science',
+      classes: 'Science ≥85%',
+      examFreq: '31 Oct 2026',
+      fee: '₹62k–₹1L/year',
+      website: 'loreal.com',
+      features: ['Girls Only', 'UG/PG Science'],
+      link: '#',
+      icon: Award,
+      color: 'purple'
+    },
+    {
+      id: 'tata-realty',
+      title: 'Tata Realty Scholarship for Girls',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Tata Realty',
+      totalSchools: 'Girl Students',
+      classes: 'UG/Professional',
+      examFreq: '31 Oct 2026',
+      fee: '₹50k–₹1L',
+      website: 'buddy4study.com',
+      features: ['Merit-cum-means', 'Girls Only'],
+      link: '#',
+      icon: Building,
+      color: 'blue'
+    },
+    {
+      id: 'jsw-udaan',
+      title: 'JSW Udaan Scholarship',
+      type: 'NGO / Foundation',
+      status: 'Coming Soon',
+      conductedBy: 'JSW Foundation',
+      totalSchools: 'School/UG/PG',
+      classes: 'Merit-cum-means',
+      examFreq: '31 Oct 2026',
+      fee: '₹10k–₹60k',
+      website: 'buddy4study.com',
+      features: ['All-India', 'Multiple Tracks'],
+      link: '#',
+      icon: Award,
+      color: 'orange'
+    },
+    {
+      id: 'glow-lovely',
+      title: 'Glow & Lovely Careers',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Hindustan Unilever',
+      totalSchools: 'Women (UG/PG)',
+      classes: 'Marks Criteria',
+      examFreq: '31 Oct 2026',
+      fee: '₹25k–₹50k',
+      website: 'glowandlovelycareers.in',
+      features: ['Girls Only', 'Vocational'],
+      link: '#',
+      icon: Award,
+      color: 'green'
+    },
+    {
+      id: 'amazon-ffe',
+      title: 'Amazon Future Engineer',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Amazon & FFE',
+      totalSchools: '1st-yr CS/Engg',
+      classes: 'Merit-cum-means',
+      examFreq: '31 Dec 2026',
+      fee: '₹50,000/year',
+      website: 'ffe.org',
+      features: ['Tech Focus', 'All-India'],
+      link: '#',
+      icon: Star,
+      color: 'blue'
+    },
+    {
+      id: 'sitaram-jindal',
+      title: 'Sitaram Jindal Scholarship',
+      type: 'NGO / Foundation',
+      status: 'Coming Soon',
+      conductedBy: 'Sitaram Jindal Found.',
+      totalSchools: 'Class 11–PG, ITI',
+      classes: 'Income ≤₹4 Lakh',
+      examFreq: '30 Sep 2026',
+      fee: 'Up to ₹38k/year',
+      website: 'sitaramjindalfoundation.org',
+      features: ['All-India', 'Many Courses'],
+      link: '#',
+      icon: Building,
+      color: 'purple'
+    },
+    {
+      id: 'tata-pankh',
+      title: 'Tata Capital Pankh',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Tata Capital',
+      totalSchools: 'Class 11–12, UG',
+      classes: 'Economically Weaker',
+      examFreq: '15 Nov 2026',
+      fee: 'Up to ₹80,000',
+      website: 'tatacapital.com',
+      features: ['Merit-cum-means', 'All-India'],
+      link: '#',
+      icon: Award,
+      color: 'orange'
+    },
+    {
+      id: 'rolls-royce',
+      title: 'Rolls-Royce Wings4Her',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Rolls-Royce India',
+      totalSchools: 'Female STEM',
+      classes: 'Merit-cum-means',
+      examFreq: '30 Nov 2026',
+      fee: '₹25k–₹35k',
+      website: 'buddy4study.com',
+      features: ['Girls Only', 'STEM Focus'],
+      link: '#',
+      icon: Star,
+      color: 'blue'
+    },
+    {
+      id: 'lic-vidyadhan',
+      title: 'LIC HFL Vidyadhan',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'LIC HFL',
+      totalSchools: 'Class 8–PG',
+      classes: 'Income ≤₹3 Lakh',
+      examFreq: '31 Dec 2026',
+      fee: '₹10k–₹25k/year',
+      website: 'buddy4study.com',
+      features: ['All-India', 'Multiple Tracks'],
+      link: '#',
+      icon: Building,
+      color: 'green'
+    },
+    {
+      id: 'jn-tata',
+      title: 'JN Tata Endowment Loan',
+      type: 'NGO / Foundation',
+      status: 'Coming Soon',
+      conductedBy: 'Tata Trusts',
+      totalSchools: 'Grads going Abroad',
+      classes: 'Merit-based',
+      examFreq: 'Feb-Mar 2027',
+      fee: 'Loan (Varies)',
+      website: 'jntataendowment.org',
+      features: ['Overseas Study', 'Low Interest'],
+      link: '#',
+      icon: GraduationCap,
+      color: 'purple'
+    },
+    {
+      id: 'hdfc-ecss',
+      title: 'HDFC Parivartan ECSS',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'HDFC Bank',
+      totalSchools: 'Class 1–PG, ITI',
+      classes: 'Crisis / Low Income',
+      examFreq: '31 Oct 2026',
+      fee: '₹15k–₹75k/year',
+      website: 'buddy4study.com',
+      features: ['Crisis Support', 'All-India'],
+      link: '#',
+      icon: Shield,
+      color: 'blue'
+    },
+    {
+      id: 'reliance-ug',
+      title: 'Reliance Foundation UG',
+      type: 'NGO / Foundation',
+      status: 'Coming Soon',
+      conductedBy: 'Reliance Foundation',
+      totalSchools: '1st-yr Undergrads',
+      classes: 'Aptitude Test',
+      examFreq: 'Aug-Oct 2026',
+      fee: 'Up to ₹2,00,000',
+      website: 'scholarships.reliancefoundation.org',
+      features: ['5000 Awards', 'High Value'],
+      link: '#',
+      icon: Star,
+      color: 'orange'
+    },
+    {
+      id: 'sbi-asha',
+      title: 'SBI Foundation Asha',
+      type: 'NGO / Foundation',
+      status: 'Coming Soon',
+      conductedBy: 'SBI Foundation',
+      totalSchools: 'Class 6–PG',
+      classes: 'Income ≤₹6 Lakh',
+      examFreq: 'Sep-Nov 2026',
+      fee: '₹15,000+',
+      website: 'sbifoundation.in',
+      features: ['SC/ST Quota', 'All-India'],
+      link: '#',
+      icon: Building,
+      color: 'green'
+    },
+    {
+      id: 'vidyadhan',
+      title: 'Vidyadhan Scholarship',
+      type: 'NGO / Foundation',
+      status: 'Coming Soon',
+      conductedBy: 'Sarojini Damodaran',
+      totalSchools: 'Class 11 and UG',
+      classes: 'Low-income, Merit',
+      examFreq: 'May-Aug 2026',
+      fee: '₹10k–₹60k/year',
+      website: 'vidyadhan.org',
+      features: ['State-wise', 'Merit-cum-means'],
+      link: '#',
+      icon: Award,
+      color: 'purple'
+    },
+    {
+      id: 'colgate',
+      title: 'Colgate Keep India Smiling',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Colgate-Palmolive',
+      totalSchools: 'Class 11 Onwards',
+      classes: 'Merit-cum-means',
+      examFreq: 'Sep-Oct 2026',
+      fee: 'Up to ₹75,000',
+      website: 'colgatecares.co.in',
+      features: ['Sports/Dental', 'All-India'],
+      link: '#',
+      icon: Star,
+      color: 'blue'
+    },
+    {
+      id: 'legrand',
+      title: 'Legrand Empowering',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Group Legrand India',
+      totalSchools: 'PwD, Girls, LGBTQ+',
+      classes: 'Special Categories',
+      examFreq: 'Aug-Dec 2026',
+      fee: 'Up to ₹1L/year',
+      website: 'legrandscholarship.co.in',
+      features: ['Inclusivity', 'B.Tech/Arch'],
+      link: '#',
+      icon: Shield,
+      color: 'orange'
+    },
+    {
+      id: 'faea',
+      title: 'FAEA Undergraduate',
+      type: 'NGO / Foundation',
+      status: 'Coming Soon',
+      conductedBy: 'FAEA',
+      totalSchools: 'UG (SC/ST/BPL)',
+      classes: 'Socially Disadvantaged',
+      examFreq: 'Apr-Jun 2026',
+      fee: 'Full/Partial Fee',
+      website: 'faeaindia.org',
+      features: ['High Impact', 'Minorities'],
+      link: '#',
+      icon: Building,
+      color: 'green'
+    },
+    {
+      id: 'aakash-anthe',
+      title: 'Aakash ANTHE',
+      type: 'Coaching / Exam',
+      status: 'Coming Soon',
+      conductedBy: 'Aakash Institute',
+      totalSchools: 'Class 7–12',
+      classes: 'Exam-based',
+      examFreq: 'Sep-Oct 2026',
+      fee: '100% Fee Waiver',
+      website: 'aakash.ac.in',
+      features: ['Coaching', 'Merit-based'],
+      link: '#',
+      icon: BookOpen,
+      color: 'purple'
+    },
+    {
+      id: 'allen-tallentex',
+      title: 'Allen TALLENTEX',
+      type: 'Coaching / Exam',
+      status: 'Coming Soon',
+      conductedBy: 'Allen Institute',
+      totalSchools: 'Class 5–11',
+      classes: 'Exam-based',
+      examFreq: 'Sep-Nov 2026',
+      fee: 'Cash + Waivers',
+      website: 'tallentex.com',
+      features: ['Coaching', 'Cash Rewards'],
+      link: '#',
+      icon: Calculator,
+      color: 'blue'
+    },
+    {
+      id: 'aditya-birla',
+      title: 'Aditya Birla Scholarship',
+      type: 'Corporate CSR',
+      status: 'Coming Soon',
+      conductedBy: 'Aditya Birla Group',
+      totalSchools: 'Top IIT/IIM/NLU',
+      classes: 'Nominated by Inst.',
+      examFreq: 'Aug-Oct 2026',
+      fee: '₹1.5L–₹3L/year',
+      website: 'adityabirlascholars.net',
+      features: ['Elite Institutes', 'Prestigious'],
+      link: '#',
+      icon: Star,
+      color: 'orange'
     }
   ];
 
   const examFilters = ['All', 'National Level', 'Defence School', 'State (Odisha)', 'State (AP/TS)', 'State (Others)'];
-  const scholarshipFilters = ['All', 'Govt. Scholarship', 'State Scholarship', 'National Scholarship'];
+  const scholarshipFilters = ['All', 'Private Scholarship', 'Corporate CSR', 'NGO / Foundation', 'Coaching / Exam'];
 
   const activeData = activeTab === 'exams' ? exams : scholarships;
   const activeFilters = activeTab === 'exams' ? examFilters : scholarshipFilters;
@@ -546,7 +946,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
             </h1>
             
             <p className="text-[14px] sm:text-[15px] text-gray-600 max-w-xl mx-auto mb-8 font-medium leading-relaxed">
-              Discover highly curated school-level entrance exams and prestigious government scholarships designed for student growth. Well-researched, structured, and updated.
+              Discover highly curated school-level entrance exams and prestigious private scholarships designed for student growth. Well-researched, structured, and updated.
             </p>
 
             {/* Premium Sliding Toggle */}
@@ -624,31 +1024,41 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
                   <div className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5">{item.type}</div>
                   <h3 className="text-[18px] leading-snug font-black text-brand-dark mb-4 group-hover:text-brand-purple transition-colors line-clamp-2 min-h-[46px]">{item.title}</h3>
                   
-                  {/* Dense Data Grid (The Game Changer) */}
+                  {/* Dense Data Grid */}
                   <div className="grid grid-cols-2 gap-y-4 gap-x-3 mb-5 p-4 bg-white/60 rounded-xl border border-gray-100/60 flex-1">
                     <div>
-                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">Conducted By</span>
+                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">
+                        {activeTab === 'exams' ? 'Conducted By' : 'Provided By'}
+                      </span>
                       <span className="text-gray-800 text-[12px] font-bold line-clamp-2 leading-tight" title={item.conductedBy}>{item.conductedBy}</span>
                     </div>
                     <div>
-                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">Total Schools</span>
+                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">
+                        {activeTab === 'exams' ? 'Total Schools' : 'Target Audience'}
+                      </span>
                       <span className="text-gray-800 text-[12px] font-bold line-clamp-2 leading-tight">{item.totalSchools}</span>
                     </div>
                     <div>
-                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">Classes</span>
+                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">
+                        {activeTab === 'exams' ? 'Classes' : 'Eligibility'}
+                      </span>
                       <span className="text-gray-800 text-[12px] font-bold line-clamp-1">{item.classes}</span>
                     </div>
                     <div>
-                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">App Fee</span>
+                      <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">
+                        {activeTab === 'exams' ? 'App Fee' : 'Grant Amount'}
+                      </span>
                       <span className="text-gray-800 text-[12px] font-bold line-clamp-1">{item.fee}</span>
                     </div>
                     <div className="col-span-2 flex items-center justify-between border-t border-gray-100/80 pt-3 mt-1">
                        <div>
-                         <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">Exam Freq.</span>
+                         <span className="text-gray-400 block text-[9px] uppercase font-bold tracking-wider mb-1">
+                           {activeTab === 'exams' ? 'Exam Freq.' : 'Deadline'}
+                         </span>
                          <span className="text-gray-800 text-[12px] font-bold">{item.examFreq}</span>
                        </div>
-                       <a href={`https://${item.website}`} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[11px] font-bold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-2.5 py-1.5 rounded-lg transition-colors">
-                         {item.website} <ExternalLink className="w-3 h-3" />
+                       <a href={item.website.startsWith('http') ? item.website : `https://${item.website}`} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[11px] font-bold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-2.5 py-1.5 rounded-lg transition-colors">
+                         {item.website.replace(/^https?:\/\//, '').split('/')[0]} <ExternalLink className="w-3 h-3" />
                        </a>
                     </div>
                   </div>
