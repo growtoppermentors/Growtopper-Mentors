@@ -515,22 +515,33 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
                 <p className="text-gray-500 text-sm font-medium mb-6">Applications are processed via the official NTA portal. Preparation is key.</p>
                 
                 <div className="space-y-4 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-100">
-                      <Calendar className="w-5 h-5 text-gray-600" />
+                  <div className="flex items-center gap-3 group/item">
+                    <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center border border-rose-100 shrink-0 group-hover/item:scale-110 transition-transform">
+                      <Calendar className="w-5 h-5 text-rose-600" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">Registration Opens</div>
-                      <div className="text-sm font-black text-gray-900">Oct 2026 (Expected)</div>
+                      <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Registration Closes</div>
+                      <div className="text-sm font-black text-gray-900">30 Oct 2026</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-100">
-                      <Clock className="w-5 h-5 text-gray-600" />
+                  
+                  <div className="flex items-center gap-3 group/item">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center border border-blue-100 shrink-0 group-hover/item:scale-110 transition-transform">
+                      <Clock className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">Exam Date</div>
-                      <div className="text-sm font-black text-gray-900">Dec 2026 (Expected)</div>
+                      <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">NETS Exam Date</div>
+                      <div className="text-sm font-black text-gray-900">21 Dec 2026</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 group/item">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center border border-emerald-100 shrink-0 group-hover/item:scale-110 transition-transform">
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Results Declared</div>
+                      <div className="text-sm font-black text-gray-900">3 Jan 2027</div>
                     </div>
                   </div>
                 </div>
