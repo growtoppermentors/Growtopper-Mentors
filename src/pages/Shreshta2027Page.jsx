@@ -522,8 +522,9 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
 
           {/* Right Column - Sidebar */}
           <div className="lg:col-span-4 space-y-6 min-w-0 w-full">
+            <div className="sticky top-32 space-y-6">
             {/* Action Card */}
-            <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-xl shadow-blue-900/5 sticky top-32">
+            <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-xl shadow-blue-900/5">
               <h3 className="text-xl font-black text-gray-900 mb-2">Ready to Apply?</h3>
               <p className="text-gray-500 text-sm font-medium mb-6">Applications are processed via the official NTA portal. Preparation is key.</p>
               
@@ -572,6 +573,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
               <p className="text-sm text-amber-800 font-medium leading-relaxed">
                 NTA only conducts the NETS exam. The actual school seat allotment is handled purely by the MoSJ&E web counselling platform based on opening and closing ranks.
               </p>
+            </div>
             </div>
           </div>
 
