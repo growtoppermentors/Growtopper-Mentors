@@ -87,7 +87,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
       <Navbar onRequestInvite={onRequestInvite} />
       
       {/* Responsive Mobile Hero Section */}
-      <section className="pt-16 sm:pt-20 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <section className="pt-24 sm:pt-28 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <Link to="/exams-scholarships" className="hidden sm:inline-flex items-center gap-1.5 text-gray-500 hover:text-blue-600 transition-colors text-sm font-bold mb-4">
           <ArrowLeft className="w-4 h-4" /> Back to Exams
         </Link>
@@ -118,7 +118,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
       </section>
 
       {/* Sticky Navigation */}
-      <div className="sticky top-[72px] z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm overflow-x-auto w-full max-w-[100vw]">
+      <div className="hidden md:block sticky top-[72px] z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm overflow-x-auto w-full max-w-[100vw]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-1 sm:gap-4 py-2 sm:py-3 shrink-0 whitespace-nowrap">
             {navItems.map((item) => (
