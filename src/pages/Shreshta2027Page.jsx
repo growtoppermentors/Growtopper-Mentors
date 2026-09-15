@@ -97,9 +97,9 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
       </section>
 
       {/* Sticky Navigation */}
-      <div className="sticky top-[72px] z-40 bg-white/80 backdrop-blur-xl border-b border-gray-200 shadow-sm overflow-x-auto hide-scrollbar">
+      <div className="sticky top-[72px] z-40 bg-white/80 backdrop-blur-xl border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-1 sm:gap-2 py-3 min-w-max">
+          <div className="flex items-center gap-1 sm:gap-2 py-3 min-w-max overflow-x-auto hide-scrollbar">
             {sections.map((section) => {
               const Icon = section.icon;
               const isActive = activeSection === section.id;
@@ -130,12 +130,12 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
           <div className="lg:col-span-8 space-y-16">
             
             {/* Section 1: Overview & Modes */}
-            <section id="overview" className="scroll-mt-32">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center border border-blue-200">
-                  <Info className="w-6 h-6 text-blue-600" />
+            <section id="overview" className="scroll-mt-40 md:scroll-mt-48">
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-blue-100 flex items-center justify-center border border-blue-200">
+                  <Info className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </div>
-                <h2 className="text-3xl font-black text-gray-900">Mission & Operating Modes</h2>
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Mission & Operating Modes</h2>
               </div>
               
               <div className="prose prose-lg prose-blue max-w-none text-gray-600 font-medium leading-relaxed mb-8">
@@ -204,12 +204,12 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
             <hr className="border-gray-200" />
 
             {/* Section 2: Eligibility */}
-            <section id="eligibility" className="scroll-mt-32">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-100 flex items-center justify-center border border-indigo-200">
-                  <Users className="w-6 h-6 text-indigo-600" />
+            <section id="eligibility" className="scroll-mt-40 md:scroll-mt-48">
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-indigo-100 flex items-center justify-center border border-indigo-200">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
                 </div>
-                <h2 className="text-3xl font-black text-gray-900">Student Eligibility Criteria</h2>
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Student Eligibility Criteria</h2>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -263,12 +263,12 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
             <hr className="border-gray-200" />
 
             {/* Section 3: Financial Benefits */}
-            <section id="financials" className="scroll-mt-32">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center border border-emerald-200">
-                  <Award className="w-6 h-6 text-emerald-600" />
+            <section id="financials" className="scroll-mt-40 md:scroll-mt-48">
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-emerald-100 flex items-center justify-center border border-emerald-200">
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                 </div>
-                <h2 className="text-3xl font-black text-gray-900">Financial Benefits & Coverage</h2>
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Financial Benefits & Coverage</h2>
               </div>
               
               <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100 mb-8">
@@ -326,12 +326,12 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
             <hr className="border-gray-200" />
 
             {/* Section 4: Exam Pattern */}
-            <section id="exam" className="scroll-mt-32">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center border border-orange-200">
-                  <FileText className="w-6 h-6 text-orange-600" />
+            <section id="exam" className="scroll-mt-40 md:scroll-mt-48">
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-orange-100 flex items-center justify-center border border-orange-200">
+                  <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
                 </div>
-                <h2 className="text-3xl font-black text-gray-900">NETS Exam Pattern</h2>
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">NETS Exam Pattern</h2>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -354,8 +354,8 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
               </div>
 
               <div className="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden mb-6">
-                <div className="p-4 bg-gray-50 border-b border-gray-200 text-sm font-medium text-gray-600 flex items-center gap-2">
-                  <Info className="w-4 h-4" /> Syllabus is based on NCERT (Class 8 for 9th admission, Class 10 for 11th admission).
+                <div className="p-4 bg-gray-50 border-b border-gray-200 text-sm font-medium text-gray-600 flex items-start gap-2 sm:gap-3">
+                  <Info className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5" /> Syllabus is based on NCERT (Class 8 for 9th admission, Class 10 for 11th admission).
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse">
@@ -401,12 +401,12 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
             <hr className="border-gray-200" />
 
             {/* Section 5: Admission Process */}
-            <section id="admission" className="scroll-mt-32">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center border border-blue-200">
-                  <ListOrdered className="w-6 h-6 text-blue-600" />
+            <section id="admission" className="scroll-mt-40 md:scroll-mt-48">
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-blue-100 flex items-center justify-center border border-blue-200">
+                  <ListOrdered className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </div>
-                <h2 className="text-3xl font-black text-gray-900">Admission Process & Documents</h2>
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Admission Process & Documents</h2>
               </div>
 
               {/* Timeline Steps */}
@@ -473,12 +473,12 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
             <hr className="border-gray-200" />
 
             {/* Section 6: Guidelines */}
-            <section id="guidelines" className="scroll-mt-32 pb-8">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center border border-rose-200">
-                  <AlertTriangle className="w-6 h-6 text-rose-600" />
+            <section id="guidelines" className="scroll-mt-40 md:scroll-mt-48 pb-8">
+              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-rose-100 flex items-center justify-center border border-rose-200">
+                  <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 text-rose-600" />
                 </div>
-                <h2 className="text-3xl font-black text-gray-900">Hidden Clauses & Strict Guidelines</h2>
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Hidden Clauses & Strict Guidelines</h2>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
