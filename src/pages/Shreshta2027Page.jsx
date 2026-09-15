@@ -65,7 +65,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
       <Navbar onRequestInvite={onRequestInvite} />
 
       {/* Responsive Mobile Hero Section */}
-      <section className="pt-20 sm:pt-24 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <section className="pt-16 sm:pt-20 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <Link to="/exams-scholarships" className="inline-flex items-center gap-1.5 text-gray-500 hover:text-blue-600 transition-colors text-sm font-bold mb-4">
           <ArrowLeft className="w-4 h-4" /> Back to Exams
         </Link>
@@ -86,29 +86,13 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
               A central sector scheme providing meritorious SC students access to high-quality residential school education in top private CBSE/State Board schools across India.
             </p>
             
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-2 sm:gap-4 mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-2 sm:gap-4 mb-2">
               <span className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white rounded-md border border-gray-100 shadow-sm w-full sm:w-auto"><Users className="w-4 h-4 text-blue-500 shrink-0" /> ~3,000 Seats (Class 9 & 11)</span>
               <span className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white rounded-md border border-gray-100 shadow-sm w-full sm:w-auto"><Wallet className="w-4 h-4 text-blue-500 shrink-0" /> Up to ₹1.35L/Year</span>
               <span className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white rounded-md border border-gray-100 shadow-sm w-full sm:w-auto"><FileText className="w-4 h-4 text-blue-500 shrink-0" /> NETS Exam by NTA</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-              <a 
-                href="https://exams.nta.nic.in/shreshta/" 
-                target="_blank"
-                rel="noreferrer"
-                className="bg-blue-600 text-white px-6 sm:px-8 py-3.5 rounded-xl font-black text-sm sm:text-base hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 w-full sm:w-auto"
-              >
-                Official NTA Portal <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-              <button 
-                onClick={() => scrollToSection('eligibility')}
-                className="px-6 sm:px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow-sm w-full sm:w-auto"
-              >
-                Check Eligibility
-              </button>
             </div>
-          </div>
         </div>
       </section>
 
