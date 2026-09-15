@@ -131,12 +131,9 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
             
             {/* Section 1: Overview & Modes */}
             <section id="overview" className="scroll-mt-40 md:scroll-mt-48">
-              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-blue-100 flex items-center justify-center border border-blue-200">
-                  <Info className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Mission & Operating Modes</h2>
-              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+                <Info className="w-6 h-6 text-blue-600 shrink-0" /> Mission & Operating Modes
+              </h2>
               
               <div className="prose prose-lg prose-blue max-w-none text-gray-600 font-medium leading-relaxed mb-8">
                 <p>
@@ -145,7 +142,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
-                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                   <div className="relative z-10">
                     <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 font-black text-xs uppercase tracking-wider rounded-lg mb-4">
@@ -172,7 +169,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                   <div className="relative z-10">
                     <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 font-black text-xs uppercase tracking-wider rounded-lg mb-4">
@@ -205,30 +202,23 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
 
             {/* Section 2: Eligibility */}
             <section id="eligibility" className="scroll-mt-40 md:scroll-mt-48">
-              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-indigo-100 flex items-center justify-center border border-indigo-200">
-                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Student Eligibility Criteria</h2>
-              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+                <Users className="w-6 h-6 text-indigo-600 shrink-0" /> Student Eligibility Criteria
+              </h2>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-                  <div className="w-12 h-12 sm:w-10 sm:h-10 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
-                    <Shield className="w-6 h-6 sm:w-5 sm:h-5 text-orange-600" />
-                  </div>
+                <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+                  <div className="p-2.5 sm:p-3 bg-orange-50 text-orange-600 rounded-xl shrink-0"><Shield className="w-5 h-5 sm:w-6 sm:h-6" /></div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Caste Category</h3>
-                    <p className="text-sm text-gray-600 font-medium">Strictly reserved for candidates belonging to the Scheduled Caste (SC) category.</p>
+                    <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Caste Category</p>
+                    <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Strictly reserved for SC candidates.</p>
                   </div>
                 </div>
-                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-                  <div className="w-12 h-12 sm:w-10 sm:h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
-                    <Wallet className="w-6 h-6 sm:w-5 sm:h-5 text-emerald-600" />
-                  </div>
+                <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+                  <div className="p-2.5 sm:p-3 bg-emerald-50 text-emerald-600 rounded-xl shrink-0"><Wallet className="w-5 h-5 sm:w-6 sm:h-6" /></div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Income Limit</h3>
-                    <p className="text-sm text-gray-600 font-medium">Parental annual income from all sources must be <strong>≤ ₹2.5 lakh/year</strong>.</p>
+                    <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Income Limit</p>
+                    <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Annual income ≤ ₹2.5 lakh/year.</p>
                   </div>
                 </div>
               </div>
@@ -264,12 +254,9 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
 
             {/* Section 3: Financial Benefits */}
             <section id="financials" className="scroll-mt-40 md:scroll-mt-48">
-              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-emerald-100 flex items-center justify-center border border-emerald-200">
-                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Financial Benefits & Coverage</h2>
-              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+                <Award className="w-6 h-6 text-emerald-600 shrink-0" /> Financial Benefits & Coverage
+              </h2>
               
               <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100 mb-8">
                 <h3 className="text-lg font-black text-emerald-900 mb-2">100% Comprehensive Coverage (Mode 1)</h3>
@@ -327,12 +314,9 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
 
             {/* Section 4: Exam Pattern */}
             <section id="exam" className="scroll-mt-40 md:scroll-mt-48">
-              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-orange-100 flex items-center justify-center border border-orange-200">
-                  <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">NETS Exam Pattern</h2>
-              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+                <FileText className="w-6 h-6 text-orange-600 shrink-0" /> NETS Exam Pattern
+              </h2>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm text-center">
@@ -402,12 +386,9 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
 
             {/* Section 5: Admission Process */}
             <section id="admission" className="scroll-mt-40 md:scroll-mt-48">
-              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-blue-100 flex items-center justify-center border border-blue-200">
-                  <ListOrdered className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Admission Process & Documents</h2>
-              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+                <ListOrdered className="w-6 h-6 text-blue-600 shrink-0" /> Admission Process & Documents
+              </h2>
 
               {/* Timeline Steps */}
               <div className="space-y-6 mb-10">
@@ -474,12 +455,9 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
 
             {/* Section 6: Guidelines */}
             <section id="guidelines" className="scroll-mt-40 md:scroll-mt-48 pb-8">
-              <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-2xl bg-rose-100 flex items-center justify-center border border-rose-200">
-                  <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 text-rose-600" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">Hidden Clauses & Strict Guidelines</h2>
-              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-4 flex items-center gap-3">
+                <AlertTriangle className="w-6 h-6 text-rose-600 shrink-0" /> Hidden Clauses & Strict Guidelines
+              </h2>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm">
