@@ -99,7 +99,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
       {/* Sticky Navigation */}
       <div className="sticky top-[72px] z-40 bg-white/80 backdrop-blur-xl border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-1 sm:gap-2 py-3 min-w-max overflow-x-auto hide-scrollbar">
+          <div className="flex items-center gap-1 sm:gap-2 py-3 overflow-x-auto hide-scrollbar">
             {sections.map((section) => {
               const Icon = section.icon;
               const isActive = activeSection === section.id;
@@ -107,7 +107,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 ${
+                  className={`shrink-0 whitespace-nowrap flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 ${
                     isActive 
                       ? 'bg-blue-600 text-white shadow-md' 
                       : 'text-gray-600 hover:bg-blue-50 hover:text-blue-600'
