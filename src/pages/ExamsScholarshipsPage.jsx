@@ -100,7 +100,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       id: 'shreshta',
       title: 'SHRESHTA NETS',
       type: 'National Level',
-      status: 'Coming Soon',
+      status: 'Active',
       conductedBy: 'NTA (Min of Social Justice)',
       totalSchools: '100+ Top Pvt Schools',
       classes: 'IX, XI',
@@ -108,7 +108,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       fee: 'Free',
       website: 'shreshta.admissions.nic.in',
       features: ['SC/ST Focused', 'Fully Funded'],
-      link: '#',
+      link: '/shreshta2027',
       icon: Star,
       color: 'blue'
     },
