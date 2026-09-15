@@ -460,7 +460,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'adobe-ai',
       title: 'Adobe India AI Research Fellowship',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Adobe India',
       totalSchools: 'PG/PhD AI/ML',
@@ -492,7 +492,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'iocl-sports',
       title: 'IndianOil Sports Scholarship',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'IOCL',
       totalSchools: 'Sportspersons',
@@ -507,8 +507,8 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     },
     {
       id: 'google-apac',
-      title: 'Generation Google Scholarship',
-      type: 'Corporate CSR',
+      title: 'Generation Google Scholarship (APAC-India)',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Google',
       totalSchools: 'UG CS/STEM',
@@ -520,6 +520,22 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       link: '#',
       icon: Star,
       color: 'blue'
+    },
+    {
+      id: 'google-apac-2026',
+      title: 'Generation Google Scholarship (APAC)',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Google',
+      totalSchools: 'APAC UG CS Students',
+      classes: 'CS/STEM UG',
+      examFreq: '31 Oct 2026',
+      fee: '₹2,10,000',
+      website: 'buildyourfuture.withgoogle.com',
+      features: ['APAC Region', 'Diversity'],
+      link: '#',
+      icon: Star,
+      color: 'purple'
     },
     {
       id: 'idfc-mba',
@@ -538,9 +554,25 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       color: 'purple'
     },
     {
+      id: 'gail-sports',
+      title: 'GAIL Sports Scholarship Scheme',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'GAIL (India) Limited',
+      totalSchools: 'Sports trainees',
+      classes: 'Performance-tier',
+      examFreq: '31 Oct 2026',
+      fee: '₹1.4L–₹1.92L/year',
+      website: 'gailonline.com',
+      features: ['Sports Focus', 'Selection-based'],
+      link: '#',
+      icon: Award,
+      color: 'green'
+    },
+    {
       id: 'lnt-build',
       title: 'L&T Build India Scholarship',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Larsen & Toubro',
       totalSchools: 'Civil/Mech Final Yr',
@@ -556,7 +588,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'infosys-stem',
       title: 'Infosys Foundation STEM Stars',
-      type: 'NGO / Foundation',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Infosys Foundation',
       totalSchools: '1st-yr Female UG',
@@ -572,7 +604,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'loreal-fywis',
       title: 'L’Oréal India FYWIS',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'L’Oréal India',
       totalSchools: 'Women in Science',
@@ -588,7 +620,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'tata-realty',
       title: 'Tata Realty Scholarship for Girls',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Tata Realty',
       totalSchools: 'Girl Students',
@@ -604,7 +636,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'jsw-udaan',
       title: 'JSW Udaan Scholarship',
-      type: 'NGO / Foundation',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'JSW Foundation',
       totalSchools: 'School/UG/PG',
@@ -620,7 +652,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'glow-lovely',
       title: 'Glow & Lovely Careers',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Hindustan Unilever',
       totalSchools: 'Women (UG/PG)',
@@ -636,7 +668,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'amazon-ffe',
       title: 'Amazon Future Engineer',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Amazon & FFE',
       totalSchools: '1st-yr CS/Engg',
@@ -652,7 +684,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'sitaram-jindal',
       title: 'Sitaram Jindal Scholarship',
-      type: 'NGO / Foundation',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Sitaram Jindal Found.',
       totalSchools: 'Class 11–PG, ITI',
@@ -668,7 +700,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'tata-pankh',
       title: 'Tata Capital Pankh',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Tata Capital',
       totalSchools: 'Class 11–12, UG',
@@ -684,7 +716,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'rolls-royce',
       title: 'Rolls-Royce Wings4Her',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Rolls-Royce India',
       totalSchools: 'Female STEM',
@@ -698,9 +730,41 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       color: 'blue'
     },
     {
+      id: 'tata-aia',
+      title: 'TATA AIA PARAS Scholarship',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'TATA AIA Life',
+      totalSchools: 'School/College',
+      classes: 'Merit-cum-means',
+      examFreq: '30 Nov 2026',
+      fee: '₹15,000',
+      website: 'buddy4study.com',
+      features: ['Weaker Sections', 'All-India'],
+      link: '#',
+      icon: Shield,
+      color: 'orange'
+    },
+    {
+      id: 'ongc-sports',
+      title: 'ONGC Sports Scholarship Scheme',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'ONGC',
+      totalSchools: 'Recognised athletes',
+      classes: 'State/National level',
+      examFreq: '31 Dec 2026',
+      fee: '₹1.8L–₹3.6L/year',
+      website: 'ongcindia.com',
+      features: ['Sports Focus', 'Elite Players'],
+      link: '#',
+      icon: Award,
+      color: 'purple'
+    },
+    {
       id: 'lic-vidyadhan',
       title: 'LIC HFL Vidyadhan',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'LIC HFL',
       totalSchools: 'Class 8–PG',
@@ -716,7 +780,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'jn-tata',
       title: 'JN Tata Endowment Loan',
-      type: 'NGO / Foundation',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Tata Trusts',
       totalSchools: 'Grads going Abroad',
@@ -730,9 +794,41 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       color: 'purple'
     },
     {
+      id: 'jk-tyre',
+      title: 'JK Tyre Shiksha Sarthi',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'JK Tyre',
+      totalSchools: 'Drivers\' daughters',
+      classes: 'Father is driver',
+      examFreq: 'Sep 2026',
+      fee: '₹15k–₹25k',
+      website: 'buddy4study.com',
+      features: ['Girls Only', 'Specific States'],
+      link: '#',
+      icon: Building,
+      color: 'blue'
+    },
+    {
+      id: 'virtusa',
+      title: 'Virtusa Engineering Excellence',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Virtusa Foundation',
+      totalSchools: '1st/2nd yr B.Tech',
+      classes: 'Income <₹6L',
+      examFreq: 'Aug-Oct 2026',
+      fee: '₹50,000/year',
+      website: 'buddy4study.com',
+      features: ['Engineering', 'Merit-based'],
+      link: '#',
+      icon: Star,
+      color: 'orange'
+    },
+    {
       id: 'hdfc-ecss',
       title: 'HDFC Parivartan ECSS',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'HDFC Bank',
       totalSchools: 'Class 1–PG, ITI',
@@ -746,25 +842,265 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       color: 'blue'
     },
     {
+      id: 'panasonic',
+      title: 'Panasonic Ratti Chhatr',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Panasonic India',
+      totalSchools: '1st yr B.Tech (IITs)',
+      classes: 'IIT entrants',
+      examFreq: '20 Aug 2026',
+      fee: '₹70,250/year',
+      website: 'buddy4study.com',
+      features: ['IIT Students', 'Merit-based'],
+      link: '#',
+      icon: Building,
+      color: 'purple'
+    },
+    {
+      id: 'kotak-kanya',
+      title: 'Kotak Kanya & Suraksha',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Kotak Mahindra Group',
+      totalSchools: '1st yr Girls & PwD',
+      classes: 'Income <₹6L',
+      examFreq: 'Jun-Sep 2026',
+      fee: '₹1,50,000/year',
+      website: 'kotakeducation.org',
+      features: ['Girls & PwD', 'Professional UG'],
+      link: '#',
+      icon: Star,
+      color: 'green'
+    },
+    {
+      id: 'santoor',
+      title: 'Santoor Scholarship Program',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Wipro',
+      totalSchools: 'Girls in AP/KA/TS/CG',
+      classes: 'Govt school passouts',
+      examFreq: 'Aug-Oct 2026',
+      fee: '₹24,000/year',
+      website: 'buddy4study.com',
+      features: ['Regional', 'Girls Only'],
+      link: '#',
+      icon: Award,
+      color: 'orange'
+    },
+    {
       id: 'reliance-ug',
-      title: 'Reliance Foundation UG',
-      type: 'NGO / Foundation',
+      title: 'Reliance Foundation UG/PG',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Reliance Foundation',
-      totalSchools: '1st-yr Undergrads',
+      totalSchools: '1st-yr Undergrads/PG',
       classes: 'Aptitude Test',
       examFreq: 'Aug-Oct 2026',
-      fee: 'Up to ₹2,00,000',
+      fee: 'Up to ₹6,00,000 (PG)',
       website: 'scholarships.reliancefoundation.org',
-      features: ['5000 Awards', 'High Value'],
+      features: ['5000+ Awards', 'High Value'],
       link: '#',
       icon: Star,
       color: 'orange'
     },
     {
+      id: 'swayam',
+      title: 'SWAYAM Trust Aspire',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'SWAYAM Trust',
+      totalSchools: '1st yr B.Tech',
+      classes: '11 Listed Institutes',
+      examFreq: 'Jul-Sep 2026',
+      fee: 'Full Academic Exp',
+      website: 'buddy4study.com',
+      features: ['Full Funding', 'IITs/IIITs'],
+      link: '#',
+      icon: Building,
+      color: 'purple'
+    },
+    {
+      id: 'tata-means',
+      title: 'Tata Trusts Means Grant',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Tata Trusts',
+      totalSchools: 'UG/PG students',
+      classes: 'Means-tested',
+      examFreq: 'Mid-year 2026',
+      fee: '₹5k–₹50k/year',
+      website: 'tatatrusts.org',
+      features: ['Fee Reimbursement', 'All-India'],
+      link: '#',
+      icon: Shield,
+      color: 'blue'
+    },
+    {
+      id: 'infosys-nonstem',
+      title: 'Infosys Foundation (Non-STEM)',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Infosys Foundation',
+      totalSchools: 'UG students',
+      classes: 'Income ≤₹8L',
+      examFreq: 'Annual 2026',
+      fee: 'Approx ₹1,00,000/yr',
+      website: 'infosys.org',
+      features: ['Merit-cum-means', 'All-India'],
+      link: '#',
+      icon: GraduationCap,
+      color: 'green'
+    },
+    {
+      id: 'kotak-shiksha',
+      title: 'Kotak Shiksha Nidhi',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Kotak Ed Foundation',
+      totalSchools: 'School/College',
+      classes: 'COVID-19 Loss',
+      examFreq: 'Mid-year 2026',
+      fee: 'Varies',
+      website: 'kotakeducation.org',
+      features: ['Crisis Support', 'All-India'],
+      link: '#',
+      icon: Shield,
+      color: 'orange'
+    },
+    {
+      id: 'lic-golden',
+      title: 'LIC Golden Jubilee',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'LIC Foundation',
+      totalSchools: 'Class 11 onwards',
+      classes: 'Economically weaker',
+      examFreq: 'Dec 2026',
+      fee: '₹20k–₹30k/year',
+      website: 'licindia.in',
+      features: ['Merit-based', 'All-India'],
+      link: '#',
+      icon: Award,
+      color: 'blue'
+    },
+    {
+      id: 'ffe-schol',
+      title: 'Foundation for Excellence (FFE)',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'FFE',
+      totalSchools: 'Engg/Medical UG',
+      classes: 'Low-income, High marks',
+      examFreq: 'Annual 2026',
+      fee: '₹50,000+ per year',
+      website: 'ffe.org',
+      features: ['Professional Courses', 'Merit-cum-means'],
+      link: '#',
+      icon: Star,
+      color: 'purple'
+    },
+    {
+      id: 'rajendra-prasad',
+      title: 'Dr Rajendra Prasad Scholarship',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Private Trust/NGO',
+      totalSchools: 'Class 10+ students',
+      classes: 'Merit-cum-means',
+      examFreq: '30 Sep 2026',
+      fee: 'Varies',
+      website: 'buddy4study.com',
+      features: ['All-India', 'School & College'],
+      link: '#',
+      icon: Building,
+      color: 'green'
+    },
+    {
+      id: 'vivo-kanya',
+      title: 'vivo KanyaGyaan',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'vivo India (CSR)',
+      totalSchools: 'Girls in STEM',
+      classes: 'School/College',
+      examFreq: 'Annual 2026',
+      fee: 'Varies',
+      website: 'buddy4study.com',
+      features: ['Girls Only', 'STEM Focus'],
+      link: '#',
+      icon: Star,
+      color: 'blue'
+    },
+    {
+      id: 'vidyasaarathi',
+      title: 'Vidyasaarathi Portal',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'NSDL e-Gov',
+      totalSchools: 'School to PG',
+      classes: 'Multiple CSR schemes',
+      examFreq: 'Rolling 2026',
+      fee: '₹10k–₹70k/year',
+      website: 'vidyasaarathi.co.in',
+      features: ['Platform', 'Various Corporates'],
+      link: '#',
+      icon: Building,
+      color: 'orange'
+    },
+    {
+      id: 'agnipankh',
+      title: 'Agnipankh Scholarship Exam',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Private Organiser',
+      totalSchools: 'Class 1–10',
+      classes: 'Exam performance',
+      examFreq: 'Annual 2026',
+      fee: 'Merit Cash Awards',
+      website: 'hbkcareers.org',
+      features: ['Exam-based', 'All-India'],
+      link: '#',
+      icon: Calculator,
+      color: 'purple'
+    },
+    {
+      id: 'pwsat',
+      title: 'PW Scholarship Test (PWSAT)',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'PhysicsWallah (PW)',
+      totalSchools: 'Class 6–12',
+      classes: 'Exam-based',
+      examFreq: 'Year-round 2026',
+      fee: 'Up to 90% Waiver',
+      website: 'pw.live',
+      features: ['Coaching', 'Fee Waiver'],
+      link: '#',
+      icon: BookOpen,
+      color: 'blue'
+    },
+    {
+      id: 'nikon',
+      title: 'Nikon Scholarship Programme',
+      type: 'Private Scholarship',
+      status: 'Coming Soon',
+      conductedBy: 'Nikon India',
+      totalSchools: 'Photo/Media students',
+      classes: 'Merit-cum-means',
+      examFreq: '23 Sep 2026',
+      fee: 'Varies',
+      website: 'buddy4study.com',
+      features: ['Media Focus', 'All-India'],
+      link: '#',
+      icon: Star,
+      color: 'green'
+    },
+    {
       id: 'sbi-asha',
       title: 'SBI Foundation Asha',
-      type: 'NGO / Foundation',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'SBI Foundation',
       totalSchools: 'Class 6–PG',
@@ -780,7 +1116,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'vidyadhan',
       title: 'Vidyadhan Scholarship',
-      type: 'NGO / Foundation',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Sarojini Damodaran',
       totalSchools: 'Class 11 and UG',
@@ -796,7 +1132,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'colgate',
       title: 'Colgate Keep India Smiling',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Colgate-Palmolive',
       totalSchools: 'Class 11 Onwards',
@@ -812,7 +1148,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'legrand',
       title: 'Legrand Empowering',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Group Legrand India',
       totalSchools: 'PwD, Girls, LGBTQ+',
@@ -828,7 +1164,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'faea',
       title: 'FAEA Undergraduate',
-      type: 'NGO / Foundation',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'FAEA',
       totalSchools: 'UG (SC/ST/BPL)',
@@ -844,7 +1180,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'aakash-anthe',
       title: 'Aakash ANTHE',
-      type: 'Coaching / Exam',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Aakash Institute',
       totalSchools: 'Class 7–12',
@@ -860,7 +1196,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'allen-tallentex',
       title: 'Allen TALLENTEX',
-      type: 'Coaching / Exam',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Allen Institute',
       totalSchools: 'Class 5–11',
@@ -876,7 +1212,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
     {
       id: 'aditya-birla',
       title: 'Aditya Birla Scholarship',
-      type: 'Corporate CSR',
+      type: 'Private Scholarship',
       status: 'Coming Soon',
       conductedBy: 'Aditya Birla Group',
       totalSchools: 'Top IIT/IIM/NLU',
@@ -892,7 +1228,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
   ];
 
   const examFilters = ['All', 'National Level', 'Defence School', 'State (Odisha)', 'State (AP/TS)', 'State (Others)'];
-  const scholarshipFilters = ['All', 'Private Scholarship', 'Corporate CSR', 'NGO / Foundation', 'Coaching / Exam'];
+  const scholarshipFilters = ['All', 'National Scholarship', 'State Scholarship', 'Private Scholarship'];
 
   const activeData = activeTab === 'exams' ? exams : scholarships;
   const activeFilters = activeTab === 'exams' ? examFilters : scholarshipFilters;
@@ -963,7 +1299,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
                 Exams
               </button>
               <button 
-                onClick={() => { setActiveTab('scholarships'); setScholarshipFilter('All'); }}
+                onClick={() => { setActiveTab('scholarships'); setScholarshipFilter('Private Scholarship'); }}
                 className={`relative z-10 flex-1 py-2.5 text-[13px] font-black transition-colors flex justify-center items-center gap-1 whitespace-nowrap ${activeTab === 'scholarships' ? 'text-white' : 'text-gray-500 hover:text-gray-900'}`}
               >
                 <Award className={`w-3.5 h-3.5 ${activeTab === 'scholarships' ? 'text-white' : 'text-gray-400'}`} /> 
@@ -1092,7 +1428,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
                 <Filter className="w-6 h-6 text-gray-300" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">No matches found</h3>
-              <p className="text-gray-500 text-[14px]">Try selecting a different filter category.</p>
+              <p className="text-gray-500 text-[14px]">Try selecting a different filter category or check back later.</p>
             </div>
           )}
         </div>
