@@ -53,7 +53,7 @@ const Jnv2027Page = ({ onRequestInvite }) => {
 
       {/* Responsive Mobile Hero Section */}
       <section className="pt-16 sm:pt-20 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <Link to="/exams-scholarships" className="inline-flex items-center gap-1.5 text-gray-500 hover:text-blue-600 transition-colors text-sm font-bold mb-4">
+        <Link to="/exams-scholarships" className="hidden sm:inline-flex items-center gap-1.5 text-gray-500 hover:text-blue-600 transition-colors text-sm font-bold mb-4">
           <ArrowLeft className="w-4 h-4" /> Back to Exams
         </Link>
         <div className="bg-gradient-to-br from-[#F0F4F8] via-white to-[#E6EDF5] rounded-[24px] sm:rounded-[32px] border border-blue-100 shadow-sm p-5 sm:p-8 text-center relative overflow-hidden">

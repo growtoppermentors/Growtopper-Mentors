@@ -26,6 +26,30 @@ import {
   ListOrdered
 } from 'lucide-react';
 
+
+const GradientCard = ({ title, icon: Icon, children, theme = 'blue', className = "" }) => {
+  const themes = {
+    blue: 'from-blue-50/50 to-white border-blue-100',
+    indigo: 'from-indigo-50/50 to-white border-indigo-100',
+    purple: 'from-purple-50/50 to-white border-purple-100',
+    emerald: 'from-emerald-50/50 to-white border-emerald-100',
+    orange: 'from-orange-50/50 to-white border-orange-100',
+    slate: 'from-slate-50/50 to-white border-slate-100',
+    red: 'from-red-50/50 to-white border-red-100'
+  };
+  return (
+    <div className={`p-6 sm:p-8 rounded-3xl bg-gradient-to-br ${themes[theme]} border shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group ${className}`}>
+      <div className="flex items-center gap-4 mb-4 relative z-10">
+        <div className="p-3 rounded-2xl bg-white shadow-sm shrink-0 group-hover:scale-110 transition-transform">
+          <Icon className={`w-6 h-6 text-${theme}-600`} />
+        </div>
+        <h3 className="font-bold text-xl sm:text-2xl text-gray-900">{title}</h3>
+      </div>
+      <div className="relative z-10">{children}</div>
+    </div>
+  );
+};
+
 const Shreshta2027Page = ({ onRequestInvite }) => {
   const [activeSection, setActiveSection] = useState('overview');
 
@@ -66,7 +90,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
 
       {/* Responsive Mobile Hero Section */}
       <section className="pt-16 sm:pt-20 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <Link to="/exams-scholarships" className="inline-flex items-center gap-1.5 text-gray-500 hover:text-blue-600 transition-colors text-sm font-bold mb-4">
+        <Link to="/exams-scholarships" className="hidden sm:inline-flex items-center gap-1.5 text-gray-500 hover:text-blue-600 transition-colors text-sm font-bold mb-4">
           <ArrowLeft className="w-4 h-4" /> Back to Exams
         </Link>
         <div className="bg-gradient-to-br from-[#F0F4F8] via-white to-[#E6EDF5] rounded-[24px] sm:rounded-[32px] border border-blue-100 shadow-sm p-5 sm:p-8 text-center relative overflow-hidden">
