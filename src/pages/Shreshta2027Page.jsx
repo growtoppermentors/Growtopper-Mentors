@@ -147,11 +147,11 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
       </div>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full overflow-hidden sm:overflow-visible">
         <div className="grid lg:grid-cols-12 gap-10">
           
           {/* Left Column - Content */}
-          <div className="lg:col-span-8 space-y-16">
+          <div className="lg:col-span-8 space-y-16 min-w-0 w-full">
             
             {/* Section 1: Overview & Modes */}
             <section id="overview" className="scroll-mt-40 md:scroll-mt-48">
@@ -521,7 +521,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
           </div>
 
           {/* Right Column - Sidebar */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-4 space-y-6 min-w-0 w-full">
             {/* Action Card */}
             <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-xl shadow-blue-900/5 sticky top-32">
               <h3 className="text-xl font-black text-gray-900 mb-2">Ready to Apply?</h3>
