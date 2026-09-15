@@ -1333,6 +1333,11 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
 
   const displayedData = activeData.filter(item => currentFilter === 'All' || item.type === currentFilter);
 
+  const getFilterCount = (filter) => {
+    if (filter === 'All') return activeData.length;
+    return activeData.filter(item => item.type === filter).length;
+  };
+
   const getColorStyles = (color) => {
     switch (color) {
       case 'purple': return { bg: 'bg-gradient-to-b from-[#F9F7FF] to-white', iconBg: 'bg-[#F4F1FF]', text: 'text-[#5B10FF]', border: 'border-[#5B10FF]/15', hoverBorder: 'hover:border-[#5B10FF]/30' };
@@ -1410,24 +1415,32 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
       {/* Filter & Content Section */}
       <section className="pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         {/* Dynamic Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2 pb-4 mb-4 sm:mb-6 justify-center px-1">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 pb-4 mb-4 sm:mb-6 justify-center px-1">
           <div className="hidden sm:flex items-center gap-1.5 text-gray-400 mr-1 shrink-0">
             <Filter className="w-3.5 h-3.5" />
-            <span className="text-[11px] font-bold uppercase tracking-wider">Filter By:</span>
+            <span className="text-[11px] font-bold uppercase tracking-wider">Filter:</span>
           </div>
           {activeFilters.map(filter => {
             const isActive = currentFilter === filter;
+            const count = getFilterCount(filter);
             return (
               <button
                 key={filter}
                 onClick={() => setCurrentFilter(filter)}
-                className={`whitespace-nowrap px-4 py-2 rounded-full font-bold text-[12px] transition-all duration-300 border ${
+                className={`whitespace-nowrap inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full font-bold text-[11px] sm:text-[12px] transition-all duration-300 border ${
                   isActive 
-                    ? 'bg-gray-900 text-white border-gray-900 shadow-sm' 
-                    : 'bg-white text-gray-500 border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                    ? 'bg-gray-900 text-white border-gray-900 shadow-md scale-[1.02]' 
+                    : 'bg-white text-gray-500 border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm'
                 }`}
               >
                 {filter}
+                <span className={`inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 rounded-full text-[10px] font-black transition-all ${
+                  isActive
+                    ? 'bg-white/20 text-white'
+                    : 'bg-gray-100 text-gray-500'
+                }`}>
+                  {count}
+                </span>
               </button>
             )
           })}
