@@ -68,7 +68,7 @@ export default function Home({ openModal }) {
         <div className="text-center max-w-3xl mx-auto mb-6 w-full mt-auto">
           <h1 className="text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.05] tracking-tight mb-4 text-balance">
             Mentor for Everything.<br/>
-            Get a mentor for <span className="whitespace-nowrap text-[#5B10FF]">10X growth.</span>
+            Get a mentor for <span className="whitespace-nowrap text-shimmer-premium font-black">10X growth.</span>
           </h1>
           <p className="text-[14px] text-gray-500 font-medium leading-relaxed mt-4">
             Not a Coaching Class. Not an App.<br/>
@@ -192,7 +192,7 @@ export default function Home({ openModal }) {
             HOW IT WORKS
           </div>
           <h2 className="text-[28px] md:text-[38px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3 text-balance">
-            A Simple 3-Step Journey<br/>to <span className="text-[#5B10FF]">10X Growth.</span>
+            A Simple 3-Step Journey<br/>to <span className="text-shimmer-premium font-black">10X Growth.</span>
           </h2>
           <p className="text-[14px] md:text-[15px] text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">
             From clarity to execution to long-term success — everything your child needs, guided by the right mentor.
