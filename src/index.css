@@ -89,9 +89,9 @@
   background: linear-gradient(
     110deg,
     #5B10FF 35%,
-    #d1b8ff 45%,
-    #ffffff 50%,
-    #d1b8ff 55%,
+    #884dff 45%,
+    #c4a3ff 50%,
+    #884dff 55%,
     #5B10FF 65%
   );
   background-size: 250% auto;
@@ -99,7 +99,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   animation: modern-shine 5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-  filter: drop-shadow(0px 2px 12px rgba(91, 16, 255, 0.3));
+  filter: drop-shadow(0px 1px 6px rgba(91, 16, 255, 0.2));
   display: inline-block;
   padding-bottom: 0.2em;
   margin-bottom: -0.2em;
