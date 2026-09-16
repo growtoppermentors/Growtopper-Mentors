@@ -79,16 +79,26 @@
 }
 
 
-/* Premium Text Shimmer Effect */
-@keyframes shimmer-text {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+
+/* Modern 2026 Premium Text Shimmer */
+@keyframes modern-shine {
+  0%, 15% { background-position: 200% center; }
+  85%, 100% { background-position: -200% center; }
 }
 .text-shimmer-premium {
-  background: linear-gradient(to right, #5B10FF 20%, #B28DFF 40%, #B28DFF 60%, #5B10FF 80%);
-  background-size: 200% auto;
+  background: linear-gradient(
+    110deg,
+    #5B10FF 35%,
+    #d1b8ff 45%,
+    #ffffff 50%,
+    #d1b8ff 55%,
+    #5B10FF 65%
+  );
+  background-size: 250% auto;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: shimmer-text 4s linear infinite;
+  animation: modern-shine 5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  filter: drop-shadow(0px 2px 12px rgba(91, 16, 255, 0.3));
+  display: inline-block;
 }
