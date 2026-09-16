@@ -82,7 +82,7 @@ export default function Footer({ onRequestInvite }) {
 
           {/* Program */}
           <div>
-            <h4 className="font-black text-brand-dark text-[13px] uppercase tracking-widest mb-6">Explore</h4>
+            <h2 className="font-black text-brand-dark text-[13px] uppercase tracking-widest mb-6">Explore</h2>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 max-w-[280px] mx-auto lg:mx-0 text-center lg:text-left">
               {[
                 { label: '30 Days Growth Challenge', href: '/30-days-growth-challenge' },
@@ -101,7 +101,7 @@ export default function Footer({ onRequestInvite }) {
 
           {/* Legal */}
           <div>
-            <h4 className="font-black text-brand-dark text-[13px] uppercase tracking-widest mb-6">Legal</h4>
+            <h2 className="font-black text-brand-dark text-[13px] uppercase tracking-widest mb-6">Legal</h2>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 max-w-[280px] mx-auto lg:mx-0 text-center lg:text-left">
               {[
                 { label: 'Privacy Policy', href: '/privacy-policy' },
@@ -116,7 +116,7 @@ export default function Footer({ onRequestInvite }) {
 
           {/* Contact */}
           <div>
-            <h4 className="font-black text-brand-dark text-[13px] uppercase tracking-widest mb-6">Contact</h4>
+            <h2 className="font-black text-brand-dark text-[13px] uppercase tracking-widest mb-6">Contact</h2>
             <ul className="space-y-3 flex flex-col items-center lg:items-start">
               <li className="flex items-center gap-2.5 text-[13px] text-gray-500 font-bold">
                 <Mail className="w-4 h-4 shrink-0 text-brand-purple" />
