@@ -3,15 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Analytics from './components/utils/Analytics';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import Hero from './components/sections/Hero';
-import Pillars from './components/sections/Pillars';
-import Journey from './components/sections/Journey';
-import ProblemSection from './components/sections/ProblemSection';
-import DifferenceSection from './components/sections/DifferenceSection';
-import CohortSection from './components/sections/CohortSection';
-import PricingSection from './components/sections/PricingSection';
-import FAQ from './components/sections/FAQ';
-import FinalCTA from './components/sections/FinalCTA';
 import ApplicationModal from './components/ui/ApplicationModal';
 import LiveNotification from './components/ui/LiveNotification';
 const SyllabusPage = React.lazy(() => import('./pages/SyllabusPage'));
@@ -21,32 +12,13 @@ const Aissee2027Page = React.lazy(() => import('./pages/Aissee2027Page'));
 const Shreshta2027Page = React.lazy(() => import('./pages/Shreshta2027Page'));
 const TermsOfService = React.lazy(() => import('./pages/TermsOfService'));
 import Home from './pages/Home';
+const OldHomePage = React.lazy(() => import('./pages/OldHomePage'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 const ClaritySession = React.lazy(() => import('./pages/ClaritySession'));
 const BlogList = React.lazy(() => import('./pages/BlogList'));
 const BlogPost = React.lazy(() => import('./pages/BlogPost'));
 const Oav2027Page = React.lazy(() => import('./pages/Oav2027Page'));
 const Jnv2027Page = React.lazy(() => import('./pages/Jnv2027Page'));
-
-function HomePage({ openModal }) {
-  return (
-    <div className="min-h-screen bg-white text-[#111827] font-sans">
-      <Navbar onRequestInvite={openModal} />
-      <main>
-        <Hero onRequestInvite={openModal} />
-        <Pillars />
-        <Journey />
-        <ProblemSection />
-        <DifferenceSection />
-        <CohortSection onRequestInvite={openModal} />
-        <PricingSection onRequestInvite={openModal} />
-        <FAQ />
-        <FinalCTA onRequestInvite={openModal} />
-      </main>
-      <Footer onRequestInvite={openModal} />
-    </div>
-  );
-}
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -117,7 +89,7 @@ function App() {
           <Route path="/" element={<Home openModal={openModal} />} />
 
           {/* Old landing page moved to /30-days-growth-challenge */}
-          <Route path="/30-days-growth-challenge" element={<HomePage openModal={openModal} />} />
+          <Route path="/30-days-growth-challenge" element={<OldHomePage openModal={openModal} />} />
 
           <Route path="/syllabus" element={<SyllabusPage onRequestInvite={openModal} />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -667,7 +667,7 @@ export default function Home({ openModal }) {
           <div className="flex overflow-x-auto gap-5 pb-8 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {/* Nav button left hidden on mobile */}
             <div className="hidden lg:flex flex-col justify-center shrink-0 pr-2">
-              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
+              <button aria-label="Previous mentor" className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
                 <ArrowLeft className="w-5 h-5" />
               </button>
             </div>
@@ -735,7 +735,7 @@ export default function Home({ openModal }) {
             ))}
 
             <div className="hidden lg:flex flex-col justify-center shrink-0 pl-2">
-              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
+              <button aria-label="Next mentor" className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
