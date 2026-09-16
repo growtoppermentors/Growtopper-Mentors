@@ -66,6 +66,15 @@ export default function Home({ openModal }) {
       {/* Hero Section (Strictly Full Viewport Height) */}
       <section className="px-4 w-full flex flex-col items-center justify-center min-h-[100dvh] pt-20 pb-4 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-6 w-full mt-auto">
+          
+          {/* Top Pill Badge */}
+          <div className="bg-white border border-gray-200 rounded-full px-5 py-2 inline-flex items-center gap-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.04)] mb-6 mt-2 lg:mt-0 mx-auto">
+            <div className="w-2 h-2 rounded-full bg-[#5B10FF] animate-pulse"></div>
+            <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#5B10FF]">
+              Grades 6–12 • Invite Only
+            </span>
+          </div>
+
           <h1 className="text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.05] tracking-tight mb-4 text-balance">
             Mentor for Everything.<br/>
             Get a mentor for <span className="whitespace-nowrap text-shimmer-premium font-black">10X growth.</span>
