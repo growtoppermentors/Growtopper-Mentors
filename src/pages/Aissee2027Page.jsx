@@ -160,7 +160,7 @@ const Aissee2027Page = ({ onRequestInvite }) => {
                   <h4 className="font-bold text-gray-900">2. Sainik School Sambalpur</h4>
                   <p className="text-xs sm:text-sm text-gray-600 mt-1">Est: 2020 | District: Sambalpur</p>
                 </div>
-                <a href="https://sainikschoolsambalpur.in" target="_blank" rel="noreferrer" className="text-xs text-indigo-600 bg-white px-3 py-1.5 rounded-full border border-indigo-200 font-semibold mt-3 sm:mt-0 inline-block hover:bg-indigo-50">Visit Website →</a>
+                <a href="https://sainikschoolsambalpur.edu.in/" target="_blank" rel="noreferrer" className="text-xs text-indigo-600 bg-white px-3 py-1.5 rounded-full border border-indigo-200 font-semibold mt-3 sm:mt-0 inline-block hover:bg-indigo-50">Visit Website →</a>
               </div>
             </div>
           </div>
