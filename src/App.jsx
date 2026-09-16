@@ -22,10 +22,12 @@ const Jnv2027Page = React.lazy(() => import('./pages/Jnv2027Page'));
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [hasOpened, setHasOpened] = useState(false);
   const timerRef = React.useRef(null);
 
   const openModal = React.useCallback(() => {
     setIsModalOpen(true);
+    setHasOpened(true);
   }, []);
 
   const schedulePopup = React.useCallback(() => {
@@ -63,6 +65,7 @@ function App() {
 
     timerRef.current = setTimeout(() => {
       setIsModalOpen(true);
+      setHasOpened(true);
       sessionStorage.setItem('gt_popup_count', (count + 1).toString());
     }, timeToWait);
   }, []);
@@ -105,7 +108,7 @@ function App() {
           <Route path="/shreshta2027" element={<Shreshta2027Page onRequestInvite={openModal} />} />
         </Routes>
       </React.Suspense>
-      <React.Suspense fallback={null}><ApplicationModal isOpen={isModalOpen} onClose={closeModal} /></React.Suspense>
+      {hasOpened && <React.Suspense fallback={null}><ApplicationModal isOpen={isModalOpen} onClose={closeModal} /></React.Suspense>}
       <React.Suspense fallback={null}><LiveNotification /></React.Suspense>
     </BrowserRouter>
   );

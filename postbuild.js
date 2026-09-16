@@ -187,3 +187,47 @@ if (sitemapContent) {
 
 
 
+
+
+// --- 4. INLINE CRITICAL CSS ---
+try {
+  const assetsDir = path.resolve(distDir, 'assets');
+  if (fs.existsSync(assetsDir)) {
+    const files = fs.readdirSync(assetsDir);
+    const cssFile = files.find(f => f.startsWith('index-') && f.endsWith('.css'));
+    if (cssFile) {
+      const cssPath = path.resolve(assetsDir, cssFile);
+      const cssContent = fs.readFileSync(cssPath, 'utf8');
+      
+      // Function to inline CSS in a given HTML file
+      const inlineCssInFile = (filePath) => {
+        if (fs.existsSync(filePath)) {
+          let html = fs.readFileSync(filePath, 'utf8');
+          // Replace the <link rel="stylesheet"> with <style>
+          const linkRegex = new RegExp(`<link\\s+rel="stylesheet"\\s+crossorigin\\s+href="/assets/${cssFile}"\\s*>`, 'i');
+          html = html.replace(linkRegex, `<style>${cssContent}</style>`);
+          fs.writeFileSync(filePath, html);
+        }
+      };
+      
+      // Inline in main index.html
+      inlineCssInFile(indexPath);
+      
+      // Inline in generated main routes
+      mainPages.forEach(page => {
+        const specificDir = path.resolve(distDir, page.path.replace(/^\//, ''));
+        inlineCssInFile(path.resolve(specificDir, 'index.html'));
+      });
+      
+      // Inline in blog routes
+      blogs.forEach(blog => {
+        const specificDir = path.resolve(blogDir, blog.slug);
+        inlineCssInFile(path.resolve(specificDir, 'index.html'));
+      });
+      
+      console.log(`Successfully inlined ${cssFile} into HTML files!`);
+    }
+  }
+} catch (error) {
+  console.error("Error inlining CSS:", error);
+}
