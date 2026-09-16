@@ -81,7 +81,7 @@ export default function ClaritySession() {
                   <div className="font-black text-[20px] md:text-[22px] text-[#5B10FF] leading-none">
                     {s.val}<span className="text-[14px]">{s.unit}</span>
                   </div>
-                  <div className="text-[9px] font-bold text-gray-400 uppercase tracking-wide mt-1">{s.label}</div>
+                  <div className="text-[9px] font-bold text-gray-500 uppercase tracking-wide mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -165,12 +165,12 @@ export default function ClaritySession() {
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Parents */}
           <div>
-            <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4 text-center lg:text-left">What Parents Face</p>
+            <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-4 text-center lg:text-left">What Parents Face</p>
             <div className="space-y-4">
               {parentProblems.map((p) => (
                 <div key={p.n} className={`p-6 md:p-8 rounded-2xl border shadow-sm ${getGradientClass(p.style)}`}>
                   <div className="flex items-start gap-4">
-                    <span className="text-[12px] font-black shrink-0 mt-0.5 text-gray-400 opacity-60">{p.n}</span>
+                    <span className="text-[12px] font-black shrink-0 mt-0.5 text-gray-500 opacity-60">{p.n}</span>
                     <div>
                       <h4 className="font-bold text-[15px] md:text-[16px] mb-2 text-gray-900">{p.title}</h4>
                       <p className="text-[13px] md:text-[14px] leading-relaxed text-gray-600">{p.desc}</p>
@@ -183,12 +183,12 @@ export default function ClaritySession() {
 
           {/* Students */}
           <div>
-            <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4 text-center lg:text-left">What Students Struggle With</p>
+            <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-4 text-center lg:text-left">What Students Struggle With</p>
             <div className="space-y-4">
               {studentProblems.map((p) => (
                 <div key={p.n} className={`p-6 md:p-8 rounded-2xl border shadow-sm ${getGradientClass(p.style)}`}>
                   <div className="flex items-start gap-4">
-                    <span className="text-[12px] font-black shrink-0 mt-0.5 text-gray-400 opacity-60">{p.n}</span>
+                    <span className="text-[12px] font-black shrink-0 mt-0.5 text-gray-500 opacity-60">{p.n}</span>
                     <div>
                       <h4 className="font-bold text-[15px] md:text-[16px] mb-2 text-gray-900">{p.title}</h4>
                       <p className="text-[13px] md:text-[14px] leading-relaxed text-gray-600">{p.desc}</p>

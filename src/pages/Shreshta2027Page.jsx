@@ -205,14 +205,14 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
                   <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
                     <div className="p-2.5 sm:p-3 bg-orange-50 text-orange-600 rounded-xl shrink-0"><Shield className="w-5 h-5 sm:w-6 sm:h-6" /></div>
                     <div>
-                      <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Caste Category</p>
+                      <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Caste Category</p>
                       <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Strictly reserved for SC candidates.</p>
                     </div>
                   </div>
                   <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
                     <div className="p-2.5 sm:p-3 bg-emerald-50 text-emerald-600 rounded-xl shrink-0"><Wallet className="w-5 h-5 sm:w-6 sm:h-6" /></div>
                     <div>
-                      <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Income Limit</p>
+                      <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Income Limit</p>
                       <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Annual income ≤ ₹2.5 lakh/year.</p>
                     </div>
                   </div>
@@ -520,7 +520,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
                       <Calendar className="w-5 h-5 text-rose-600" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Registration Closes</div>
+                      <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Registration Closes</div>
                       <div className="text-sm font-black text-gray-900">30 Oct 2026</div>
                     </div>
                   </div>
@@ -530,7 +530,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
                       <Clock className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">NETS Exam Date</div>
+                      <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">NETS Exam Date</div>
                       <div className="text-sm font-black text-gray-900">21 Dec 2026</div>
                     </div>
                   </div>
@@ -540,7 +540,7 @@ const Shreshta2027Page = ({ onRequestInvite }) => {
                       <CheckCircle className="w-5 h-5 text-emerald-600" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Results Declared</div>
+                      <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Results Declared</div>
                       <div className="text-sm font-black text-gray-900">3 Jan 2027</div>
                     </div>
                   </div>

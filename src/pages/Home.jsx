@@ -99,7 +99,7 @@ export default function Home({ openModal }) {
               PARENT & STUDENT CALL
             </div>
             
-            <p className="text-[11px] text-gray-400 font-medium mb-6">
+            <p className="text-[11px] text-gray-500 font-medium mb-6">
               Includes our 30-min student test.
             </p>
 
@@ -136,17 +136,17 @@ export default function Home({ openModal }) {
               <thead>
                 <tr>
                   <th className="p-4 md:p-5 w-[40%] align-bottom">
-                    <span className="text-[10px] md:text-[11px] font-black text-gray-400 uppercase tracking-widest">FEATURE</span>
+                    <span className="text-[10px] md:text-[11px] font-black text-gray-500 uppercase tracking-widest">FEATURE</span>
                   </th>
                   <th className="p-4 md:p-5 w-[20%] text-center align-bottom border-l border-gray-100">
                     <div className="flex flex-col items-center gap-2">
-                      <Building2 className="w-5 h-5 md:w-6 md:h-6 text-gray-400" strokeWidth={1.5} />
+                      <Building2 className="w-5 h-5 md:w-6 md:h-6 text-gray-500" strokeWidth={1.5} />
                       <span className="text-[11px] md:text-[12px] font-bold text-gray-700 leading-tight">Offline<br/>Coaching</span>
                     </div>
                   </th>
                   <th className="p-4 md:p-5 w-[20%] text-center align-bottom border-l border-gray-100">
                     <div className="flex flex-col items-center gap-2">
-                      <MonitorPlay className="w-5 h-5 md:w-6 md:h-6 text-gray-400" strokeWidth={1.5} />
+                      <MonitorPlay className="w-5 h-5 md:w-6 md:h-6 text-gray-500" strokeWidth={1.5} />
                       <span className="text-[11px] md:text-[12px] font-bold text-gray-700 leading-tight">Online<br/>Apps</span>
                     </div>
                   </th>
@@ -334,8 +334,8 @@ export default function Home({ openModal }) {
                             <div className={`w-9 h-9 mx-auto rounded-xl ${skill.color} flex items-center justify-center mb-2 shadow-sm`}>
                               <skill.icon className="w-4 h-4" strokeWidth={2.5} />
                             </div>
-                            <h5 className="font-bold text-[10px] text-gray-800 leading-tight mb-0.5">{skill.title}</h5>
-                            <p className="text-[8px] text-gray-400 font-medium leading-tight">{skill.sub}</p>
+                            <h4 className="font-bold text-[10px] text-gray-800 leading-tight mb-0.5">{skill.title}</h4>
+                            <p className="text-[8px] text-gray-500 font-medium leading-tight">{skill.sub}</p>
                           </div>
                         ))}
                       </div>
@@ -508,7 +508,7 @@ export default function Home({ openModal }) {
           {/* Image Container */}
             <div className="w-full md:w-1/2 rounded-[24px] overflow-hidden relative flex items-center justify-center">
               <img 
-                src="/images/arshi-banner.png" 
+                src="/images/arshi-banner.webp" width="498" height="280" 
                 alt="Student Testimonial"
                 loading="lazy"
                 className="w-full h-auto object-contain rounded-[16px]"
@@ -567,7 +567,7 @@ export default function Home({ openModal }) {
               <img src="https://api.dicebear.com/9.x/notionists/svg?lips=&seed=Priya&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100" alt="Parent" />
               <div>
                 <h4 className="font-bold text-[13px] text-gray-800">Priya Mehta</h4>
-                <p className="text-[10px] text-gray-400 font-medium">Parent of Grade 8 Student</p>
+                <p className="text-[10px] text-gray-500 font-medium">Parent of Grade 8 Student</p>
               </div>
             </div>
           </div>
@@ -588,7 +588,7 @@ export default function Home({ openModal }) {
               <img src="https://api.dicebear.com/9.x/notionists/svg?lips=&seed=Rohan&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-purple-50 border border-purple-100" alt="Student" />
               <div>
                 <h4 className="font-bold text-[13px] text-gray-800">Rohan K.</h4>
-                <p className="text-[10px] text-gray-400 font-medium">Grade 10, Bhubaneswar</p>
+                <p className="text-[10px] text-gray-500 font-medium">Grade 10, Bhubaneswar</p>
               </div>
             </div>
           </div>
@@ -609,7 +609,7 @@ export default function Home({ openModal }) {
               <img src="https://api.dicebear.com/9.x/notionists/svg?lips=&seed=Sandeep&backgroundColor=transparent" className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100" alt="Parent" />
               <div>
                 <h4 className="font-bold text-[13px] text-gray-800">Sandeep Rao</h4>
-                <p className="text-[10px] text-gray-400 font-medium">Parent of Grade 9 Student</p>
+                <p className="text-[10px] text-gray-500 font-medium">Parent of Grade 9 Student</p>
               </div>
             </div>
           </div>
@@ -619,19 +619,19 @@ export default function Home({ openModal }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-20 border-t border-gray-100 pt-8">
           <div>
             <p className="text-[13px] font-bold text-gray-800 leading-snug mb-2">"My child is now more organized and calm."</p>
-            <p className="text-[10px] text-gray-400 font-medium">— Parent, Grade 7</p>
+            <p className="text-[10px] text-gray-500 font-medium">— Parent, Grade 7</p>
           </div>
           <div>
             <p className="text-[13px] font-bold text-gray-800 leading-snug mb-2">"The mentor actually listens and understands."</p>
-            <p className="text-[10px] text-gray-400 font-medium">— Student, Grade 9</p>
+            <p className="text-[10px] text-gray-500 font-medium">— Student, Grade 9</p>
           </div>
           <div>
             <p className="text-[13px] font-bold text-gray-800 leading-snug mb-2">"Great platform for holistic development."</p>
-            <p className="text-[10px] text-gray-400 font-medium">— Parent, Grade 10</p>
+            <p className="text-[10px] text-gray-500 font-medium">— Parent, Grade 10</p>
           </div>
           <div>
             <p className="text-[13px] font-bold text-gray-800 leading-snug mb-2">"I feel more prepared for my future now."</p>
-            <p className="text-[10px] text-gray-400 font-medium">— Student, Grade 11</p>
+            <p className="text-[10px] text-gray-500 font-medium">— Student, Grade 11</p>
           </div>
         </div>
 
@@ -667,7 +667,7 @@ export default function Home({ openModal }) {
           <div className="flex overflow-x-auto gap-5 pb-8 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {/* Nav button left hidden on mobile */}
             <div className="hidden lg:flex flex-col justify-center shrink-0 pr-2">
-              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
                 <ArrowLeft className="w-5 h-5" />
               </button>
             </div>
@@ -723,7 +723,7 @@ export default function Home({ openModal }) {
                 <div className="p-5 flex flex-col flex-1">
                   <h3 className="font-black text-[16px] text-gray-900 leading-none mb-1">{m.name}</h3>
                   <div className="font-bold text-[12px] text-gray-800 leading-tight">{m.uni}</div>
-                  <div className="text-[10px] text-gray-400 font-medium mb-3">{m.deg}</div>
+                  <div className="text-[10px] text-gray-500 font-medium mb-3">{m.deg}</div>
                   <p className="text-[12px] text-gray-500 font-medium leading-relaxed mb-4 flex-1">"{m.quote}"</p>
                   <div className="flex flex-wrap gap-1.5 mt-auto">
                     {m.tags.map(tag => (
@@ -735,7 +735,7 @@ export default function Home({ openModal }) {
             ))}
 
             <div className="hidden lg:flex flex-col justify-center shrink-0 pl-2">
-              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-brand-purple hover:border-brand-purple transition-colors bg-white shadow-sm">
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -810,7 +810,7 @@ export default function Home({ openModal }) {
             <div className="flex flex-col items-center sm:items-start">
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-[48px] md:text-[56px] font-black text-brand-dark leading-none">4.8</span>
-                <span className="text-[20px] font-bold text-gray-400">/5</span>
+                <span className="text-[20px] font-bold text-gray-500">/5</span>
               </div>
               <div className="flex gap-1 mb-3">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-[#FBBF24] text-[#FBBF24]" />)}
@@ -824,7 +824,7 @@ export default function Home({ openModal }) {
             <div className="flex flex-col items-center sm:items-start">
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-[48px] md:text-[56px] font-black text-brand-dark leading-none">4.7</span>
-                <span className="text-[20px] font-bold text-gray-400">/5</span>
+                <span className="text-[20px] font-bold text-gray-500">/5</span>
               </div>
               <div className="flex gap-1 mb-3">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-[#FBBF24] text-[#FBBF24]" />)}
@@ -859,7 +859,7 @@ export default function Home({ openModal }) {
             >
               Start Today <ChevronRight className="w-4 h-4" />
             </button>
-            <p className="text-[10px] text-gray-400 font-medium">Not a Coaching Class. Not an App.<br/>A Mentor for Everything.</p>
+            <p className="text-[10px] text-gray-500 font-medium">Not a Coaching Class. Not an App.<br/>A Mentor for Everything.</p>
           </div>
         </div>
       </section>

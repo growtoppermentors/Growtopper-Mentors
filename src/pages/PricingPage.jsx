@@ -45,7 +45,7 @@ export default function PricingPage({ onRequestInvite }) {
             <div className="bg-gradient-to-br from-[#F4F1FF] to-[#FAFAFF] rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
               
               <div className="flex-1 text-center md:text-left mt-4 md:mt-0">
-                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">STEP 1 • ONE-TIME SETUP</div>
+                <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1.5">STEP 1 • ONE-TIME SETUP</div>
                 <h2 className="text-[22px] md:text-[26px] font-black text-brand-dark mb-2">The Setup Call</h2>
                 <p className="text-[13px] font-medium text-gray-500 max-w-sm mx-auto md:mx-0">
                   Includes the 30-min AI Test, 60-min Parent & Student goal-setting meeting, and custom study roadmap creation.
@@ -63,14 +63,14 @@ export default function PricingPage({ onRequestInvite }) {
                   <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden mb-1.5">
                     <div className="h-full bg-brand-purple rounded-full transition-all duration-1000" style={{ width: `${bookedSeats}%` }}></div>
                   </div>
-                  <div className="text-[9px] font-medium text-gray-400 text-center">{bookedSeats}/100 booked. Refreshes daily.</div>
+                  <div className="text-[9px] font-medium text-gray-500 text-center">{bookedSeats}/100 booked. Refreshes daily.</div>
                 </div>
 
                 {/* Price & CTA */}
                 <div className="w-full flex items-center justify-between gap-4">
                   <div className="flex flex-col">
                     <div className="flex items-center gap-1.5 mb-0.5">
-                      <span className="text-[11px] font-bold text-gray-400 line-through">₹999</span>
+                      <span className="text-[11px] font-bold text-gray-500 line-through">₹999</span>
                     </div>
                     <div className="flex items-baseline gap-1.5">
                       <span className="text-[32px] md:text-[38px] font-black text-brand-purple leading-none tracking-tighter">₹1</span>
@@ -89,7 +89,7 @@ export default function PricingPage({ onRequestInvite }) {
           <div className="rounded-[26px] bg-gradient-to-br from-orange-200 via-transparent to-orange-100 p-[1.5px] mb-8 shadow-sm hover:shadow-md transition-shadow">
             <div className="bg-gradient-to-br from-[#FFF4ED] to-[#FFFaf0] rounded-[24px] p-6 md:p-8">
               <div className="text-center mb-6">
-                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">STEP 2 • BUILD THE FOUNDATION</div>
+                <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1.5">STEP 2 • BUILD THE FOUNDATION</div>
                 <h2 className="text-[22px] md:text-[26px] font-black text-brand-dark mb-2">30-Day Growth Challenge</h2>
                 <p className="text-[13px] font-medium text-gray-500 max-w-lg mx-auto">
                   An intensive 30-day program where your child learns 6 core life skills under the direct guidance of a dedicated mentor.
@@ -125,7 +125,7 @@ export default function PricingPage({ onRequestInvite }) {
                     <div className="text-[12px] font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500 uppercase tracking-widest mb-1">
                       Invite Only
                     </div>
-                    <div className="text-[11px] font-medium text-gray-400 mb-4 text-center">
+                    <div className="text-[11px] font-medium text-gray-500 mb-4 text-center">
                       Pricing revealed after Setup Call
                     </div>
                     <button onClick={onRequestInvite} className="bg-gray-900 text-white px-6 py-2.5 rounded-xl font-bold text-[13px] hover:bg-gray-800 transition-colors shadow-md w-full max-w-[180px]">
@@ -140,7 +140,7 @@ export default function PricingPage({ onRequestInvite }) {
           {/* Step 3: Choose Monthly Plan */}
           <div className="bg-white rounded-[24px] border border-gray-200 shadow-sm overflow-hidden">
             <div className="text-center pt-8 md:pt-10 pb-6 border-b border-gray-100">
-              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">STEP 3 • CHOOSE MONTHLY PLAN</div>
+              <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">STEP 3 • CHOOSE MONTHLY PLAN</div>
               <h2 className="text-[20px] font-black text-brand-dark">Long-Term Mentorship</h2>
             </div>
             
@@ -239,7 +239,7 @@ export default function PricingPage({ onRequestInvite }) {
                   <tr>
                     <td className="p-4 border-r border-gray-100 bg-gray-50/30"></td>
                     <td className="p-6 border-r border-gray-100 text-center">
-                      <button disabled className="bg-gray-100/50 text-gray-400 px-8 py-2.5 rounded-xl font-bold text-[13px] border border-gray-200 cursor-not-allowed w-full flex justify-center items-center gap-2">
+                      <button disabled className="bg-gray-100/50 text-gray-500 px-8 py-2.5 rounded-xl font-bold text-[13px] border border-gray-200 cursor-not-allowed w-full flex justify-center items-center gap-2">
                         <Lock className="w-3.5 h-3.5" /> Locked
                       </button>
                     </td>

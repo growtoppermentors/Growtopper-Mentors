@@ -9,7 +9,7 @@ export default function ParentDashboard() {
           <h2 className="text-3xl md:text-[44px] leading-tight font-bold mb-6">
             Parents Shouldn't Have to Guess If Their Child Is Progressing.
           </h2>
-          <p className="text-xl text-gray-400 font-medium text-balance">
+          <p className="text-xl text-gray-500 font-medium text-balance">
             Complete visibility into what is actually changing.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function ParentDashboard() {
                 {/* Academic & Skills Row */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-[#24242C] p-5 rounded-2xl border border-gray-800">
-                    <div className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-3">Academic</div>
+                    <div className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-3">Academic</div>
                     <div className="flex justify-between items-end mb-2">
                       <div className="text-sm font-semibold">Math + Science</div>
                       <div className="text-emerald-400 font-bold text-sm">On Track</div>
@@ -45,7 +45,7 @@ export default function ParentDashboard() {
                     </div>
                   </div>
                   <div className="bg-[#24242C] p-5 rounded-2xl border border-gray-800">
-                    <div className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-3">Execution</div>
+                    <div className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-3">Execution</div>
                     <div className="flex justify-between items-end mb-2">
                       <div className="text-sm font-semibold">Task Completion</div>
                       <div className="text-[#6610F2] font-bold text-sm">92%</div>
@@ -67,7 +67,7 @@ export default function ParentDashboard() {
 
               <div className="space-y-6">
                 <div className="bg-[#24242C] p-5 rounded-2xl border border-gray-800 h-full">
-                  <div className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-4">Next Priority</div>
+                  <div className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-4">Next Priority</div>
                   <div className="flex flex-col gap-3">
                     <div className="w-full p-4 rounded-xl bg-[#1C1C22] border border-[#6610F2]/50 text-center">
                       <span className="font-bold text-[#9B7BFF]">Consistent Start Time</span>

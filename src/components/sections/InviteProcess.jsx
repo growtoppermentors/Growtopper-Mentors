@@ -19,7 +19,7 @@ export default function InviteProcess() {
           <h2 className="text-3xl md:text-[44px] leading-tight font-bold mb-6">
             We Don't Accept Every Student.<br className="hidden md:block"/> We Accept Students We Believe We Can Help.
           </h2>
-          <p className="text-gray-400 font-medium">
+          <p className="text-gray-500 font-medium">
             Invite-only access exists to maintain program quality and personalized attention.
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function InviteProcess() {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent to-transparent group-hover:from-[#6610F2] group-hover:to-[#4D43F5] transition-all rounded-t-3xl"></div>
                 <div className="text-[#6610F2] font-bold text-sm tracking-widest mb-4">{step.id}</div>
                 <h3 className="text-white font-bold mb-2 tracking-wide uppercase">{step.title}</h3>
-                <p className="text-gray-400 text-sm font-medium">{step.desc}</p>
+                <p className="text-gray-500 text-sm font-medium">{step.desc}</p>
               </div>
             ))}
           </div>

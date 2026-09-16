@@ -44,7 +44,7 @@ export default function BlogList({ onRequestInvite }) {
               <div className="w-full md:w-1/2 flex flex-col justify-center py-2 md:py-6 lg:py-8 md:pr-6 lg:pr-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-[11px] font-black uppercase tracking-widest">{featuredBlog.category}</span>
-                <span className="text-[13px] font-bold text-gray-400">{featuredBlog.readTime}</span>
+                <span className="text-[13px] font-bold text-gray-500">{featuredBlog.readTime}</span>
               </div>
               <h2 className="text-[28px] md:text-[36px] font-black text-brand-dark leading-[1.15] tracking-tight mb-4 group-hover:text-brand-purple transition-colors">
                 {featuredBlog.title}
@@ -60,7 +60,7 @@ export default function BlogList({ onRequestInvite }) {
                   </div>
                   <div>
                     <div className="text-[13px] font-bold text-brand-dark leading-tight">{featuredBlog.author}</div>
-                    <div className="text-[12px] font-medium text-gray-400">{featuredBlog.date}</div>
+                    <div className="text-[12px] font-medium text-gray-500">{featuredBlog.date}</div>
                   </div>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-brand-purple group-hover:text-white text-brand-dark transition-colors border border-gray-100 group-hover:border-brand-purple">
@@ -98,7 +98,7 @@ export default function BlogList({ onRequestInvite }) {
                     </div>
                     <div>
                       <div className="text-[12px] font-bold text-brand-dark">{blog.author}</div>
-                      <div className="text-[11px] font-medium text-gray-400">{blog.date}</div>
+                      <div className="text-[11px] font-medium text-gray-500">{blog.date}</div>
                     </div>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-gray-300 group-hover:text-brand-purple transition-colors" />

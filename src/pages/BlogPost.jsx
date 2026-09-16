@@ -34,13 +34,13 @@ export default function BlogPost({ onRequestInvite }) {
         
         {/* Article Header */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-16">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-[13px] font-bold text-gray-400 hover:text-brand-purple transition-colors mb-8 md:mb-12">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-[13px] font-bold text-gray-500 hover:text-brand-purple transition-colors mb-8 md:mb-12">
             <ArrowLeft className="w-4 h-4" /> Back to all posts
           </Link>
           
           <div className="flex items-center gap-3 mb-6">
             <span className="px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple text-[11px] font-black uppercase tracking-widest">{blog.category}</span>
-            <span className="text-[13px] font-bold text-gray-400">{blog.readTime}</span>
+            <span className="text-[13px] font-bold text-gray-500">{blog.readTime}</span>
           </div>
           
           <h1 className="text-[36px] md:text-[48px] lg:text-[56px] font-black text-brand-dark leading-[1.1] tracking-tight mb-8">
@@ -59,20 +59,20 @@ export default function BlogPost({ onRequestInvite }) {
             </div>
             
             <div className="flex items-center gap-2">
-              <span className="text-[12px] font-bold text-gray-400 mr-2 uppercase tracking-widest hidden md:inline-block">Share</span>
+              <span className="text-[12px] font-bold text-gray-500 mr-2 uppercase tracking-widest hidden md:inline-block">Share</span>
               
               {/* LinkedIn */}
-              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#0A66C2] hover:text-white transition-colors" title="Share on LinkedIn">
+              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-[#0A66C2] hover:text-white transition-colors" title="Share on LinkedIn">
                 <Linkedin className="w-4 h-4" />
               </a>
 
               {/* Facebook */}
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-colors" title="Share on Facebook">
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-[#1877F2] hover:text-white transition-colors" title="Share on Facebook">
                 <Facebook className="w-4 h-4" />
               </a>
 
               {/* Twitter / X */}
-              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(blog.title)}`} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-colors" title="Share on Twitter">
+              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(blog.title)}`} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-black hover:text-white transition-colors" title="Share on Twitter">
                 <Twitter className="w-4 h-4" />
               </a>
 
@@ -82,7 +82,7 @@ export default function BlogPost({ onRequestInvite }) {
                   navigator.clipboard.writeText(window.location.href);
                   alert('Link copied to clipboard! You can now paste it on Instagram.');
                 }}
-                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white transition-colors" 
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white transition-colors" 
                 title="Share on Instagram (Copies Link)"
               >
                 <Instagram className="w-4 h-4" />

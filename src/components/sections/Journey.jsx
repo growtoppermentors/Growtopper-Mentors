@@ -81,10 +81,10 @@ export default function Journey() {
             </p>
           </div>
           <div className="flex items-center gap-3 shrink-0">
-            <button onClick={() => scroll('left')} className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-brand-dark transition-all active:scale-95 shadow-sm">
+            <button onClick={() => scroll('left')} className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 hover:text-brand-dark transition-all active:scale-95 shadow-sm">
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <button onClick={() => scroll('right')} className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-brand-dark transition-all active:scale-95 shadow-sm">
+            <button onClick={() => scroll('right')} className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 hover:text-brand-dark transition-all active:scale-95 shadow-sm">
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>

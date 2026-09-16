@@ -49,7 +49,7 @@ const TimelineItem = ({ title, date, isExpected }) => (
   <div className="relative pl-6 pb-6 border-l-2 border-blue-200 last:border-0 last:pb-0">
     <div className="absolute left-[-9px] top-0 w-4 h-4 bg-white border-2 border-blue-500 rounded-full" />
     <h4 className="font-bold text-gray-900 text-sm sm:text-base">{title}</h4>
-    <p className="text-blue-600 font-semibold text-sm mt-1">{date} {isExpected && <span className="text-xs text-gray-400 font-normal ml-1">(Expected)</span>}</p>
+    <p className="text-blue-600 font-semibold text-sm mt-1">{date} {isExpected && <span className="text-xs text-gray-500 font-normal ml-1">(Expected)</span>}</p>
   </div>
 );
 
@@ -97,28 +97,28 @@ const Aissee2027Page = ({ onRequestInvite }) => {
           <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <div className="p-2.5 sm:p-3 bg-blue-50 text-blue-600 rounded-xl shrink-0"><Calendar className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
-              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Notification</p>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Notification</p>
               <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Sep - Oct 2026</p>
             </div>
           </div>
           <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <div className="p-2.5 sm:p-3 bg-indigo-50 text-indigo-600 rounded-xl shrink-0"><CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
-              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Conducting Body</p>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Conducting Body</p>
               <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">NTA</p>
             </div>
           </div>
           <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <div className="p-2.5 sm:p-3 bg-emerald-50 text-emerald-600 rounded-xl shrink-0"><Users className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
-              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Gender</p>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Gender</p>
               <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Boys & Girls</p>
             </div>
           </div>
           <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <div className="p-2.5 sm:p-3 bg-orange-50 text-orange-600 rounded-xl shrink-0"><Target className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
-              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Goal</p>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Goal</p>
               <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">NDA Entry</p>
             </div>
           </div>
@@ -382,13 +382,13 @@ const Aissee2027Page = ({ onRequestInvite }) => {
           <GradientCard title="Fees Structure" icon={CreditCard} theme="slate">
             <div className="space-y-4">
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Application Fee</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">Application Fee</p>
                 <p className="text-sm font-semibold text-gray-900">Gen / OBC / Defence: ₹850</p>
                 <p className="text-sm font-semibold text-gray-900">SC / ST: ₹700</p>
               </div>
               <div className="h-px w-full bg-gray-200"></div>
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Annual School Fees</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">Annual School Fees</p>
                 <p className="text-xl font-black text-gray-900 mb-2">₹2.0 Lakh — ₹2.63 Lakh</p>
                 <p className="text-xs text-gray-500 leading-relaxed">
                   Includes tuition (~₹90k), boarding (~₹45k), mess (~₹50k), uniform, and books. 

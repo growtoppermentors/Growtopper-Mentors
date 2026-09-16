@@ -49,7 +49,7 @@ const TimelineItem = ({ title, date, isExpected }) => (
   <div className="relative pl-6 pb-6 border-l-2 border-blue-200 last:border-0 last:pb-0">
     <div className="absolute left-[-9px] top-0 w-4 h-4 bg-white border-2 border-blue-500 rounded-full" />
     <h4 className="font-bold text-gray-900 text-sm sm:text-base">{title}</h4>
-    <p className="text-blue-600 font-semibold text-sm mt-1">{date} {isExpected && <span className="text-xs text-gray-400 font-normal ml-1">(Expected)</span>}</p>
+    <p className="text-blue-600 font-semibold text-sm mt-1">{date} {isExpected && <span className="text-xs text-gray-500 font-normal ml-1">(Expected)</span>}</p>
   </div>
 );
 
@@ -97,28 +97,28 @@ const Oav2027Page = ({ onRequestInvite }) => {
           <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <div className="p-2.5 sm:p-3 bg-blue-50 text-blue-600 rounded-xl shrink-0"><Calendar className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
-              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Notification</p>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Notification</p>
               <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Nov - Dec 2026</p>
             </div>
           </div>
           <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <div className="p-2.5 sm:p-3 bg-indigo-50 text-indigo-600 rounded-xl shrink-0"><CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
-              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Conducting Body</p>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Conducting Body</p>
               <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">BSE Odisha</p>
             </div>
           </div>
           <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <div className="p-2.5 sm:p-3 bg-emerald-50 text-emerald-600 rounded-xl shrink-0"><Users className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
-              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Gender</p>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Gender</p>
               <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Boys & Girls</p>
             </div>
           </div>
           <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             <div className="p-2.5 sm:p-3 bg-orange-50 text-orange-600 rounded-xl shrink-0"><Target className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
-              <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Goal</p>
+              <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5 sm:mb-1">Goal</p>
               <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Block Talent Growth</p>
             </div>
           </div>
@@ -313,7 +313,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
           <GradientCard title="Fees & Perks" icon={CreditCard} theme="slate">
             <div className="space-y-4">
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Education Fee</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">Education Fee</p>
                 <p className="text-xl font-black text-emerald-600 mb-2">Completely Free</p>
                 <p className="text-xs text-gray-500 leading-relaxed">
                   Tuition, textbooks, and uniforms are entirely free, managed by the Govt. of Odisha.
@@ -321,7 +321,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
               </div>
               <div className="h-px w-full bg-gray-200"></div>
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Hostel Fees</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">Hostel Fees</p>
                 <p className="text-sm font-semibold text-gray-900">Free / Subsidized</p>
                 <p className="text-xs text-gray-500 leading-relaxed mt-1">
                   Many OAVs are now getting 100-bed girls' hostels. Fees are either waived for SC/ST or highly subsidized.

@@ -239,7 +239,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
   // Mobile-first highly compact inputs
   const inputClass = "w-full pl-10 pr-3 py-3 sm:py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple focus:bg-white outline-none transition-all font-semibold text-brand-dark shadow-sm text-sm sm:text-base";
   const labelClass = "block text-[11px] sm:text-xs font-bold text-gray-700 mb-1.5 ml-1";
-  const iconClass = "absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within:text-brand-purple transition-colors";
+  const iconClass = "absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 group-focus-within:text-brand-purple transition-colors";
   
   // Clean fade & slight zoom transition (removes horizontal scroll jitter)
   const animClass = "animate-in fade-in zoom-in-[0.98] duration-300 ease-out fill-mode-both";

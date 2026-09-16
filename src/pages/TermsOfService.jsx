@@ -119,7 +119,7 @@ Address: Bhubaneswar, India`
           ))}
         </div>
 
-        <p className="text-center text-gray-400 text-[13px] mt-12">© {new Date().getFullYear()} Growtopper Education. All rights reserved.</p>
+        <p className="text-center text-gray-500 text-[13px] mt-12">© {new Date().getFullYear()} Growtopper Education. All rights reserved.</p>
       </div>
     </div>
   );

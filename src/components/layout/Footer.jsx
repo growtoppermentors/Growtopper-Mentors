@@ -129,12 +129,12 @@ export default function Footer({ onRequestInvite }) {
             </ul>
             <div className="flex items-center justify-center lg:justify-start gap-3 mt-8">
               {[
-                { Icon: Linkedin, href: 'https://linkedin.com/company/growtopper' },
-                { Icon: Instagram, href: 'https://instagram.com/growtopper' },
-                { Icon: Twitter, href: 'https://twitter.com/growtopper' },
-                { Icon: Youtube, href: 'https://youtube.com/@growtopper' },
-              ].map(({ Icon, href }, i) => (
-                <a key={i} href={href}
+                { Icon: Linkedin, href: 'https://linkedin.com/company/growtopper', label: 'Follow us on LinkedIn' },
+                { Icon: Instagram, href: 'https://instagram.com/growtopper', label: 'Follow us on Instagram' },
+                { Icon: Twitter, href: 'https://twitter.com/growtopper', label: 'Follow us on Twitter' },
+                { Icon: Youtube, href: 'https://youtube.com/@growtopper', label: 'Subscribe to our YouTube channel' },
+              ].map(({ Icon, href, label }, i) => (
+                <a key={i} href={href} aria-label={label}
                   className="w-9 h-9 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-gray-500 hover:text-brand-purple hover:border-brand-purple/30 hover:shadow-md transition-all shadow-sm relative z-20">
                   <Icon className="w-4 h-4" />
                 </a>
@@ -146,10 +146,10 @@ export default function Footer({ onRequestInvite }) {
 
         {/* Bottom bar */}
         <div className="pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left relative z-20">
-          <p className="text-[12px] font-medium text-gray-400">
+          <p className="text-[12px] font-medium text-gray-500">
             © {new Date().getFullYear()} Growtopper Education. All rights reserved. | growtopper.app
           </p>
-          <p className="text-[11px] text-gray-400 font-medium">Made with ❤️ in Bhubaneswar, India</p>
+          <p className="text-[11px] text-gray-500 font-medium">Made with ❤️ in Bhubaneswar, India</p>
         </div>
 
       </div>

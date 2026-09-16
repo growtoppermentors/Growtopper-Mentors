@@ -25,7 +25,7 @@ export default function WeeklyExperience() {
               >
                 <div className="w-40 shrink-0 mb-2 sm:mb-0">
                   <span className={`text-sm font-bold tracking-wider ${
-                    day.day === 'SUNDAY' ? 'text-gray-400' : 'text-[#6610F2]'
+                    day.day === 'SUNDAY' ? 'text-gray-500' : 'text-[#6610F2]'
                   }`}>
                     {day.day}
                   </span>

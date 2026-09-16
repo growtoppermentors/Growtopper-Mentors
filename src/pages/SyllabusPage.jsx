@@ -291,7 +291,7 @@ export default function SyllabusPage({ onRequestInvite }) {
                 </div>
                 <span className={`self-start text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full ${
                   d.type === 'mentor' ? 'bg-emerald-100 text-emerald-700' :
-                  d.type === 'rest'   ? 'bg-gray-100 text-gray-400' : 'bg-white text-gray-500 border border-gray-200'
+                  d.type === 'rest'   ? 'bg-gray-100 text-gray-500' : 'bg-white text-gray-500 border border-gray-200'
                 }`}>
                   {d.type === 'mentor' ? 'Mentor' : d.type === 'rest' ? 'Rest' : '2 Skills'}
                 </span>
@@ -318,7 +318,7 @@ export default function SyllabusPage({ onRequestInvite }) {
           <h2 className="text-[18px] font-black text-brand-dark mb-1">
             {activeTab === 'junior' ? 'Grade 6–8' : 'Grade 9–12'} — Topics by Skill
           </h2>
-          <p className="text-gray-400 text-[12px] font-medium mb-6">8 sessions per skill · 4 weeks · 2 per week</p>
+          <p className="text-gray-500 text-[12px] font-medium mb-6">8 sessions per skill · 4 weeks · 2 per week</p>
 
           <div className="space-y-3">
             {skills.map((skill) => {
