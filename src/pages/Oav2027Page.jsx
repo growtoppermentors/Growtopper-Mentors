@@ -98,7 +98,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
             <div className="p-2.5 sm:p-3 bg-blue-50 text-blue-600 rounded-xl shrink-0"><Calendar className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
               <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Notification</p>
-              <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Nov 2026</p>
+              <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Nov - Dec 2026</p>
             </div>
           </div>
           <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
@@ -119,7 +119,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
             <div className="p-2.5 sm:p-3 bg-orange-50 text-orange-600 rounded-xl shrink-0"><Target className="w-5 h-5 sm:w-6 sm:h-6" /></div>
             <div>
               <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1">Goal</p>
-              <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Block-Level Excellence</p>
+              <p className="text-sm sm:text-base text-gray-900 font-bold leading-tight">Block Talent Growth</p>
             </div>
           </div>
         </div>
