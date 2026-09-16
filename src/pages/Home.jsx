@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { ChevronRight, Check, Building2, MonitorPlay, Zap, Award, Cpu, MessageSquare, TrendingUp, Lightbulb, BookOpen, Target, Calendar, FileText, Video, Star, Heart, Shield, Users, GraduationCap, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+const Footer = React.lazy(() => import('../components/layout/Footer'));
 
 export default function Home({ openModal }) {
   const navigate = useNavigate();
@@ -865,7 +865,7 @@ export default function Home({ openModal }) {
       </section>
       </main>
 
-      <Footer onRequestInvite={openModal} />
+      <React.Suspense fallback={null}><Footer onRequestInvite={openModal} /></React.Suspense>
     </div>
   );
 }

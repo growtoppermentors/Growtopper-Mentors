@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Analytics from './components/utils/Analytics';
 import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-import ApplicationModal from './components/ui/ApplicationModal';
-import LiveNotification from './components/ui/LiveNotification';
+const Footer = React.lazy(() => import('./components/layout/Footer'));
+const ApplicationModal = React.lazy(() => import('./components/ui/ApplicationModal'));
+const LiveNotification = React.lazy(() => import('./components/ui/LiveNotification'));
 const SyllabusPage = React.lazy(() => import('./pages/SyllabusPage'));
 const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
 const ExamsScholarshipsPage = React.lazy(() => import('./pages/ExamsScholarshipsPage'));
@@ -105,8 +105,8 @@ function App() {
           <Route path="/shreshta2027" element={<Shreshta2027Page onRequestInvite={openModal} />} />
         </Routes>
       </React.Suspense>
-      <ApplicationModal isOpen={isModalOpen} onClose={closeModal} />
-      <LiveNotification />
+      <React.Suspense fallback={null}><ApplicationModal isOpen={isModalOpen} onClose={closeModal} /></React.Suspense>
+      <React.Suspense fallback={null}><LiveNotification /></React.Suspense>
     </BrowserRouter>
   );
 }
