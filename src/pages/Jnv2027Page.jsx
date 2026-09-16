@@ -62,10 +62,10 @@ const Jnv2027Page = ({ onRequestInvite }) => {
               <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Official Guide 2027
             </div>
             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-brand-dark mb-3 sm:mb-4 leading-tight tracking-tight">
-              Navodaya Vidyalaya Selection <br className="hidden lg:block"/> Test <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">(JNVST)</span> 2027
+              Jawahar Navodaya Vidyalaya <br className="hidden lg:block"/> Selection Test <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">(JNVST)</span> 2027
             </h1>
             <p className="text-sm sm:text-base text-gray-600 mb-6 max-w-2xl mx-auto font-medium px-2">
-              The complete research playbook for admission into 650+ Jawahar Navodaya Vidyalayas across India. Prepare for Class VI & IX lateral entry with verified eligibility, syllabi, and strategies.
+              The complete research playbook for admission into 650+ JNVs across India. Prepare for Class VI & IX lateral entry with verified eligibility, syllabi, and strategies.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-2 sm:gap-4 mb-2">
               <span className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white rounded-md border border-gray-100 shadow-sm w-full sm:w-auto"><Calendar className="w-4 h-4 text-blue-500 shrink-0" /> Exam: Jan & April 2027</span>
