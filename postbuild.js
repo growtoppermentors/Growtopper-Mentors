@@ -156,39 +156,6 @@ blogs.forEach(blog => {
 
 console.log(`Successfully generated static HTML pages for ${count} blogs!`);
 
-// --- 3. APPEND BLOGS TO SITEMAP.XML ---
-const sitemapPath = path.resolve(__dirname, 'public/sitemap.xml');
-const distSitemapPath = path.resolve(distDir, 'sitemap.xml');
-
-let sitemapContent = '';
-if (fs.existsSync(distSitemapPath)) {
-  sitemapContent = fs.readFileSync(distSitemapPath, 'utf-8');
-} else if (fs.existsSync(sitemapPath)) {
-  sitemapContent = fs.readFileSync(sitemapPath, 'utf-8');
-}
-
-if (sitemapContent) {
-  let blogUrls = '';
-  blogs.forEach(blog => {
-    blogUrls += `
-  <url>
-    <loc>https://growtopper.app/blog/${blog.slug}</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>`;
-  });
-  
-  sitemapContent = sitemapContent.replace('</urlset>', blogUrls + '\n</urlset>');
-  fs.writeFileSync(distSitemapPath, sitemapContent);
-  console.log('Successfully updated sitemap.xml with blog URLs!');
-}
-
-
-
-
-
-
-
 // --- 4. INLINE CRITICAL CSS ---
 try {
   const assetsDir = path.resolve(distDir, 'assets');
