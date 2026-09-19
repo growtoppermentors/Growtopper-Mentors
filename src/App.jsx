@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Analytics from './components/utils/Analytics';
+import ScrollToTop from './components/utils/ScrollToTop';
 import Navbar from './components/layout/Navbar';
 const Footer = React.lazy(() => import('./components/layout/Footer'));
 const ApplicationModal = React.lazy(() => import('./components/ui/ApplicationModal'));
@@ -85,6 +86,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Analytics />
       <React.Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-brand-dark font-bold">Loading...</div>}>
         <Routes>

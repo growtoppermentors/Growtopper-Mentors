@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Instagram, Twitter, Youtube, Mail, Phone, Linkedin } from 'lucide-react';
 
 export default function Footer({ onRequestInvite }) {
@@ -33,12 +34,11 @@ export default function Footer({ onRequestInvite }) {
               Request Invite Only Access
               <ArrowRight className="w-4 h-4" />
             </button>
-            <a
-              href="/syllabus"
+            <Link to="/syllabus"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white border border-brand-purple/20 text-brand-purple font-bold text-[14px] sm:text-[15px] hover:bg-brand-purple/5 transition-colors"
             >
               View Full Syllabus
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -75,9 +75,9 @@ export default function Footer({ onRequestInvite }) {
             <p className="text-gray-500 text-[13px] font-medium leading-relaxed mb-6 max-w-[240px] mx-auto lg:mx-0">
               India's first invite-only 30-day student growth program for Grades 6—12.
             </p>
-            <a href="https://growtopper.app" className="text-[13px] text-brand-purple font-bold tracking-wide hover:underline">
+            <Link to="/" className="text-[13px] text-brand-purple font-bold tracking-wide hover:underline">
               growtopper.app
-            </a>
+            </Link>
           </div>
 
           {/* Program */}
@@ -93,7 +93,7 @@ export default function Footer({ onRequestInvite }) {
                 { label: 'Exams & Scholarships', href: '/exams-scholarships' },
               ].map(l => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-[13px] font-bold text-gray-500 hover:text-brand-purple transition-colors">{l.label}</a>
+                  <Link to={l.href} className="text-[13px] font-bold text-gray-500 hover:text-brand-purple transition-colors">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -108,7 +108,7 @@ export default function Footer({ onRequestInvite }) {
                 { label: 'Terms of Service', href: '/terms-of-service' },
               ].map(l => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-[13px] font-bold text-gray-500 hover:text-brand-purple transition-colors">{l.label}</a>
+                  <Link to={l.href} className="text-[13px] font-bold text-gray-500 hover:text-brand-purple transition-colors">{l.label}</Link>
                 </li>
               ))}
             </ul>
