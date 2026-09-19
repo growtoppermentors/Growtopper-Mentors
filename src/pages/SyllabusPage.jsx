@@ -1,3 +1,4 @@
+import Footer from '../components/layout/Footer';
 import React, { useState } from 'react';
 import {
   ArrowLeft, Check, Trophy, Award, ChevronDown,
@@ -226,6 +227,8 @@ export default function SyllabusPage({ onRequestInvite }) {
   });
 
   return (
+    <>
+
     <div className="min-h-screen bg-[#F8F9FE]">
 
       {/* Sticky nav */}
@@ -504,5 +507,8 @@ export default function SyllabusPage({ onRequestInvite }) {
 
       </div>
     </div>
+      <Footer onRequestInvite={onRequestInvite} />
+
+      </>
   );
 }

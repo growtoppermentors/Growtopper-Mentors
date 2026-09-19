@@ -1,3 +1,4 @@
+import Footer from '../components/layout/Footer';
 import React from 'react';
 import { ArrowLeft, FileText } from 'lucide-react';
 
@@ -78,6 +79,8 @@ Address: Bhubaneswar, India`
   ];
 
   return (
+    <>
+
     <div className="min-h-screen bg-[#F8F9FE]">
       {/* Top Bar */}
       <div className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
@@ -122,5 +125,8 @@ Address: Bhubaneswar, India`
         <p className="text-center text-gray-500 text-[13px] mt-12">© {new Date().getFullYear()} Growtopper Education. All rights reserved.</p>
       </div>
     </div>
+      <Footer  />
+
+      </>
   );
 }
