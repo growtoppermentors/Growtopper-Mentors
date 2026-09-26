@@ -115,9 +115,29 @@ const mainPages = [
     title: 'Sainik School Entrance Exam (AISSEE) 2027 Guide | Growtopper',
     description: 'Complete research playbook for All India Sainik School Entrance Exam (AISSEE) 2027. Get eligibility, exam pattern, dates, and syllabus for Class 6 & 9.',
     urlPath: '/aissee2027',
-    image: 'https://growtopper.app/images/aissee2027-preview.jpg'
-  }
-];
+    image: 'https://growtopper.app/images/aissee2027-preview.jpg'},
+    {
+      path: '/shreshta2027',
+      title: 'SHRESHTA (NETS) 2027 Entrance Exam Guide | Growtopper',
+      description: 'Complete syllabus, dates, and eligibility for the SHRESHTA National Entrance Test (NETS) 2027 for SC students.',
+      urlPath: '/shreshta2027',
+      image: 'https://growtopper.app/images/exams-preview.jpg'
+    },
+    {
+      path: '/privacy-policy',
+      title: 'Privacy Policy | Growtopper Mentors',
+      description: 'Read the privacy policy and data protection guidelines for Growtopper Mentors.',
+      urlPath: '/privacy-policy',
+      image: 'https://growtopper.app/og-home.png'
+    },
+    {
+      path: '/terms-of-service',
+      title: 'Terms of Service | Growtopper Mentors',
+      description: 'Read the terms of service and usage guidelines for Growtopper Mentors.',
+      urlPath: '/terms-of-service',
+      image: 'https://growtopper.app/og-home.png'
+    }
+  ];
 
 mainPages.forEach(page => {
   const specificDir = path.resolve(distDir, page.path.replace(/^\//, '')); // remove leading slash
