@@ -229,7 +229,7 @@ export default function SyllabusPage({ onRequestInvite }) {
   return (
     <>
 
-    <div className="min-h-screen bg-[#F8F9FE]">
+    <div className="min-h-[100dvh] bg-[#F8F9FE]">
 
       {/* Sticky nav */}
       <div className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">

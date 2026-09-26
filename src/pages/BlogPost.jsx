@@ -17,7 +17,7 @@ export default function BlogPost({ onRequestInvite }) {
 
   if (!blog) {
     return (
-      <div className="min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center font-sans">
+      <div className="min-h-[100dvh] bg-[#FAFAFA] flex flex-col items-center justify-center font-sans">
         <h1 className="text-4xl font-black text-brand-dark mb-4">Post Not Found</h1>
         <button onClick={() => navigate('/blog')} className="text-brand-purple font-bold hover:underline">
           &larr; Back to Blog
@@ -27,7 +27,7 @@ export default function BlogPost({ onRequestInvite }) {
   }
 
   return (
-    <div className="min-h-screen bg-white font-sans allow-select selection:bg-brand-purple/20 selection:text-brand-purple">
+    <div className="min-h-[100dvh] bg-white font-sans allow-select selection:bg-brand-purple/20 selection:text-brand-purple">
       <Navbar onRequestInvite={onRequestInvite} />
 
       <main className="pt-24 md:pt-32 pb-24">

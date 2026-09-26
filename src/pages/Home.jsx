@@ -60,7 +60,7 @@ export default function Home({ openModal }) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-[#111827] font-sans flex flex-col">
+    <div className="min-h-[100dvh] bg-[#FAFAFA] text-[#111827] font-sans flex flex-col">
       <Navbar onRequestInvite={openModal} />
       <main className="flex-1 w-full flex flex-col">
       {/* Hero Section (Strictly Full Viewport Height) */}

@@ -51,7 +51,7 @@ export default function ClaritySession() {
   const handleBook = () => window.open('https://pages.razorpay.com/setupcall', '_blank');
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-[#111827] font-sans flex flex-col">
+    <div className="min-h-[100dvh] bg-[#FAFAFA] text-[#111827] font-sans flex flex-col">
       <Navbar onRequestInvite={handleBook} />
 
       {/* ──────────────────── HERO ──────────────────── */}

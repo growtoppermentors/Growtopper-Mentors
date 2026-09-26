@@ -13,7 +13,7 @@ import FinalCTA from '../components/sections/FinalCTA';
 
 export default function OldHomePage({ openModal }) {
   return (
-    <div className="min-h-screen bg-white text-[#111827] font-sans flex flex-col">
+    <div className="min-h-[100dvh] bg-white text-[#111827] font-sans flex flex-col">
       <Navbar onRequestInvite={openModal} />
       <main className="flex-1 w-full flex flex-col">
         <Hero onRequestInvite={openModal} />

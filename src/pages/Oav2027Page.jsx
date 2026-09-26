@@ -62,7 +62,7 @@ const Oav2027Page = ({ onRequestInvite }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] font-sans allow-select">
+    <div className="min-h-[100dvh] bg-[#FDFBF7] font-sans allow-select">
       <Navbar onRequestInvite={onRequestInvite} />
 
       {/* Responsive Mobile Hero Section */}

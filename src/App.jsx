@@ -88,7 +88,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Analytics />
-      <React.Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-brand-dark font-bold">Loading...</div>}>
+      <React.Suspense fallback={<div className="h-[100dvh] w-full flex items-center justify-center text-brand-dark font-bold">Loading...</div>}>
         <Routes>
           {/* Home is now the default homepage */}
           <Route path="/" element={<Home openModal={openModal} />} />

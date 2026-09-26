@@ -17,7 +17,7 @@ export default function PricingPage({ onRequestInvite }) {
   const seatsLeft = 100 - bookedSeats;
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] font-sans">
+    <div className="min-h-[100dvh] bg-[#FAFAFA] font-sans">
       <Navbar onRequestInvite={onRequestInvite} />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
