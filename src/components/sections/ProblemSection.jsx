@@ -88,13 +88,13 @@ export default function ProblemSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch mb-8">
 
           {/* Premium Authentic Certificate Card */}
-          <div className="relative rounded-[28px] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-200 border border-brand-purple/10 flex flex-col p-4 sm:p-6 min-h-[380px] lg:h-full shadow-inner">
+          <div className="authentic-certificate relative rounded-[28px] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-200 border border-brand-purple/10 flex flex-col p-4 sm:p-6 min-h-[380px] lg:h-full shadow-inner">
             
             {/* Authentic Outer Frame */}
-            <div className="flex-1 bg-[#FCFBF8] rounded-md shadow-2xl border-[8px] border-[#1C2033] p-1.5 relative flex flex-col">
+            <div className="certificate-frame flex-1 bg-[#FCFBF8] rounded-md shadow-2xl border-[8px] border-[#1C2033] p-1.5 relative flex flex-col">
               
               {/* Inner Authentic Decorative Border */}
-              <div className="flex-1 border-[1.5px] border-amber-400/50 p-5 sm:p-6 flex flex-col items-center justify-center text-center relative">
+              <div className="certificate-inner-border flex-1 border-[1.5px] border-amber-400/50 p-5 sm:p-6 flex flex-col items-center justify-center text-center relative">
                 
                 {/* Background watermark logo */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
@@ -109,10 +109,10 @@ export default function ProblemSection() {
                   <span className="font-black text-[18px] tracking-tight text-brand-dark">growtopper</span>
                 </div>
 
-                <h3 className="font-serif text-[28px] sm:text-[34px] font-black text-[#1C2033] uppercase tracking-widest mb-1 leading-none">
+                <h3 className="certificate-title font-serif text-[28px] sm:text-[34px] font-black text-[#1C2033] uppercase tracking-widest mb-1 leading-none">
                   Certificate
                 </h3>
-                <span className="text-[12px] sm:text-[14px] tracking-[0.3em] text-amber-600 uppercase font-bold mb-6">Of Excellence</span>
+                <span className="certificate-sub text-[12px] sm:text-[14px] tracking-[0.3em] text-amber-600 uppercase font-bold mb-6">Of Excellence</span>
 
                 <p className="text-[12px] text-gray-600 font-medium mb-3 italic font-serif">
                   is hereby awarded to
@@ -137,7 +137,7 @@ export default function ProblemSection() {
                   </div>
 
                   {/* Authentic Rubber Stamp */}
-                  <div className="relative transform rotate-[-15deg] translate-y-1 sm:translate-y-2 opacity-80 mix-blend-multiply">
+                  <div className="certificate-seal relative transform rotate-[-15deg] translate-y-1 sm:translate-y-2 opacity-80 mix-blend-multiply">
                     <div className="border-2 border-blue-600 rounded-full w-14 h-14 sm:w-[68px] sm:h-[68px] flex flex-col items-center justify-center text-center p-1">
                       <span className="text-[5.5px] sm:text-[7px] font-black uppercase text-blue-600 leading-none tracking-widest">Growtopper</span>
                       <div className="w-full max-w-[85%] border-y border-blue-600 py-[2px] my-1 flex items-center justify-center">
@@ -160,7 +160,7 @@ export default function ProblemSection() {
             </div>
             
             {/* The centralized quote */}
-            <div className="w-full bg-white px-6 py-4 mt-6 rounded-xl flex flex-col items-center justify-center text-center shadow-sm border border-brand-purple/5 shrink-0">
+            <div className="certificate-quote-box w-full bg-white px-6 py-4 mt-6 rounded-xl flex flex-col items-center justify-center text-center shadow-sm border border-brand-purple/5 shrink-0">
               <span className="font-['Caveat',cursive] text-[20px] text-brand-purple font-bold leading-snug">
                 "More than marks"
               </span>

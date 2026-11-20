@@ -248,7 +248,7 @@ export default function ApplicationModal({ isOpen, onClose }) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
       
-      <div className="relative bg-gradient-to-b from-[#FAF9FF] to-white w-full max-w-[440px] rounded-[24px] sm:rounded-[32px] shadow-2xl z-10 flex flex-col border border-white/60">
+      <div className="modal-surface relative bg-gradient-to-b from-[#FAF9FF] to-white w-full max-w-[440px] rounded-[24px] sm:rounded-[32px] shadow-2xl z-10 flex flex-col border border-white/60">
         
         {/* Absolute Header for Back & Close Buttons (Keeps them out of document flow) */}
         <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-between px-4 sm:px-6 z-20 mt-1">

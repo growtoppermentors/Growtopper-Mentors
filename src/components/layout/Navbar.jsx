@@ -56,7 +56,7 @@ export default function Navbar({ onRequestInvite }) {
 
       {/* 🔮 Navbar Bar 🔮 */}
       <header
-        className={`transition-all duration-300 ${
+        className={`site-navbar transition-all duration-300 ${
           scrolled || mobileMenuOpen
             ? 'bg-white/98 backdrop-blur-md shadow-sm py-3'
             : 'bg-transparent py-5'
@@ -69,7 +69,7 @@ export default function Navbar({ onRequestInvite }) {
             <div className="w-8 h-8 rounded-lg bg-brand-purple flex items-center justify-center text-white shadow-md shadow-brand-purple/30">
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <span className="font-black text-[18px] tracking-tight text-brand-dark">growtopper</span>
+            <span className="navbar-logo-text font-black text-[18px] tracking-tight text-brand-dark">growtopper</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -80,7 +80,7 @@ export default function Navbar({ onRequestInvite }) {
                   {link.name} <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
                 </button>
                 {/* Dropdown Panel */}
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[320px] bg-white rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.1)] border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top translate-y-2 group-hover:translate-y-0 p-3 flex flex-col gap-1">
+                <div className="navbar-desktop-dropdown absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[320px] bg-white rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.1)] border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top translate-y-2 group-hover:translate-y-0 p-3 flex flex-col gap-1">
                   {link.children.map(child => (
                     <Link key={child.name} to={child.href} className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group/item">
                       <div className="w-10 h-10 rounded-[10px] bg-white border border-gray-100 flex items-center justify-center shrink-0 group-hover/item:border-brand-purple/30 group-hover/item:bg-brand-purple/5 transition-colors text-brand-dark">
@@ -111,7 +111,7 @@ export default function Navbar({ onRequestInvite }) {
 
           {/* Mobile Hamburger */}
           <button
-            className="lg:hidden w-9 h-9 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors active:scale-95"
+            className="navbar-toggle-btn lg:hidden w-9 h-9 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors active:scale-95"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -133,7 +133,7 @@ export default function Navbar({ onRequestInvite }) {
         }`}
       >
         {/* Frosted dropdown panel */}
-        <div className="bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-xl shadow-black/[0.08] mx-0">
+        <div className="navbar-mobile-drawer bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-xl shadow-black/[0.08] mx-0">
           
           {/* Nav Links Grid */}
           <div className="px-4 pt-4 pb-2 flex flex-col gap-2.5">
