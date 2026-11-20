@@ -786,6 +786,8 @@ export default function Home({ openModal }) {
           <div className="mt-8 text-center flex flex-col items-center">
             <button 
               onClick={openModal}
+              onMouseEnter={() => import('../components/ui/ApplicationModal')}
+              onTouchStart={() => import('../components/ui/ApplicationModal')}
               className="bg-[#5B10FF] text-white px-8 py-3.5 rounded-full font-bold text-[13px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-[#5B10FF]/30 flex items-center gap-2 mb-2"
             >
               Request to Invite <ArrowRight className="w-4 h-4" />

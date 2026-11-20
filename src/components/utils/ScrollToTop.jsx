@@ -5,7 +5,12 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Instant jump to top on navigation - avoids sluggish smooth-scroll delays
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    } catch {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return null;

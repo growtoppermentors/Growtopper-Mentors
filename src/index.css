@@ -38,7 +38,6 @@
 @layer base {
   html {
     font-family: 'Satoshi', system-ui, sans-serif;
-    scroll-behavior: smooth;
     scroll-padding-top: 80px;
     color: #111115;
     background-color: #ffffff;

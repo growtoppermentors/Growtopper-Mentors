@@ -128,7 +128,12 @@ export default function PricingPage({ onRequestInvite }) {
                     <div className="text-[11px] font-medium text-gray-500 mb-4 text-center">
                       Pricing revealed after Setup Call
                     </div>
-                    <button onClick={onRequestInvite} className="bg-gray-900 text-white px-6 py-2.5 rounded-xl font-bold text-[13px] hover:bg-gray-800 transition-colors shadow-md w-full max-w-[180px]">
+                    <button
+                      onClick={onRequestInvite}
+                      onMouseEnter={() => import('../components/ui/ApplicationModal')}
+                      onTouchStart={() => import('../components/ui/ApplicationModal')}
+                      className="bg-gray-900 text-white px-6 py-2.5 rounded-xl font-bold text-[13px] hover:bg-gray-800 transition-colors shadow-md w-full max-w-[180px]"
+                    >
                       Request Invite
                     </button>
                   </div>

@@ -51,6 +51,32 @@ export default function Navbar({ onRequestInvite }) {
     setMobileExploreOpen(false);
   };
 
+  const prefetchTarget = (href) => {
+    switch (href) {
+      case '/30-days-growth-challenge':
+        import('../../pages/OldHomePage');
+        break;
+      case '/1-1-clarity-session-call':
+        import('../../pages/ClaritySession');
+        break;
+      case '/pricing':
+        import('../../pages/PricingPage');
+        break;
+      case '/blog':
+        import('../../pages/BlogList');
+        break;
+      case '/exams-scholarships':
+        import('../../pages/ExamsScholarshipsPage');
+        break;
+      default:
+        break;
+    }
+  };
+
+  const prefetchModal = () => {
+    import('../ui/ApplicationModal');
+  };
+
   return (
     <div ref={menuRef} className="fixed top-0 left-0 right-0 z-50">
 
@@ -82,7 +108,13 @@ export default function Navbar({ onRequestInvite }) {
                 {/* Dropdown Panel */}
                 <div className="navbar-desktop-dropdown absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[320px] bg-white rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.1)] border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top translate-y-2 group-hover:translate-y-0 p-3 flex flex-col gap-1">
                   {link.children.map(child => (
-                    <Link key={child.name} to={child.href} className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group/item">
+                    <Link
+                      key={child.name}
+                      to={child.href}
+                      onMouseEnter={() => prefetchTarget(child.href)}
+                      onTouchStart={() => prefetchTarget(child.href)}
+                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group/item"
+                    >
                       <div className="w-10 h-10 rounded-[10px] bg-white border border-gray-100 flex items-center justify-center shrink-0 group-hover/item:border-brand-purple/30 group-hover/item:bg-brand-purple/5 transition-colors text-brand-dark">
                         <child.Icon className="w-4.5 h-4.5 group-hover/item:text-brand-purple transition-colors" />
                       </div>
@@ -95,7 +127,13 @@ export default function Navbar({ onRequestInvite }) {
                 </div>
               </div>
             ) : (
-              <Link key={link.name} to={link.href} className="text-[14px] font-bold text-gray-500 hover:text-brand-purple transition-colors">
+              <Link
+                key={link.name}
+                to={link.href}
+                onMouseEnter={() => prefetchTarget(link.href)}
+                onTouchStart={() => prefetchTarget(link.href)}
+                className="text-[14px] font-bold text-gray-500 hover:text-brand-purple transition-colors"
+              >
                 {link.name}
               </Link>
             ))}
@@ -104,6 +142,8 @@ export default function Navbar({ onRequestInvite }) {
           {/* Desktop CTA */}
           <button
             onClick={onRequestInvite}
+            onMouseEnter={prefetchModal}
+            onTouchStart={prefetchModal}
             className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-brand-purple text-white text-[14px] font-bold hover:opacity-90 transition-opacity shadow-md shadow-brand-purple/25"
           >
             Request Invite Only Access <ArrowRight className="w-4 h-4" />
@@ -157,6 +197,7 @@ export default function Navbar({ onRequestInvite }) {
                       key={child.name}
                       to={child.href}
                       onClick={handleNavClick}
+                      onTouchStart={() => prefetchTarget(child.href)}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white hover:bg-gray-50 border border-transparent hover:border-gray-100 transition-all active:scale-[0.98]"
                     >
                        <div className="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center shrink-0">
@@ -172,6 +213,7 @@ export default function Navbar({ onRequestInvite }) {
                 key={link.name}
                 to={link.href}
                 onClick={handleNavClick}
+                onTouchStart={() => prefetchTarget(link.href)}
                 className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-gray-50/80 hover:bg-brand-purple/5 hover:text-brand-purple border border-gray-100 hover:border-brand-purple/20 active:scale-[0.98] transition-all group"
               >
                 <div className="w-9 h-9 rounded-[10px] bg-white border border-gray-100 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.04)] group-hover:border-brand-purple/30 group-hover:bg-brand-purple/5 transition-colors shrink-0">
@@ -187,6 +229,7 @@ export default function Navbar({ onRequestInvite }) {
           <div className="px-4 pb-4 pt-2">
             <button
               onClick={() => { setMobileMenuOpen(false); onRequestInvite(); }}
+              onTouchStart={prefetchModal}
               className="w-full py-3.5 rounded-2xl bg-brand-purple text-white font-bold text-[14px] flex items-center justify-center gap-2 shadow-lg shadow-brand-purple/20 active:scale-[0.98] transition-transform"
             >
               Request Invite Only Access <ArrowRight className="w-4 h-4" />

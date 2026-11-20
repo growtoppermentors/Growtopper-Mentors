@@ -79,6 +79,26 @@ function App() {
 
   useEffect(() => {
     schedulePopup();
+
+    // Background prefetch: loads modal & popular routes during browser idle time for instant navigation
+    const prefetchRoutes = () => {
+      import('./components/ui/ApplicationModal');
+      import('./pages/OldHomePage');
+      import('./pages/PricingPage');
+      import('./pages/ClaritySession');
+      import('./pages/ExamsScholarshipsPage');
+      import('./pages/BlogList');
+      import('./components/layout/Footer');
+    };
+
+    if (typeof window !== 'undefined') {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(prefetchRoutes);
+      } else {
+        setTimeout(prefetchRoutes, 500);
+      }
+    }
+
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
@@ -88,7 +108,11 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Analytics />
-      <React.Suspense fallback={<div className="h-[100dvh] w-full flex items-center justify-center text-brand-dark font-bold">Loading...</div>}>
+      <React.Suspense fallback={
+        <div className="min-h-[50vh] w-full flex items-center justify-center">
+          <div className="w-8 h-8 rounded-full border-2 border-brand-purple/20 border-t-brand-purple animate-spin"></div>
+        </div>
+      }>
         <Routes>
           {/* Home is now the default homepage */}
           <Route path="/" element={<Home openModal={openModal} />} />
