@@ -42,7 +42,7 @@ export default function PricingPage({ onRequestInvite }) {
               <Zap className="w-3 h-3 fill-current" /> EARLY BIRD: FIRST 100 ONLY
             </div>
             
-            <div className="bg-gradient-to-br from-[#F4F1FF] to-[#FAFAFF] rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
+            <div className="pricing-setup-card bg-gradient-to-br from-[#F4F1FF] to-[#FAFAFF] rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
               
               <div className="flex-1 text-center md:text-left mt-4 md:mt-0">
                 <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1.5">STEP 1 • ONE-TIME SETUP</div>
@@ -87,7 +87,7 @@ export default function PricingPage({ onRequestInvite }) {
 
           {/* Step 2: 30-Day Growth Challenge */}
           <div className="rounded-[26px] bg-gradient-to-br from-orange-200 via-transparent to-orange-100 p-[1.5px] mb-8 shadow-sm hover:shadow-md transition-shadow">
-            <div className="bg-gradient-to-br from-[#FFF4ED] to-[#FFFaf0] rounded-[24px] p-6 md:p-8">
+            <div className="pricing-setup-card bg-gradient-to-br from-[#FFF4ED] to-[#FFFaf0] rounded-[24px] p-6 md:p-8">
               <div className="text-center mb-6">
                 <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1.5">STEP 2 • BUILD THE FOUNDATION</div>
                 <h2 className="text-[22px] md:text-[26px] font-black text-brand-dark mb-2">30-Day Growth Challenge</h2>

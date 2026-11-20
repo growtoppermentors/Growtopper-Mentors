@@ -371,27 +371,70 @@
     color: #FFFFFF !important;
   }
 
-  /* Pastel gradient cards in dark mode -> dark slate cards with light text */
-  .from-\[\#F9F7FF\],
-  .from-\[\#F5FAFF\],
-  .from-\[\#F4FCF7\],
-  .from-\[\#FFF8F4\],
-  .from-\[\#FFF4ED\],
-  .from-\[\#F4F1FF\],
-  .from-\[\#F0FDF4\],
-  .from-\[\#FFF0E5\] {
-    --tw-gradient-from: #181C2B var(--tw-gradient-from-position) !important;
-    --tw-gradient-to: #131622 var(--tw-gradient-to-position) !important;
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
-    background-color: #131622 !important;
-    border-color: #252B3E !important;
+  /* Neutralize white gradient stops on dark mode */
+  .from-white {
+    --tw-gradient-from: #131622 !important;
+  }
+  .via-white {
+    --tw-gradient-stops: var(--tw-gradient-from), #131726, var(--tw-gradient-to) !important;
+  }
+  .to-white {
+    --tw-gradient-to: #131622 !important;
   }
 
-  .to-\[\#FFFaf0\],
-  .to-\[\#FAFAFF\],
-  .to-\[\#F8FAFC\],
-  .to-\[\#E0F2FE\] {
-    --tw-gradient-to: #131622 var(--tw-gradient-to-position) !important;
+  /* Gray backgrounds in dark mode (pills, badges, tables) */
+  .bg-gray-100,
+  .bg-gray-200,
+  .bg-gray-50\/60,
+  .bg-gray-100\/60 {
+    background-color: #1A1F30 !important;
+    border-color: #262D42 !important;
+  }
+
+  /* Premium Obsidian Hero Showcase & Pricing Cards in Dark Mode */
+  .hero-showcase-card,
+  .pricing-setup-card,
+  div[class*="from-[#FFF9F2]"],
+  div[class*="from-[#F0F4F8]"],
+  div[class*="from-[#F4F1FF]"],
+  div[class*="from-[#FFF4ED]"],
+  div[class*="from-[#F0FDF4]"],
+  div[class*="from-[#FFF0E5]"],
+  div[class*="from-[#F9F7FF]"],
+  div[class*="from-[#F5FAFF]"],
+  div[class*="from-[#F4FCF7]"],
+  div[class*="from-[#FFF8F4]"] {
+    background: linear-gradient(135deg, #161B2E 0%, #0F121E 100%) !important;
+    border-color: #242B42 !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .hero-showcase-card h1,
+  .hero-showcase-card h2,
+  .hero-showcase-card h3,
+  .pricing-setup-card h1,
+  .pricing-setup-card h2,
+  .pricing-setup-card h3 {
+    color: #FFFFFF !important;
+  }
+
+  .hero-showcase-card p,
+  .pricing-setup-card p {
+    color: #D1D5DB !important;
+  }
+
+  /* Hero toggle buttons and actions in dark mode */
+  .hero-showcase-card button:not(.text-white) {
+    color: #9CA3AF !important;
+  }
+  .hero-showcase-card button:not(.text-white):hover {
+    color: #FFFFFF !important;
+  }
+
+  /* Sliding toggle container on dark mode */
+  .hero-showcase-card .bg-white\/80 {
+    background-color: #101322 !important;
+    border-color: #252C44 !important;
   }
 
   /* Pastel badges in dark mode */
@@ -401,6 +444,33 @@
   .bg-\[\#FFF4ED\] {
     background-color: rgba(91, 16, 255, 0.12) !important;
     border-color: rgba(157, 123, 255, 0.25) !important;
+  }
+
+  /* Blog article prose typography in dark mode */
+  .prose-custom {
+    color: #D1D5DB !important;
+  }
+  .prose-custom h1,
+  .prose-custom h2,
+  .prose-custom h3,
+  .prose-custom h4 {
+    color: #F9FAFB !important;
+  }
+  .prose-custom p,
+  .prose-custom ul,
+  .prose-custom ol,
+  .prose-custom li {
+    color: #D1D5DB !important;
+  }
+  .prose-custom strong {
+    color: #FFFFFF !important;
+  }
+  .prose-custom a {
+    color: #9D7BFF !important;
+  }
+  .prose-custom blockquote {
+    color: #E5E7EB !important;
+    border-left-color: #5B10FF !important;
   }
 
   /* ==========================================================

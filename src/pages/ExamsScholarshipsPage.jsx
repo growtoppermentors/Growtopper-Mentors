@@ -1367,7 +1367,7 @@ const ExamsScholarshipsPage = ({ onRequestInvite }) => {
 
       {/* Hero Section */}
       <section className="pt-28 pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="bg-gradient-to-br from-[#FFF9F2] via-white to-[#FFF4E6] rounded-[24px] sm:rounded-[32px] border border-orange-100/50 shadow-[0_8px_30px_rgba(249,115,22,0.04)] p-6 sm:p-10 relative overflow-hidden text-center max-w-4xl mx-auto">
+        <div className="hero-showcase-card bg-gradient-to-br from-[#FFF9F2] via-white to-[#FFF4E6] rounded-[24px] sm:rounded-[32px] border border-orange-100/50 shadow-[0_8px_30px_rgba(249,115,22,0.04)] p-6 sm:p-10 relative overflow-hidden text-center max-w-4xl mx-auto">
           {/* Decorative Blobs */}
           <div className="absolute -top-20 -left-20 w-48 h-48 bg-orange-400/10 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
