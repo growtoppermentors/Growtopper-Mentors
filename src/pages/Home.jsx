@@ -75,7 +75,7 @@ export default function Home({ openModal }) {
             </span>
           </div>
 
-          <h1 className="text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.05] tracking-tight mb-4 text-balance">
+          <h1 className="text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.2] tracking-tight mb-4 text-balance pb-2">
             Mentor for Everything.<br/>
             Get a mentor for <span className="whitespace-nowrap text-shimmer-premium font-black">10X growth.</span>
           </h1>
@@ -200,7 +200,7 @@ export default function Home({ openModal }) {
           <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-purple/5 text-brand-purple text-[10px] font-black uppercase tracking-widest mb-4">
             HOW IT WORKS
           </div>
-          <h2 className="text-[28px] md:text-[38px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3 text-balance">
+          <h2 className="text-[28px] md:text-[38px] font-black text-brand-dark leading-[1.2] tracking-tight mb-3 text-balance pb-1">
             A Simple 3-Step Journey<br/>to <span className="text-shimmer-premium font-black">10X Growth.</span>
           </h2>
           <p className="text-[14px] md:text-[15px] text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">

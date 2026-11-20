@@ -95,6 +95,11 @@
 
 .text-shimmer-premium {
   display: inline-block;
+  line-height: 1.25;
+  padding-bottom: 0.28em;
+  margin-bottom: -0.28em;
+  padding-top: 0.05em;
+  overflow: visible;
   background: linear-gradient(
     115deg,
     #5B10FF 10%,
@@ -136,6 +141,7 @@
   /* Section containers with light backgrounds */
   .bg-\[\#FAFAFA\], 
   .bg-\[\#F8F9FE\], 
+  .bg-\[\#FDFBF7\],
   .bg-gray-50, 
   .bg-slate-50 {
     background-color: #0A0B10 !important;
@@ -256,6 +262,11 @@
 
   /* Aesthetic Organic Text Shimmer (Dark Mode) */
   .text-shimmer-premium {
+    line-height: 1.25 !important;
+    padding-bottom: 0.28em !important;
+    margin-bottom: -0.28em !important;
+    padding-top: 0.05em !important;
+    overflow: visible !important;
     background: linear-gradient(
       115deg,
       #9D7BFF 10%,
@@ -350,6 +361,38 @@
     background-color: #1A1E2E !important;
     border-color: #333C57 !important;
     color: #FFFFFF !important;
+  }
+
+  /* Pastel gradient cards in dark mode -> dark slate cards with light text */
+  .from-\[\#F9F7FF\],
+  .from-\[\#F5FAFF\],
+  .from-\[\#F4FCF7\],
+  .from-\[\#FFF8F4\],
+  .from-\[\#FFF4ED\],
+  .from-\[\#F4F1FF\],
+  .from-\[\#F0FDF4\],
+  .from-\[\#FFF0E5\] {
+    --tw-gradient-from: #181C2B var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: #131622 var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+    background-color: #131622 !important;
+    border-color: #252B3E !important;
+  }
+
+  .to-\[\#FFFaf0\],
+  .to-\[\#FAFAFF\],
+  .to-\[\#F8FAFC\],
+  .to-\[\#E0F2FE\] {
+    --tw-gradient-to: #131622 var(--tw-gradient-to-position) !important;
+  }
+
+  /* Pastel badges in dark mode */
+  .bg-\[\#F4F1FF\],
+  .bg-\[\#E6F8EC\],
+  .bg-\[\#FFEDE1\],
+  .bg-\[\#FFF4ED\] {
+    background-color: rgba(91, 16, 255, 0.12) !important;
+    border-color: rgba(157, 123, 255, 0.25) !important;
   }
 
   /* ==========================================================

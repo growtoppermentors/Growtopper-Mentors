@@ -212,7 +212,7 @@ try {
   const assetsDir = path.resolve(distDir, 'assets');
   if (fs.existsSync(assetsDir)) {
     const files = fs.readdirSync(assetsDir);
-    const cssFile = files.find(f => f.startsWith('index-') && f.endsWith('.css'));
+    const match = baseHtml.match(/href="\/assets\/(index-[^"]+\.css)"/); const cssFile = (match && match[1]) || files.find(f => f.startsWith('index-') && f.endsWith('.css'));
     if (cssFile) {
       const cssPath = path.resolve(assetsDir, cssFile);
       const cssContent = fs.readFileSync(cssPath, 'utf8');
