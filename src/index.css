@@ -369,6 +369,20 @@
     flex-shrink: 0 !important;
   }
 
+  /* 4-Bar Color Palette for High Contrast on Dark Surfaces */
+  .text-\[\#22C55E\], .dark\:text-\[\#22C55E\] {
+    color: #22C55E !important;
+  }
+  .text-\[\#F87171\], .dark\:text-\[\#F87171\] {
+    color: #F87171 !important;
+  }
+  .text-\[\#A78BFA\], .dark\:text-\[\#A78BFA\] {
+    color: #A78BFA !important;
+  }
+  .text-\[\#FBBF24\], .dark\:text-\[\#FBBF24\] {
+    color: #FBBF24 !important;
+  }
+
   .bg-brand-purple\/8,
   .bg-brand-purple\/10,
   .bg-brand-purple\/15,

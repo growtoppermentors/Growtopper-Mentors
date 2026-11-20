@@ -491,42 +491,42 @@ export default function Home({ openModal }) {
           </p>
         </div>
 
-        {/* Stats Row */}
+        {/* Stats Row with 4-Bar Color Harmony */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 max-w-5xl mx-auto place-items-center md:place-items-start">
           <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 w-full max-w-[160px]">
-            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-[#8B5CF6]/15 flex items-center justify-center text-[#5B10FF] dark:text-[#A78BFA] shrink-0 border border-purple-100/50 dark:border-[#8B5CF6]/30">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
             </div>
             <div>
-              <div className="font-black text-[18px] text-brand-dark leading-none mb-1">500+</div>
-              <div className="text-[11px] font-medium text-gray-500 leading-tight">Students Mentored</div>
+              <div className="font-black text-[18px] text-brand-dark dark:text-[#A78BFA] leading-none mb-1">500+</div>
+              <div className="text-[11px] font-medium text-gray-500 dark:text-gray-400 leading-tight">Students Mentored</div>
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 w-full max-w-[160px]">
-            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-[#FBBF24]/15 flex items-center justify-center text-amber-500 dark:text-[#FBBF24] shrink-0 border border-amber-100/50 dark:border-[#FBBF24]/30">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
             </div>
             <div>
-              <div className="font-black text-[18px] text-brand-dark leading-none mb-1">4.8/5</div>
-              <div className="text-[11px] font-medium text-gray-500 leading-tight">Trusted by Parents</div>
+              <div className="font-black text-[18px] text-brand-dark dark:text-[#FBBF24] leading-none mb-1">4.8/5</div>
+              <div className="text-[11px] font-medium text-gray-500 dark:text-gray-400 leading-tight">Trusted by Parents</div>
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 w-full max-w-[160px]">
-            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-[#22C55E]/15 flex items-center justify-center text-emerald-500 dark:text-[#22C55E] shrink-0 border border-emerald-100/50 dark:border-[#22C55E]/30">
               <TrendingUp className="w-5 h-5" strokeWidth={2.5} />
             </div>
             <div>
-              <div className="font-black text-[18px] text-brand-dark leading-none mb-1">90%</div>
-              <div className="text-[11px] font-medium text-gray-500 leading-tight">Show Improved Discipline</div>
+              <div className="font-black text-[18px] text-brand-dark dark:text-[#22C55E] leading-none mb-1">90%</div>
+              <div className="text-[11px] font-medium text-gray-500 dark:text-gray-400 leading-tight">Show Improved Discipline</div>
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 w-full max-w-[160px]">
-            <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-brand-purple shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-rose-50 dark:bg-[#F87171]/15 flex items-center justify-center text-rose-500 dark:text-[#F87171] shrink-0 border border-rose-100/50 dark:border-[#F87171]/30">
               <BookOpen className="w-5 h-5" strokeWidth={2.5} />
             </div>
             <div>
-              <div className="font-black text-[18px] text-brand-dark leading-none mb-1">6-12</div>
-              <div className="text-[11px] font-medium text-gray-500 leading-tight">Grades We Support</div>
+              <div className="font-black text-[18px] text-brand-dark dark:text-[#F87171] leading-none mb-1">6-12</div>
+              <div className="text-[11px] font-medium text-gray-500 dark:text-gray-400 leading-tight">Grades We Support</div>
             </div>
           </div>
         </div>

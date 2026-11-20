@@ -17,10 +17,42 @@ const parameters = [
 ];
 
 const stats = [
-  { val: '60', unit: 'min', label: 'Deep Dive Session' },
-  { val: '10+', unit: '',   label: 'AI Parameters' },
-  { val: '₹1', unit: '',    label: 'One-Time Setup' },
-  { val: '500+', unit: '',  label: 'Students Helped' },
+  { 
+    val: '60', 
+    unit: 'min', 
+    label: 'Deep Dive Session',
+    color: 'text-emerald-600 dark:text-[#22C55E]',
+    glow: '0 0 14px rgba(34, 197, 94, 0.4)',
+    border: 'border-emerald-100/80 dark:border-[#22C55E]/30',
+    bg: 'bg-emerald-50/25 dark:bg-[#22C55E]/[0.06]'
+  },
+  { 
+    val: '10+', 
+    unit: '',   
+    label: 'AI Parameters',
+    color: 'text-rose-600 dark:text-[#F87171]',
+    glow: '0 0 14px rgba(248, 113, 113, 0.4)',
+    border: 'border-rose-100/80 dark:border-[#F87171]/30',
+    bg: 'bg-rose-50/25 dark:bg-[#F87171]/[0.06]'
+  },
+  { 
+    val: '₹1', 
+    unit: '',    
+    label: 'One-Time Setup',
+    color: 'text-[#5B10FF] dark:text-[#A78BFA]',
+    glow: '0 0 14px rgba(167, 139, 250, 0.45)',
+    border: 'border-purple-100/80 dark:border-[#8B5CF6]/30',
+    bg: 'bg-purple-50/25 dark:bg-[#8B5CF6]/[0.06]'
+  },
+  { 
+    val: '500+', 
+    unit: '',  
+    label: 'Students Helped',
+    color: 'text-amber-600 dark:text-[#FBBF24]',
+    glow: '0 0 14px rgba(251, 191, 36, 0.4)',
+    border: 'border-amber-100/80 dark:border-[#FBBF24]/30',
+    bg: 'bg-amber-50/25 dark:bg-[#FBBF24]/[0.06]'
+  },
 ];
 
 const parentProblems = [
@@ -74,14 +106,20 @@ export default function ClaritySession() {
               A comprehensive 60-minute intervention: 30 minutes of deep AI-powered SWOT analysis, followed by a 30-minute 1-on-1 Mentor strategy call to decode reality and build an execution roadmap.
             </p>
 
-            {/* Stats row */}
+            {/* Stats row with 4-Bar Color Palette */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 max-w-lg mx-auto lg:mx-0">
               {stats.map((s, i) => (
-                <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-3 text-center">
-                  <div className="font-black text-[20px] md:text-[22px] text-[#5B10FF] leading-none">
-                    {s.val}<span className="text-[14px]">{s.unit}</span>
+                <div 
+                  key={i} 
+                  className={`bg-white dark:bg-[#111522] rounded-2xl border ${s.border} ${s.bg} shadow-sm p-3 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md`}
+                >
+                  <div 
+                    className={`font-black text-[20px] md:text-[22px] ${s.color} leading-none`}
+                    style={{ textShadow: s.glow }}
+                  >
+                    {s.val}<span className="text-[13px] md:text-[14px]">{s.unit}</span>
                   </div>
-                  <div className="text-[9px] font-bold text-gray-500 uppercase tracking-wide mt-1">{s.label}</div>
+                  <div className="text-[9px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide mt-1.5">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -126,19 +164,19 @@ export default function ClaritySession() {
                 </div>
 
                 {/* SWOT mini card */}
-                <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 p-4">
-                  <h4 className="font-bold text-[11px] text-gray-800 mb-2.5 pb-2 border-b border-gray-100">SWOT Report Preview</h4>
+                <div className="bg-white dark:bg-[#131726] rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-gray-100 dark:border-[#222940] p-4">
+                  <h4 className="font-bold text-[11px] text-gray-800 dark:text-gray-200 mb-2.5 pb-2 border-b border-gray-100 dark:border-gray-800/80">SWOT Report Preview</h4>
                   <ul className="space-y-2">
                     {[
-                      { label: 'Strengths',    color: 'bg-green-500',   w: 'w-4/5' },
-                      { label: 'Weaknesses',   color: 'bg-red-400',     w: 'w-3/5' },
-                      { label: 'Opportunities',color: 'bg-[#5B10FF]',   w: 'w-[90%]' },
-                      { label: 'Growth Areas', color: 'bg-amber-400',   w: 'w-2/3' },
+                      { label: 'Strengths',    color: 'bg-[#22C55E]',   w: 'w-4/5' },
+                      { label: 'Weaknesses',   color: 'bg-[#F87171]',   w: 'w-3/5' },
+                      { label: 'Opportunities',color: 'bg-[#5B10FF] dark:bg-[#A78BFA]',   w: 'w-[90%]' },
+                      { label: 'Growth Areas', color: 'bg-[#FBBF24]',   w: 'w-2/3' },
                     ].map(s => (
                       <li key={s.label} className="flex items-center gap-2">
                         <div className={`w-1.5 h-1.5 rounded-full ${s.color} shrink-0`} />
-                        <span className="text-[10px] font-semibold text-gray-600 w-20 shrink-0">{s.label}</span>
-                        <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                        <span className="text-[10px] font-semibold text-gray-600 dark:text-gray-300 w-20 shrink-0">{s.label}</span>
+                        <div className="flex-1 h-1.5 bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden">
                           <div className={`h-full ${s.color} rounded-full ${s.w}`} />
                         </div>
                       </li>
