@@ -77,7 +77,7 @@ export default function Home({ openModal }) {
 
           <h1 className="text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.25] tracking-tight mb-4 text-balance pb-3">
             Mentor for Everything.<br/>
-            Get a mentor for <span className="whitespace-nowrap text-shimmer-premium font-black">10X growth.</span>
+            Get a mentor for <span className="whitespace-nowrap brand-shimmer-hero font-black">10X growth.</span>
           </h1>
           <p className="text-[14px] text-gray-500 font-medium leading-relaxed mt-4">
             Not a Coaching Class. Not an App.<br/>
@@ -85,32 +85,42 @@ export default function Home({ openModal }) {
           </p>
         </div>
 
-        <div className="relative w-full max-w-[320px] md:max-w-[300px] mx-auto mb-auto">
-          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#222222] text-white text-[9px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full z-10 shadow-sm border border-[#333]">
-            START HERE
+        <div className="relative w-full max-w-[320px] md:max-w-[305px] mx-auto mb-auto">
+          {/* Top Pill Badge with Pulsing Brand Dot */}
+          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#171926] text-white text-[9px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full z-10 shadow-sm border border-[#2B3147] flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5B10FF] shadow-[0_0_8px_#5B10FF] animate-pulse"></span>
+            <span>START HERE</span>
           </div>
 
-          <div className="bg-white rounded-[32px] md:rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 p-6 flex flex-col items-center text-center relative z-0">
-            <div className="text-[#5B10FF] font-black text-[56px] md:text-[54px] leading-none tracking-tighter my-5 flex items-center justify-center">
-              1<span className="text-[44px] mx-0.5">on</span>1
+          {/* Luxury Ambient Border Container */}
+          <div className="rounded-[32px] md:rounded-[28px] bg-gradient-to-b from-[#5B10FF]/40 via-white/10 to-[#5B10FF]/25 p-[1.5px] shadow-[0_20px_50px_-10px_rgba(0,0,0,0.12),0_0_35px_rgba(91,16,255,0.18)] group transition-all duration-300 hover:shadow-[0_25px_60px_-10px_rgba(0,0,0,0.2),0_0_45px_rgba(91,16,255,0.28)]">
+            <div className="hero-start-card bg-white rounded-[30.5px] md:rounded-[26.5px] p-6 flex flex-col items-center text-center relative z-0 overflow-hidden">
+              
+              {/* Soft Ambient Violet Ray behind 1on1 */}
+              <div className="w-36 h-36 bg-gradient-to-tr from-[#5B10FF]/20 via-[#7B2BF9]/10 to-transparent rounded-full blur-2xl pointer-events-none absolute top-10 left-1/2 -translate-x-1/2"></div>
+
+              {/* 1on1 Electric Brand Typography with Breathing Glow */}
+              <div className="brand-hero-1on1 font-black text-[56px] md:text-[54px] leading-none tracking-tighter my-5 flex items-center justify-center relative z-10 select-none">
+                1<span className="text-[38px] md:text-[36px] mx-0.5 font-extrabold opacity-85">on</span>1
+              </div>
+
+              <div className="uppercase text-[10px] font-black text-gray-800 dark:text-gray-200 tracking-widest mb-3 relative z-10">
+                PARENT & STUDENT CALL
+              </div>
+              
+              <p className="text-[11px] text-gray-500 dark:text-gray-400 font-medium mb-6 relative z-10">
+                Includes our 30-min student test.
+              </p>
+
+              <div className="w-full h-px bg-gray-100 dark:bg-gray-800/80 mb-6 relative z-10"></div>
+
+              <button 
+                onClick={() => window.open('https://pages.razorpay.com/setupcall', '_blank')}
+                className="w-full bg-gradient-to-r from-[#5B10FF] via-[#681AEC] to-[#5B10FF] text-white font-bold text-[14px] py-3.5 rounded-xl flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all shadow-md shadow-[#5B10FF]/35 hover:shadow-lg hover:shadow-[#5B10FF]/50 relative z-10"
+              >
+                Book for ₹1 <ChevronRight className="w-4 h-4" />
+              </button>
             </div>
-
-            <div className="uppercase text-[10px] font-black text-gray-800 tracking-widest mb-3">
-              PARENT & STUDENT CALL
-            </div>
-            
-            <p className="text-[11px] text-gray-500 font-medium mb-6">
-              Includes our 30-min student test.
-            </p>
-
-            <div className="w-full h-px bg-gray-100 mb-6"></div>
-
-            <button 
-              onClick={() => window.open('https://pages.razorpay.com/setupcall', '_blank')}
-              className="w-full bg-[#5B10FF] text-white font-bold text-[14px] py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-[#4E0EE6] transition-colors shadow-md shadow-[#5B10FF]/20"
-            >
-              Book for ₹1 <ChevronRight className="w-4 h-4" />
-            </button>
           </div>
         </div>
       </section>

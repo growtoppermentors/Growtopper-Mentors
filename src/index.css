@@ -92,7 +92,8 @@
   }
 }
 
-.text-shimmer-premium {
+.text-shimmer-premium,
+.brand-shimmer-hero {
   display: inline-block;
   line-height: 1.25;
   padding-bottom: 0.25em;
@@ -100,12 +101,15 @@
   margin-bottom: -0.25em;
   overflow: visible;
   background: linear-gradient(
-    115deg,
+    110deg,
     #5B10FF 0%,
-    #7C3AED 25%,
-    #A855F7 45%,
-    #6366F1 55%,
-    #7C3AED 75%,
+    #5B10FF 20%,
+    #7B2BF9 35%,
+    #A78BFA 48%,
+    #E9D5FF 50%,
+    #A78BFA 52%,
+    #7B2BF9 65%,
+    #5B10FF 80%,
     #5B10FF 100%
   );
   background-size: 250% 100%;
@@ -113,14 +117,37 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent !important;
-  animation: text-shimmer-flow 5s ease-in-out infinite;
+  animation: text-shimmer-flow 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   vertical-align: baseline;
   text-shadow: none !important;
+  filter: drop-shadow(0 2px 14px rgba(91, 16, 255, 0.4));
   transition: filter 0.3s ease;
 }
 
-.text-shimmer-premium:hover {
-  filter: drop-shadow(0 2px 14px rgba(91, 16, 255, 0.5));
+.text-shimmer-premium:hover,
+.brand-shimmer-hero:hover {
+  filter: drop-shadow(0 4px 22px rgba(91, 16, 255, 0.65));
+}
+
+@keyframes brand-glow-breath {
+  0%, 100% {
+    filter: drop-shadow(0 4px 16px rgba(91, 16, 255, 0.45));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 6px 26px rgba(91, 16, 255, 0.75));
+    transform: scale(1.02);
+  }
+}
+
+.brand-hero-1on1 {
+  background: linear-gradient(135deg, #5B10FF 0%, #681AEC 45%, #8B5CF6 70%, #5B10FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  animation: brand-glow-breath 4s ease-in-out infinite;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* ── COMPARISON & PRICING HERO HIGHLIGHTS (Light Mode) ── */
@@ -281,31 +308,53 @@
     background-color: #181C2B !important;
   }
 
-  /* Aesthetic Organic Text Shimmer (Dark Mode) */
-  .text-shimmer-premium {
+  /* Aesthetic Organic Text Shimmer (Dark Mode) - Saturated Electric Brand Purple */
+  .text-shimmer-premium,
+  .brand-shimmer-hero {
     line-height: 1.25 !important;
     padding-bottom: 0.25em !important;
     padding-top: 0.05em !important;
     margin-bottom: -0.25em !important;
     overflow: visible !important;
     background: linear-gradient(
-      115deg,
-      #9D7BFF 0%,
-      #C084FC 25%,
-      #E9D5FF 50%,
-      #C084FC 75%,
-      #9D7BFF 100%
+      110deg,
+      #5B10FF 0%,
+      #5B10FF 20%,
+      #7B2BF9 35%,
+      #B49BFF 48%,
+      #FFFFFF 50%,
+      #B49BFF 52%,
+      #7B2BF9 65%,
+      #5B10FF 80%,
+      #5B10FF 100%
     ) !important;
     background-size: 250% 100% !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     color: transparent !important;
+    filter: drop-shadow(0 0 24px rgba(91, 16, 255, 0.65)) !important;
     transition: filter 0.3s ease !important;
   }
 
-  .text-shimmer-premium:hover {
-    filter: drop-shadow(0 2px 14px rgba(157, 123, 255, 0.7)) !important;
+  .text-shimmer-premium:hover,
+  .brand-shimmer-hero:hover {
+    filter: drop-shadow(0 0 32px rgba(91, 16, 255, 0.85)) !important;
+  }
+
+  /* 1on1 Brand Text Hero (Dark Mode) */
+  .brand-hero-1on1 {
+    background: linear-gradient(135deg, #5B10FF 0%, #7B2BF9 45%, #9D68FF 75%, #5B10FF 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    filter: drop-shadow(0 0 24px rgba(91, 16, 255, 0.7)) !important;
+  }
+
+  .hero-start-card {
+    background: linear-gradient(145deg, #131728 0%, #101422 50%, #0D101C 100%) !important;
+    border-color: #222940 !important;
   }
 
   /* Tinted cards & badges on dark background */
