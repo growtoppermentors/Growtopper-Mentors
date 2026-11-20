@@ -79,37 +79,40 @@
 
 
 
-/* Modern 2026 Premium Text Shimmer (Composited) */
-@keyframes composited-shine {
-  0%, 15% { transform: translateX(100%); }
-  85%, 100% { transform: translateX(-100%); }
+/* ==========================================================
+   AESTHETIC ORGANIC TEXT SHIMMER (Zero Bounding Box Glitch)
+   Animates the background position of the text's own gradient.
+   Clipped 100% strictly to letterforms — no unclipped overlays.
+   ========================================================== */
+@keyframes text-shimmer-flow {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
 }
+
 .text-shimmer-premium {
-  position: relative;
   display: inline-block;
-  color: #5B10FF;
-  overflow: hidden;
-  vertical-align: bottom;
-  padding-bottom: 0.1em;
-  margin-bottom: -0.1em;
-}
-.text-shimmer-premium::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: linear-gradient(
-    110deg,
-    transparent 20%,
-    rgba(255, 255, 255, 0.7) 50%,
-    transparent 80%
+    115deg,
+    #5B10FF 10%,
+    #7C3AED 28%,
+    #C4B5FD 45%,
+    #FFFFFF 50%,
+    #C4B5FD 55%,
+    #7C3AED 72%,
+    #5B10FF 90%
   );
-  transform: translateX(-100%);
-  animation: composited-shine 5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-  mix-blend-mode: screen;
-  pointer-events: none;
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  animation: text-shimmer-flow 4.5s ease-in-out infinite;
+  vertical-align: baseline;
+  text-shadow: none !important;
 }
 
 /* ==========================================================
@@ -159,6 +162,7 @@
   h1, h2, h3, h4, h5, h6,
   .text-brand-dark,
   .text-gray-900,
+  .text-gray-800,
   .text-\[\#111115\],
   .text-\[\#111827\],
   .text-\[\#222222\],
@@ -248,6 +252,104 @@
   .hover\:bg-gray-50:hover,
   .hover\:bg-gray-100:hover {
     background-color: #181C2B !important;
+  }
+
+  /* Aesthetic Organic Text Shimmer (Dark Mode) */
+  .text-shimmer-premium {
+    background: linear-gradient(
+      115deg,
+      #9D7BFF 10%,
+      #C4B5FD 28%,
+      #FFFFFF 45%,
+      #FFFFFF 55%,
+      #C4B5FD 72%,
+      #9D7BFF 90%
+    ) !important;
+    background-size: 250% 100% !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+  }
+
+  /* Tinted cards & badges on dark background */
+  .bg-\[\#F9F4FF\],
+  .bg-purple-50,
+  .bg-purple-100 {
+    background-color: rgba(91, 16, 255, 0.12) !important;
+    border-color: rgba(157, 123, 255, 0.25) !important;
+  }
+
+  .bg-\[\#EBF4FF\],
+  .bg-blue-50,
+  .bg-blue-100 {
+    background-color: rgba(37, 99, 235, 0.12) !important;
+    border-color: rgba(59, 130, 246, 0.25) !important;
+  }
+
+  .bg-green-50,
+  .bg-green-100 {
+    background-color: rgba(16, 185, 129, 0.12) !important;
+    border-color: rgba(16, 185, 129, 0.25) !important;
+  }
+
+  .bg-yellow-50,
+  .bg-yellow-100 {
+    background-color: rgba(234, 179, 8, 0.12) !important;
+    border-color: rgba(234, 179, 8, 0.25) !important;
+  }
+
+  .bg-orange-50,
+  .bg-orange-50\/50,
+  .bg-orange-100 {
+    background-color: rgba(249, 115, 22, 0.12) !important;
+    border-color: rgba(249, 115, 22, 0.25) !important;
+  }
+
+  .bg-red-50,
+  .bg-red-100 {
+    background-color: rgba(239, 68, 68, 0.12) !important;
+    border-color: rgba(239, 68, 68, 0.25) !important;
+  }
+
+  .bg-indigo-50,
+  .bg-indigo-100 {
+    background-color: rgba(99, 102, 241, 0.12) !important;
+    border-color: rgba(99, 102, 241, 0.25) !important;
+  }
+
+  /* High-contrast pastel accents for text on dark backgrounds */
+  .text-purple-600 {
+    color: #A78BFA !important;
+  }
+  .text-blue-600,
+  .text-blue-500,
+  .text-\[\#0055DD\] {
+    color: #60A5FA !important;
+  }
+  .text-green-600,
+  .text-green-700 {
+    color: #34D399 !important;
+  }
+  .text-yellow-600 {
+    color: #FBBF24 !important;
+  }
+  .text-orange-600,
+  .text-\[\#E96614\] {
+    color: #FB923C !important;
+  }
+  .text-red-600 {
+    color: #F87171 !important;
+  }
+  .text-indigo-600 {
+    color: #818CF8 !important;
+  }
+
+  /* Dark pill "START HERE" badge */
+  .bg-\[\#222222\] {
+    background-color: #1A1E2E !important;
+    border-color: #333C57 !important;
+    color: #FFFFFF !important;
   }
 
   /* ==========================================================
