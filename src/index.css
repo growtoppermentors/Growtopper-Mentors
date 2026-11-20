@@ -278,7 +278,13 @@
     color: #D97706 !important;
   }
 
-  .certificate-frame .text-brand-dark {
+  .certificate-frame .text-brand-dark,
+  .certificate-frame .text-gray-900,
+  .certificate-frame .text-gray-800,
+  .certificate-frame .text-gray-700,
+  .certificate-frame strong,
+  .certificate-frame .certificate-signature,
+  .certificate-frame .certificate-signer-name {
     color: #1C2033 !important;
   }
 
