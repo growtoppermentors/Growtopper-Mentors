@@ -71,9 +71,11 @@ export default function Hero({ onRequestInvite }) {
               <iframe 
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/uTZyyhW5zk4?rel=0&modestbranding=1" 
-                title="Explainer Video"
+                title="Growtopper Mentors Explainer Video"
                 frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin"
+                loading="lazy"
                 allowFullScreen
               ></iframe>
             </div>
