@@ -130,65 +130,83 @@ export default function Home({ openModal }) {
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white rounded-[24px] md:rounded-[32px] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden">
-          <div className="overflow-x-auto" ref={tableContainerRef}>
-            <table className="w-full text-left border-collapse min-w-[500px] md:min-w-[600px]">
-              <thead>
-                <tr>
-                  <th className="p-4 md:p-5 w-[40%] align-bottom">
-                    <span className="text-[10px] md:text-[11px] font-black text-gray-500 uppercase tracking-widest">FEATURE</span>
-                  </th>
-                  <th className="p-4 md:p-5 w-[20%] text-center align-bottom border-l border-gray-100">
-                    <div className="flex flex-col items-center gap-2">
-                      <Building2 className="w-5 h-5 md:w-6 md:h-6 text-gray-500" strokeWidth={1.5} />
-                      <span className="text-[11px] md:text-[12px] font-bold text-gray-700 leading-tight">Offline<br/>Coaching</span>
-                    </div>
-                  </th>
-                  <th className="p-4 md:p-5 w-[20%] text-center align-bottom border-l border-gray-100">
-                    <div className="flex flex-col items-center gap-2">
-                      <MonitorPlay className="w-5 h-5 md:w-6 md:h-6 text-gray-500" strokeWidth={1.5} />
-                      <span className="text-[11px] md:text-[12px] font-bold text-gray-700 leading-tight">Online<br/>Apps</span>
-                    </div>
-                  </th>
-                  <th className="p-4 md:p-5 w-[20%] text-center align-bottom border-l border-gray-100 bg-[#F9F4FF]">
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-[#5B10FF] flex items-center justify-center text-white shadow-sm shadow-[#5B10FF]/30">
-                        <Zap className="w-3.5 h-3.5 md:w-4 md:h-4 fill-current" />
+        <div className="rounded-[28px] md:rounded-[36px] bg-gradient-to-b from-[#5B10FF]/30 via-white/5 to-[#5B10FF]/20 p-[1.5px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4),0_0_40px_rgba(91,16,255,0.12)] relative overflow-hidden group">
+          <div className="comparison-card bg-white rounded-[26.5px] md:rounded-[34.5px] overflow-hidden">
+            <div className="overflow-x-auto" ref={tableContainerRef}>
+              <table className="w-full text-left border-collapse min-w-[520px] md:min-w-[620px]">
+                <thead>
+                  <tr>
+                    <th className="p-5 md:p-6 w-[37%] align-bottom">
+                      <span className="text-[10px] md:text-[11px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">
+                        CORE FEATURE
+                      </span>
+                    </th>
+                    <th className="p-5 md:p-6 w-[21%] text-center align-bottom border-l border-gray-100 dark:border-gray-800/80">
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="w-9 h-9 rounded-xl bg-gray-100/90 dark:bg-gray-800/70 border border-gray-200/60 dark:border-gray-700/60 flex items-center justify-center text-gray-500 shadow-sm">
+                          <Building2 className="w-4.5 h-4.5 text-gray-500" strokeWidth={1.75} />
+                        </div>
+                        <span className="text-[11px] md:text-[12px] font-bold text-gray-700 dark:text-gray-300 leading-tight">Offline<br/>Coaching</span>
                       </div>
-                      <span className="text-[12px] md:text-[13px] font-bold text-[#5B10FF]">Growtopper</span>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {features.map((feature, i) => (
-                  <tr key={i} className="hover:bg-gray-50/50 transition-colors">
-                    <td className="p-4 md:px-5 md:py-4">
-                      <span className="text-[13px] md:text-[14px] font-medium text-gray-600">{feature.name}</span>
-                    </td>
-                    <td className="p-4 md:px-5 md:py-4 text-center border-l border-gray-100">
-                      {feature.offline ? (
-                        <Check className="w-4 h-4 text-gray-300 mx-auto" />
-                      ) : (
-                        <span className="text-gray-300 font-medium">-</span>
-                      )}
-                    </td>
-                    <td className="p-4 md:px-5 md:py-4 text-center border-l border-gray-100">
-                      {feature.online ? (
-                        <Check className="w-4 h-4 text-gray-300 mx-auto" />
-                      ) : (
-                        <span className="text-gray-300 font-medium">-</span>
-                      )}
-                    </td>
-                    <td className="p-4 md:px-5 md:py-4 text-center border-l border-gray-100 bg-[#F9F4FF]">
-                      <div className="w-5 h-5 rounded-full bg-[#5B10FF] flex items-center justify-center mx-auto shadow-sm shadow-[#5B10FF]/20">
-                        <Check className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" strokeWidth={3} />
+                    </th>
+                    <th className="p-5 md:p-6 w-[21%] text-center align-bottom border-l border-gray-100 dark:border-gray-800/80">
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="w-9 h-9 rounded-xl bg-gray-100/90 dark:bg-gray-800/70 border border-gray-200/60 dark:border-gray-700/60 flex items-center justify-center text-gray-500 shadow-sm">
+                          <MonitorPlay className="w-4.5 h-4.5 text-gray-500" strokeWidth={1.75} />
+                        </div>
+                        <span className="text-[11px] md:text-[12px] font-bold text-gray-700 dark:text-gray-300 leading-tight">Online<br/>Apps</span>
                       </div>
-                    </td>
+                    </th>
+                    <th className="p-5 md:p-6 w-[21%] text-center align-bottom border-l border-[#5B10FF]/25 dark:border-[#5B10FF]/35 growtopper-column-highlight relative">
+                      {/* Radiant Top Accent Bar */}
+                      <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#5B10FF] via-[#9D68FF] to-[#5B10FF] shadow-[0_2px_12px_rgba(91,16,255,0.6)]"></div>
+                      
+                      <div className="flex flex-col items-center gap-2 pt-1">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[9px] font-black tracking-widest uppercase bg-[#5B10FF] text-white shadow-sm shadow-[#5B10FF]/40 border border-white/20">
+                          ALL-IN-ONE
+                        </span>
+                        <div className="w-9 h-9 md:w-10 md:h-10 rounded-2xl bg-gradient-to-tr from-[#5B10FF] via-[#7B2BF9] to-[#9D68FF] flex items-center justify-center text-white shadow-[0_4px_18px_rgba(91,16,255,0.45)] group-hover:scale-105 transition-transform">
+                          <Zap className="w-4.5 h-4.5 md:w-5 md:h-5 fill-current" />
+                        </div>
+                        <span className="text-[13px] md:text-[14px] font-black text-[#5B10FF] dark:text-[#C4B5FD] tracking-tight">Growtopper</span>
+                      </div>
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-gray-100 dark:divide-gray-800/70">
+                  {features.map((feature, i) => (
+                    <tr key={i} className="hover:bg-gray-50/60 dark:hover:bg-white/[0.02] transition-colors group/row">
+                      <td className="p-4 md:px-6 md:py-4.5">
+                        <span className="text-[13px] md:text-[14.5px] font-semibold text-gray-800 dark:text-gray-200 tracking-tight">{feature.name}</span>
+                      </td>
+                      <td className="p-4 md:px-5 md:py-4.5 text-center border-l border-gray-100 dark:border-gray-800/70">
+                        {feature.offline ? (
+                          <div className="w-5 h-5 rounded-full bg-gray-100 dark:bg-gray-800/90 border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center mx-auto text-gray-500">
+                            <Check className="w-3 h-3 text-gray-500 dark:text-gray-400" strokeWidth={2.5} />
+                          </div>
+                        ) : (
+                          <span className="text-gray-300 dark:text-gray-600 font-semibold text-[15px]">—</span>
+                        )}
+                      </td>
+                      <td className="p-4 md:px-5 md:py-4.5 text-center border-l border-gray-100 dark:border-gray-800/70">
+                        {feature.online ? (
+                          <div className="w-5 h-5 rounded-full bg-gray-100 dark:bg-gray-800/90 border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center mx-auto text-gray-500">
+                            <Check className="w-3 h-3 text-gray-500 dark:text-gray-400" strokeWidth={2.5} />
+                          </div>
+                        ) : (
+                          <span className="text-gray-300 dark:text-gray-600 font-semibold text-[15px]">—</span>
+                        )}
+                      </td>
+                      <td className="p-4 md:px-5 md:py-4.5 text-center border-l border-[#5B10FF]/25 dark:border-[#5B10FF]/35 growtopper-column-highlight group-hover/row:brightness-105 transition-all">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-[#5B10FF] to-[#875BFB] flex items-center justify-center mx-auto shadow-[0_2px_12px_rgba(91,16,255,0.45)] ring-2 ring-[#5B10FF]/30">
+                          <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
