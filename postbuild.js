@@ -190,12 +190,15 @@ if (fs.existsSync(distSitemapPath)) {
 
 if (sitemapContent) {
   let blogUrls = '';
+  const today = new Date().toISOString().split('T')[0];
   blogs.forEach(blog => {
+    const lastmod = blog.date ? new Date(blog.date).toISOString().split('T')[0] : today;
     blogUrls += `
   <url>
     <loc>https://growtopper.app/blog/${blog.slug}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>`;
   });
   
