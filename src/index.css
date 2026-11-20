@@ -150,6 +150,33 @@
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* ── HERO TOP PILL BADGE & COMPARISON BADGES (Light Mode) ── */
+.hero-pill-badge {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 9999px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.hero-pill-dot {
+  background-color: #5B10FF;
+  box-shadow: 0 0 8px rgba(91, 16, 255, 0.6);
+}
+
+.hero-pill-text {
+  color: #5B10FF;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.badge-all-in-one {
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  flex-shrink: 0 !important;
+}
+
 /* ── COMPARISON & PRICING HERO HIGHLIGHTS (Light Mode) ── */
 .growtopper-column-highlight {
   background: linear-gradient(180deg, #F3EBFF 0%, #FAF6FF 100%);
@@ -274,7 +301,72 @@
   .text-brand-purple,
   .text-\[\#5B10FF\],
   .text-\[\#4E14F9\] {
-    color: #9D7BFF !important;
+    color: #B49BFF !important;
+  }
+
+  /* Any heading accent span with brand purple gets radiant brand shimmer */
+  h1 span.text-\[\#5B10FF\],
+  h2 span.text-\[\#5B10FF\],
+  h1 span.text-brand-purple,
+  h2 span.text-brand-purple,
+  h1 span.text-\[\#4E14F9\],
+  h2 span.text-\[\#4E14F9\] {
+    background: linear-gradient(
+      110deg,
+      #8B5CF6 0%,
+      #A855F7 25%,
+      #E9D5FF 48%,
+      #FFFFFF 50%,
+      #E9D5FF 52%,
+      #A855F7 75%,
+      #8B5CF6 100%
+    ) !important;
+    background-size: 250% 100% !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    animation: text-shimmer-flow 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.7)) drop-shadow(0 0 6px rgba(168, 85, 247, 0.45)) !important;
+  }
+
+  /* Elite Hero Top Pill Badge in Dark Mode */
+  .hero-pill-badge {
+    background: linear-gradient(180deg, rgba(32, 25, 62, 0.9) 0%, rgba(18, 20, 36, 0.95) 100%) !important;
+    border: 1px solid rgba(168, 85, 247, 0.4) !important;
+    box-shadow: 0 4px 24px -2px rgba(91, 16, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+
+  .hero-pill-dot {
+    background-color: #A855F7 !important;
+    box-shadow: 0 0 12px #A855F7, 0 0 4px #FFFFFF !important;
+  }
+
+  .hero-pill-text {
+    color: #FFFFFF !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.22em !important;
+    background: linear-gradient(90deg, #FFFFFF 0%, #F5EEFF 45%, #DDD6FE 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.5)) !important;
+  }
+
+  /* Pricing Pro Plan Yellow Pill Safeguard */
+  .pro-column-highlight .bg-\[\#FBBF24\],
+  .bg-\[\#FBBF24\] {
+    background-color: #FBBF24 !important;
+    color: #090A0F !important;
+  }
+
+  /* Comparison Table Mobile ALL-IN-ONE single line safeguard */
+  .badge-all-in-one {
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
   }
 
   .bg-brand-purple\/8,

@@ -67,7 +67,7 @@ export default function ClaritySession() {
 
             <h1 className="text-[30px] md:text-[40px] lg:text-[46px] font-black leading-[1.05] tracking-tight mb-5 text-balance">
               1-on-1 Video Call for<br />
-              <span className="text-[#5B10FF]">Student Growth Check.</span>
+              <span className="brand-shimmer-hero font-black">Student Growth Check.</span>
             </h1>
 
             <p className="text-[14px] md:text-[15px] text-gray-500 font-medium max-w-lg mx-auto lg:mx-0 mb-6 leading-relaxed">
@@ -240,7 +240,7 @@ export default function ClaritySession() {
             THE GROWTOPPER ENGINE
           </div>
           <h2 className="text-[26px] md:text-[36px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3">
-            AI Intelligence. <span className="text-[#5B10FF]">Human Empathy.</span>
+            AI Intelligence. <span className="brand-shimmer-hero font-black">Human Empathy.</span>
           </h2>
           <p className="text-[14px] text-gray-500 font-medium max-w-xl mx-auto">
             Technology alone can't motivate a teenager. Humans alone can't track millions of data points. We combine both.

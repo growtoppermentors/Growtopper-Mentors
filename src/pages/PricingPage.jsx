@@ -193,8 +193,8 @@ export default function PricingPage({ onRequestInvite }) {
 
                       {/* Pro Column Header (Standout Premium) */}
                       <th className="w-[31%] p-0 text-center border-b border-[#5B10FF]/25 dark:border-[#5B10FF]/35 pro-column-highlight relative align-bottom">
-                        {/* Top Radiant Gold Banner */}
-                        <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-[9px] font-black text-gray-900 uppercase tracking-widest py-1 shadow-sm">
+                        {/* Top Radiant Solid Amber Banner */}
+                        <div className="absolute top-0 left-0 right-0 bg-[#FBBF24] text-[9.5px] font-black text-gray-950 uppercase tracking-widest py-1 shadow-sm">
                           PRO PLAN • ALL-INCLUSIVE
                         </div>
                         <div className="pt-8 pb-6 px-5 md:px-6 flex flex-col items-center">

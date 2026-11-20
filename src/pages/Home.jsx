@@ -68,9 +68,9 @@ export default function Home({ openModal }) {
         <div className="text-center max-w-3xl mx-auto mb-6 w-full mt-auto">
           
           {/* Top Pill Badge */}
-          <div className="bg-white border border-gray-200 rounded-full px-5 py-2 inline-flex items-center gap-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.04)] mb-6 mt-2 lg:mt-0 mx-auto">
-            <div className="w-2 h-2 rounded-full bg-[#5B10FF] animate-pulse"></div>
-            <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#5B10FF]">
+          <div className="hero-pill-badge bg-white border border-gray-200 rounded-full px-5 py-2 inline-flex items-center gap-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.04)] mb-6 mt-2 lg:mt-0 mx-auto select-none">
+            <div className="hero-pill-dot w-2 h-2 rounded-full bg-[#5B10FF] animate-pulse"></div>
+            <span className="hero-pill-text text-[11px] font-black tracking-[0.2em] uppercase text-[#5B10FF]">
               Grades 6–12 • Invite Only
             </span>
           </div>
@@ -146,12 +146,12 @@ export default function Home({ openModal }) {
               <table className="w-full text-left border-collapse min-w-[520px] md:min-w-[620px]">
                 <thead>
                   <tr>
-                    <th className="p-5 md:p-6 w-[37%] align-bottom">
+                    <th className="p-3.5 sm:p-5 md:p-6 w-[37%] align-bottom">
                       <span className="text-[10px] md:text-[11px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">
                         CORE FEATURE
                       </span>
                     </th>
-                    <th className="p-5 md:p-6 w-[21%] text-center align-bottom border-l border-gray-100 dark:border-gray-800/80">
+                    <th className="p-3 sm:p-5 md:p-6 w-[21%] text-center align-bottom border-l border-gray-100 dark:border-gray-800/80">
                       <div className="flex flex-col items-center gap-2">
                         <div className="w-9 h-9 rounded-xl bg-gray-100/90 dark:bg-gray-800/70 border border-gray-200/60 dark:border-gray-700/60 flex items-center justify-center text-gray-500 shadow-sm">
                           <Building2 className="w-4.5 h-4.5 text-gray-500" strokeWidth={1.75} />
@@ -159,7 +159,7 @@ export default function Home({ openModal }) {
                         <span className="text-[11px] md:text-[12px] font-bold text-gray-700 dark:text-gray-300 leading-tight">Offline<br/>Coaching</span>
                       </div>
                     </th>
-                    <th className="p-5 md:p-6 w-[21%] text-center align-bottom border-l border-gray-100 dark:border-gray-800/80">
+                    <th className="p-3 sm:p-5 md:p-6 w-[21%] text-center align-bottom border-l border-gray-100 dark:border-gray-800/80">
                       <div className="flex flex-col items-center gap-2">
                         <div className="w-9 h-9 rounded-xl bg-gray-100/90 dark:bg-gray-800/70 border border-gray-200/60 dark:border-gray-700/60 flex items-center justify-center text-gray-500 shadow-sm">
                           <MonitorPlay className="w-4.5 h-4.5 text-gray-500" strokeWidth={1.75} />
@@ -167,12 +167,12 @@ export default function Home({ openModal }) {
                         <span className="text-[11px] md:text-[12px] font-bold text-gray-700 dark:text-gray-300 leading-tight">Online<br/>Apps</span>
                       </div>
                     </th>
-                    <th className="p-5 md:p-6 w-[21%] text-center align-bottom border-l border-[#5B10FF]/25 dark:border-[#5B10FF]/35 growtopper-column-highlight relative">
+                    <th className="p-3 sm:p-5 md:p-6 w-[21%] text-center align-bottom border-l border-[#5B10FF]/25 dark:border-[#5B10FF]/35 growtopper-column-highlight relative">
                       {/* Radiant Top Accent Bar */}
                       <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#5B10FF] via-[#9D68FF] to-[#5B10FF] shadow-[0_2px_12px_rgba(91,16,255,0.6)]"></div>
                       
                       <div className="flex flex-col items-center gap-2 pt-1">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[9px] font-black tracking-widest uppercase bg-[#5B10FF] text-white shadow-sm shadow-[#5B10FF]/40 border border-white/20">
+                        <span className="badge-all-in-one inline-flex items-center whitespace-nowrap shrink-0 px-2 sm:px-2.5 py-0.5 rounded-full text-[8.5px] sm:text-[9.5px] font-black tracking-wider uppercase bg-[#5B10FF] text-white shadow-sm shadow-[#5B10FF]/40 border border-white/20 select-none">
                           ALL-IN-ONE
                         </span>
                         <div className="w-9 h-9 md:w-10 md:h-10 rounded-2xl bg-gradient-to-tr from-[#5B10FF] via-[#7B2BF9] to-[#9D68FF] flex items-center justify-center text-white shadow-[0_4px_18px_rgba(91,16,255,0.45)] group-hover:scale-105 transition-transform">
@@ -484,7 +484,7 @@ export default function Home({ openModal }) {
             TESTIMONIALS
           </div>
           <h2 className="text-[32px] md:text-[44px] font-black text-brand-dark leading-[1.1] tracking-tight mb-4 text-balance">
-            Real People. Real Stories.<br/><span className="text-[#5B10FF]">Real Growth.</span>
+            Real People. Real Stories.<br/><span className="brand-shimmer-hero font-black">Real Growth.</span>
           </h2>
           <p className="text-[14px] md:text-[16px] text-gray-500 font-medium max-w-2xl mx-auto leading-relaxed">
             From better habits to bigger dreams — hear from students and parents who are building a brighter future with Growtopper.
@@ -672,7 +672,7 @@ export default function Home({ openModal }) {
                 OUR MENTORS
               </div>
               <h2 className="text-[28px] md:text-[38px] font-black text-brand-dark leading-[1.1] tracking-tight mb-3">
-                Learn from People Who <br className="hidden md:block" />Are Building a <span className="text-[#5B10FF]">Brighter Tomorrow.</span>
+                Learn from People Who <br className="hidden md:block" />Are Building a <span className="brand-shimmer-hero font-black">Brighter Tomorrow.</span>
               </h2>
               <p className="text-[14px] text-gray-500 font-medium max-w-2xl mx-auto md:mx-0 leading-relaxed">
                 Our mentors are young achievers from top universities and diverse fields, passionate about helping students grow — academically, personally, and for life.

@@ -35,9 +35,9 @@ export default function Hero({ onRequestInvite }) {
       <div className="max-w-[1200px] mx-auto w-full px-4 sm:px-8 flex flex-col items-center relative z-10">
         
         {/* Top Pill Badge */}
-        <div className="bg-white border border-gray-200 rounded-full px-5 py-2 flex items-center gap-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.04)] mb-5 mt-2 lg:mt-0">
-          <div className="w-2 h-2 rounded-full bg-brand-purple animate-pulse"></div>
-          <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-brand-purple">
+        <div className="hero-pill-badge bg-white border border-gray-200 rounded-full px-5 py-2 flex items-center gap-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.04)] mb-5 mt-2 lg:mt-0 select-none">
+          <div className="hero-pill-dot w-2 h-2 rounded-full bg-[#5B10FF] animate-pulse"></div>
+          <span className="hero-pill-text text-[11px] font-black tracking-[0.2em] uppercase text-[#5B10FF]">
             Grades 6–12 • Invite Only
           </span>
         </div>
@@ -45,7 +45,7 @@ export default function Hero({ onRequestInvite }) {
         {/* Headline */}
         <h1 className="text-center font-black text-[38px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-[-0.02em] text-[#111115] mb-5 max-w-[850px]">
           30 Days. One Mentor.<br/>
-          A Structured System for <span className="inline-flex text-transparent bg-clip-text bg-[linear-gradient(110deg,#4E14F9,45%,#B28BFF,55%,#4E14F9)] bg-[length:200%_auto] md:animate-shimmer">Student Growth.</span>
+          A Structured System for <span className="brand-shimmer-hero font-black">Student Growth.</span>
         </h1>
 
         {/* Subtitle */}
