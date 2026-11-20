@@ -111,3 +111,141 @@
   mix-blend-mode: screen;
   pointer-events: none;
 }
+
+/* ==========================================================
+   PREMIUM DARK MODE ADAPTATION (prefers-color-scheme: dark)
+   Provides deep, high-contrast, comfortable branding colors
+   so device dark mode looks intentional, sleek, and premium.
+   ========================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  /* Root canvas & smooth backgrounds */
+  html, body, #root {
+    background-color: #0A0B10 !important;
+    color: #F3F4F6 !important;
+  }
+
+  /* Section containers with light backgrounds */
+  .bg-\[\#FAFAFA\], 
+  .bg-\[\#F8F9FE\], 
+  .bg-gray-50, 
+  .bg-slate-50 {
+    background-color: #0A0B10 !important;
+  }
+
+  /* Cards, Modals, Dropdowns & Elevated surfaces */
+  .bg-white {
+    background-color: #131622 !important;
+    border-color: #222738 !important;
+  }
+
+  /* Translucent frosted glass (Navbar / Drawers) */
+  .bg-white\/98,
+  .bg-white\/95,
+  .bg-white\/90,
+  .bg-white\/80 {
+    background-color: rgba(13, 15, 23, 0.92) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-color: #1E2335 !important;
+  }
+
+  /* Primary text headings & brand dark */
+  .text-brand-dark,
+  .text-gray-900,
+  .text-\[\#111827\],
+  .text-\[\#222222\],
+  .text-black {
+    color: #F9FAFB !important;
+  }
+
+  /* Secondary body text */
+  .text-gray-700,
+  .text-gray-600 {
+    color: #D1D5DB !important;
+  }
+
+  /* Muted & metadata text (enhanced for WCAG AA readability on dark) */
+  .text-gray-500,
+  .text-brand-gray {
+    color: #9CA3AF !important;
+  }
+
+  .text-gray-400 {
+    color: #828B9E !important;
+  }
+
+  /* Subtle borders & dividers */
+  .border-gray-100,
+  .border-gray-200,
+  .border-gray-300 {
+    border-color: #202538 !important;
+  }
+
+  .divide-gray-100 > :not([hidden]) ~ :not([hidden]),
+  .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #202538 !important;
+  }
+
+  /* Elevated Shadow adjustments for dark surfaces */
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl,
+  .shadow-card {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* Specific hero card depth in dark mode */
+  .shadow-\[0_20px_60px_rgba\(0\,0\,0\,0\.06\)\] {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 0 1px #252B3E !important;
+    border-color: #252B3E !important;
+  }
+
+  /* Brand purple highlights: boost luminescence for optimal dark contrast */
+  .text-brand-purple,
+  .text-\[\#5B10FF\],
+  .text-\[\#4E14F9\] {
+    color: #9D7BFF !important;
+  }
+
+  .bg-brand-purple\/8,
+  .bg-brand-purple\/10,
+  .bg-brand-purple\/15,
+  .bg-\[\#5B10FF\]\/8 {
+    background-color: rgba(157, 123, 255, 0.12) !important;
+    border-color: rgba(157, 123, 255, 0.25) !important;
+  }
+
+  /* Badges & pill tags */
+  .bg-brand-purple {
+    background-color: #5B10FF !important;
+  }
+
+  /* Form inputs (ApplicationModal & contact forms) */
+  input, select, textarea {
+    background-color: #181C2B !important;
+    border-color: #283048 !important;
+    color: #F9FAFB !important;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #6B7280 !important;
+  }
+
+  /* Table zebra striping & comparison rows */
+  .bg-gray-50\/50,
+  .hover\:bg-gray-50:hover,
+  .hover\:bg-gray-100:hover {
+    background-color: #181C2B !important;
+  }
+
+  /* Footer gradient & backdrop */
+  footer {
+    background-color: #07080C !important;
+  }
+}
