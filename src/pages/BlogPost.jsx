@@ -187,10 +187,40 @@ export default function BlogPost({ onRequestInvite }) {
               border-bottom-color: #5B10FF;
               background-color: rgba(91,16,255,0.05);
             }
+            @media (prefers-color-scheme: dark) {
+              .prose-custom {
+                color: #D1D5DB !important;
+              }
+              .prose-custom h2,
+              .prose-custom h3,
+              .prose-custom h4,
+              .prose-custom strong {
+                color: #F9FAFB !important;
+              }
+              .prose-custom p,
+              .prose-custom ul,
+              .prose-custom ol,
+              .prose-custom li {
+                color: #D1D5DB !important;
+              }
+              .prose-custom blockquote {
+                color: #F3F4F6 !important;
+                border-left-color: #9D7BFF !important;
+                background: linear-gradient(to right, rgba(157,123,255,0.12), transparent) !important;
+              }
+              .prose-custom a {
+                color: #B49BFF !important;
+                border-bottom-color: rgba(180,155,255,0.4) !important;
+              }
+              .prose-custom a:hover {
+                border-bottom-color: #B49BFF !important;
+                background-color: rgba(157,123,255,0.15) !important;
+              }
+            }
           `}} />
 
           {/* Bottom CTA within Article */}
-          <div className="mt-16 bg-[#F9F4FF] rounded-[24px] p-8 md:p-10 border border-brand-purple/10 text-center">
+          <div className="hero-showcase-card mt-16 bg-[#F9F4FF] rounded-[24px] p-8 md:p-10 border border-brand-purple/10 text-center shadow-sm">
             <h3 className="text-[24px] font-black text-brand-dark mb-3">Ready to accelerate your growth?</h3>
             <p className="text-[15px] font-medium text-gray-500 mb-6 max-w-md mx-auto">Join the exclusive 30-day challenge and let our mentors guide you to your true potential.</p>
             <button onClick={onRequestInvite} className="bg-brand-purple text-white px-8 py-3.5 rounded-full font-bold text-[14px] hover:bg-[#4E0EE6] transition-colors shadow-lg shadow-brand-purple/25">

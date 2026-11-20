@@ -96,28 +96,31 @@
 .text-shimmer-premium {
   display: inline-block;
   line-height: 1.25;
-  padding-bottom: 0.28em;
-  margin-bottom: -0.28em;
+  padding-bottom: 0.15em;
   padding-top: 0.05em;
   overflow: visible;
   background: linear-gradient(
     115deg,
-    #5B10FF 10%,
-    #7C3AED 28%,
-    #C4B5FD 45%,
-    #FFFFFF 50%,
-    #C4B5FD 55%,
-    #7C3AED 72%,
-    #5B10FF 90%
+    #5B10FF 0%,
+    #7C3AED 25%,
+    #A855F7 45%,
+    #6366F1 55%,
+    #7C3AED 75%,
+    #5B10FF 100%
   );
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent !important;
-  animation: text-shimmer-flow 4.5s ease-in-out infinite;
+  animation: text-shimmer-flow 5s ease-in-out infinite;
   vertical-align: baseline;
   text-shadow: none !important;
+  transition: filter 0.3s ease;
+}
+
+.text-shimmer-premium:hover {
+  filter: drop-shadow(0 2px 12px rgba(91, 16, 255, 0.45));
 }
 
 /* ==========================================================
@@ -271,24 +274,27 @@
   /* Aesthetic Organic Text Shimmer (Dark Mode) */
   .text-shimmer-premium {
     line-height: 1.25 !important;
-    padding-bottom: 0.28em !important;
-    margin-bottom: -0.28em !important;
+    padding-bottom: 0.15em !important;
     padding-top: 0.05em !important;
     overflow: visible !important;
     background: linear-gradient(
       115deg,
-      #9D7BFF 10%,
-      #C4B5FD 28%,
-      #FFFFFF 45%,
-      #FFFFFF 55%,
-      #C4B5FD 72%,
-      #9D7BFF 90%
+      #9D7BFF 0%,
+      #C084FC 25%,
+      #E9D5FF 50%,
+      #C084FC 75%,
+      #9D7BFF 100%
     ) !important;
     background-size: 250% 100% !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     color: transparent !important;
+    transition: filter 0.3s ease !important;
+  }
+
+  .text-shimmer-premium:hover {
+    filter: drop-shadow(0 2px 14px rgba(157, 123, 255, 0.7)) !important;
   }
 
   /* Tinted cards & badges on dark background */
@@ -391,7 +397,7 @@
     border-color: #262D42 !important;
   }
 
-  /* Premium Obsidian Hero Showcase & Pricing Cards in Dark Mode */
+  /* Premium Obsidian Hero Showcase, Guide Cards & Pricing Cards in Dark Mode */
   .hero-showcase-card,
   .pricing-setup-card,
   div[class*="from-[#FFF9F2]"],
@@ -403,10 +409,84 @@
   div[class*="from-[#F9F7FF]"],
   div[class*="from-[#F5FAFF]"],
   div[class*="from-[#F4FCF7]"],
-  div[class*="from-[#FFF8F4]"] {
+  div[class*="from-[#FFF8F4]"],
+  div[class*="from-blue-50"],
+  div[class*="from-indigo-50"],
+  div[class*="from-emerald-50"],
+  div[class*="from-green-50"],
+  div[class*="from-orange-50"],
+  div[class*="from-slate-50"],
+  div[class*="from-red-50"],
+  div[class*="from-purple-50"] {
     background: linear-gradient(135deg, #161B2E 0%, #0F121E 100%) !important;
     border-color: #242B42 !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* Premium Card Hover State Across All Pages */
+  .bg-white:hover,
+  .hero-showcase-card:hover,
+  .pricing-setup-card:hover,
+  div[class*="from-blue-50"]:hover,
+  div[class*="from-indigo-50"]:hover,
+  div[class*="from-emerald-50"]:hover,
+  div[class*="from-green-50"]:hover,
+  div[class*="from-orange-50"]:hover,
+  div[class*="from-slate-50"]:hover,
+  div[class*="from-red-50"]:hover,
+  div[class*="from-purple-50"]:hover {
+    border-color: rgba(157, 123, 255, 0.35) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 24px rgba(91, 16, 255, 0.14) !important;
+  }
+
+  /* Interactive hover backgrounds in Dark Mode */
+  .hover\:bg-gray-50:hover,
+  .hover\:bg-gray-100:hover,
+  .hover\:bg-gray-200:hover,
+  .hover\:bg-gray-50\/50:hover,
+  .hover\:bg-indigo-50:hover,
+  .hover\:bg-blue-50:hover,
+  .hover\:bg-purple-50:hover,
+  .hover\:bg-orange-50:hover {
+    background-color: #1A1F32 !important;
+  }
+
+  /* Table row hover in dark mode */
+  tr.hover\:bg-gray-50\/50:hover,
+  tr.hover\:bg-gray-50:hover {
+    background-color: #161A2B !important;
+  }
+
+  /* Text hover states */
+  .hover\:text-gray-900:hover,
+  .hover\:text-gray-800:hover,
+  .hover\:text-brand-dark:hover {
+    color: #FFFFFF !important;
+  }
+
+  .hover\:text-brand-purple:hover,
+  .hover\:text-blue-600:hover,
+  .hover\:text-indigo-600:hover {
+    color: #B49BFF !important;
+  }
+
+  /* Step circle borders & dividers */
+  .border-\[\#FAFAFA\],
+  .border-\[\#F8F9FE\],
+  .border-\[\#FDFBF7\] {
+    border-color: #0A0B10 !important;
+  }
+
+  /* High-contrast tab and accent text */
+  .text-blue-700,
+  .text-indigo-700 {
+    color: #93C5FD !important;
+  }
+  .text-emerald-700 {
+    color: #6EE7B7 !important;
+  }
+  .text-purple-700 {
+    color: #C4B5FD !important;
   }
 
   .hero-showcase-card h1,
