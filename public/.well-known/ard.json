@@ -1,0 +1,41 @@
+{
+  "specVersion": "0.91",
+  "host": {
+    "displayName": "Growtopper Mentors",
+    "identifier": "growtopper.app"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:growtopper.app:programs:growth-challenge",
+      "displayName": "30-Day Growth Challenge",
+      "type": "application/json",
+      "url": "https://www.growtopper.app/30-days-growth-challenge",
+      "description": "India's structured 30-day mentor-led program for school students in Grades 6-12 covering 6 real-world skills: Math, Science, Tech & AI, Finance, Communication, and Business.",
+      "representativeQueries": [
+        "What is the Growtopper 30-Day Growth Challenge?",
+        "How can school students get a dedicated mentor in India?"
+      ],
+      "capabilities": [
+        "Mentorship",
+        "StudentGrowth",
+        "CareerGuidance"
+      ]
+    },
+    {
+      "identifier": "urn:air:growtopper.app:services:clarity-session",
+      "displayName": "1-on-1 Clarity Session",
+      "type": "application/json",
+      "url": "https://www.growtopper.app/1-1-clarity-session-call",
+      "description": "1-on-1 diagnostic clarity counseling session and SWOT roadmap for students and parents.",
+      "representativeQueries": [
+        "Book a 1-on-1 clarity session call with a mentor",
+        "Student academic counseling and roadmap session"
+      ],
+      "capabilities": [
+        "Counseling",
+        "SWOTAnalysis",
+        "RoadmapPlanning"
+      ]
+    }
+  ]
+}

@@ -8,18 +8,17 @@
     <!-- Performance: Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://ipapi.co" crossorigin />
-    <link rel="preconnect" href="https://api.dicebear.com" crossorigin />
 
-    <!-- Performance: Preload Critical Fonts -->
+    <!-- Performance: Preload Critical Above-The-Fold Fonts Only -->
     <link rel="preload" href="/fonts/satoshi/Satoshi-Regular.otf" as="font" type="font/otf" crossorigin />
-    <link rel="preload" href="/fonts/satoshi/Satoshi-Medium.otf" as="font" type="font/otf" crossorigin />
     <link rel="preload" href="/fonts/satoshi/Satoshi-Bold.otf" as="font" type="font/otf" crossorigin />
-    <link rel="preload" href="/fonts/satoshi/Satoshi-Black.otf" as="font" type="font/otf" crossorigin />
 
-    <!-- Performance: Google Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lilita+One&family=Permanent+Marker&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lilita+One&family=Permanent+Marker&display=swap" /></noscript>
+    <!-- Performance: Google Fonts (Caveat used in badges/notes) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" /></noscript>
+
+    <!-- Agentic Resource Discovery (ARD) Manifest -->
+    <link rel="ard" href="https://growtopper.app/.well-known/ard.json" type="application/json" />
 
 
     <!-- ===== PRIMARY SEO ===== -->

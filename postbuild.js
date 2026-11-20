@@ -249,3 +249,18 @@ try {
 } catch (error) {
   console.error("Error inlining CSS:", error);
 }
+
+// --- 5. COPY .well-known DIRECTORY TO DIST ---
+try {
+  const wellKnownSrc = path.resolve(__dirname, 'public/.well-known');
+  const wellKnownDist = path.resolve(distDir, '.well-known');
+  if (fs.existsSync(wellKnownSrc)) {
+    if (!fs.existsSync(wellKnownDist)) {
+      fs.mkdirSync(wellKnownDist, { recursive: true });
+    }
+    fs.cpSync(wellKnownSrc, wellKnownDist, { recursive: true });
+    console.log('Successfully copied .well-known to dist!');
+  }
+} catch (error) {
+  console.error('Error copying .well-known:', error);
+}

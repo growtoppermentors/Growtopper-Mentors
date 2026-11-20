@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://growtopper.app/sitemap.xml
+Agentmap: https://growtopper.app/.well-known/ard.json
