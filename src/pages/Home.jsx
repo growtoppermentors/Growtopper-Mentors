@@ -75,7 +75,7 @@ export default function Home({ openModal }) {
             </span>
           </div>
 
-          <h1 className="text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.2] tracking-tight mb-4 text-balance pb-2">
+          <h1 className="text-[36px] md:text-[46px] font-black text-brand-dark leading-[1.25] tracking-tight mb-4 text-balance pb-3">
             Mentor for Everything.<br/>
             Get a mentor for <span className="whitespace-nowrap text-shimmer-premium font-black">10X growth.</span>
           </h1>

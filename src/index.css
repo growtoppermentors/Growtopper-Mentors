@@ -96,8 +96,9 @@
 .text-shimmer-premium {
   display: inline-block;
   line-height: 1.25;
-  padding-bottom: 0.15em;
+  padding-bottom: 0.25em;
   padding-top: 0.05em;
+  margin-bottom: -0.25em;
   overflow: visible;
   background: linear-gradient(
     115deg,
@@ -120,7 +121,7 @@
 }
 
 .text-shimmer-premium:hover {
-  filter: drop-shadow(0 2px 12px rgba(91, 16, 255, 0.45));
+  filter: drop-shadow(0 2px 14px rgba(91, 16, 255, 0.5));
 }
 
 /* ==========================================================
@@ -152,8 +153,8 @@
 
   /* Generic Cards, Modals, Dropdowns & Elevated surfaces */
   .bg-white {
-    background-color: #131622 !important;
-    border-color: #222738 !important;
+    background-color: #111520 !important;
+    border-color: #1E2335 !important;
   }
 
   /* Translucent frosted glass (Navbar / Drawers) */
@@ -170,8 +171,9 @@
   /* Inner glass boxes (e.g. data grids inside cards) */
   .bg-white\/70,
   .bg-white\/60,
-  .bg-white\/50 {
-    background-color: rgba(255, 255, 255, 0.04) !important;
+  .bg-white\/50,
+  .bg-white\/40 {
+    background-color: rgba(255, 255, 255, 0.05) !important;
     border-color: rgba(255, 255, 255, 0.08) !important;
   }
 
@@ -274,8 +276,9 @@
   /* Aesthetic Organic Text Shimmer (Dark Mode) */
   .text-shimmer-premium {
     line-height: 1.25 !important;
-    padding-bottom: 0.15em !important;
+    padding-bottom: 0.25em !important;
     padding-top: 0.05em !important;
+    margin-bottom: -0.25em !important;
     overflow: visible !important;
     background: linear-gradient(
       115deg,
@@ -390,16 +393,100 @@
 
   /* Gray backgrounds in dark mode (pills, badges, tables) */
   .bg-gray-100,
-  .bg-gray-200,
-  .bg-gray-50\/60,
-  .bg-gray-100\/60 {
-    background-color: #1A1F30 !important;
-    border-color: #262D42 !important;
+  .bg-gray-200 {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
   }
 
-  /* Premium Obsidian Hero Showcase, Guide Cards & Pricing Cards in Dark Mode */
+  .bg-gray-50\/60,
+  .bg-gray-100\/60 {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* Table cells & comparison tables: eliminate ugly opaque gray blocks */
+  th.bg-gray-50\/30,
+  td.bg-gray-50\/30,
+  .bg-gray-50\/30 {
+    background-color: transparent !important;
+    border-color: #202538 !important;
+  }
+
+  tr.bg-gray-50,
+  th.bg-gray-50,
+  td.bg-gray-50 {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border-color: #202538 !important;
+  }
+
+  /* Locked button pills & disabled states */
+  button[disabled].bg-gray-100\/50,
+  div.bg-gray-100\/80,
+  .bg-gray-100\/50,
+  .bg-gray-100\/80 {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: #9CA3AF !important;
+  }
+
+  button[disabled] span,
+  button[disabled] svg {
+    color: inherit !important;
+  }
+
+  /* ── LOW GRADIENT COLOR ACCENT CARDS (Journey Style) ──
+     Mentor cards, quota boxes, and soft gradient blocks in dark mode.
+     Replaces flat chalky gray with subtle luminous color gradients. */
+  .bg-purple-50\/50 {
+    background: linear-gradient(145deg, rgba(168, 85, 247, 0.15) 0%, rgba(91, 16, 255, 0.04) 100%) !important;
+    border-color: rgba(168, 85, 247, 0.22) !important;
+  }
+  .bg-blue-50\/50 {
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.04) 100%) !important;
+    border-color: rgba(59, 130, 246, 0.22) !important;
+  }
+  .bg-green-50\/50,
+  .bg-emerald-50\/50 {
+    background: linear-gradient(145deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.04) 100%) !important;
+    border-color: rgba(16, 185, 129, 0.22) !important;
+  }
+  .bg-indigo-50\/50 {
+    background: linear-gradient(145deg, rgba(99, 102, 241, 0.15) 0%, rgba(79, 70, 229, 0.04) 100%) !important;
+    border-color: rgba(99, 102, 241, 0.22) !important;
+  }
+  .bg-orange-50\/50 {
+    background: linear-gradient(145deg, rgba(249, 115, 22, 0.15) 0%, rgba(234, 88, 12, 0.04) 100%) !important;
+    border-color: rgba(249, 115, 22, 0.22) !important;
+  }
+  .bg-sky-50\/50 {
+    background: linear-gradient(145deg, rgba(56, 189, 248, 0.15) 0%, rgba(14, 165, 233, 0.04) 100%) !important;
+    border-color: rgba(56, 189, 248, 0.22) !important;
+  }
+  .bg-teal-50\/50 {
+    background: linear-gradient(145deg, rgba(45, 212, 191, 0.15) 0%, rgba(20, 184, 166, 0.04) 100%) !important;
+    border-color: rgba(45, 212, 191, 0.22) !important;
+  }
+  .bg-pink-50\/50 {
+    background: linear-gradient(145deg, rgba(244, 114, 182, 0.15) 0%, rgba(236, 72, 153, 0.04) 100%) !important;
+    border-color: rgba(244, 114, 182, 0.22) !important;
+  }
+  .bg-amber-50\/50 {
+    background: linear-gradient(145deg, rgba(251, 191, 36, 0.15) 0%, rgba(245, 158, 11, 0.04) 100%) !important;
+    border-color: rgba(251, 191, 36, 0.22) !important;
+  }
+
+  /* ── HERO SHOWCASE & PRICING CARDS ── 
+     Low-gradient premium color background (replaces heavy dark obsidian). */
   .hero-showcase-card,
-  .pricing-setup-card,
+  .pricing-setup-card {
+    background: linear-gradient(145deg, #131728 0%, #101422 50%, #0D101C 100%) !important;
+    border: 1px solid #222940 !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+  }
+
+  /* ── GUIDE SECTION GRADIENT CARDS ──
+     GradientCard components and pastel gradient cards get a
+     subtle, sleek translucent treatment with clean borders. */
   div[class*="from-[#FFF9F2]"],
   div[class*="from-[#F0F4F8]"],
   div[class*="from-[#F4F1FF]"],
@@ -410,33 +497,28 @@
   div[class*="from-[#F5FAFF]"],
   div[class*="from-[#F4FCF7]"],
   div[class*="from-[#FFF8F4]"],
-  div[class*="from-blue-50"],
-  div[class*="from-indigo-50"],
-  div[class*="from-emerald-50"],
-  div[class*="from-green-50"],
-  div[class*="from-orange-50"],
-  div[class*="from-slate-50"],
-  div[class*="from-red-50"],
-  div[class*="from-purple-50"] {
-    background: linear-gradient(135deg, #161B2E 0%, #0F121E 100%) !important;
-    border-color: #242B42 !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  div[class*="from-[#FFF9F5]"],
+  div[class*="from-blue-50/"],
+  div[class*="from-indigo-50/"],
+  div[class*="from-emerald-50/"],
+  div[class*="from-green-50/"],
+  div[class*="from-orange-50/"],
+  div[class*="from-slate-50/"],
+  div[class*="from-red-50/"],
+  div[class*="from-purple-50/"],
+  div[class*="from-sky-50"],
+  div[class*="from-pink-50"],
+  div[class*="from-teal-50"],
+  div[class*="from-amber-50"] {
+    background: linear-gradient(145deg, #131826 0%, #101420 100%) !important;
+    border-color: #1E2538 !important;
   }
 
-  /* Premium Card Hover State Across All Pages */
-  .bg-white:hover,
+  /* Premium subtle hover — cards lift slightly with soft brand glow */
   .hero-showcase-card:hover,
-  .pricing-setup-card:hover,
-  div[class*="from-blue-50"]:hover,
-  div[class*="from-indigo-50"]:hover,
-  div[class*="from-emerald-50"]:hover,
-  div[class*="from-green-50"]:hover,
-  div[class*="from-orange-50"]:hover,
-  div[class*="from-slate-50"]:hover,
-  div[class*="from-red-50"]:hover,
-  div[class*="from-purple-50"]:hover {
+  .pricing-setup-card:hover {
     border-color: rgba(157, 123, 255, 0.35) !important;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 24px rgba(91, 16, 255, 0.14) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(91, 16, 255, 0.12) !important;
   }
 
   /* Interactive hover backgrounds in Dark Mode */
