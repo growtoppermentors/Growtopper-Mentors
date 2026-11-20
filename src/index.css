@@ -164,6 +164,14 @@
     border-color: #1E2335 !important;
   }
 
+  /* Inner glass boxes (e.g. data grids inside cards) */
+  .bg-white\/70,
+  .bg-white\/60,
+  .bg-white\/50 {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+  }
+
   /* Primary text headings & brand dark */
   h1, h2, h3, h4, h5, h6,
   .text-brand-dark,
