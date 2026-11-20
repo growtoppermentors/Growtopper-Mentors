@@ -154,8 +154,10 @@
   }
 
   /* Primary text headings & brand dark */
+  h1, h2, h3, h4, h5, h6,
   .text-brand-dark,
   .text-gray-900,
+  .text-\[\#111115\],
   .text-\[\#111827\],
   .text-\[\#222222\],
   .text-black {
@@ -164,7 +166,9 @@
 
   /* Secondary body text */
   .text-gray-700,
-  .text-gray-600 {
+  .text-gray-600,
+  .text-\[\#4B5563\],
+  .text-\[\#374151\] {
     color: #D1D5DB !important;
   }
 
